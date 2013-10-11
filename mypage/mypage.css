@@ -80,7 +80,13 @@ a{
 }
 
 #header ul li#logo {
-	width: 33%;
+	width: 70%;
+	line-height: 34px;
+	font-size: 27px;
+}
+
+#header ul li#button{
+	width: 15%;
 	line-height: 34px;
 	font-size: 27px;
 }
