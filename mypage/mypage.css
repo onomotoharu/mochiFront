@@ -123,7 +123,7 @@ a{
 	margin-left: 8pt;
 }
 
-.bold{
+.myname{
 	font-size: 16pt;
 	font-weight: bold;
 }
@@ -137,10 +137,15 @@ a{
 
 .follow{
 	font-size: 8pt;
-	background-color: #BBB;
 	color: #fff;
+	background-color: #BBB;
 	padding: 9.5px 8px;
 	border-radius: 5px 5px;
+}
+
+.followcount,.followercount{
+	font-size: 8pt;
+	color: #fff;
 }
 
 #myintro{
