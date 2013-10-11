@@ -136,16 +136,17 @@ a{
 
 #follow{
 	display: block;
+	height: 25px;
 	text-align: right;
 	margin-top: 10px;
 	margin-right: 10px;
 }
 
 .follow{
-	font-size: 8pt;
-	color: #fff;
 	background-color: #BBB;
-	padding: 9.5px 8px;
+	font-size: 8pt;
+	width: 60px;
+	color: #fff;
 	border-radius: 5px 5px;
 }
 
@@ -155,6 +156,7 @@ a{
 }
 
 #myintro{
+	font-size: 9pt;
 	margin: 15pt 20px;
 }
 
@@ -170,7 +172,7 @@ a{
 }
 
 .tab ul{
-	height: auto;
+	height: 40px;
 	margin: 0;
 	padding: 0;
 	line-height: 100%;
@@ -181,17 +183,22 @@ a{
 	float: left;
 	width: 33.3%;
 	text-align: center;
-	margin: 0;
-	padding: 0;
+	/*margin: 0;
+	padding: 0;*/
 }
 
 .tab ul li a{
 	border-right: 1px solid #BBB;
 	border-top: 1px solid #BBB;
 	border-bottom: 1px solid #BBB;
-	padding: 8px 20px;
 	display: block;
 	position: relative;
 	background-color: #DDD;
+	height: 40px;
+}
+
+.tab ul li a img{
+	height: 26px;
+	margin: 7pt auto;
 }
 
