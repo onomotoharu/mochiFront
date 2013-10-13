@@ -121,7 +121,7 @@ a{
 }
 
 #myname{
-	width:40%;
+	width:35%;
     color : #000;
    	font-size: 8pt;
 	float:left;
@@ -134,11 +134,15 @@ a{
 	font-weight: bold;
 }
 
+table{
+	border-spacing: 10pt 0;
+}
+
 .follow{
 	font-size: 8pt;
 	background-color: #BBB;
 	text-align: center;
-	width: 75px;
+	width: 70px;
 	height: 25px;
 	color: #fff;
 	border-radius: 5px 5px;
