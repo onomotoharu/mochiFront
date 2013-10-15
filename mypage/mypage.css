@@ -175,7 +175,6 @@ table{
 	padding: 0;
 	line-height: 100%;
 	list-style-type: none;
-	/*-webkit-gradient(linear, top, bottom, from(#), to(#));*/
 }
 
 .tab ul li{
@@ -185,16 +184,21 @@ table{
 }
 
 .tab ul li a{
-	border-right: 1px solid #BBB;
-	border-top: 1px solid #BBB;
-	border-bottom: 1px solid #BBB;
+	border-right: 1px solid #AAA;
+	border-top: 1px solid #AAA;
+	border-bottom: 1px solid #AAA;
 	display: block;
 	position: relative;
-	background-color: #DDD;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #D8D8D8), color-stop(1, #B2B2B2));
 }
 
 .tab ul li a img{
 	height: 26px;
 	margin: 7pt auto;
 }
+
+.tab ul li a:hover{
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #D8D8D8), color-stop(1, #7F7F7F));
+}
+
 
