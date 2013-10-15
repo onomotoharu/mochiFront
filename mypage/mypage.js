@@ -8,11 +8,27 @@ $(document).ready(function(){
 });
 
 $(function(){
-	$('a img').hover(function(){
-		$(this).attr('src', $(this).attr('src').replace('_off', '_on'));
+	$('.list a').hover(function(){
+		$('.list a img').attr('src', $('.list a img').attr('src').replace('_off', '_on'));
 	}, function(){
-		if (!$(this).hasClass('current')) {
-			$(this).attr('src', $(this).attr('src').replace('_on', '_off'));
+		if (!$('.list a img').hasClass('current')) {
+			$('.list a img').attr('src', $('.list a img').attr('src').replace('_on', '_off'));
+		}
+	});
+
+	$('.graph a').hover(function(){
+		$('.graph a img').attr('src', $('.graph a img').attr('src').replace('_off', '_on'));
+	}, function(){
+		if (!$('.graph a img').hasClass('current')) {
+			$('.graph a img').attr('src', $('.graph a img').attr('src').replace('_on', '_off'));
+		}
+	});
+
+	$('.fav a').hover(function(){
+		$('.fav a img').attr('src', $('.fav a img').attr('src').replace('_off', '_on'));
+	}, function(){
+		if (!$('.fav a img').hasClass('current')) {
+			$('.fav a img').attr('src', $('.fav a img').attr('src').replace('_on', '_off'));
 		}
 	});
 });
