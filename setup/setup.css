@@ -117,14 +117,14 @@ a{
 	height: 50px;
 	padding-left: 20px;
 	border-bottom: solid 3px #ddd;
-	margin-top: 25px;
+	margin-top: 23px;
 }
 
 .content table a img{
 	height: 32px;
 	width: 12px;
 	margin-right: 20px;
-	background-color: black;
+	margin-top: -4px;
 }
 
 
