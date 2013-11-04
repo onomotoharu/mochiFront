@@ -1,4 +1,18 @@
+function footer() {
+	document.write ('<nav id="footer" name="nav">\n');      
+	document.write ('<ul>\n');       
+	document.write ('<li><a href=""><img src="../img/off/reco_off.png"></a></li>\n');    
+	document.write ('<li><a href=""><img src="../img/off/act_off.png"></a></li>\n');   
+	document.write ('<li><a href=""><img src="../img/on/my_on.png"></a></li>\n'); 
+	document.write ('<li><a href=""><img src="../img/off/set_off.png"></a></li>\n'); 
+	document.write ('</ul>\n');
+	document.write ('</nav>\n');     
+}
+
+
 $(document).ready(function(){
+	$('#pagename').append("マイページ")
+
 	$('.myname').html("名前");
 
 	$('.followcount').append("30");
@@ -8,6 +22,7 @@ $(document).ready(function(){
 });
 
 $(function(){
+
 	$('.list a').hover(function(){
 		$('.list a img').attr('src', $('.list a img').attr('src').replace('_off', '_on'));
 	}, function(){
@@ -32,3 +47,5 @@ $(function(){
 		}
 	});
 });
+
+
