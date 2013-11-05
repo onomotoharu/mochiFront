@@ -45,14 +45,19 @@
                                 /*********************
                                  * チャート
                                 *********************/
-                                chartStrokeColor    : ['#e07431'],  //チャートの線
-                                chartFillColor      : ['rgba(224, 116, 49, 0.3)'],//チャートの塗り色 noneで塗らない
-                                chartLineWidth      : 5,//線の太さ
+                                chartStrokeColor    : ['#e07431','#9c7d25'],  //チャートの線
+                                chartFillColor      : ['rgba(224, 116, 49, 0.3)', 'none'],//チャートの塗り色 noneで塗らない
+                                chartLineWidth      : 6,//線の太さ
             
                                 /*********************
                                  * レーダーチャートの頂点
                                 *********************/
-                                chartPoint          : false,         //チャートの点描画 true or false
+                                chartPoint          : true,         //チャートの点描画 true or false
+                                chartPointType      : ['square','arc'],   //点の図形タイプ square:四角 or arc:円
+                                chartPointType2     : ['fill'],     //線か塗りつぶし　stroke or fill
+                                chartPointLineWidth : 1,            //頂点の線の太さ
+                                chartPointSize      : [0, 15],         //チャートの頂点サイズ
+                                chartPointColor     : [''],         //チャートの頂点描画色、指定無しで線と同じ色
             
                                 /*********************
                                  * 評価名
@@ -118,6 +123,14 @@
                                         <input type="hidden" value="30" id="input4" name="input4" />
                                         <input type="hidden" value="10" id="input5" name="input5" />
                                         <input type="hidden" value="35" id="input6" name="input6" />
+                                </div>
+                                <div class="chartInput">
+                                        <input type="hidden" value="100" id="input1" name="input1" />
+                                        <input type="hidden" value="100" id="input2" name="input2" />
+                                        <input type="hidden" value="100" id="input3" name="input3" />
+                                        <input type="hidden" value="100" id="input4" name="input4" />
+                                        <input type="hidden" value="100" id="input5" name="input5" />
+                                        <input type="hidden" value="100" id="input6" name="input6" />
                                 </div>
                         </div>
                 </div>

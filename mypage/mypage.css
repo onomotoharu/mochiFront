@@ -124,13 +124,16 @@ table{
 
 #canvasChart{
 	margin: auto;
+	position: absolute;
+}
+
+#canbasChart_soto{
+	position: auto;
 }
 
 .valName{
 	font-size: 12pt;
-	background-color: #9c7d25;
 	color: #fff;
-	font-weight: bold;
 }
 
 
