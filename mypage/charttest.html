@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>jquery　CanvasChart.js TEST</title>
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="./jquery.canvasChart.js"></script>
+<!--[if IE]><script type="text/javascript" src="./excanvas.js"></script><![endif]-->
+ 
+<script type="text/javascript">
+$(function(){
+    $('#canvasChart').canvasChart({
+        /*********************
+             * 基本設定
+            *********************/
+            polygon             : 6,            //頂点の数
+            chartInput          : '.chartInput',//チャートのインプットclass
+            valuation           : 100,            //評価値
+            radius              : 150,          //半径
+            bgType              : 'pol',        //背景のタイプ　 pol:多角形 or arc:円
+            angle               : '30',           //レーダーチャートの回転度数
+            
+            /*********************
+             * 背景
+            *********************/
+            bgStroke            : true,         //背景の線 true or false
+            bgStrokeColor       : '#ece2d5',    //背景の線色
+            bgLineWidth         : 4,            //背景の線の太さ
+            bgFill              : false,        //背景の塗り true or false
+            bgDivision          : 3,    //背景の分割数
+            
+            /*********************
+             * チャート
+            *********************/
+            chartStrokeColor    : ['#e07431'],  //チャートの線
+            chartFillColor      : ['rgba(224, 116, 49, 0.3)'],//チャートの塗り色 noneで塗らない
+            chartLineWidth      : 5,//線の太さ
+            
+            /*********************
+             * レーダーチャートの頂点
+            *********************/
+            chartPoint          : false,         //チャートの点描画 true or false
+            
+            /*********************
+             * 評価名
+            *********************/
+            valuationPrint      : true,         //評価名の表示　true or false
+            valuationName       : ['米','菜','魚','肉','他', '麺'],//評価名
+            valuationPosition   : 1,            //評価名要素の位置
+            valuationClass      : '',           //評価名要素のclass デフォルトでvalName
+            
+            /*********************
+             * 評価の数値
+            *********************/
+            valuationCntPrint   : false,         //評価の数値表記 true or false
+            valuationCntClass   : '',           //評価の数値のclass　デフォルトでvalCntName
+            printZero           : false,         //中央0の表記 true or false
+            valuationCntDivision: 3,    //評価の数値分割数
+            
+            /*********************
+             * 中央からのゲージライン
+            *********************/
+            gauge               : true,         //中央からのゲージライン描画 true or false
+            gaugeColor          : '',           //中央からのゲージライン描画色、指定無しで背景線と同じ色
+            
+            /*********************
+             * ゲージラインのスケール
+            *********************/
+            scale               : false,         //ゲージラインの目盛り描画 true or false
+    });
+});
+</script>
+ 
+</head>
+ 
+<body>
+ 
+<div id="canvasChart">
+    <canvas width="380" height="380"></canvas>
+    <div class="chartInput">
+        <input type="hidden" value="65" id="input1" name="input1" />
+        <input type="hidden" value="40" id="input2" name="input2" />
+        <input type="hidden" value="50" id="input3" name="input3" />
+        <input type="hidden" value="30" id="input4" name="input4" />
+        <input type="hidden" value="10" id="input5" name="input5" />
+        <input type="hidden" value="35" id="input6" name="input6" />
+    </div>
+</div>
+ 
+</body>
+</html>

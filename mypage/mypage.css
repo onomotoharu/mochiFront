@@ -32,7 +32,7 @@
 }
 
 .myname{
-	font-size: 16pt;
+	font-size: 14pt;
 	font-weight: bold;
 }
 
@@ -99,4 +99,38 @@ table{
 .tab ul li a:hover{
 	background-color: #ff8c00;
 }
+
+.tab_now a{
+	background-color: #ff8c00;
+}
+
+
+/*-----------------------------
+ タブ中身（グラフとか）
+-----------------------------*/
+
+.tab_title{
+	background-color: #eee;
+	color: #aaa;
+	height: 25px;
+	padding-left: 10px;
+	padding-top: 15px;
+}
+
+
+/*----------------------------
+ グラフ
+----------------------------*/
+
+#canvasChart{
+	margin: auto;
+}
+
+.valName{
+	font-size: 12pt;
+	background-color: #9c7d25;
+	color: #fff;
+	font-weight: bold;
+}
+
 
