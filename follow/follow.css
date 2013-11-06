@@ -1,9 +1,5 @@
 @charset "utf-8";
-/* CSS Document */
 
-/*----------------------
-    デフォルトスタイル
------------------------*/
 body,p,h1,h2,h3,h4,h5,h6,
 span,small,strong,
 div,ul,li,
@@ -12,213 +8,172 @@ header,footer,nav,section{
     margin:0;
     padding:0;
     border:none;
-	outline:none;
-	font-size:1rem;
-	font-weight:normal;
-	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	color: #600;
+    outline:none;
+    font-size:1rem;
+    font-weight:normal;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #000;
 }
 
 header,footer,nav{display:block;}
 
 html{
-	font:13px/1.3 " HiraKakuProN-W3";
-	-webkit-text-size-adjust:none;}
-
-li{list-style:none;}
-
-
-body{
-    background-color:#FDF5E6;
-    background-position:center top;
-    background-repeat:repeat;
+    font:13px/1.3 " HiraKakuProN-W3";
+    -webkit-text-size-adjust:none;
 }
 
-
-
-/* リンク色変更はここ */
+li{
+    list-style:none;
+}
 
 a{
-    color:#3cb371;
-	text-decoration:none;
+    text-decoration:none;
 }
-
-/* 縦ライン */
-#all{
-    position: relative;
-	width:100%;
-	overflow:hidden;
-	margin-bottom:50px;
-}
-
-
 
 /*----------------------------------------
  全ページ共有ここから
 ----------------------------------------*/
 
-/* 水平ライン */
-#head h1:before{
-    content:"";
-    width:100%;
-    height:2px;
-	margin-top:-1px;
-    display:block;
-    position:absolute;
-	top:10%;
-    z-index:1;
+/*--------------------
+ ヘッダー
+--------------------*/
+
+#header{
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    /*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffd047), color-stop(1, #edb637));*/
+    background-image: url("./img/header.png");
+    box-shadow: 0px 0px 10px -2px rgba(93, 56, 3, 0.9);
+    z-index: 3;
 }
 
-#head h1 span{
-	background:url(img/head_bg.gif) repeat-x left center;
-    padding:0 5px;
-	color:#3cb371;
-	font-size:10px;
-    position:relative;
-    z-index:5;
+#header ul li{
+    text-align: center;
+    float: left;
+    padding-top: 10px;
+    font-size: 20px;
+    width: 10%;
 }
 
-
-.clear {clear:both;}
-
-
-
-/*----------------------------------------
-ヘッダー　header
-----------------------------------------*/
-
-.header {
-	width: 140px;
-	height: 30px;
-	margin:0 auto;
-	background-color: #dadbda;
-	display:block;
-	float:center;
-	-webkit-border-radius: 8px;
+#header ul li a img{
+    width:20px;
+    height:25px;
 }
 
-.header a {
-	color: #000;
-	font-size:x-small;
-	float:center;
+#header ul li#pagename{
+    width: 80%;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 
 
-/*----------------------------------------
-header_in
-----------------------------------------*/
+/*------------------------
+ 背景
+------------------------*/
 
-.header_in{
+body{
+    background-image: url("./img/tate.png");
+}
+
+
+/*------------------------
+ 中身
+------------------------*/
+
+.allcontents{
+    margin: 45px 0 45px;
+    z-index: 1;
+    overflow: auto;
+    width: 100%;
+}
+
+.inheader{
 	width:100%;
 	height:20px;
 	background-color:#E7E4E0;
 	padding:10px 0;
+	margin:0;
 }
 
-.header_in a{
+.inheader a{
 	color:#fff;
+	margin-left:20px;
 }
+
+.follow{
+	background-color:#fff;
+	height:60px;
+	margin:0;
+	padding-top:10px;
+}
+
+.follow a{
+	color:#000;
+	font-size:15px;
+}
+
+.follow_pic{
+	margin:0 20px;
+	width:50px;
+	height:50px;
+	float:left;
+}
+
+.follow_pic ul img{
+	width:50px;
+	height:50px;	
+}
+
+.follow_btn{
+	margin:13px 20px 23px 0;
+	width:70px;
+	height:24px;
+	float:right;
+}
+
+.follow_btn ul img{
+	width:70px;
+	height:24px;
+}
+
+/*------------------------
+ フッター
+------------------------*/
+
+#footer{
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    bottom: 0;
+    background-color: #bbac88;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px -2px rgba(93, 56, 3, 0.9);
+    z-index: 3;
+}
+
+#footer ul{
+    overflow: hidden;
+}
+
+#footer ul li{
+    text-align: center;
+    float: left;
+    width: 25%;
+}
+
+#footer ul img{
+    width:72px;
+    height:45px;
+}
+
 
 
 /*----------------------------------------
-title
+ 全ページ共有ここまで
 ----------------------------------------*/
 
-.date{
-	font-size:9pt;
-	text-align:right;
-	margin-right:10px;
-}
-.date a{
-	color:#444;
-}
 
-
-.title{
-	overflow: hidden;
-	padding: 5px;
-	margin-top: 3px;
-	margin-right:10px;
-	font-size:13pt;
-
-}
-.title a{
-	color:#000;
-}
-
-
-
-
-/* -----------------------
-  左上角丸　最初の行の最初のセル
------------------------ */
-.material tr:first-child th:first-child,
-.material tr:first-child td:first-child {
-    -webkit-border-radius: 10px 0 0 0;
-       -moz-border-radius: 10px 0 0 0;
-         -o-border-radius: 10px 0 0 0;
-            border-radius: 10px 0 0 0;
-}
-/* -----------------------
-  右上角丸　最初の行の最後のセル
------------------------ */
-.material tr:first-child th:last-child,
-.material tr:first-child td:last-child {
-    -webkit-border-radius: 10px 10px 0 0;
-       -moz-border-radius: 10px 10px 0 0;
-         -o-border-radius: 10px 10px 0 0;
-            border-radius: 10px 10px 0 0;
-}
-/* -----------------------
-  左下角丸　最後の行の最初のセル
------------------------ */
-.material tr:last-child th:first-child,
-.material tr:last-child td:first-child {
-    -webkit-border-radius: 0 0 0 10px;
-       -moz-border-radius: 0 0 0 10px;
-         -o-border-radius: 0 0 0 10px;
-            border-radius: 0 0 0 10px;
-}
-/* -----------------------
-  右下角丸　最後の行の最後のセル
------------------------ */
-.material tr:last-child th:last-child,
-.material tr:last-child td:last-child {
-    -webkit-border-radius: 0 0 10px 0;
-       -moz-border-radius: 0 0 10px 0;
-         -o-border-radius: 0 0 10px 0;
-            border-radius: 0 0 10px 0;
-}
-
-
-
-/*--------------------
- めにゅー
---------------------*/
-
-#nav{
-	position:fixed;
-	top:0px;
-	height: 34px;
-	left:0;
-	width: 100%;
-	overflow: hidden;
-	background-color:#000;
-    	background-size:320px,568px;
-	text-align:center;
-	color: #000;
-	float:left;
-	box-shadow: 0px 2px 5px #000; /*CSS3*/
-	-moz-box-shadow: 0px 2px 5px #000; /* Firefox用*/
-	-webkit-box-shadow: 0px 2px 5px #000; /* Google Chrome, Safari用*/
-
-}
-
-.bar{
-	width:2px;
-	height: 20px;
-	margin: 7px 0;
-	background-color:#e2aa72;
-	float:left;
-}
