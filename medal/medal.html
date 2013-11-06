@@ -1,0 +1,152 @@
+<!DOCTYPE html>  
+<html lang="ja">  
+        <head>  
+                <meta charset="UTF-8">  
+                <meta http-equiv="content-script-type" content="text/javascript">  
+                <meta name="viewport" content="width=device-width,user-scalable=no">  
+
+                <title>マイページ | cheese</title>
+
+                <meta name="description" content="" />
+                <meta name="keywords" content="" />
+                <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"> -->
+                <!--[if lt IE 9]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                <![endif]-->
+                <link rel="stylesheet" type="text/css" href="../template.css">
+                <link rel="stylesheet" type="text/css" href="./mypage.css">
+                 <link rel="stylesheet" type="text/css" href="./medal.css">
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+                <script language="javascript" src="../template.js"></script>
+                <script type="text/javascript" src="./mypage.js"></script>
+               
+                <script type="text/javascript" src="./source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="./source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<script type="text/javascript" src="./jquery.fancybox.js"></script>
+                <!--[if IE]><script type="text/javascript" src="./excanvas.js"></script><![endif]-->
+                 <script type="text/javascript">
+		$(document).ready(function() {
+			$('.zoom').fancybox();
+			});
+</script>
+                
+        </head>
+
+        <body>
+                <script>header();</script>
+                <div class="allcontents">
+                        <section id="profile">
+                        <div id="profile_top">
+                                <div id="myphoto"><img src="./img/my_icon_user.png"></div>
+                                <div id="myname"><span class="myname"></span></div>
+                                <table align="right">
+                                        <th><td class="follow">フォロー<br><span class="followcount"></span></td>
+                                        <td class="follow">フォロワー<br><span class="followercount"></span></td></tr>
+                                </table>
+                        </div>
+                        <div id="myintro"><p></p></div>
+                        </section>
+
+                        <div id="option">
+                        <div class="tab">
+                                <ul>
+                                        <li class="list"><a href=""><img src="./img/log_off.png"></a></li>
+                                        <li class="graph"><a href=""><img src="img/graph_off.png"></a></li>
+                                        <li class="fav"><a href=""><img src="img/fav_off.png"></a></li>
+                                        <li class="badge"><a href="" class="now"><img src="img/badge_on.png" class="current"></a></li>
+                                </ul>
+                        </div>
+                        <div class="tab_contents">
+                        
+                        <div class="tab_title">
+                        <p>バッチ<span class=""></span>獲得</p>
+                        </div>
+                        
+                        <ul>
+                         <li>
+                        <div id="medalimg"><a class="zoom" href="./medal_img/medal_bb_1.png" title="cheeseバッチを手に入れました！"><img src="medal_img/medal_b_1.png"></a></div>
+                        <div id="coment">
+                        <div class="medallog">
+                       <p class="b">つくった！1回目</p>
+                        </div>
+                        <div id ="getdate">
+                        2013/9/1
+                        </div>
+                        <div class="medalintro">
+                        cheeseバッチを手に入れました！<br>
+cheeseを使って初めての料理うまくできたかな？
+                        </div>
+                        </div>
+                        </li> 
+                        
+                         <li>
+                        <div id="medalimg"><a class="zoom" href="./medal_img/medal_bb_2.png" title="ハンバーグバッチを手に入れました！"><img src="medal_img/medal_b_2.png"></a></div>
+                        <div id="coment">
+                        <div class="medallog">
+                       <p class="b">つくった！3回目</p>
+                        </div>
+                        <div id ="getdate">
+                        2013/9/3
+                        </div>
+                        <div class="medalintro">
+                        ハンバーグバッチを手に入れました！<br>
+料理をして偉いぞ！偏には気をつけて！
+                        </div>
+                        </div>
+                        </li> 
+                        
+                         <li>
+                        <div id="medalimg"><a class="zoom" href="./medal_img/medal_aa_1.png" title="たまごバッチを手に入れました！"><img src="medal_img/medal_a_1.png"></a></div>
+                        <div id="coment">
+                        <div class="medallog">
+                       <p class="a">3日連続つくった！</p>
+                        </div>
+                        <div id ="getdate">
+                        2013/9/5
+                        </div>
+                        <div class="medalintro">
+                       たまごバッチを手に入れました！<br>
+これからもどんどん料理していこう
+                        </div>
+                        </div>
+                        </li> 
+                        
+                         <li>
+                        <div id="medalimg"><a class="zoom" href="./medal_img/medal_cc_1.png" title="クロッシュバッチを手に入れました！"><img src="medal_img/medal_c_1.png"></a></div>
+                        <div id="coment">
+                        <div class="medallog">
+                       <p class="c">ログイン1週間</p>
+                        </div>
+                        <div id ="getdate">
+                        2013/9/7
+                        </div>
+                        <div class="medalintro">
+                      クロッシュバッチを手に入れました！ <br>
+これからも料理を楽しくしていってね！
+                        </div>
+                        </div>
+                        </li> 
+                        
+                         <li>
+                        <div id="medalimg"><a class="zoom" href="./medal_img/medal_bb_3.png" title="サラダバッチを手に入れました！"><img src="medal_img/medal_b_3.png"></a></div>
+                        <div id="coment">
+                        <div class="medallog">
+                       <p class="b">つくった！5回目</p>
+                        </div>
+                        <div id ="getdate">
+                        2013/9/10
+                        </div>
+                        <div class="medalintro">
+                      "サラダバッチを手に入れました！<br>
+健康を考えて、バランスよく料理しよう！"！
+                        </div>
+                        </div>
+                        </li> 
+                        </ul>
+
+                        </div>
+                </div>
+                <script>footer();</script>
+        </body>
+</html>
