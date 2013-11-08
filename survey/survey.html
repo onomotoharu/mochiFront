@@ -16,6 +16,8 @@
 <link rel="stylesheet" type="text/css" href="../survey.css">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script language="javascript" src="../template.js"></script>
+<script language="JavaScript" type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="./js/jquery.syg_imageradio.1.1.js"></script>
 </head>
 
 <body>
@@ -23,15 +25,18 @@
 	<div class="allcontents">
 		<div id="all">
 		<div id="question">いつもつくってる料理をおしえて！</div>
-
+<form action="" method="post">
 	<div id="grid" data-columns>
 	<div class="column size-1of2">
+		<input type="checkbox" name="q2" id="btn-0" value="0" />
 		<div class="box" data-n="1">
-		<img src="../survey/img/butamoyashi.jpg">
+		<label for="btn-0">
+		<img src="../survey/img/butamoyashi.jpg" class="checkGroup1" />
+		</label>
 		<div id="coment">
 			<p>豚肉ともやしの炒め物</p>
 		</div>	
-	</div>
+		</div>
 		<div class="box" data-n="3">
 		<img src="../survey/img/omuraisu.jpg">
 		<div id="coment">
@@ -83,7 +88,20 @@
 </div>
 </div>
 </div>
-		
+<!-- ラジオボタンの設定 -->
+		<script language="JavaScript" type="text/javascript"><!--
+			$.sygImageRadio( '.checkGroup1' );
+
+			// 外部からのテスト
+			$('#on-0').click( function(){ $('#btn-0').attr('checked','checked'); return false; } );
+			$('#on-1').click( function(){ $('#btn-1').attr('checked','checked'); return false; } );
+			$('#on-2').click( function(){ $('#btn-2').attr('checked','checked'); return false; } );
+
+			$('#off-0').click( function(){ $('#btn-0').attr('checked',''); return false; } );
+			$('#off-1').click( function(){ $('#btn-1').attr('checked',''); return false; } );
+			$('#off-2').click( function(){ $('#btn-2').attr('checked',''); return false; } );
+		// --></script>
+</form>		
 </div>
                 <script>footer();</script>
 
