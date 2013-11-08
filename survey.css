@@ -28,17 +28,42 @@
 
 .box[data-n="1"]{
 	width:145px;
-	margin:0 0 20px;	
+	margin:0 0 10px;	
 }
 
 .box[data-n="2"]{
 	width:145px;
-	margin:0 0 20px;	
+	margin:0 0 10px;	
 }
 
 .box[data-n="3"]{
 	width:145px;
-	margin:0 0 20px;	
+	margin:0 0 10px;	
+}
+
+.box[data-n="4"]{
+	width:145px;
+	margin:0 0 10px;	
+}
+
+.box[data-n="5"]{
+	width:145px;
+	margin:0 0 10px;	
+}
+
+.box[data-n="6"]{
+	width:145px;
+	margin:0 0 10px;	
+}
+
+.box[data-n="7"]{
+	width:145px;
+	margin:0 0 10px;	
+}
+
+.box[data-n="8"]{
+	width:145px;
+	margin:0 0 10px;	
 }
 
 .box img{
