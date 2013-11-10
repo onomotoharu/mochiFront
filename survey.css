@@ -34,9 +34,7 @@
 	width:100%;
 }
 
-#btn-0,#btn-1,#btn-2{
-	display: none;
-}
+
 
 #coment{
 	margin-top:-5px;
@@ -53,4 +51,18 @@
 	color: #523200;
 }
 
+.box a{
+	width:100%;
+	background:#000;
+	display:block;
+	filter:alpha(opacity=100);
+	-moz-opacity:1;
+	opacity:1;
+}
+
+.box a:hover{
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	opacity:0.8;
+}
 [data-columns]::before { display: none; }
