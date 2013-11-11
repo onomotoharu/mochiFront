@@ -27,15 +27,18 @@
 	function setEvents () {
 
 		boxEl.addEventListener("touchstart", function(e) {
-			boxEl.className = "boxSelect";
+			if(boxEl.className == "box" || boxEl.className == "boxNonSelect") {
+				boxEl.className = "boxSelect";
+			} else {
+				boxEl.className = "boxNonSelect";
+			}
 		});
-		boxEl.addEventListener("touchmove", function(e) {
-			boxEl.className = "boxNonSelect";
-		});
-		boxEl.addEventListener("touchend", function(e) {
-			boxEl.className = "boxSelect";
-		});
+		// boxEl.addEventListener("touchmove", function(e) {
 
+		// });
+		// boxEl.addEventListener("touchend", function(e) {
+
+		// });
 	}
 
 	document.addEventListener("DOMContentLoaded", function (e) {
