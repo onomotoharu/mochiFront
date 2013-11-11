@@ -13,17 +13,24 @@
     font-weight: bold;
 }
 
+.textInput {
+    width: 100%;
+    height: 78px;
+    border: #CCCCCC solid 1px;
+    display: -webkit-box;
+}
+
 form {
     height: 100px;
 }
 
 textarea {
-    width: 100%;
-    height: 78px;
     color: #a09488;
     font-size: 12px;
     border: #CCCCCC solid 1px;
-    padding: 10px;
+    margin: 0;
+    height: 73px;
+    width: 100%;
 }
 
 .iconBar {
