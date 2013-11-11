@@ -51,7 +51,6 @@
 	color: #523200;
 }
 
-/*
 .box a{
 	width:100%;
 	background:#000;
@@ -65,5 +64,5 @@
 	filter:alpha(opacity=80);
 	-moz-opacity:0.8;
 	opacity:0.8;
-} */
+}
 [data-columns]::before { display: none; }
