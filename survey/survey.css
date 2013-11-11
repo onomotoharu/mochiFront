@@ -51,7 +51,24 @@
 	color: #523200;
 }
 
-.box a{
+.boxSelect {
+	opacity: 0.8;
+	background: #000;
+	z-index: 1;
+	margin:0 0 10px;
+}
+
+.boxSelect img,.boxNonSelect {
+	width: 100%;
+}
+
+.boxNonSelect {
+	opacity: 1;
+	background: #000;
+	z-index: -1;
+}
+
+/*.box a{
 	width:100%;
 	background:#000;
 	display:block;
@@ -64,5 +81,6 @@
 	filter:alpha(opacity=80);
 	-moz-opacity:0.8;
 	opacity:0.8;
-}
+}*/
+
 [data-columns]::before { display: none; }
