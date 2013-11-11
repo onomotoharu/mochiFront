@@ -2,9 +2,9 @@ jQuery(function($) {
 
   var placeHolder = 'コメントを書く...';
   var frag_camera = new Boolean(false);
-  var frag_good = new Boolean(false);
-  var frag_tw = new Boolean(false);
-  var frag_fb = new Boolean(false);
+  var frag_good   = new Boolean(false);
+  var frag_tw     = new Boolean(false);
+  var frag_fb     = new Boolean(false);
 
   // 入力フォーム
 
@@ -70,5 +70,13 @@ jQuery(function($) {
       $("#fb img").attr("src","img/facebook.png");
     }
   })
+
+  // つくったボタン
+
+  $('.cookedBtn').click(function(){
+    $(this).addClass("cookedBtn_on");
+    location.href = "../mypage/mypage.html";
+  })
+
 
 });
