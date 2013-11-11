@@ -13,39 +13,111 @@
                 <!--[if lt IE 9]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
                 <![endif]-->
+                <link rel="stylesheet" type="text/css" href="./template.css">
                 <link rel="stylesheet" type="text/css" href="./recommend.css">
+                <link rel="stylesheet" type="text/css" href=".Elastislide/css/elastislide.css">
+               
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
                 <script language="javascript" src="./recommend.js"></script>
         </head>
 
         <body>
                 <script>header();</script>
-                        <div class="allcontents">
-  
+                <script>
+                  $('#carousel').elastislide();
+                  $.Elastislide.defaults = {
+    // orientation 'horizontal' || 'vertical'
+    orientation : 'horizontal',
+ 
+    // sliding speed
+    speed : 500,
+ 
+    // sliding easing
+    easing : 'ease-in-out',
+ 
+    // the minimum number of items to show. 
+    // when we resize the window, this will make sure minItems are always shown 
+    // (unless of course minItems is higher than the total number of elements)
+    minItems : 3,
+ 
+    // index of the current item (left most item of the carousel)
+    start : 0,
+     
+    // click item callback
+    onClick : function( el, position, evt ) { return false; },
+    onReady : function() { return false; },
+    onBeforeSlide : function() { return false; },
+    onAfterSlide : function() { return false; }
+};
+                </script>
+
+
+
+    <div class="allcontents">
     
     <!-- メインコンテンツここから -->
     <section class="content"> 
       <!-- 関連図ここから--> 
       
       <!--左上の◯-->
-      <article class="position1"> <span>食材</span><a href="#l" class="border" style="background-image: url('img/meat.jpg')"> </a> </article>
+      <article class="lefttop">
+        <div class="recipename">基本的なチンジャオロース</div>
+        <a href="#l" class="circle" style="background-image: url('img/meat.jpg')"></a>
+        <div class="money">
+          300円以下
+        </div>
+      </article>
       <!--左上の◯ここまで--> 
       
       <!--右上の◯-->
-      <article class="position2"> <span>時間</span><a href="#l" class="border" style="background-image: url('img/meat.jpg')"> </a> </article>
+      <article class="righttop">
+      <div class="recipename">朝食・お弁当に♪ふわぐわオムレツ</div>
+        <a href="#l" class="circle" style="background-image: url('img/meat.jpg')"></a>
+        <div class="time">
+          30分未満
+        </div>
+        </article>
       <!--右上の◯ここまで--> 
       
       <!--左下の◯-->
-      <article class="position3"> <a href="#l" class="border" style="background-image: url('img/meat.jpg')"> </a><span>味</span> </article>
+      <article class="leftbottom">
+        <div class="material">
+          にんじん<br>
+          だいこん<br>
+          かまぼこ<br>
+        </div>
+        <a href="#l" class="circle" style="background-image: url('img/meat.jpg')"> </a>
+      <div class="recipename">左下</div>
+        </article>
       <!--左下の◯ここまで--> 
       
       <!--右下の◯-->
-      <article class="position4"> <a href="#l" class="border" style="background-image: url('img/meat.jpg')"> </a><span>金額</span> </article>
+      <article class="rightbottom">
+        <div class="process">
+          煮る<br>焼く<br>
+        </div>
+        <a href="#l" class="circle" style="background-image: url('img/meat.jpg')"> </a>      
+        <div class="recipename">右下</div>
+        </article>
       <!--右下の◯ここまで--> 
       
       <!--真ん中の◯-->
-      <article class="main"> <a href="#l" class="mainborder" style="background-image: url('img/meat.jpg')"> </a><span>メイン</span></article>
-      <!--真ん中の◯ここまで--> 
+      <article class="center_circle">
+
+<ul id="carousel" class="elastislide-list">
+    <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+    <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+    <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+    <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+    <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+    <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+
+</ul>
+
+</article>
+
+
+ <!--真ん中の◯ここまで--> 
       
       <!-- /関連図ここまで --> 
     </section>
@@ -54,10 +126,11 @@
   
 </div>
                         
-                        
-                        
-                        
-                        </div>
-                <script>footer();</script>
+
+</div>
+
+<!-- 
+<script>footer();</script>
+ -->     
         </body>
 </html>
