@@ -308,6 +308,22 @@ a.circle{
 }
 
 
+/*
+いままでのレシピすべて　ピンク   
+---------*/
+
+.total{
+    height: 50px;
+    color: #bd1a21;
+    font-weight: bold;
+    font-size: 10px;
+    background-image: url("img/total.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+
 
 /*
 ？？？
