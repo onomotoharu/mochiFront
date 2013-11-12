@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/* CSS Document */ 
+
+
+/*----------------------------
+検索バー
+-----------------------------*/
+#search{
+	width:100%;
+	height:30px;
+	background:#E6E6E6;
+	margin-top:-12px;
+}
+
+#searchform1 {
+	width: 100%;
+	height:20px;
+	padding:3px;
+	margin-left:-20px;
+	
+}  
+
+#keywords1  {
+	width: 80%;
+    height: 20px;
+    background:#fff url(img/image/btn4.gif) no-repeat 8px 3px;  
+    border: 1px solid #CCC;    
+}
+
+#searchBtn1 {
+	width:55px;
+    height:25px; 
+	float:right;
+}  
+
+
+
+/*----------------------------
+ タブ切り替え
+-----------------------------*/
+
+.tab2{
+	background-color: #BBB;
+	margin-top:20px;
+}
+
+.tab2 ul{
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
+	list-style-type: none;
+}
+
+.tab2 ul li{
+	float: left;
+	width: 33.3%;
+	text-align: center;
+}
+
+.tab2 ul li a{
+	display: block;
+	position: relative;
+	background-color: #fff;
+}
+
+.tab2 ul li a img{
+	height: 40px;
+	margin: 0pt auto;
+}
+
+.tab2 ul li a.c:hover{
+	background-color:#FBC800;
+}
+
+.tab2 ul li a.t:hover{
+	background-color:#5ECBE6;
+}
+
+.tab2 ul li a.f:hover{
+	background-color:#375899;
+}
+
+.tab2 a.c_now{
+	background-color:#FBC800;
+}
+
+.tab2 a.t_now{
+	background-color:#5ECBE6;
+}
+
+.tab2 a.f_now{
+	background-color:#375899;
+}
+
+
+/*-----------------------------
+ タブ中身（グラフとか）
+-----------------------------*/
+
+.tab_title{
+	background: #E7E4E0;
+	color: #808080;
+	height: 25px;
+	padding-left: 10px;
+	padding-top: 15px;
+}
+
+.tab_title p{
+	color: #808080;
+	font-size:15px;
+}
