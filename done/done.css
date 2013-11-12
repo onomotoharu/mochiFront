@@ -3,6 +3,7 @@
 .foodTitle {
     display: -webkit-box;
     margin: 10px;
+    overflow: hidden;
 }
 
 .foodTitle p {
@@ -14,16 +15,18 @@
 }
 
 .textInput {
-    width: 100%;
+    width: 320px;
     height: 99px;
     border-top: #CCCCCC solid 1px;
     display: -webkit-box;
     background: #fff;
     position: relative;
+    overflow: hidden;
 }
 
 form {
     height: 100px;
+    width: 320px;
 }
 
 textarea {
@@ -31,7 +34,7 @@ textarea {
     font-size: 12px;
     margin: 0;
     height: 74px;
-    width: 215px;
+    width: 205px;
     border-radius: 0px;
     border: none;
     padding: 10px;
@@ -56,10 +59,11 @@ input#imageInput {
 }
 
 .iconBar {
-    width:300px;
+    width: 310px;
     display: -webkit-box;
     background-color: #a0a0a0;
-    padding: 5px 10px;
+    padding: 5px 0 5px 10px;
+    overflow: hidden;
 }
 
 .iconBar span {
@@ -78,8 +82,12 @@ input#imageInput {
 
 .shareIcon {
     display:-webkit-box;
-    right: 0;
+    right: 5px;
     position: absolute;
+}
+
+#fb {
+    margin:0;
 }
 
 .cookedBtn {
