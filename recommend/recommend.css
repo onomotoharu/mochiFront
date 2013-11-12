@@ -1,5 +1,6 @@
 
 
+
 /*-------------------------
 まんなか ( ･`ω･´)  
 
@@ -19,20 +20,23 @@ a.center {
 	width: 100px;
 	height:100px;
 	position: relative;
-*/ 	background-position: center center;
+ 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size:cover;
 }
+
+
 article span {
 	width:100%;
 	float:left;
 }
 
-.center_circle {
-    width:200px;
-    margin: 0 auto;
-    position: relative;
-
+.center_circle {    
+    width:120px;
+    height:150px;
+    overflow: scroll;   /* スクロール表示 */ 
+    margin: 140px 100px 0 100px ;
+    position:fixed;
     text-align:center;
     color:#3cb371;
 }
@@ -76,10 +80,6 @@ a.circle{
 }
 
 
-
-
-
-
 /*-------------------------
 ●　　○
 　○
@@ -102,7 +102,7 @@ a.circle{
 .lefttop a.circle{
     margin-left :auto;
     margin-right : auto;
-	border:solid 5px #edd67a;
+	border:solid 5px #e2cf16;
 
 }
 
@@ -131,7 +131,7 @@ a.circle{
 .righttop a.circle{
     margin-left :auto;
     margin-right : auto;
-	border:solid 5px #95c594;
+	border:solid 5px #74c0bc;
 }
 
 
@@ -160,7 +160,7 @@ a.circle{
 .leftbottom a.circle{
     margin-left :auto;
     margin-right : auto;
-	border:solid 5px #9fd1d0;
+	border:solid 5px #e168a3;
 }
 
 
@@ -187,7 +187,7 @@ a.circle{
 }
 
 .rightbottom a.circle{
-	border:solid 5px #f78484;
+	border:solid 5px #bf824b;
     margin-left :auto;
     margin-right :auto;
 }
@@ -227,7 +227,7 @@ a.circle{
 
 .time{
     height: 50px;
-    color: #339933;
+    color: #577264;
     font-weight: bold;
     font-size: 16px;
     background-image: url("img/time.png");
@@ -245,7 +245,7 @@ a.circle{
 
 .material{
     height: 50px;
-    color: #009999;
+    color: #04417c;
     font-weight: bold;
     font-size: 10px;
     background-image: url("img/material.png");
@@ -264,7 +264,7 @@ a.circle{
 
 .friend{
     height: 50px;
-    color: #339933;
+    color: #277b39;
     font-weight: bold;
     font-size: 16px;
     background-image: url("img/friend.png");
@@ -281,11 +281,11 @@ a.circle{
 
 .taste{
     height: 50px;
-    color: #339933;
+    color: #814120;
     font-weight: bold;
     font-size: 12px;
     background-image: url("img/taste.png");
-    background-size:50%;
+    background-size:40%;
     background-position: center bottom;
     background-repeat: no-repeat;
 }
@@ -298,7 +298,7 @@ a.circle{
 
 .process{
     height: 50px;
-    color: #bd1a21;
+    color: #932722;
     font-weight: bold;
     font-size: 10px;
     background-image: url("img/process.png");
@@ -314,7 +314,7 @@ a.circle{
 
 .total{
     height: 50px;
-    color: #bd1a21;
+    color: #a20e73;
     font-weight: bold;
     font-size: 10px;
     background-image: url("img/total.png");
