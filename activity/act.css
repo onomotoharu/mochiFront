@@ -54,7 +54,9 @@
 
 .comment{
 	clear: both;
-	padding-left: 20px;
+	margin: 0 10px 10px;
+	padding: 10px;
+	background-color: #fff;
 }
 
 .come_com{
@@ -105,9 +107,9 @@ input{
 	font-size: 11px;
 	background-color: #c9caca;
 	border-radius: 3px;
-	margin: 10px;
 	display: block;
 	float: right;
+	margin-top: 20px;
 }
 
 .com_btn{
