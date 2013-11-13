@@ -1,0 +1,166 @@
+/*-------------------------
+ プロフィール（共通）
+-------------------------*/
+
+#profile{
+	width:100%;
+    color : #000;
+	overflow: hidden;
+	padding: 5px;
+}
+
+#profile_top{
+	height: 25px;
+	margin: 10px 10px;
+}
+
+#myphoto img{
+	height:25px;
+	width:25px;
+	float:left;
+	overflow: hidden;
+}
+
+#myname{
+	width:30%;
+    color: #000;
+   	font-size: 8pt;
+	float:left;
+	overflow: hidden;
+	margin-left: 8pt;
+}
+
+.myname{
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+table{
+	border-spacing: 5pt 0;
+}
+
+.follow{
+	font-size: 8pt;
+	background-image: url("./img/follow_back.png");
+	text-align: center;
+	width: 70px;
+	height: 25px;
+	color: #fff;
+	border-radius: 5px 5px;
+}
+
+.followcount,.followercount{
+	font-size: 8pt;
+	color: #fff;
+}
+
+#myintro{
+	font-size: 9pt;
+	margin: 15pt 20px 10pt;
+}
+
+
+
+
+/*----------------------------
+ タブ切り替え（共通）
+-----------------------------*/
+
+.tab{
+	background-color: #fff;
+}
+
+.tab ul{
+	height: 46px;
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
+	list-style-type: none;
+}
+
+.tab ul li{
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+.tab ul li a{
+	display: block;
+	position: relative;
+}
+
+.tab ul li a img{
+	height: 26px;
+	margin: 7pt auto;
+}
+
+.tab ul li a:hover{
+	background-color: #ffd047;
+}
+
+.tab a.now{
+	background-color: #ffd047;
+}
+
+
+/*-----------------------------
+ タブタイトル（共通）
+-----------------------------*/
+
+.tab_title{
+	background-color: #e7e4e0;
+	color: #808080;
+	height: 25px;
+	padding-left: 10px;
+	padding-top: 10px;
+	font-size: 15px;
+}
+
+/*----------------------------
+ ふぁぼ
+----------------------------*/
+
+.fav_menu{
+	background-color: #fff;
+	border-top: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
+	width: 100%;
+	height: auto;
+}
+
+.fav_menu_photo{
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	float: left;
+}
+
+.fav_menu_title{
+	font-size: 10pt;
+	padding: 10px 10px 0 0;
+	font-weight: bold;
+}
+
+.fav_info_all{
+	height: 45px;
+	padding-left: 10px;
+}
+
+.fav_menu_info{
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	position: relative;
+	bottom: -5px;
+}
+
+.fav_icon{
+	position: relative;
+	bottom: -5px;
+}
+
+.shareicon{
+	margin-right: 10px;
+	padding-top: 5px;
+}
+
