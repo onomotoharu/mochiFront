@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* CSS Document */ 
+
+
+/*----------------------------
+検索バー
+-----------------------------*/
+#search{
+	width:100%;
+	height:30px;
+	/* Firefox */
+    background: -moz-linear-gradient(top center, #fff 0%, #E6E6E6 100%);
+    /* Chrom と Safari */
+    background: -webkit-gradient(linear, center top, center bottom, from(#fff), to(#E6E6E6));
+/* 共通 */
+    background: linear-gradient(top center, #fff 0%, #E6E6E6 100%);
+	overflow:hidden;
+}
+
+#searchform1 {
+	width:100%;
+	height:30px;
+	padding:0px 0px 0px 10px;
+}  
+
+#keywords1  {
+	margin:3px 0px 5px 0px;
+	float:left;
+	width: 73%;
+    height: 20px;
+    background:#fff url(img/image/) no-repeat  3px 3px;  
+    border: 1px solid #CCC;    
+}
+
+#searchBtn1 {
+	float:left;
+	width:50px; 
+	height:20px;
+}  
+
+
+
+/*----------------------------
+ タブ切り替え
+-----------------------------*/
+
+.tab2{
+	background-color: #BBB;
+	margin-top:20px;
+}
+
+.tab2 ul{
+	height: 40px;
+	line-height: 100%;
+	list-style-type: none;
+	display:table;
+    table-layout: fixed;
+    width:100%;
+}
+
+.tab2 ul li{
+	display:table-cell;
+	text-align: center;
+}
+
+.tab2 ul li a{
+	display: block;
+	position: relative;
+	background-color: #fff;
+}
+
+.tab2 ul li a img{
+	height: 40px;
+	margin: 0pt auto;
+}
+
+.tab2 ul li a.c:hover{
+	background-color:#FBC800;
+}
+
+.tab2 ul li a.t:hover{
+	background-color:#5ECBE6;
+}
+
+.tab2 ul li a.f:hover{
+	background-color:#375899;
+}
+
+.tab2 a.c_now{
+	background-color:#FBC800;
+}
+
+.tab2 a.t_now{
+	background-color:#5ECBE6;
+}
+
+.tab2 a.f_now{
+	background-color:#375899;
+}
+
+
+/*-----------------------------
+ タブ中身（グラフとか）
+-----------------------------*/
+
+.tab_title{
+	background: #E7E4E0;
+	color: #808080;
+	height: 25px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.tab_title p{
+	color: #808080;
+	font-size:15px;
+}
+
+/*-----------------------------
+ フォロー・フォロワー（グラフとか）
+-----------------------------*/
+
+
+.follow{
+	background-color:#fff;
+	height:60px;
+	margin:0;
+	padding-top:10px;
+	border-bottom:#CCC 1px solid;
+}
+
+.follow a{
+	color:#000;
+	font-size:15px;
+}
+
+.follow_pic{
+	margin:0 20px;
+	width:50px;
+	height:50px;
+	float:left;
+}
+
+.follow_pic ul img{
+	width:50px;
+	height:50px;	
+}
+
+.follow_btn{
+	margin:13px 20px 23px 0;
+	width:70px;
+	height:24px;
+	float:right;
+}
+
+.follow_btn ul img{
+	width:70px;
+	height:24px;
+}
