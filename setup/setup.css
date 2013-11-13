@@ -17,6 +17,7 @@
 .content{
 	font-size: 16pt;
 	border-bottom: solid 3px #ddd;
+	background-color: #fff;
 }
 
 .content a{
@@ -24,6 +25,13 @@
 	width: 100%;
 	height: 100%;
 	padding: 20px 0 20px 20px;
+}
+
+.content img{
+	height: 30px;
+	width: 30px;
+	position: relative;
+	bottom: -6px;
 }
 
 .content table img{
