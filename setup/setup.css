@@ -5,7 +5,7 @@
 .headline{
 	background-color: #fafad2;
 	padding: 20px 0 20px 10px;
-	font-size: 14pt;
+	font-size: 10pt;
 	border-bottom: solid 3px #ddd;
 }
 
@@ -15,7 +15,7 @@
 -----------------------------*/
 
 .content{
-	font-size: 16pt;
+	font-size: 12pt;
 	border-bottom: solid 3px #ddd;
 	background-color: #fff;
 }
@@ -28,16 +28,16 @@
 }
 
 .content img{
-	height: 30px;
-	width: 30px;
+	height: 20px;
+	width: 20px;
 	position: relative;
-	bottom: -6px;
+	bottom: -5px;
 }
 
 .content table img{
 	height: 32px;
 	width: 12px;
 	margin-right: 40px;
-	margin-top: -4px;
+	margin-top: -13px;
 }
 
