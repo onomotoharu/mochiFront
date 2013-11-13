@@ -50,6 +50,26 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 
+
+
+// スクロールを抑止する関数
+function preventScroll(event) {
+
+  // li要素だけは、タップイベントに反応したいので、抑止しない。
+  if (event.touches[0].target.tagName.toLowerCase() == "li") {return;}
+
+  // preventDefaultでブラウザ標準動作を抑止する。
+  event.preventDefault();
+}
+
+// タッチイベントの初期化
+document.addEventListener("touchstart", preventScroll, false);
+document.addEventListener("touchmove", preventScroll, false);
+document.addEventListener("touchend", preventScroll, false); 
+// ジェスチャーイベントの初期化
+document.addEventListener("gesturestart", preventScroll, false);
+document.addEventListener("gesturechange", preventScroll, false);
+document.addEventListener("gestureend", preventScroll, false);
     </script>
 
 
@@ -84,10 +104,9 @@
       
       <!--左下の◯-->
       <article class="leftbottom">
-        <div class="total">
-          にんじん<br>
-          だいこん<br>
-          かまぼこ<br>
+        <div class="process">
+          煮る<br>
+          焼く<br>
         </div>
         <a href="#l" class="circle" style="background-image: url('img/meat.jpg')"> </a>
       <div class="recipename">左下</div>
