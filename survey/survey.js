@@ -12,6 +12,14 @@
 // 	});
 // });
 
+$(document).ready(function(){
+	$('#r_btn a').append("次へ");
+});
+
+$(function(){
+	$('#r_btn a').attr("href", "../recommend/index.html");
+})
+
 
 (function() {
 
