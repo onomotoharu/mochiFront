@@ -31,12 +31,6 @@ $(function(){
 	});
 });
 
-//$(function(){
-//	$('.user_photo').append("<img src="./img/foodphoto.png">");
-//	if(){
-//		$('.camera img').css("display", "block");
-//		$('.user_photo img').css("display", "block");
-//	}
-//});
+
 
 
