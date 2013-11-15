@@ -54,7 +54,7 @@ a{
     float: left;
     padding-top: 10px;
     font-size: 20px;
-    width: 10%;
+    width: 20%;
 }
 
 #header ul li a img{
@@ -63,7 +63,7 @@ a{
 }
 
 #header ul li#pagename{
-    width: 80%;
+    width: 60%;
     padding-top: 10px;
     font-weight: bold;
     font-size: 20px;
@@ -129,17 +129,3 @@ body{
 ----------------------------------------*/
 
 
-.clearfix:after {  
-  content: ".";   
-  display: block;   
-  height: 0;   
-  clear: both;   
-  visibility: hidden;  
-}  
-  
-.clearfix { display: inline-table; }  
-  
-/* Hides from IE-mac \*/  
-* html .clearfix { height: 1%; }  
-.clearfix { display: block; }  
-/* End hide from IE-mac */  

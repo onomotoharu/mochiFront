@@ -45,8 +45,17 @@ table{
 	text-align: center;
 	width: 70px;
 	height: 25px;
-	color: #fff;
 	border-radius: 5px 5px;
+}
+
+.follow p{
+	color: #fff;
+}
+
+.follow a{
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 .followcount,.followercount{
@@ -71,7 +80,7 @@ table{
 }
 
 .tab ul{
-	height: 46px;
+	height: 45px;
 	margin: 0;
 	padding: 0;
 	line-height: 100%;
