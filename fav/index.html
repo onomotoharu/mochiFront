@@ -30,8 +30,8 @@
                                 <div id="myphoto"><img src="./img/my_icon_user.png"></div>
                                 <div id="myname"><span class="myname"></span></div>
                                 <table align="right">
-                                        <th><td class="follow"><a href="../follow/index.html"><p>フォロー</p><span class="followcount"></span></a></td>
-                                        <td class="follow"><a href="../follow/index.html"><p>フォロワー</p><span class="followercount"></span></a></td></th>
+                                        <th><a href=""><td class="follow">フォロー<br><span class="followcount"></span></td></a>
+                                        <a href=""><td class="follow">フォロワー<br><span class="followercount"></span></td></a></th>
                                 </table>
                         </div>
                         <div id="myintro"></div>
@@ -46,16 +46,23 @@
                                 </ul>
                         </div>
                         <div class="tab_title">お気に入り</div>
+                        
+                        
                         <div class="fav_menu">
                                 <img src="./img/foodphoto.png" class="fav_menu_photo"><div class="fav_menu_title">鮭といくら丼</div>
+                                
                                 <div class="fav_info_all">
                                 <span class="fav_menu_info">
                                         <img src="./img/money.png" width="25" height="25" class="fav_icon"> <span class="fav_menu_money">400</span>円 |
                                         <img src="./img/time.png" width="25" height="25" class="fav_icon"> <span class="fav_menu_time">20</span>分
                                 </span>
-                                <a href=""><img src="./img/shareicon.png" width="30" height="30" align="right" class="shareicon"></a>
-                                </div>
+                                <div id="share">
+                               <p><a href="#open01"><img src="./img/…_off.png"></a></p>
+                               </div> 
                         </div>
+                        </div>
+                        
+                        
                         <div class="fav_menu">
                                 <img src="./img/foodphoto.png" class="fav_menu_photo"><div class="fav_menu_title">これで１０文字です。これで１０文字です。これで１０文字です。</div>
                                 <div class="fav_info_all">
@@ -63,7 +70,9 @@
                                         <img src="./img/money.png" width="25" height="25" class="fav_icon"> <span class="fav_menu_money">400</span>円 |
                                         <img src="./img/time.png" width="25" height="25" class="fav_icon"> <span class="fav_menu_time">20</span>分
                                 </span>
-                                <a href=""><img src="./img/shareicon.png" width="30" height="30" align="right" class="shareicon"></a>
+                               <div id="share">
+                               <p><a href="#open01"><img src="./img/…_off.png"></a></p>
+                   </div>             
                                 </div>
                         </div>
                         <div class="fav_menu">
@@ -73,8 +82,24 @@
                                         <img src="./img/money.png" width="25" height="25" class="fav_icon"> <span class="fav_menu_money">400</span>円 |
                                         <img src="./img/time.png" width="25" height="25" class="fav_icon"> <span class="fav_menu_time">20</span>分
                                 </span>
-                                <a href=""><img src="./img/shareicon.png" width="30" height="30" align="right" class="shareicon"></a>
+                              <div id="share">
+                               <p><a href="#open01"><img src="./img/…_off.png"></a></p>
+                               
+                        </div>
                                 </div>
+                                 <div id="modal">
+                                
+                          <div id="open01">
+<a href="#" class="close_overlay">×</a>
+<span class="modal_window">
+<a href=""><img src="./img/twitter_off.png"><h1>twitterで投稿する</h1></a>
+<a href=""><img src="./img/facebook_off.png"><h1>facebookで投稿する</h1></a>
+<a href=""><img src="./img/delete.png"><h1>つくった！投稿を削除する</h1></a>
+<a href="#"><p>【×】CLOSE</p></a>
+</span><!--/.modal_window-->
+</div><!--/#open01-->
+</div><!--/#modal-->
+</div><!--/#share-->
                 <script>footer();</script>
         </body>
 </html>
