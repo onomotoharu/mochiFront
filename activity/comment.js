@@ -1,9 +1,12 @@
 
 $(document).ready(function(){
 	$('#pagename').append("みんなのごはん");
+	$('#l_btn a').append("＜");
 });
 
 $(function(){
+
+	$('#l_btn a').attr("href", "./index.html");
 
 	$('.com_btn').click(function(){
 		$('.com_formsend').toggle();
@@ -22,7 +25,5 @@ $(function(){
 
 	});
 });
-
-
 
 
