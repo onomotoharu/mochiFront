@@ -45,3 +45,42 @@ $(function(){
 		}
 	});
 });
+
+
+jQuery(function($) {
+
+  var frag_com     = new Boolean(false);
+  var frag_iine     = new Boolean(false);
+
+
+  // コメントボタン
+
+  $(".com_btn").click(function(){
+    if(frag_com == false){
+      frag_com = true;
+      $(".com_btn img").attr("src","img/com_on.png");
+      
+    }else{
+      frag_com = false;
+      $(".com_btn img").attr("src","img/com_off.png");
+    }
+  })
+
+  // イイネ！ボタン
+
+  $(".iine_btn").click(function(){
+    if(frag_iine == false){
+      frag_iine = true;
+      $(".iine_btn img").attr("src","img/good_on.png");
+      
+    }else{
+      frag_iine = false;
+      $(".iine_btn img").attr("src","img/good_off.png");
+    }
+  })
+
+
+});
+
+
+
