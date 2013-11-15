@@ -150,6 +150,10 @@ table{
 	font-weight: bold;
 }
 
+.fav_menu_title a{
+	color:#000;
+}
+
 .fav_info_all{
 	height: 45px;
 	padding-left: 10px;
