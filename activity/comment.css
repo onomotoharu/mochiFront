@@ -51,7 +51,7 @@
 .user_id{
 	font-size: 13px;
 	font-weight: bold;
-	color: #1a1a1a;
+	color: #523200;
 }
 
 .comment{
@@ -62,19 +62,17 @@
 }
 
 .come_com{
-	color: #4d4d4d;
+	color: #9e804f;
 }
 
 .come_com, .come_com .user_id {
-	font-size: 11px;
+	font-size: 1em;
 	padding-top: 5px;
 }
 
 .com_formsend{
-	margin-right: 10px;
-	height: 45px;
-	display: none;
-	position: auto;
+	height: 35px;
+	margin: 10px 0 0 0;
 }
 
 .hyouji_on{
@@ -89,16 +87,19 @@ input{
 	font-size: 11px;
 	margin-top: auto;
 	border: 0;
+	color: #523200;
+	letter-spacing: 0.1em;
+	font-size: 1em;
 }
 
 .send{
 	float: right;
-	margin-top: 4px;
 }
 
 .send img{
 	height: 30px;
 	width: 48px;
+	border-radius: 3px;
 }
 
 .hyouji_btn{
