@@ -12,6 +12,9 @@
 // 	});
 // });
 
+$(document).ready(function(){
+	$('#pagename').append("cheese!")
+ });
 
 (function() {
 
