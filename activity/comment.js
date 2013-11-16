@@ -26,8 +26,9 @@ $(function(){
 	// });
 });
 
+
+// 下部スクロール
 function footerStart(selector){
-  // #itemまでスクロール
   $('html,body').animate({scrollTop: $(selector).offset().top},'slow');
   //スクロールの着地点を生成
 }
@@ -35,25 +36,24 @@ function footerStart(selector){
 footerStart(".com_formsend");
 
 
-
 jQuery(function($) {
 
-  var frag_com     = new Boolean(false);
+  // var frag_com     = new Boolean(false);
   var frag_iine     = new Boolean(false);
 
 
-  // コメントボタン
+  // // コメントボタン
 
-  $(".com_btn").click(function(){
-    if(frag_com == false){
-      frag_com = true;
-      $(".com_btn img").attr("src","img/com_on.png");
+  // $(".com_btn").click(function(){
+  //   if(frag_com == false){
+  //     frag_com = true;
+  //     $(".com_btn img").attr("src","img/com_on.png");
       
-    }else{
-      frag_com = false;
-      $(".com_btn img").attr("src","img/com_off.png");
-    }
-  })
+  //   }else{
+  //     frag_com = false;
+  //     $(".com_btn img").attr("src","img/com_off.png");
+  //   }
+  // })
 
   // イイネ！ボタン
 

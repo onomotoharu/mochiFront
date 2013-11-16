@@ -140,8 +140,8 @@ input{
 	float: left;
 	text-align: center;
 	border-radius: 4px;
-	padding-top: 7px;
-	margin: 15px 0 5px 5px;
+	margin: 0 0 0 10px;
+	padding-top: 10px;
 }
 
 .iine_btn img{
