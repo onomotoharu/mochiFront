@@ -1,6 +1,3 @@
-$(document).ready(function(){
-  $('#l_btn a').append("＜");
-});
 
 $(function(){
   $('#l_btn a').attr("href", "../recipe/index.html");
