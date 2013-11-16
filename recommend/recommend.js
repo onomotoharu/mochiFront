@@ -3,10 +3,14 @@ function header() {
 	document.write ('<ul>\n');       
 	document.write ('<li><a href="">＜</a></li>\n');    
 	document.write ('<li id="pagename"></li>\n');   
-	document.write ('<li><a href="">右</a></li>\n');
+	/*document.write ('<li><a href="">右</a></li>\n');*/
 	document.write ('</ul>\n');
 	document.write ('</nav>\n');  
 }
+
+$(document).ready(function(){
+	$('#pagename').append("cheese!")
+ });
 
 function footer() {
 	document.write ('<nav id="footer" name="nav">\n');      
