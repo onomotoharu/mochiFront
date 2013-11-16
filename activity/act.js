@@ -37,6 +37,7 @@ jQuery(function($) {
     if(frag_com == false){
       frag_com = true;
       $(".com_btn img").attr("src","img/com_on.png");
+      location.href = "comment.html";
       
     }else{
       frag_com = false;
