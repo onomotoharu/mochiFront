@@ -42,9 +42,9 @@ photo
 	margin:10px;
 	padding: 10px;
 	background-color: #fff;
-	box-shadow: 0px 2px 5px #000; /*CSS3*/
-	-moz-box-shadow: 0px 2px 5px #000; /* Firefox用*/
-	-webkit-box-shadow: 0px 2px 5px #000; /* Google Chrome, Safari用*/
+	box-shadow: 0px 2px 5px #bbb; /*CSS3*/
+	-moz-box-shadow: 0px 2px 5px #bbb; /* Firefox用*/
+	-webkit-box-shadow: 0px 2px 5px #bbb; /* Google Chrome, Safari用*/
 }
 
 .photo img{
