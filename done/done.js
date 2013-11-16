@@ -1,12 +1,6 @@
 
-$(function(){
-  $('#l_btn a').attr("href", "../recipe/index.html");
-})
-
-
 $(document).ready(function(){
-
-	$('#pagename').append("cheese!")
+    $('#pagename').append("cheese!")；
  });
 
 jQuery(function($) {
