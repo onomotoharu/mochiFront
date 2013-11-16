@@ -7,3 +7,7 @@ function header() {
   document.write ('</ul>\n');
   document.write ('</nav>\n');  
 }
+
+$(document).ready(function(){
+	$('#pagename').append("cheese!")
+ });
