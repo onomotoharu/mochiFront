@@ -4,6 +4,10 @@ $(function(){
 })
 
 
+$(document).ready(function(){
+
+	$('#pagename').append("cheese!")
+ });
 
 jQuery(function($) {
 
