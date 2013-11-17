@@ -4,6 +4,10 @@ $(document).ready(function(){
 	$('#pagename').append("cheese!")
  });
 
+$(function(){
+  $('#nav_reco img').attr("src", "../img/on/reco_on.png");
+});
+
 function footer() {
 	document.write ('<nav id="footer" name="nav">\n');      
 	document.write ('<ul>\n');       
