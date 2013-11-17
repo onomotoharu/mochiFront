@@ -10,5 +10,9 @@
 //}
 
 $(document).ready(function(){
-	$('#pagename').append("cheese!")
+	$('#pagename').append("設定")
+});
+
+$(function(){
+  $('#nav_set img').attr("src", "../img/on/set_on.png");
 });
