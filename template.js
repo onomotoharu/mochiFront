@@ -21,10 +21,4 @@ function footer() {
 
 $(function(){
 	$('#l_btn a').attr("href", "javascript:history.back();");
-<<<<<<< HEAD
 })
-
-
-=======
-})
->>>>>>> d96bccba4112515bc7289595dc0ef6245d42ea58
