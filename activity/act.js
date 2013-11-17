@@ -3,6 +3,12 @@ $(document).ready(function(){
 	$('#pagename').append("みんなのごはん");
 });
 
+
+$(function(){
+  $('#nav_act img').attr("src", "../img/on/act_on.png");
+});
+
+
 $(function(){
 
 	$('.com_btn').click(function(){
