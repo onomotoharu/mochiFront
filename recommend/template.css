@@ -26,9 +26,8 @@ li{
     list-style:none;
 }
 
-a,a:visited,a:hover,a:active {
+a{
     text-decoration:none;
-    color:#523200;
 }
 
 /*----------------------------------------
@@ -45,19 +44,17 @@ a,a:visited,a:hover,a:active {
     position: fixed;
     top: 0;
     /*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffd047), color-stop(1, #edb637));*/
-    background-image: url("./img/header.png");
+    background-image: url("../img/header.png");
     box-shadow: 0px 0px 10px -2px rgba(93, 56, 3, 0.9);
     z-index: 3;
-    color: #523200;
-    font-size: 14px;
-    letter-spacing: 0.2em;
 }
 
 #header ul li{
     text-align: center;
     float: left;
     padding-top: 10px;
-    width: 20%;
+    font-size: 20px;
+    width: 10%;
 }
 
 #header ul li a img{
@@ -66,9 +63,10 @@ a,a:visited,a:hover,a:active {
 }
 
 #header ul li#pagename{
-    width: 60%;
+    width: 80%;
     padding-top: 10px;
     font-weight: bold;
+    font-size: 20px;
 }
 
 
@@ -78,7 +76,7 @@ a,a:visited,a:hover,a:active {
 ------------------------*/
 
 body{
-    background-image: url("./img/tate.png");
+    background-image: url("../img/tate.png");
 }
 
 
@@ -90,7 +88,7 @@ body{
     margin: 45px 0 45px;
     z-index: 1;
     overflow: auto;
-    width: 320px;
+    width: 100%;
 }
 
 
@@ -124,10 +122,5 @@ body{
     height:45px;
 }
 
-
-
-/*----------------------------------------
- 全ページ共有ここまで
-----------------------------------------*/
 
 
