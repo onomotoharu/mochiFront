@@ -1,115 +1,115 @@
+#l_btn a{
+	display: none;
+}
+
 /*---------------------------------
- 基本設定
+ ヘッダー
 ---------------------------------*/
 
+#l_btn a { display: none;}
 
-.recipe_photo{
-	padding: 20px 10px 10px 10px;
-	height: 80px;
-	width: 80px;
-	float: left;
-}
 
-.recipe_photo img{
-	height: 80px;
-	width: 80px;
-}
+/*---------------------------------
+ 一覧ページ　上のタブ
+---------------------------------*/
 
-.right{
-	padding: 20px 10px 10px 0;
-	margin-left: 100px;
-}
-
-.date{
-	text-align: right;
-	font-size: 9px;
-	color: #4d4d4d;
-}
-
-.recipe_name{
-	font-size: 13px;
-	font-weight: bold;
-	color: #1a1a1a;
-	height: 40px;
-}
-
-.user_info{
-	font-size: 8px;
-	color: #4d4d4d;
+table{
+	font-size: 12px;
+	background-color: #eeeeee;
+	margin: 10px auto;
+	width: 140px;
 	height: 30px;
-	padding-top: 5px;
-	margin-bottom: 10px;
+	border-spacing: 4px 3px;
+	border-radius: 4px;
 }
 
-.user_icon img{
-	width: 25px;
+#followuser, #alluser{
+	text-align: center;
+	width: 65px;
 	height: 25px;
 }
 
-.user_id{
+.now{
+	background-color: #cccccc;
+	border-radius: 4px;
+}
+
+/*---------------------------------
+ 一覧ページ　投稿内容
+---------------------------------*/
+
+.all_act{
+	background-color:#fff;
+	border-bottom: solid 2px #DDD;
+}
+
+.act_left{
+	float: left;
+	padding: 10px;
+}
+
+.re_photo img{
+	width: 80px;
+	height: 80px;
+}
+
+.act_right{
+	padding: 10px 10px 20px 0;
+}
+
+.date{
+	font-size: 9px;
+	text-align: right;
+	color: #444;
+}
+
+.title{
+	font-size:13px;
+	font-weight: bold;
+	margin-top: 6px;
+}
+
+#myname{
+	height: 30px;
+	color: #000;
+	font-size: 8px;
+	position: relative;
+	top: 25px;
+	margin-bottom: 10px;
+}
+
+#myphoto img{
+	height:25px;
+	width:25px;
+	float: left;
+	position: relative;
+	top: -10px;
+}
+
+.myname{
 	font-size: 13px;
 	font-weight: bold;
-	color: #1a1a1a;
+	margin-left: 8px;
 }
 
-.comment{
+.act_bottom{
 	clear: both;
-	margin: 0 10px 10px;
-	padding: 10px;
-	background-color: #fff;
-}
-
-.come_com{
-	color: #4d4d4d;
-}
-
-.come_com, .come_com .user_id {
-	font-size: 11px;
-	padding-top: 5px;
-}
-
-.com_formsend{
-	margin-right: 10px;
+	width: 100%;
 	height: 45px;
-	display: none;
-	position: auto;
 }
 
-.hyouji_on{
-	display: none;
-}
-
-input{
-	clear: both;
-	float: left;
-	width: 220px;
-	height: 30px;
-	font-size: 11px;
-	margin-top: auto;
-}
-
-.send{
+#share{
+	text-align:right;
+	width:25px;
+	height:25px;
 	float: right;
-	margin-top: 4px;
+	margin: 8px 20px 0 0;
 }
 
-.send img{
-	height: 30px;
-	width: 48px;
-}
 
-.hyouji_btn{
-	clear: both;
-	text-align: center;
-	padding-top: 5px;
-	height: 18px;
-	width: 120px;
-	font-size: 11px;
-	background-color: #c9caca;
-	border-radius: 3px;
-	display: block;
-	float: right;
-	margin-top: 20px;
+#share img{
+	width:25px;
+	height:25px;
 }
 
 .com_btn{
@@ -120,7 +120,7 @@ input{
 	text-align: center;
 	border-radius: 4px;
 	padding-top: 7px;
-	margin: 15px 0 5px 10px;
+	margin: 5px 5px 0 10px;
 	clear: both;
 }
 
@@ -137,7 +137,7 @@ input{
 	text-align: center;
 	border-radius: 4px;
 	padding-top: 7px;
-	margin: 15px 0 5px 5px;
+	margin-top: 5px;
 }
 
 .iine_btn img{
@@ -148,20 +148,18 @@ input{
 /*---------------------------------
  写真投稿あり
 ---------------------------------*/
-
+/*
 .camera img{
 	height: 15px;
 	width: 20px;
 	margin-left: 5px;
-	/*display: none;*/
 }
 
 .user_photo img{
 	height: 220px;
 	width :320px;
-	/*display: none;*/
 }
-
+*/
 
 
 
