@@ -31,6 +31,16 @@ $(function(){
 	});
 });
 
+function date() {
+	var now, date;
+	now= new Date();
+	date= now.getFullYear() + "/"
+	+ (now.getMonth()+1) + "/"
+	+ now.getDate() + "-"
+	+ (now.getHours()+1) + ":"
+	+ now.getMinutes();
+    document.write(date);
+}
 //$(function(){
 //	$('.user_photo').append("<img src="./img/foodphoto.png">");
 //	if(){

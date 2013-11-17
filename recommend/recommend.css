@@ -245,7 +245,7 @@ a.circle{
 食材のかぶり 食材名　青
 ---------*/
 
-/*.material{
+.material{
     height: 50px;
     color: #04417c;
     font-weight: bold;
@@ -256,7 +256,7 @@ a.circle{
     background-repeat: no-repeat;
 }
 
-*/
+
 
 
 /*
@@ -313,7 +313,7 @@ a.circle{
 /*
 いままでのレシピすべて　ピンク   
 ---------*/
-/*
+
 .total{
     height: 50px;
     color: #a20e73;
@@ -324,7 +324,7 @@ a.circle{
     background-position: center bottom;
     background-repeat: no-repeat;
 }
-*/
+
 
 
 /*
