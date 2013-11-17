@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /* CSS Document */ 
 
+#l_btn a{
+	display: none;
+}
+
+
+
 #all{
 	margin:0 10px 0 0;
 }
