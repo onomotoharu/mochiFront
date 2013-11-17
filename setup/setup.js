@@ -10,5 +10,5 @@
 //}
 
 $(document).ready(function(){
-	$('#pagename').append("設定")
+	$('#pagename').append("cheese!")
 });
