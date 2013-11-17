@@ -1,3 +1,8 @@
+
+$(document).ready(function(){
+    $('#pagename').append("cheese!")；
+ });
+
 jQuery(function($) {
 
   var placeHolder = 'コメントを書く...';
