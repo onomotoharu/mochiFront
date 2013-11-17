@@ -13,6 +13,10 @@ $(document).ready(function(){
 });
 
 $(function(){
+  $('#nav_my img').attr("src", "../img/on/my_on.png");
+});
+
+$(function(){
 
 	$('#log a').hover(function(){
 		$('#log a img').attr('src', $('#log a img').attr('src').replace('_off', '_on'));
