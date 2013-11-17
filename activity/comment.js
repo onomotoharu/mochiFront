@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
 	$('#pagename').append("みんなのごはん");
-	$('#l_btn a').append("＜");
 });
 
 $(function(){
