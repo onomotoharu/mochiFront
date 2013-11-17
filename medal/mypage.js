@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function(){
 	$('#pagename').append("cheese!")
 
@@ -11,6 +8,11 @@ $(document).ready(function(){
 
 	$('#myintro').append("鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者");
 });
+
+$(function(){
+  $('#nav_my img').attr("src", "../img/on/my_on.png");
+});
+
 
 $(function(){
 
@@ -46,6 +48,3 @@ $(function(){
 		}
 	});
 });
-
-
-
