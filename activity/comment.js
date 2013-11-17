@@ -26,15 +26,6 @@ $(function(){
 });
 
 
-// 下部スクロール
-function footerStart(selector){
-  $('html,body').animate({scrollTop: $(selector).offset().top},'slow');
-  //スクロールの着地点を生成
-}
- //セレクタ指定
-footerStart(".com_formsend");
-
-
 jQuery(function($) {
 
   // var frag_com     = new Boolean(false);
