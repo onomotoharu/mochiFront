@@ -1,7 +1,7 @@
 function header() {
 	document.write ('<nav id="header" name="nav">\n');      
 	document.write ('<ul>\n');       
-	document.write ('<li id="l_btn"><a href=""></a></li>\n');    
+	document.write ('<li id="l_btn"><a href=""><img src="../img/back.png"></a></li>\n');   
 	document.write ('<li id="pagename"></li>\n');   
 	document.write ('<li id="r_btn"><a href=""></a></li>\n');
 	document.write ('</ul>\n');
@@ -21,6 +21,10 @@ function footer() {
 
 $(function(){
 	$('#l_btn a').attr("href", "javascript:history.back();");
+<<<<<<< HEAD
 })
 
 
+=======
+})
+>>>>>>> d96bccba4112515bc7289595dc0ef6245d42ea58
