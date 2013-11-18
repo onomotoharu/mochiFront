@@ -1,0 +1,27 @@
+ul.jCarousel img{
+	}
+	
+#animation {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+
+#frame {
+	width:320px;
+	hieght:500px;
+	background: url("./img/02.png") no-repeat scroll left top transparent;
+   animation: 1s steps(2, end) 0s normal none infinite frame-animation
+}
+
+#roll {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    width: 640px;
+	height:1138px;
+    border: 1px solid rgb(178, 178, 178);
+    background: url("./img/02.png") no-repeat scroll left top rgb(255, 255, 255);
+    transition: opacity 0.3s linear 0s;
+    animation: 1s steps(2, end) 0s normal none infinite roll-animation;
+}
