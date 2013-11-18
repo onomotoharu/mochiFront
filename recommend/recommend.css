@@ -167,7 +167,7 @@ a.circle{
 .righttop a.circle{
     margin-left :auto;
     margin-right : auto;
-	border:solid 5px #74c0bc;
+	border:solid 5px #bfdd0b;
 }
 
 
@@ -196,7 +196,7 @@ a.circle{
 .leftbottom a.circle{
     margin-left :auto;
     margin-right : auto;
-	border:solid 5px #ed7b7b;
+	border:solid 5px #94cda3;
 }
 
 
@@ -239,12 +239,12 @@ a.circle{
 
 
 /*
-お金　円 黄色
+お金　円 ボーダーの色　e2cf16
 ---------*/
 
 .money{
     height: 50px;
-    color: #977b00;
+    color: #785b25;
     font-weight: bold;
     font-size: 16px;
     background-image: url("img/money.png");
@@ -257,7 +257,7 @@ a.circle{
 
 
 /*
-時間　分　緑
+時間　分　94cda3
 ---------*/
 
 
@@ -276,10 +276,10 @@ a.circle{
 
 
 /*
-食材のかぶり 食材名　青
+食材のかぶり 食材名　69dcf7
 ---------*/
 
-/*.material{
+.material{
     height: 50px;
     color: #04417c;
     font-weight: bold;
@@ -290,11 +290,11 @@ a.circle{
     background-repeat: no-repeat;
 }
 
-*/
+
 
 
 /*
-友人のおすすめ　友人の名前？　青
+友人のおすすめ　友人の名前？　bfdd0b
 ---------*/
 
 
@@ -302,17 +302,17 @@ a.circle{
     height: 50px;
     color: #277b39;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 12px;
     background-image: url("img/friend.png");
     background-size:50%;
-    background-position: center bottombottom;
+    background-position: center bottom;
     background-repeat: no-repeat;
 }
 
 
 
 /*
-味付け　味の名前　おれんじ
+味付け　味の名前　bf824b
 ---------*/
 
 .taste{
@@ -329,12 +329,12 @@ a.circle{
 
 
 /*
-調理方法　 調理方法の名前　赤   
+調理方法　 調理方法の名前　ed7b7b   
 ---------*/
 
 .process{
     height: 50px;
-    color: #932722;
+    color: #ed7b7b;
     font-weight: bold;
     font-size: 10px;
     background-image: url("img/process.png");
@@ -345,9 +345,9 @@ a.circle{
 
 
 /*
-いままでのレシピすべて　ピンク   
+いままでのレシピすべて　e168a3   
 ---------*/
-/*
+
 .total{
     height: 50px;
     color: #a20e73;
@@ -358,7 +358,7 @@ a.circle{
     background-position: center bottom;
     background-repeat: no-repeat;
 }
-*/
+
 
 
 /*
