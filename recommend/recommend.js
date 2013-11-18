@@ -7,6 +7,18 @@ $(function(){
 });
 
 
+// スクロールを抑止する関数
+function preventScroll(event) {
+
+  // li要素だけは、タップイベントに反応したいので、抑止しない。
+  if (event.touches[0].target.tagName.toLowerCase() == "li") {return;}
+
+  // preventDefaultでブラウザ標準動作を抑止する。
+  event.preventDefault();
+}
+
+
+
 jQuery(function($) {
     $('.recipename').each(function() {
         var $target = $(this);
