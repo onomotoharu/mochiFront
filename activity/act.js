@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-	$('#pagename').append("cheese!")
+	$('#pagename').append("みんなのごはん")
 });
 
 
