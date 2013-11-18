@@ -4,6 +4,7 @@
 
 
 
+
 /*-------------------------
 まんなか ( ･`ω･´)  
 
@@ -52,7 +53,33 @@ article span {
 }
 
 
+.down{
+    font-size: 8px;
+    width:120px;
+    height:10px;
+    margin: 290px 100px 0 100px ;
+    position:fixed;
+    text-align:center;
+    background-color: #584400;
+    color:#fff;
+    filter: alpha(opacity=20);
+    -moz-opacity:0.20;
+    opacity:0.20;
+}
 
+/*.top{
+    font-size: 8px;
+    width:120px;
+    height:10px;
+    margin: 130px 100px 0 100px ;
+    position:fixed;
+    text-align:center;
+    background-color: #584400;
+    color:#fff;
+    filter: alpha(opacity=20);
+    -moz-opacity:0.20;
+    opacity:0.20;
+}*/
 
 /*-------------------------
 四隅のサークルのスタイル(^_-)-☆  
@@ -78,11 +105,15 @@ a.circle{
     font-size: 9px;
     text-align: center;
     color:#645641;
-    height: 25px;
+    height: 30px;
     width:95px;
     margin-top: 10px;
     overflow: hidden; 
-}
+/*    text-overflow: ellipsis;  
+    -webkit-text-overflow: ellipsis;  
+    -o-text-overflow: ellipsis;  
+    white-space: nowrap;
+*/}
 
 
 /*-------------------------
