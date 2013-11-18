@@ -61,6 +61,11 @@ a,a:visited,a:hover,a:active {
 }
 
 #header ul li a img{
+    width:25px;
+    height:25px;
+}
+
+#header ul li:first-child a img {
     width:20px;
     height:25px;
 }
@@ -69,6 +74,9 @@ a,a:visited,a:hover,a:active {
     width: 60%;
     padding-top: 10px;
     font-weight: bold;
+    margin: 5px 0;
+    font-size: 14px;
+    letter-spacing: 0.2em;
 }
 
 
