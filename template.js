@@ -2,7 +2,7 @@ function header() {
 	document.write ('<nav id="header" name="nav">\n');      
 	document.write ('<ul>\n');       
 	document.write ('<li id="l_btn"><a href=""><img src="../img/back.png"></a></li>\n');    
-	document.write ('<li id="pagename"></li>\n');   
+	document.write ('<li id="pagename"><img src="../img/h_logo.png" height="20" width="69"></li>\n');   
 	document.write ('<li id="r_btn"><a href=""></a></li>\n');
 	document.write ('</ul>\n');
 	document.write ('</nav>\n');  

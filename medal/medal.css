@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* CSS Document */ 
 
+
+#pagename img {
+	display: none;
+}
+
 #l_btn a{
 	display: none;
 }
