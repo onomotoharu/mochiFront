@@ -1,3 +1,6 @@
+#l_btn a{
+    display: none;
+}
 
 
 
@@ -149,7 +152,7 @@ a.circle{
 .leftbottom {
     width:95px;
     height: 190px;
-    border: solid 1px; #000;
+    /*border: solid 1px; #000;*/
     bottom: 45px;
     display:table-cell;
     text-align:center;

@@ -1,19 +1,16 @@
-//function footer() {
-//	document.write ('<nav id="footer" name="nav">\n');      
-//	document.write ('<ul>\n');       
-//	document.write ('<li><a href=""><img src="../img/off/reco_off.png"></a></li>\n');    
-//	document.write ('<li><a href=""><img src="../img/on/act_on.png"></a></li>\n');   
-//	document.write ('<li><a href=""><img src="../img/off/my_off.png"></a></li>\n'); 
-//	document.write ('<li><a href=""><img src="../img/off/set_off.png"></a></li>\n'); 
-//	document.write ('</ul>\n');
-//	document.write ('</nav>\n');     
-//}
 
 $(document).ready(function(){
-	$('#pagename').append("みんなのごはん")
+	$('#pagename').append("cheese!")
 });
 
+
 $(function(){
+  $('#nav_act img').attr("src", "../img/on/act_on.png");
+});
+
+
+$(function(){
+
 	$('.com_btn').click(function(){
 		$('.com_formsend').toggle();
 		return false;
@@ -28,15 +25,42 @@ $(function(){
 		$('.hyouji_on').toggle();
 		$('.hyouji_off').css("display", "none");
 		$('input').css("margin-top", "16px")
+
 	});
 });
 
-//$(function(){
-//	$('.user_photo').append("<img src="./img/foodphoto.png">");
-//	if(){
-//		$('.camera img').css("display", "block");
-//		$('.user_photo img').css("display", "block");
-//	}
-//});
+jQuery(function($) {
+
+  var frag_com     = new Boolean(false);
+  var frag_iine     = new Boolean(false);
 
 
+  // コメントボタン
+
+  $(".com_btn").click(function(){
+    if(frag_com == false){
+      frag_com = true;
+      $(".com_btn img").attr("src","img/com_on.png");
+      location.href = "comment.html";
+      
+    }else{
+      frag_com = false;
+      $(".com_btn img").attr("src","img/com_off.png");
+    }
+  })
+
+  // イイネ！ボタン
+
+  $(".iine_btn").click(function(){
+    if(frag_iine == false){
+      frag_iine = true;
+      $(".iine_btn img").attr("src","img/good_on.png");
+      
+    }else{
+      frag_iine = false;
+      $(".iine_btn img").attr("src","img/good_off.png");
+    }
+  })
+
+
+});

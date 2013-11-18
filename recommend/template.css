@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+body,p,h1,h2,h3,h4,h5,h6,
+span,small,strong,
+div,ul,li,
+figure,img,
+header,footer,nav,section{
+    margin:0;
+    padding:0;
+    border:none;
+    outline:none;
+    font-size:1rem;
+    font-weight:normal;
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #523200;
+}
+
+header,footer,nav{display:block;}
+
+html{
+    font:13px/1.3 " HiraKakuProN-W3";
+    -webkit-text-size-adjust:none;
+}
+
+li{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+}
+
+/*----------------------------------------
+ 全ページ共有ここから
+----------------------------------------*/
+
+/*--------------------
+ ヘッダー
+--------------------*/
+
+#header{
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    /*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffd047), color-stop(1, #edb637));*/
+    background-image: url("../img/header.png");
+    box-shadow: 0px 0px 10px -2px rgba(93, 56, 3, 0.9);
+    z-index: 3;
+}
+
+#header ul li{
+    text-align: center;
+    float: left;
+    padding-top: 10px;
+    font-size: 20px;
+    width: 10%;
+}
+
+#header ul li a img{
+    width:20px;
+    height:25px;
+}
+
+#header ul li#pagename{
+    width: 80%;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+/*------------------------
+ 背景
+------------------------*/
+
+body{
+    background-image: url("../img/tate.png");
+}
+
+
+/*------------------------
+ 中身
+------------------------*/
+
+.allcontents{
+    margin: 45px 0 45px;
+    z-index: 1;
+    overflow: auto;
+    width: 100%;
+}
+
+
+/*------------------------
+ フッター
+------------------------*/
+
+#footer{
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    bottom: 0;
+    background-color: #bbac88;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px -2px rgba(93, 56, 3, 0.9);
+    z-index: 3;
+}
+
+#footer ul{
+    overflow: hidden;
+}
+
+#footer ul li{
+    text-align: center;
+    float: left;
+    width: 25%;
+}
+
+#footer ul img{
+    width:72px;
+    height:45px;
+}
+
+
+

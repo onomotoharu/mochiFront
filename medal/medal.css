@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* CSS Document */ 
 
+#l_btn a{
+	display: none;
+}
+
+
 
 .tab_contents ul{
 	overflow:hidden;
