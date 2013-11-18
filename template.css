@@ -69,6 +69,9 @@ a,a:visited,a:hover,a:active {
     width: 60%;
     padding-top: 10px;
     font-weight: bold;
+    margin: 5px 0;
+    font-size: 14px;
+    letter-spacing: 0.2em;
 }
 
 

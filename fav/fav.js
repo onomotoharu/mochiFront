@@ -2,7 +2,7 @@
 
 
 $(document).ready(function(){
-	$('#pagename').append("cheese!")
+	$('#pagename').append("マイページ")
 
 	$('.myname').html("名前");
 
