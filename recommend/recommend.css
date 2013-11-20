@@ -109,11 +109,7 @@ a.circle{
     width:95px;
     margin-top: 10px;
     overflow: hidden; 
-/*    text-overflow: ellipsis;  
-    -webkit-text-overflow: ellipsis;  
-    -o-text-overflow: ellipsis;  
-    white-space: nowrap;
-*/}
+}
 
 
 /*-------------------------
@@ -135,14 +131,6 @@ a.circle{
 	color:#edd67a;
 }
 
-.lefttop a.circle{
-    margin-left :auto;
-    margin-right : auto;
-	border:solid 5px #e2cf16;
-
-}
-
-
 /*-------------------------
 ○　　●
 　○
@@ -162,12 +150,6 @@ a.circle{
 	text-align:center;
 	position:fixed;
 	color:#edd67a;
-}
-
-.righttop a.circle{
-    margin-left :auto;
-    margin-right : auto;
-	border:solid 5px #bfdd0b;
 }
 
 
@@ -193,12 +175,6 @@ a.circle{
     color:#edd67a;
 }
 
-.leftbottom a.circle{
-    margin-left :auto;
-    margin-right : auto;
-	border:solid 5px #94cda3;
-}
-
 
 /*-------------------------
 ○　　○
@@ -222,15 +198,6 @@ a.circle{
 
 }
 
-.rightbottom a.circle{
-	border:solid 5px #bf824b;
-    margin-left :auto;
-    margin-right :auto;
-}
-
-
-
-
 
 /*-------------------------
 軸〜〜〜(・o・)
@@ -242,7 +209,7 @@ a.circle{
 お金　円 ボーダーの色　e2cf16
 ---------*/
 
-.money{
+.money {
     height: 50px;
     color: #785b25;
     font-weight: bold;
@@ -251,6 +218,14 @@ a.circle{
     background-size:50%;
     background-position: center bottom;
     background-repeat: no-repeat;
+
+}
+
+
+.money_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #e2cf16;
 
 }
 
@@ -272,6 +247,12 @@ a.circle{
     background-repeat:no-repeat;
 }
 
+.time_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #94cda3;
+
+}
 
 
 
@@ -290,6 +271,12 @@ a.circle{
     background-repeat: no-repeat;
 }
 
+.material_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #69dcf7;
+
+}
 
 
 
@@ -302,13 +289,19 @@ a.circle{
     height: 50px;
     color: #277b39;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 10px;
     background-image: url("img/friend.png");
     background-size:50%;
     background-position: center bottom;
     background-repeat: no-repeat;
 }
 
+.friend_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #bfdd0b;
+
+}
 
 
 /*
@@ -319,7 +312,7 @@ a.circle{
     height: 50px;
     color: #814120;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 10px;
     background-image: url("img/taste.png");
     background-size:40%;
     background-position: center bottom;
@@ -327,6 +320,12 @@ a.circle{
 }
 
 
+.taste_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #bf824b;
+
+}
 
 /*
 調理方法　 調理方法の名前　ed7b7b   
@@ -343,6 +342,12 @@ a.circle{
     background-repeat: no-repeat;
 }
 
+.process_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #ed7b7b;
+
+}
 
 /*
 いままでのレシピすべて　e168a3   
@@ -359,6 +364,12 @@ a.circle{
     background-repeat: no-repeat;
 }
 
+.total_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #e168a3;
+
+}
 
 
 /*
