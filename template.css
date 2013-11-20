@@ -97,7 +97,7 @@ body{
 .allcontents{
     margin: 45px 0 45px;
     z-index: 1;
-    overflow: auto;
+    overflow:hidden;
     width: 320px;
 }
 
