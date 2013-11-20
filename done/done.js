@@ -1,8 +1,3 @@
-
-$(document).ready(function(){
-    $('#pagename').append("cheese!")；
- });
-
 jQuery(function($) {
 
   var placeHolder = 'コメントを書く...';
@@ -78,9 +73,48 @@ jQuery(function($) {
 
   // つくったボタン
 
+  $(".cookedBtn img").hide();
+
   $('.cookedBtn').click(function(){
     $(this).addClass("cookedBtn_on");
-    location.href = "../mypage/mypage.html";
+    // location.href = "../log/index.html";
+
+    // loading.gifを表示
+    $(".cookedBtn img").show();
+    var content = "",
+        recommend = false,
+        img = "";
+
+    // 通信に成功
+    localStorage.setItem("hoge", 1);
+    location.href = "../log/index.html";
+
+
+    // $.ajax({
+    //   method: "POST",
+    //   url: "/hoge/hoge",
+    //   data: {
+    //     hoge: content,
+    //     foo: recommend,
+    //     buzz: img
+    //   },
+    //   success: function(res) {
+    //     // 通信に成功
+    //     localStorage.setItem("hoge", 1);
+    //     location.href = "../log/index.html";
+    //   },
+    //   error: function() {
+    //     // 通信に失敗
+    //     alert("失敗だよー");
+    //   },
+    //   complete: function() {
+    //     $(".cookedBtn img").hide();
+    //     $('.cookedBtn').removeClass("cookedBtn_on");
+    //     alert("hogehoge");
+    //   }
+    // });
+
+    return false;
   })
 
 
