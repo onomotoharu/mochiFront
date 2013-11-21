@@ -138,15 +138,14 @@ body{
 ------------------------*/
 
 #loader {
-    width: 画像の幅px;
-    height: 画像の高さpx;
+    width:100;
     display: none;
     position: fixed;
     _position: absolute; /* IE6対策 */
-    top:35%;
-    left:35%;
-    margin-top: -XXpx; /* heightの半分のマイナス値 */
-    margin-left: -XXXpx; /* widthの半分のマイナス値 */
+    top:50%;
+    left:50%;
+    margin-top: -60px; /* heightの半分のマイナス値 */
+    margin-left: -50px; /* widthの半分のマイナス値 */
     z-index: 100;
 }
  
@@ -155,7 +154,7 @@ body{
     height: 100%;
     display: none;
     background-color: #000;
-	opacity:0.7;
+	opacity:0.6;
     position: absolute;
     top: 0px;
     left: 0px;
