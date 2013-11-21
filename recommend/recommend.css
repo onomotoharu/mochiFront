@@ -21,14 +21,21 @@ a.center {
     border-radius:50%;
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
-	width: 100px;
-	height:100px;
+	width: 80px;
+	height:80px;
 	position: relative;
  	background-position: center center;
 	background-repeat: no-repeat;
 	background-size:cover;
 }
 
+a.center :hover{   
+    background: #0FF;
+    top: -10px;
+    left: -10px;
+    padding: 10px;
+    font-size: 20px;
+}
 
 article span {
 	width:100%;
@@ -36,10 +43,10 @@ article span {
 }
 
 .center_circle {    
-    width:120px;
-    height:150px;
+    width:100px;
+    height:120px;
     overflow: scroll;   /* スクロール表示 */ 
-    margin: 140px 100px 0 100px ;
+    margin: 160px 110px 0 110px ;
     position:fixed;
     text-align:center;
     color:#3cb371;
@@ -55,16 +62,16 @@ article span {
 
 .down{
     font-size: 8px;
-    width:120px;
+    width:90px;
     height:10px;
-    margin: 290px 100px 0 100px ;
+    margin: 270px 115px 0 115px ;
     position:fixed;
     text-align:center;
     background-color: #584400;
     color:#fff;
-    filter: alpha(opacity=20);
-    -moz-opacity:0.20;
-    opacity:0.20;
+    filter: alpha(opacity=50);
+    -moz-opacity:0.50;
+    opacity:0.50;
 }
 
 /*.top{
@@ -93,8 +100,8 @@ a.circle{
     border-radius:50%;
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     position: relative;
     background-position: center center;
     background-repeat: no-repeat;
@@ -121,12 +128,12 @@ a.circle{
 --------------------------*/
 
 .lefttop {
-	width:95px;
+	width:90px;
     height: 180px;
 	display:table-cell;
 	text-align:center;
 	position:fixed;
-	margin-left: 20px;
+	left: 20px;
     margin-top: 10px;
 	color:#edd67a;
 }
@@ -141,7 +148,7 @@ a.circle{
 
 
 .righttop {
-    width:95px;
+    width:90px;
     height: 180px;
     /*margin-left: 205px;*/
     right: 20px;
@@ -163,14 +170,14 @@ a.circle{
 
 
 .leftbottom {
-    width:95px;
+    width:90px;
     height: 190px;
     /*border: solid 1px; #000;*/
     bottom: 45px;
     display:table-cell;
     text-align:center;
     position:fixed;
-    margin-left: 20px;
+    left: 20px;
     margin-top: 10px;
     color:#edd67a;
 }
@@ -185,14 +192,13 @@ a.circle{
 --------------------------*/
 
 .rightbottom {
-    width:95px;
+    width:90px;
     height: 190px;
     bottom: 45px;
     right: 20px;
     display:table-cell;
     text-align:center;
     position:fixed;
-    margin-left: 20px;
     margin-top: 10px;
     color:#edd67a;
 

@@ -18,7 +18,9 @@ function preventScroll(event) {
 }
 
 
-
+// $(function(){
+//     $('#pagename').append($("<img>").attr("src", "./img/.png"));
+// })
 
 
 jQuery(function($) {
