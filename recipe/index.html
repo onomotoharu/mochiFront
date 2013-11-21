@@ -24,7 +24,7 @@
         </head>
 
         <body>
-         <script>
+          <script>
 $('head').append(
     '<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>'
 );
@@ -32,8 +32,8 @@ $('head').append(
 jQuery.event.add(window,"load",function() { 
     var pageH = $("#container").height();
  
-    $("#fade").css("height", pageH).delay(500).fadeOut(1000);
-    $("#loader").delay(500).fadeOut(1000);
+    $("#fade").css("height", pageH).delay(900).fadeOut(800);
+    $("#loader").delay(600).fadeOut(400);
     $("#container").css("display", "block");
 });
 </script>
