@@ -24,6 +24,22 @@
         </head>
 
         <body>
+         <script>
+$('head').append(
+    '<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>'
+);
+ 
+jQuery.event.add(window,"load",function() {
+    var pageH = $("#container").height();
+ 
+    $("#fade").css("height", pageH).delay(900).fadeOut(800);
+    $("#loader").delay(600).fadeOut(300);
+    $("#container").css("display", "block");
+});
+</script>
+
+<div id="loader"><img src="../img/cheeseload.gif" width="100" height="画像の高さ" alt="Loading..." /></div>
+<div id="fade"></div>
         <script>header();</script>
         <div class="allcontents">
                 <div class="photo" id="re_photo"><img src="./img/meat.jpg"></div>
@@ -59,5 +75,6 @@
                 </div>
         </div>
         <script>footer();</script>
+        </div>
         </body>
 </html>
