@@ -50,7 +50,7 @@ if (img.length) img[0].src = flg?img2:img1;
         </head>
 
         <body>
-         <script>
+       <script>
 $('head').append(
     '<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>'
 );
@@ -58,11 +58,12 @@ $('head').append(
 jQuery.event.add(window,"load",function() { 
     var pageH = $("#container").height();
  
-    $("#fade").css("height", pageH).delay(900).fadeOut(800);
-    $("#loader").delay(600).fadeOut(300);
+    $("#fade").css("height", pageH).delay(500).fadeOut(1000);
+    $("#loader").delay(500).fadeOut(1000);
     $("#container").css("display", "block");
 });
 </script>
+
 
 <div id="loader"><img src="../img/cheeseload.gif" width="100" height="画像の高さ" alt="Loading..." /></div>
 <div id="fade"></div>
