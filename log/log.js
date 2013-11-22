@@ -17,7 +17,21 @@ $(function(){
 $(function(){
 
 	if(localStorage.getItem("hoge") !== null) {
-	  $('.success').slideUp(0).slideDown('fast').delay(2500).slideUp('fast', function() {
+	  var slideIn = $("<div></div>").css({
+	      position: "absolute",
+	      top: 0,
+	      left: 0,
+	      "z-index": 9999,
+	      width: "100%",
+	      height: 50,
+	      background: "#000",
+	      color: "#fff"
+	    }).text("うんこほげほげほげ");
+	  
+	  $("body").append(slideIn);
+	  slideIn.slideUp(0).slideDown('fast').delay(3000).slideUp('fast', function() {
+	    // にょきっと消えた後に何か実行する
+	    console.log("上のが消えたよ〜〜〜〜〜");
 	    localStorage.removeItem("hoge");
 	  });
 	}
