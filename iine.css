@@ -6,7 +6,7 @@
 	text-align: center;
 	border-radius: 4px;
 	padding-top: 7px;
-	margin: 5px 5px 0 10px;
+	margin: 0 5px 0 10px;
 	clear: both;
 }
 
@@ -22,7 +22,7 @@ div.iine_btn,div.iine_btn_on{
 	float: left;
 	text-align: center;
 	border-radius: 4px;
-	margin: 5px 0 0 10px;
+	margin: 0 0 0 10px;
 	padding-top: 10px;
 }
 
@@ -34,7 +34,7 @@ div.iine_btn_on{
 	color: #fff;
 	text-align: center;
 	border-radius: 4px;
-	margin: 5px 0 0 10px;
+	margin: 0 0 0 10px;
 	padding-top: 10px;
 }
 
