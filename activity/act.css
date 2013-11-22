@@ -129,19 +129,31 @@ table{
 	width: 16px;
 }
 
-.iine_btn{
+div.iine_btn,div.iine_btn_on{
 	background-color: #efefef;
-	height: 25px;
+	height: 22px;
 	width: 90px;
 	float: left;
 	text-align: center;
 	border-radius: 4px;
-	padding-top: 7px;
-	margin-top: 5px;
+	margin: 5px 0 0 10px;
+	padding-top: 10px;
+}
+
+div.iine_btn_on{
+	background-color: #ccc;
+	height: 22px;
+	width: 90px;
+	float: left;
+	color: #fff;
+	text-align: center;
+	border-radius: 4px;
+	margin: 5px 0 0 10px;
+	padding-top: 10px;
 }
 
 .iine_btn img{
-	height: 13px;
+	height: 12px;
 	width: 12px;
 }
 

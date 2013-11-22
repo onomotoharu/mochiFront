@@ -140,7 +140,7 @@ input{
 	width: 16px;
 }
 
-.iine_btn{
+.iine_btn,.iine_btn:focus{
 	background-color: #efefef;
 	height: 25px;
 	width: 90px;
@@ -149,6 +149,11 @@ input{
 	border-radius: 4px;
 	margin: 0 0 0 10px;
 	padding-top: 10px;
+}
+
+.iine_btn:focus{
+	background: #000;
+	color: #fff;
 }
 
 .iine_btn img{
