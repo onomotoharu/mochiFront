@@ -26,6 +26,48 @@
     <script type="text/javascript" src="jquery.flicksimple.js"></script>
     <script type="text/javascript" src="../template.js"></script>
 
+    <script>
+      $(function(){
+        json = [{"photo":"./img/foodphoto1.jpg",
+                 "jiku":"煮る、焼く、蒸す、炒める",
+                 "recipename":"朝食・お弁当に♪ふわふわオムレツ",
+                 "link": "りんく１"},
+                 {"photo":"./img/foodphoto2.jpg",
+                 "jiku":"ひらっちさん、あんどーさん",
+                 "recipename":"基本的なチンジャオロース",
+                 "link": "りんく２"},
+                 {"photo":"./img/foodphoto3.jpg",
+                 "jiku":"60分",
+                 "recipename":"さくさく野菜たっぷりコロッケ",
+                 "link": "りんく３"},
+                 {"photo":"./img/foodphoto4.jpg",
+                 "jiku":"にんじん,ピーマン,合挽肉,ケチャップ",
+                 "recipename":"右下",
+                 "link": "りんく４"}];
+      });
+      $(document).ready(function(){
+        $('.lefttop .recipename').text(json[0].recipename);
+        $('.lefttop .process').text(json[0].jiku);
+        $('.righttop .recipename').text(json[1].recipename);
+        $('.righttop .friend').text(json[1].jiku);
+        $('.leftbottom .recipename').text(json[2].recipename);
+        $('.leftbottom .time').text(json[2].jiku);
+        $('.rightbottom .recipename').text(json[3].recipename);
+        $('.rightbottom .material').text(json[3].jiku);
+      });
+      $(function(){
+        $('.lefttop a').attr("style", "background-image: url("+json[0].photo+")"); //変更
+        $('.lefttop a').attr("href", json[0].link);
+        $('.righttop a').attr("style", "background-image: url("+json[1].photo+")"); //変更
+        $('.righttop a').attr("href", json[1].link);
+        $('.leftbottom a').attr("style", "background-image: url("+json[2].photo+")"); //変更
+        $('.leftbottom a').attr("href", json[2].link);
+        $('.rightbottom a').attr("style", "background-image: url("+json[3].photo+")"); //変更
+        $('.rightbottom a').attr("href", json[3].link);
+      });
+
+    </script>
+
 </head>
 
         <body>
