@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-=======
+
 
 $(document).ready(function(){
     $('#pagename').append("cheese!")
  });
 
->>>>>>> comment_js
 jQuery(function($) {
 
   var placeHolder = 'コメントを書く...';
