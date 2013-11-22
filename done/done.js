@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    $('#pagename').append("cheese!")；
+    $('#pagename').append("cheese!")
  });
 
 jQuery(function($) {
@@ -12,16 +12,25 @@ jQuery(function($) {
   var frag_fb     = new Boolean(false);
 
   // 入力フォーム
-
   $("textarea")
     .focus(function() {
       var self = $(this);
-      if (self.val() === placeHolder) { self.val(''); }
+      if (self.val() === placeHolder) { self.val('');}
     })
     .blur(function() {
       var self = $(this);
-      if (self.val() === "") { self.val(placeHolder); }
+      if (self.val() === "") { self.val(placeHolder);}
   });
+  
+  $(function(){
+	$('input[type=text],textarea').focus(function(){
+		$(this).addClass('focus');
+	}).blur(function(){
+		$(this).removeClass('focus');
+	});
+});
+  
+  
 
   // 写真投稿ボタン
 
