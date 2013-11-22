@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+
+$(document).ready(function(){
+    $('#pagename').append("cheese!")
+ });
+
+>>>>>>> comment_js
 jQuery(function($) {
 
   var placeHolder = 'コメントを書く...';
@@ -9,16 +17,25 @@ jQuery(function($) {
   var pageH       = $("#container").height();
 
   // 入力フォーム
-
   $("textarea")
     .focus(function() {
       var self = $(this);
-      if (self.val() === placeHolder) { self.val(''); }
+      if (self.val() === placeHolder) { self.val('');}
     })
     .blur(function() {
       var self = $(this);
-      if (self.val() === "") { self.val(placeHolder); }
+      if (self.val() === "") { self.val(placeHolder);}
   });
+  
+  $(function(){
+	$('input[type=text],textarea').focus(function(){
+		$(this).addClass('focus');
+	}).blur(function(){
+		$(this).removeClass('focus');
+	});
+});
+  
+  
 
   // 写真投稿ボタン
 
