@@ -16,6 +16,12 @@ $(function(){
 
 $(function(){
 
+	if(localStorage.getItem("hoge") !== null) {
+	  $('.success').slideUp(0).slideDown('fast').delay(2500).slideUp('fast', function() {
+	    localStorage.removeItem("hoge");
+	  });
+	}
+
 	$('#log a').hover(function(){
 		$('#log a img').attr('src', $('#log a img').attr('src').replace('_off', '_on'));
 	}, function(){

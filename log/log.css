@@ -1,7 +1,44 @@
+/*-------------------------
+ヘッダー
+-------------------------*/
+
 #l_btn a{
 	display: none;
 }
 
+<<<<<<< HEAD
+=======
+#pagename img {
+	display: none;
+}
+
+/*-------------------------
+投稿完了
+-------------------------*/
+
+.success {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+	height: 5px;
+	background: #93cf3e;
+	padding: 5px 0 20px 0;
+	display: none;
+}
+
+.success p {
+	text-align: center;
+	color: #fff;
+	letter-spacing: 0.1em;
+}
+
+.success p img {
+	padding:5px 5px 0 0;
+}
+
+>>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
 
 /*-------------------------
  プロフィール（共通）
@@ -15,13 +52,15 @@
 }
 
 #profile_top{
-	height: 25px;
+	height: 33px;
 	margin: 10px 10px;
+	overflow: hidden;
+	position: relative;
 }
 
 #myphoto img{
-	height:25px;
-	width:25px;
+	height:30px;
+	width:30px;
 	float:left;
 	overflow: hidden;
 }
@@ -40,29 +79,53 @@
 	font-weight: bold;
 }
 
-table{
+#profile_top table{
 	border-spacing: 5pt 0;
+	position:absolute;
+	right:0;
 }
 
 .follow{
 	font-size: 8pt;
-	background-image: url("./img/follow_back.png");
 	text-align: center;
 	width: 70px;
 	height: 25px;
 	border-radius: 5px 5px;
 }
 
+<<<<<<< HEAD
 .follow p{
+=======
+.follow a p{
+>>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
 	color: #fff;
 }
 
 .follow a{
+<<<<<<< HEAD
+=======
+	background: url("./img/follow_back.png") no-repeat;
+	background-size:70px 30px;
+>>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
 	display: block;
 	width: 100%;
 	height: 100%;
 }
 
+<<<<<<< HEAD
+=======
+.follow a:hover{
+	background: url("./img/follow_back_on.png")no-repeat;
+	display: block;
+	background-size:70px 30px;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+>>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
 .followcount,.followercount{
 	font-size: 8pt;
 	color: #fff;
@@ -154,7 +217,7 @@ table{
 
 .act_right{
 	margin-left: 100px;
-	padding: 10px 10px 10px 0;
+	padding: 10px 5px 5px 0;
 }
 
 .date{
