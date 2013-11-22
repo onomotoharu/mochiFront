@@ -19,6 +19,121 @@ function footer() {
 	document.write ('</nav>\n');     
 }
 
+
+
+//
+function CheeseController(){
+	this.domain = "https://fmap.d.r3n.cc/api/v1";
+}
+
+
+CheeseController.prototype._authorizationHeader = function(xhr) {
+	var credentials = $.base64.encode(localStorage.api_token + ":" + localStorage.api_token_secret);
+	xhr.setRequestHeader("Authorization", "Basic " + credentials);
+}
+
+CheeseController.prototype._throwRequest = function(url,data,type){
+	return $.ajax({
+		type: type,
+		data: data,
+		url: this.domain + url,
+		beforeSend: this._authorizationHeader,
+		async:false
+	}).responseText;
+}
+
+//sign_in
+CheeseController.prototype.signIn = function(screen_id,password,callback){
+	url = "/sign_in";
+	data = {"user": {"screen_id": screen_id, "password": password}}
+	type = "post";
+	response = 	this._throwRequest(url,data,type);
+	callback(response);
+};
+
+//sign_out
+CheeseController.prototype.signOut = function(callback){
+	url = "/sign_out";
+	data = null
+	type = "post";
+	this._throwRequest(url,data,type,callback);
+}
+
+CheeseController.prototype.recommend = function(callback){
+	url = "/recommend/today";
+	data = null;
+	type = "get";
+	this._throwRequest(url,data,type,callback);
+};
+
+
 $(function(){
 	$('#l_btn a').attr("href", "javascript:history.back();");
+	App = new CheeseController();
+	App.signIn("ren","test",function(data){
+		console.log(JSON.stringify(data,null,"	"));
+	});
 })
+
+
+
+
+
+// //return boolean
+// CheeseController.prototype.isLoggedIn? = function(){
+// 	return (localStorage.api_token != null && localStorage.api_token_secret != null);
+// };
+
+// CheeseController.prototype.authorizationHeader = function(xhr) {
+//     var credentials = $.base64.encode(localStorage.api_token+":"+localStorage.api_token_secret);
+//      xhr.setRequestHeader("Authorization", "Basic " + credentials);
+// }
+
+
+// //return json
+// CheeseController.prototype.userCreate = function(args){
+
+// };
+
+
+//args => {"screen_id": "ren", "password": "test"}
+//return json
+// CheeseController.prototype.signIn = function(args){
+// 	$.ajax({
+// 		type:"POST"
+// 		url: this.domain + "/sign_in",
+// 		success: function(jsontext){
+// 			json = $.parseJSON(jsontext)
+// 			alert(json.api_token);
+// 		},
+// 		error: function(jqXHR, textStatus, errorThrown){
+// 			alert(textStatus+": "+errorThrown);
+// 		},
+// 			beforeSend: authorizationHeader
+// 	});
+// };
+
+// CheeseController.prototype.getRecommendToday = function(){
+
+// 	$.ajax({
+// 		type:”GET”
+// 		url: "https://fmap.d.r3n.cc/api/v1/timeline/",
+// 		success: function(json){
+// 			$(“h1”).text = json.midasi
+// 		},
+// 		error: function(jqXHR, textStatus, errorThrown){
+// 			alert(textStatus+": "+errorThrown);
+// 		},
+// 			beforeSend: authorizationHeader
+// 	});
+
+// };
+
+
+
+
+
+
+
+
+
