@@ -13,20 +13,66 @@
 --------------------------*/
 
 
-a.center {
-	margin:auto;
-	text-align :left;
-	display: inline-block;
+#verticaly {
+  width: 90px;
+  height: 120px;
+}
+
+#verticaly ul,
+#verticaly ul.landscape {
+  height: 960px;
+}
+
+#verticaly ul li,
+#verticaly ul li.landscape {
+  width: 90px;
+  height: 90px;
+}
+
+#verticaly ul li a {
+  display: block;
+  border:solid 5px #f5c53a;
+  margin:auto;
+  text-align :left;
+  display: inline-block;
     border-radius:50%;
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
-	width: 80px;
-	height:80px;
-	position: relative;
- 	background-position: center center;
-	background-repeat: no-repeat;
-	background-size:cover;
+  width: 70px;
+  height:70px;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:cover;
+
+
 }
+
+.flickSimple {
+    width:90px;
+    height:120px;
+    margin: 160px 115px 0 115px ;
+    text-align:center;
+    color:#3cb371;
+    position: fixed;
+    overflow: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+.flickSimple ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.flickSimple ul li {
+    float: left;
+    list-style-type: none;
+    text-align: center;
+}
+
+
 
 
 article span {
@@ -34,18 +80,9 @@ article span {
 	float:left;
 }
 
-.center_circle {    
-    width:100px;
-    height:120px;
-    overflow: auto;   /* スクロール表示 */ 
-    margin: 160px 110px 0 110px ;
-    position:fixed;
-    text-align:center;
-    color:#3cb371;
-}
 
 
-.center_circle a.center{
+.flickSimple a.center{
     border:solid 5px #f5c53a;
     margin-left :auto;
     margin-right : auto;
@@ -98,6 +135,12 @@ a.circle{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+a.circle:hover{
+    filter: alpha(opacity=50);
+    -moz-opacity:0.50;
+    opacity:0.50;
 }
 
 .recipename{

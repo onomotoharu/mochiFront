@@ -23,6 +23,7 @@
 
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="recommend.js"></script>
+    <script type="text/javascript" src="jquery.flicksimple.js"></script>
     <script type="text/javascript" src="../template.js"></script>
 
 </head>
@@ -87,28 +88,39 @@
       
       <!--真ん中の◯-->
       <article class="center_circle">
-              <ul id="centerscroll">
-                  <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-
-              </ul>
+        <div id="verticaly" class="flickSimple">
+              <ul>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+             </ul>
+            </div>
       </article>
       <div class="down">▲</div>
     </section>
 
   <!-- /全体ここまで --> 
   
+</head>
+<body>
+
+<script type="text/javascript">
+  $('#verticaly').flickSimple({
+    vertical: true,
+    horizontal: false,
+    lock: true
+  });
+</script>
+
 </div>
   
 
