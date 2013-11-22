@@ -3,10 +3,9 @@ $(document).ready(function(){
 });
 
 $(function(){
-
   var commentObj = {
     userId : "namaedesu",
-    comment : "oisu--"
+    comment : ""
   };
 
 	$('#l_btn a').attr("href", "./index.html");
@@ -18,10 +17,13 @@ $(function(){
 		});
 	});
 
+  // コメントを投稿
   $(".send").click(function(userId,comment) {
-    var newComment = $("<div></div>").appendTo('div.comment').addClass('come_com');
+
+    var newComment = $("<div/>").appendTo('div.comment').addClass('come_com');
 
     newComment.append($("<span/>").text(commentObj.userId).addClass('user_id'));
+    commentObj.comment = $(".com_input").val();
     newComment.append($("<span/>").text(commentObj.comment).addClass('com_txt'));
 
   });
