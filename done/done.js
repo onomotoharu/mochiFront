@@ -6,6 +6,8 @@ jQuery(function($) {
   var frag_tw     = new Boolean(false);
   var frag_fb     = new Boolean(false);
 
+  var pageH       = $("#container").height();
+
   // 入力フォーム
 
   $("textarea")
@@ -77,10 +79,14 @@ jQuery(function($) {
 
   $('.cookedBtn').click(function(){
     $(this).addClass("cookedBtn_on");
-    // location.href = "../log/index.html";
 
-    // loading.gifを表示
-    $(".cookedBtn img").show();
+    // loading画像を表示
+    $('head').append(
+    '<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>');
+    $("#fade").css("height", pageH).delay(700).fadeOut(600);
+    $("#loader").delay(500).fadeOut(300);
+    $("#container").css("display", "block");
+    
     var content = "",
         recommend = false,
         img = "";
