@@ -18,67 +18,12 @@
     <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="../template.css">
-    <link rel="stylesheet" type="text/css" href="./recommend.css">
- 
-    <script language="javascript" src="../template.js"></script>
-    <script language="javascript" src="recommend.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
-<style type="text/css">
-
-#verticaly {
-        width: 160px;
-        height: 240px;
-}
-
-#verticaly ul,
-#verticaly ul.landscape {
-        height: 960px;
-}
-
-#verticaly ul li,
-#verticaly ul li.landscape {
-        width: 160px;
-        height: 80px;
-}
-
-#verticaly ul li a {
-        display: block;
-        height: 70px;
-        margin: 5px;
-        border: solid 1px #ccc;
-        background-color: #fff;
-        line-height: 70px;
-}
-#flick {
-        width: 100%;
-        position: relative; /* IE6・7の overflowバグ回避 */
-        overflow: auto;     /* JavaScript無効時にスクロール表示させたいから */
-}
-
-#flick ul {
-        display: block;
-        width: 400%;
-        margin: 0;
-        padding: 0;
-}
-
-#flick ul li {
-        float: left;
-        list-style-type: none;
-        width: 5%;
-}
-
-</style>
+    <link rel="stylesheet" type="text/css" href="recommend.css">
 
 
-    <script language="javascript" src=".flick.js"></script>
-
-
-    <script type="text/javascript">$('#centerscroll').flickSimple( {
-  // some options...
-} );
-</script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="recommend.js"></script>
+    <script type="text/javascript" src="../template.js"></script>
 
 </head>
 
@@ -88,8 +33,7 @@
 
 
     <div class="allcontents">
-    
-    <!-- メインコンテンツここから -->
+        <!-- メインコンテンツここから -->
     <section class="content"> 
       <!-- 関連図ここから--> 
       
@@ -107,7 +51,7 @@
       
       <!--右上の◯-->
       <article class="righttop">
-        <div class="recipename">朝食・お弁当に♪ふわぐわオムレツですふわふわふわぐわふわ</div>
+        <div class="recipename">aaa朝食・お弁当に♪ふわぐわオムレツですふわふわふわぐわふわあああ</div>
           <div class="friend_s">
             <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"　data-transition="slideup"></a>
             <div class="friend">
@@ -161,40 +105,12 @@
               </ul>
       </article>
       <div class="down">▲</div>
-
-
-
-<h3>Verticaly</h3>
-<div id="verticaly" class="flickSimple">
-<ul>
-<li><a href="#1">1</a></li>
-<li><a href="#2">2</a></li>
-<li><a href="#3">3</a></li>
-<li><a href="#4">4</a></li>
-<li><a href="#5">5</a></li>
-<li><a href="#6">6</a></li>
-<li><a href="#7">7</a></li>
-<li><a href="#8">8</a></li>
-<li><a href="#9">9</a></li>
-<li><a href="#10">10</a></li>
-<li><a href="#11">11</a></li>
-<li><a href="#12">12</a></li>
-</ul>
-</div>
-<script type="text/javascript">
-        $('#verticaly').flickSimple({
-                vertical: true,
-                horizontal: false,
-                lock: true
-        });
-</script>
-
     </section>
 
   <!-- /全体ここまで --> 
   
 </div>
-                        
+  
 
 <script>footer();</script>   
  

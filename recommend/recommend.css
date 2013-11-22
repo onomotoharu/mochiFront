@@ -3,35 +3,6 @@
 }
 
 
-
-
-#verticaly {
-        width: 160px;
-        height: 240px;
-}
-
-#verticaly ul,
-#verticaly ul.landscape {
-        height: 960px;
-}
-
-#verticaly ul li,
-#verticaly ul li.landscape {
-        width: 160px;
-        height: 80px;
-}
-
-#verticaly ul li a {
-        display: block;
-        height: 70px;
-        margin: 5px;
-        border: solid 1px #ccc;
-        background-color: #fff;
-        line-height: 70px;
-}
-
-
-
 /*-------------------------
 まんなか ( ･`ω･´)  
 
@@ -134,9 +105,14 @@ a.circle{
     text-align: center;
     color:#645641;
     height: 30px;
-    width:95px;
+    width:90px;
     margin-top: 10px;
-    overflow: hidden; 
+    overflow: hidden;
+/*    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+*/
 }
 
 
@@ -226,9 +202,9 @@ a.circle{
 }
 
 
-/*-------------------------
+-------------------------
 軸〜〜〜(・o・)
---------------------------*/
+--------------------------
 
 
 

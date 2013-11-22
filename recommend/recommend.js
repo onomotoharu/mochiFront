@@ -10,10 +10,7 @@ $(function(){
 
 
 
-
-
-
-jQuery(function($) {
+$(function() {
     $('.recipename').each(function() {
         var $target = $(this);
  
@@ -45,5 +42,3 @@ jQuery(function($) {
         $clone.remove();
     });
 });
-
-
