@@ -54,8 +54,8 @@
 }
 
 #myphoto img{
-	height:25px;
-	width:25px;
+	height:30px;
+	width:30px;
 	float:left;
 	overflow: hidden;
 }
@@ -80,13 +80,25 @@ table{
 
 .follow{
 	font-size: 8pt;
-	background-image: url("./img/follow_back.png");
 	text-align: center;
 	width: 70px;
 	height: 25px;
-	color: #fff;
 	border-radius: 5px 5px;
 }
+
+.follow p{
+	color: #fff;
+}
+
+.follow a{
+	background: url("./img/follow_back.png") no-repeat;
+	background-size:70px 30px;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+
 
 .followcount,.followercount{
 	font-size: 8pt;
@@ -110,7 +122,7 @@ table{
 }
 
 .tab ul{
-	height: 46px;
+	height: 45px;
 	margin: 0;
 	padding: 0;
 	line-height: 100%;
@@ -179,7 +191,7 @@ table{
 
 .act_right{
 	margin-left: 100px;
-	padding: 10px 10px 10px 0;
+	padding: 10px 5px 5px 0;
 }
 
 .date{
