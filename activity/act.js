@@ -1,6 +1,3 @@
-var iine_count = 0;
-// ajax組まれたらここにいいね数を代入
-
 $(document).ready(function(){
 	$('#pagename').append("みんなのごはん")
 });
@@ -29,54 +26,4 @@ $(function(){
 		$('input').css("margin-top", "16px")
 
 	});
-});
-
-jQuery(function($) {
-
-  var frag_com     = new Boolean(false);
-  var frag_iine     = new Boolean(false);
-
-
-  // コメントボタン
-
-  $(".com_btn").click(function(){
-    if(frag_com == false){
-      frag_com = true;
-      $(".com_btn img").attr("src","img/com_on.png");
-      location.href = "comment.html";
-      
-    }else{
-      frag_com = false;
-      $(".com_btn img").attr("src","img/com_off.png");
-    }
-  });
-
-  // イイネ！ボタン
-
-  $(".iine_btn").click(function() {
-    if($(this).hasClass('iine_btn')){
-      $(this).addClass("iine_btn_on").removeClass('iine_btn');
-      $(".iine_btn_on img").attr('src', './img/good_on.png');
-      iine_count++;
-      $(this).children('span').text("イイネ！" + iine_count);
-    } else if($(this).hasClass('iine_btn_on')) {
-      $(this).addClass("iine_btn").removeClass('iine_btn_on');
-      $(".iine_btn img").attr('src', './img/good_off.png');
-      iine_count--;
-      $(this).children('span').text("イイネ！" + iine_count);
-    }
-  });
-
-  // $(".iine_btn").click(function(){
-  //   if(frag_iine == false){
-  //     frag_iine = true;
-  //     $(".iine_btn img").attr("src","img/good_on.png");
-      
-  //   }else{
-  //     frag_iine = false;
-  //     $(".iine_btn img").attr("src","img/good_off.png");
-  //   }
-  // })
-
-
 });
