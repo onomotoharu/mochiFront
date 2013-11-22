@@ -10,8 +10,10 @@
 }
 
 #profile_top{
-	height: 25px;
+	height: 33px;
 	margin: 10px 10px;
+	overflow: hidden;
+	position: relative;
 }
 
 #myphoto img{
@@ -35,8 +37,10 @@
 	font-weight: bold;
 }
 
-table{
+#profile_top table{
 	border-spacing: 5pt 0;
+	position:absolute;
+	right:0;
 }
 
 .follow{
