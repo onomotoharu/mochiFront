@@ -1,26 +1,12 @@
+
 $(document).ready(function(){
-	$('#pagename').append("cheese!")
- });
+    $('#pagename').append("cheese!")
+    $('#r_btn a').append("更新");
+});
 
 $(function(){
   $('#nav_reco img').attr("src", "../img/on/reco_on.png");
 });
-
-
-// スクロールを抑止する関数
-function preventScroll(event) {
-
-  // li要素だけは、タップイベントに反応したいので、抑止しない。
-  if (event.touches[0].target.tagName.toLowerCase() == "li") {return;}
-
-  // preventDefaultでブラウザ標準動作を抑止する。
-  event.preventDefault();
-}
-
-
-// $(function(){
-//     $('#pagename').append($("<img>").attr("src", "./img/.png"));
-// })
 
 
 jQuery(function($) {
@@ -55,4 +41,5 @@ jQuery(function($) {
         $clone.remove();
     });
 });
+
 

@@ -17,49 +17,74 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href=".Elastislide/css/custom.css">
-    <link rel="stylesheet" type="text/css" href=".Elastislide/css/demo.css">
-    <link rel="stylesheet" type="text/css" href=".Elastislide/css/elastislide.css">
-
     <link rel="stylesheet" type="text/css" href="../template.css">
     <link rel="stylesheet" type="text/css" href="./recommend.css">
-
-    <link rel="stylesheet" type="text/css" href=".Elastislide/js/jquery.elastislide.js">
-    <link rel="stylesheet" type="text/css" href=".Elastislide/js/jquerypp.custom.js">
-    <link rel="stylesheet" type="text/css" href=".Elastislide/css/modernizr.custom.17475.js">
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+ 
     <script language="javascript" src="../template.js"></script>
-    <script language="javascript" src="./recommend.js"></script>
+    <script language="javascript" src="recommend.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<style type="text/css">
+
+#verticaly {
+        width: 160px;
+        height: 240px;
+}
+
+#verticaly ul,
+#verticaly ul.landscape {
+        height: 960px;
+}
+
+#verticaly ul li,
+#verticaly ul li.landscape {
+        width: 160px;
+        height: 80px;
+}
+
+#verticaly ul li a {
+        display: block;
+        height: 70px;
+        margin: 5px;
+        border: solid 1px #ccc;
+        background-color: #fff;
+        line-height: 70px;
+}
+#flick {
+        width: 100%;
+        position: relative; /* IE6・7の overflowバグ回避 */
+        overflow: auto;     /* JavaScript無効時にスクロール表示させたいから */
+}
+
+#flick ul {
+        display: block;
+        width: 400%;
+        margin: 0;
+        padding: 0;
+}
+
+#flick ul li {
+        float: left;
+        list-style-type: none;
+        width: 5%;
+}
+
+</style>
+
+
+    <script language="javascript" src=".flick.js"></script>
+
+
+    <script type="text/javascript">$('#centerscroll').flickSimple( {
+  // some options...
+} );
+</script>
 
 </head>
 
         <body>
 
           <script>header();</script>
-
-
-
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-7243260-2']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-
-
-
-      
-  </script>
-
-
-
 
 
     <div class="allcontents">
@@ -72,7 +97,7 @@
       <article class="lefttop">
         <div class="recipename">基本的なチンジャオロース</div>
           <div class="process_s">
-            <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"></a>
+            <a href="../recipe/index.html" class="circle" data-transition="fade" style="background-image: url('img/meat.jpg')"　data-transition="turn"></a>
             <div class="process">
             煮る、焼く、蒸す、炒める
             </div>
@@ -84,7 +109,7 @@
       <article class="righttop">
         <div class="recipename">朝食・お弁当に♪ふわぐわオムレツですふわふわふわぐわふわ</div>
           <div class="friend_s">
-            <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"></a>
+            <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"　data-transition="slideup"></a>
             <div class="friend">
               ひらっちさん、あんどーさん
             </div>
@@ -98,7 +123,7 @@
           <div class="time">
             60分
           </div>
-          <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"> </a>
+          <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"　data-transition="slideup"> </a>
         </div>
         <div class="recipename">さくさく野菜たっぷりコロッケ</div>
         </article>
@@ -110,7 +135,7 @@
           <div class="material">
             にんじん,ピーマン,合挽肉,ケチャップ
           </div>
-          <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"> </a>
+          <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"　data-transition="slideup"> </a>
         </div>
         <div class="recipename">さくさく野菜たっぷりコロッケ</div>
         </article>
@@ -118,9 +143,15 @@
       
       <!--真ん中の◯-->
       <article class="center_circle">
-      <div class="scr">
-              <ul id="carousel" class="elastislide-list">
+              <ul id="centerscroll">
                   <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
                   <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
                   <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
                   <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
@@ -128,11 +159,38 @@
                   <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
 
               </ul>
-      </div>
       </article>
       <div class="down">▲</div>
 
+
+
+<h3>Verticaly</h3>
+<div id="verticaly" class="flickSimple">
+<ul>
+<li><a href="#1">1</a></li>
+<li><a href="#2">2</a></li>
+<li><a href="#3">3</a></li>
+<li><a href="#4">4</a></li>
+<li><a href="#5">5</a></li>
+<li><a href="#6">6</a></li>
+<li><a href="#7">7</a></li>
+<li><a href="#8">8</a></li>
+<li><a href="#9">9</a></li>
+<li><a href="#10">10</a></li>
+<li><a href="#11">11</a></li>
+<li><a href="#12">12</a></li>
+</ul>
+</div>
+<script type="text/javascript">
+        $('#verticaly').flickSimple({
+                vertical: true,
+                horizontal: false,
+                lock: true
+        });
+</script>
+
     </section>
+
   <!-- /全体ここまで --> 
   
 </div>
