@@ -21,11 +21,12 @@ $(function(){
   };
 
 	$('#l_btn a').attr("href", "./index.html");
-
+  
   // レシピデータ
   $('.recipe_photo img').attr({'src':recipeData.recipePhoto});
   $('.right .date').text(recipeData.cookedDay);
   $('.recipe_name a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
+  // ユーザデータ
   $('.user_info .user_icon img').attr({'src':cookedUser.pic});
   $('.user_info .user_id').text(cookedUser.id);
 
