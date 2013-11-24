@@ -3,12 +3,22 @@ $(document).ready(function(){
 });
 
 $(function(){
+  var recipeData = {
+    recipeName : "おいしいよー",
+    recipePhoto : "./img/foodphoto.png",
+    CookedDay : "2013/12/22",
+    CookedUser : "betch"
+  }
   var commentObj = {
     userId : "namaedesu",
     comment : ""
   };
 
 	$('#l_btn a').attr("href", "./index.html");
+
+  // レシピデータ
+
+  $('.recipe_photo img').attr({'src':recipeData.recipePhoto});
 
 	$('input').focus(function(){
 		$('.allcontents').css("margin", "45px 0 0 0 ");
