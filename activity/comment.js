@@ -6,9 +6,15 @@ $(function(){
   var recipeData = {
     recipeName : "おいしいよー",
     recipePhoto : "./img/foodphoto.png",
-    CookedDay : "2013/12/22",
-    CookedUser : "betch"
+    recipeUrl : "../recipe/index.html",
+    cookedDay : "2013/12/22",
   }
+
+  var cookedUser = {
+    pic : "./img/my_icon_user.png",
+    id : "bechi"
+  }
+
   var commentObj = {
     userId : "namaedesu",
     comment : ""
@@ -17,8 +23,11 @@ $(function(){
 	$('#l_btn a').attr("href", "./index.html");
 
   // レシピデータ
-
   $('.recipe_photo img').attr({'src':recipeData.recipePhoto});
+  $('.right .date').text(recipeData.cookedDay);
+  $('.recipe_name a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
+  $('.user_info .user_icon img').attr({'src':cookedUser.pic});
+  $('.user_info .user_id').text(cookedUser.id);
 
 	$('input').focus(function(){
 		$('.allcontents').css("margin", "45px 0 0 0 ");
