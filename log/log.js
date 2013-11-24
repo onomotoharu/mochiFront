@@ -48,6 +48,29 @@ $(function(){
 			$('#badge a img').attr('src', $('#badge a img').attr('src').replace('_on', '_off'));
 		}
 	});
+
+	var recipeData = {
+	recipeName : "おいしいよー",
+	recipePhoto : "./img/foodphoto.png",
+	recipeUrl : "../recipe/index.html",
+	cookedDay : "2013/12/22",
+	}
+
+	var cookedUser = {
+	pic : "./img/my_icon_user.png",
+	id : "bechi",
+	comment : "おいしかったっす〜〜〜"
+	}
+
+	// レシピデータ
+	$('.recipe_photo img').attr({'src':recipeData.recipePhoto});
+	$('.act_right .date').text(recipeData.cookedDay);
+	$('.title a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
+	// ユーザデータ
+	$('#myname #myphoto img').attr({'src':cookedUser.pic});
+	$('#myname .myname').text(cookedUser.id);
+	$('.my_comment').text(cookedUser.comment);
+
 });
 
 
