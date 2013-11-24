@@ -21,11 +21,15 @@ function footer() {
 
 
 
-//
+/*
+|||||||||||||||||||||||||||||||
+        CheeseController
+|||||||||||||||||||||||||||||||
+*/
 function CheeseController(){
 	this.domain = "https://fmap.d.r3n.cc/api/v1";
+	this.isLoggedIn = false;
 }
-
 
 CheeseController.prototype._authorizationHeader = function(xhr) {
 	var credentials = $.base64.encode(localStorage.api_token + ":" + localStorage.api_token_secret);
@@ -42,109 +46,162 @@ CheeseController.prototype._throwRequest = function(url,data,type){
 	}).responseText;
 }
 
-//sign_in
+ 
+/*=====================
+	Auth
+======================*/
+
 CheeseController.prototype.signIn = function(screen_id,password,callback){
 	url = "/sign_in";
 	data = {"user": {"screen_id": screen_id, "password": password}}
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	localStorage.screen_id = screen_id;
 	localStorage.api_token = response.api_token;
 	localStorage.api_token_secret = response.api_token_secret;
+	this.isLoggedIn = true;
 	callback(response);
 };
 
-//sign_out
 CheeseController.prototype.signOut = function(callback){
 	url = "/sign_out";
 	data = null
 	type = "post";
-	response = this._throwRequest(url,data,type,callback);
-	// localStorage.api_token.clear();
-	// localStorage.api_token_secret.clear();
+	response = this._throwRequest(url,data,type);
+	localStorage.clear();
+	this.isLoggedIn = false;
 	callback(response);
 }
 
-CheeseController.prototype.recommend = function(callback){
-	url = "/users/ren/activities	";
-	data = null;
-	type = "get";
-	response = this._throwRequest(url,data,type,callback);
+
+/*=====================
+	User
+======================*/
+
+CheeseController.prototype.userCreate = function(screen_id,password,callback){
+	url = "/users/create";
+	data = {"screen_id": screen_id, "password":"password"};
+	type = "post";
+	response = this._throwRequest(url,data,type);
 	callback(response);
 };
+
+CheeseController.prototype.getOwnProfile = function(callback){
+	url = "/users/"  + localStorage.screen_id + "/profile";
+	data = null;
+	type = "get";
+	response = this._throwRequest(url,data,type);
+	callback(response);
+}
+
+CheeseController.prototype.getOwnBadges = function(callback){
+	url = "/users/"  + localStorage.screen_id + "/badges";
+	data = null;
+	type = "get";
+	response = this._throwRequest(url,data,type);
+	callback(response);
+}
+
+CheeseController.prototype.getOwnActivities = function(callback){
+	url = "/users/"  + localStorage.screen_id + "/activities";
+	data = null;
+	type = "get";
+	response = this._throwRequest(url,data,type);
+	callback(response);
+}
+
+CheeseController.prototype.setFollow = function(screen_id,callback){
+	url = "/users/"  + screen_id + "/follow";
+	data = null;
+	type = "post";
+	response = this._throwRequest(url,data,type);
+	callback(response);
+}
+
+CheeseController.prototype.setUnfollow = function(screen_id,callback){
+	url = "/users/"  + screen_id + "/unfollow";
+	data = null;
+	type = "post";
+	response = this._throwRequest(url,data,type);
+	callback(response);
+}
+
+
+/*=====================
+	Recommned
+======================*/
+
+CheeseController.prototype.getRecommend = function(callback){
+	url = "/recommend/today";
+	data = null;
+	type = "get";
+	response = this._throwRequest(url,data,type);
+	callback(response);
+};
+
+
+/*=====================
+	Activity
+======================*/
+
+CheeseController.prototype.getTimeline = function(callback){
+	url = "/timeline";
+	data = null;
+	type = "get";
+	response = this._throwRequest(url,data,type);
+	callback(response);
+}
+
+CheeseController.prototype.goodToActivity = function(activity_id,callback){
+	url = "/activities/" + activity_id + "/good";
+	data = {"activity_id": activity_id};
+	type = "post";
+	response = this._throwRequest(url,data,type);
+	callback(response);
+}
+
+
+/*=====================
+	Recipe
+======================*/
+
+CheeseController.prototype.sendMade = function(recipe_id,callback){
+	url = "/recipes/" + recipe_id + "/made";
+	data = null;
+	type = "post";
+	response = this._throwRequest(url,data,type);
+	callback(response);
+}
+
+CheeseController.prototype.sendFavorite = function(recipe_id,callback){
+	url = "/recipes/" + recipe_id + "/favorite"
+	data = null;
+	type = "post";
+	response = this._throwRequest(url,data,type);
+}
+
+CheeseController.prototype.getDetail = function(recipe_id,callback){
+	url = "/recipes/" + recipe_id +  "/detail"
+	data = null;
+	type = "get";
+	response = this._throwRequest(url,data,type);
+}
+
+CheeseController.prototype.getSample = function(callback){
+	url = "/recipes/sample";
+	data = null;
+	type = "get";
+	response = this._throwRequest(url,data,type);
+}
+
+
+/*
+||||||||||||||||||||||||||||||||||||||||||||||||||
+*/
+
 
 
 $(function(){
 	$('#l_btn a').attr("href", "javascript:history.back();");
 	App = new CheeseController();
-	
-	App.recommend(function(data){
-		console.log(JSON.stringify(data,null,"	"));
-	});
-
-	// App.signIn("ren","test",function(data){
-	// 	console.log(JSON.stringify(data,null,"	"));
-	// });
 })
-
-
-
-
-
-// //return boolean
-// CheeseController.prototype.isLoggedIn? = function(){
-// 	return (localStorage.api_token != null && localStorage.api_token_secret != null);
-// };
-
-// CheeseController.prototype.authorizationHeader = function(xhr) {
-//     var credentials = $.base64.encode(localStorage.api_token+":"+localStorage.api_token_secret);
-//      xhr.setRequestHeader("Authorization", "Basic " + credentials);
-// }
-
-
-// //return json
-// CheeseController.prototype.userCreate = function(args){
-
-// };
-
-
-//args => {"screen_id": "ren", "password": "test"}
-//return json
-// CheeseController.prototype.signIn = function(args){
-// 	$.ajax({
-// 		type:"POST"
-// 		url: this.domain + "/sign_in",
-// 		success: function(jsontext){
-// 			json = $.parseJSON(jsontext)
-// 			alert(json.api_token);
-// 		},
-// 		error: function(jqXHR, textStatus, errorThrown){
-// 			alert(textStatus+": "+errorThrown);
-// 		},
-// 			beforeSend: authorizationHeader
-// 	});
-// };
-
-// CheeseController.prototype.getRecommendToday = function(){
-
-// 	$.ajax({
-// 		type:”GET”
-// 		url: "https://fmap.d.r3n.cc/api/v1/timeline/",
-// 		success: function(json){
-// 			$(“h1”).text = json.midasi
-// 		},
-// 		error: function(jqXHR, textStatus, errorThrown){
-// 			alert(textStatus+": "+errorThrown);
-// 		},
-// 			beforeSend: authorizationHeader
-// 	});
-
-// };
-
-
-
-
-
-
-
-
-
