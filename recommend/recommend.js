@@ -58,19 +58,14 @@ $(function(){
     $('.righttop a').attr("style", "background-image: url("+reco[1].photo+")").attr("href", reco[1].link);
     $('.leftbottom a').attr("style", "background-image: url("+reco[2].photo+")").attr("href", reco[2].link);
     $('.rightbottom a').attr("style", "background-image: url("+reco[3].photo+")").attr("href", reco[3].link);
+});
 
-    $('.kako1 a').attr("style", "background-image: url("+kako[0].photo+")").attr("href", kako[0].link);
-    $('.kako2 a').attr("style", "background-image: url("+kako[1].photo+")").attr("href", kako[1].link);
-    $('.kako3 a').attr("style", "background-image: url("+kako[2].photo+")").attr("href", kako[2].link);
-    $('.kako4 a').attr("style", "background-image: url("+kako[3].photo+")").attr("href", kako[3].link);
-    $('.kako5 a').attr("style", "background-image: url("+kako[4].photo+")").attr("href", kako[4].link);
-    $('.kako6 a').attr("style", "background-image: url("+kako[5].photo+")").attr("href", kako[5].link);
-    $('.kako7 a').attr("style", "background-image: url("+kako[0].photo+")").attr("href", kako[0].link);
-    $('.kako8 a').attr("style", "background-image: url("+kako[1].photo+")").attr("href", kako[1].link);
-    $('.kako9 a').attr("style", "background-image: url("+kako[2].photo+")").attr("href", kako[2].link);
-    $('.kako10 a').attr("style", "background-image: url("+kako[3].photo+")").attr("href", kako[3].link);
-    $('.kako11 a').attr("style", "background-image: url("+kako[4].photo+")").attr("href", kako[4].link);
-    $('.kako12 a').attr("style", "background-image: url("+kako[5].photo+")").attr("href", kako[5].link);
+$(function(){
+    for(var i=0; i < kako.length; i++){
+        $a = $("<a/>").attr("href", kako[i].link).addClass("center").attr("style", "background-image: url("+kako[i].photo+")");
+        $li = $("<li/>").append($a);
+        $(".center_circle ul").append($li);     
+    }
 });
 
       /*$(function(){
