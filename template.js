@@ -47,7 +47,9 @@ CheeseController.prototype.signIn = function(screen_id,password,callback){
 	url = "/sign_in";
 	data = {"user": {"screen_id": screen_id, "password": password}}
 	type = "post";
-	response = 	this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	localStorage.api_token = response.api_token;
+	localStorage.api_token_secret = response.api_token_secret;
 	callback(response);
 };
 
@@ -56,23 +58,32 @@ CheeseController.prototype.signOut = function(callback){
 	url = "/sign_out";
 	data = null
 	type = "post";
-	this._throwRequest(url,data,type,callback);
+	response = this._throwRequest(url,data,type,callback);
+	// localStorage.api_token.clear();
+	// localStorage.api_token_secret.clear();
+	callback(response);
 }
 
 CheeseController.prototype.recommend = function(callback){
-	url = "/recommend/today";
+	url = "/users/ren/activities	";
 	data = null;
 	type = "get";
-	this._throwRequest(url,data,type,callback);
+	response = this._throwRequest(url,data,type,callback);
+	callback(response);
 };
 
 
 $(function(){
 	$('#l_btn a').attr("href", "javascript:history.back();");
 	App = new CheeseController();
-	App.signIn("ren","test",function(data){
+	
+	App.recommend(function(data){
 		console.log(JSON.stringify(data,null,"	"));
 	});
+
+	// App.signIn("ren","test",function(data){
+	// 	console.log(JSON.stringify(data,null,"	"));
+	// });
 })
 
 
