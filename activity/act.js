@@ -10,6 +10,26 @@ $(function(){
 
 $(function(){
 
+	var recipeData = {
+	recipeName : "おいしいよー",
+	recipePhoto : "./img/foodphoto.png",
+	recipeUrl : "../recipe/index.html",
+	cookedDay : "2013/12/22",
+	}
+
+	var cookedUser = {
+	pic : "./img/my_icon_user.png",
+	id : "bechi"
+	}
+
+	// レシピデータ
+	$('.re_photo img').attr({'src':recipeData.recipePhoto});
+	$('.act_right .date').text(recipeData.cookedDay);
+	$('.title a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
+	// ユーザデータ
+	$('#myname #myphoto img').attr({'src':cookedUser.pic});
+	$('#myname .myname').text(cookedUser.id);
+
 	$('.com_btn').click(function(){
 		$('.com_formsend').toggle();
 		return false;
