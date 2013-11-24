@@ -217,15 +217,15 @@
 		updateSize: function() {
 			var o = this;
 			var ori = typeof( window.orientation ) !== 'undefined'
-				? ( window.orientation === 0 ? 'portrait' : 'landscape' )
+				//? ( window.orientation === 0 ? 'portrait' : 'landscape' )
 				: ( window.innerWidth < window.innerHeight ? 'portrait' : 'landscape' );
 			// var lis = o.target.find('li');
 			var lis = o.target.children();
 	
-			o.elm.removeClass('landscape portrait').addClass( ori );
+			//o.elm.removeClass('landscape portrait').addClass( ori );
 			// うまく反映されない場合があるので、エレメント自体にclassを振る
-			o.target.removeClass('landscape portrait').addClass( ori );
-			lis.removeClass('landscape portrait').addClass( ori );
+			//o.target.removeClass('landscape portrait').addClass( ori );
+			//lis.removeClass('landscape portrait').addClass( ori );
 	
 			var targw = o.target.width();
 			var targh = o.target.height();

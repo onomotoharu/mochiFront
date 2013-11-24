@@ -26,48 +26,6 @@
     <script type="text/javascript" src="jquery.flicksimple.js"></script>
     <script type="text/javascript" src="../template.js"></script>
 
-    <script>
-      $(function(){
-        json = [{"photo":"./img/foodphoto1.jpg",
-                 "jiku":"煮る、焼く、蒸す、炒める",
-                 "recipename":"朝食・お弁当に♪ふわふわオムレツ",
-                 "link": "りんく１"},
-                 {"photo":"./img/foodphoto2.jpg",
-                 "jiku":"ひらっちさん、あんどーさん",
-                 "recipename":"基本的なチンジャオロース",
-                 "link": "りんく２"},
-                 {"photo":"./img/foodphoto3.jpg",
-                 "jiku":"60分",
-                 "recipename":"さくさく野菜たっぷりコロッケ",
-                 "link": "りんく３"},
-                 {"photo":"./img/foodphoto4.jpg",
-                 "jiku":"にんじん,ピーマン,合挽肉,ケチャップ",
-                 "recipename":"右下",
-                 "link": "りんく４"}];
-      });
-      $(document).ready(function(){
-        $('.lefttop .recipename').text(json[0].recipename);
-        $('.lefttop .process').text(json[0].jiku);
-        $('.righttop .recipename').text(json[1].recipename);
-        $('.righttop .friend').text(json[1].jiku);
-        $('.leftbottom .recipename').text(json[2].recipename);
-        $('.leftbottom .time').text(json[2].jiku);
-        $('.rightbottom .recipename').text(json[3].recipename);
-        $('.rightbottom .material').text(json[3].jiku);
-      });
-      $(function(){
-        $('.lefttop a').attr("style", "background-image: url("+json[0].photo+")"); //変更
-        $('.lefttop a').attr("href", json[0].link);
-        $('.righttop a').attr("style", "background-image: url("+json[1].photo+")"); //変更
-        $('.righttop a').attr("href", json[1].link);
-        $('.leftbottom a').attr("style", "background-image: url("+json[2].photo+")"); //変更
-        $('.leftbottom a').attr("href", json[2].link);
-        $('.rightbottom a').attr("style", "background-image: url("+json[3].photo+")"); //変更
-        $('.rightbottom a').attr("href", json[3].link);
-      });
-
-    </script>
-
 </head>
 
         <body>
@@ -82,11 +40,11 @@
       
       <!--左上の◯-->
       <article class="lefttop">
-        <div class="recipename">基本的なチンジャオロース</div>
+        <div class="recipename"><!--レシピ名--></div>
           <div class="process_s">
-            <a href="../recipe/index.html" class="circle" data-transition="fade" style="background-image: url('img/meat.jpg')"　data-transition="turn"></a>
+            <a href=" " class="circle" data-transition="fade" style="background-image: url(' ')"　data-transition="turn"></a>
             <div class="process">
-            煮る、焼く、蒸す、炒める
+            <!--軸-->
             </div>
         </div>
       </article>
@@ -94,11 +52,11 @@
       
       <!--右上の◯-->
       <article class="righttop">
-        <div class="recipename">aaa朝食・お弁当に♪ふわぐわオムレツですふわふわふわぐわふわあああ</div>
+        <div class="recipename"><!--レシピ名--></div>
           <div class="friend_s">
-            <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"　data-transition="slideup"></a>
+            <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"></a>
             <div class="friend">
-              ひらっちさん、あんどーさん
+              <!--軸-->
             </div>
           </div>
         </article>
@@ -108,11 +66,11 @@
       <article class="leftbottom">
         <div class="time_s">
           <div class="time">
-            60分
+            <!--軸-->
           </div>
-          <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"　data-transition="slideup"> </a>
+          <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
         </div>
-        <div class="recipename">さくさく野菜たっぷりコロッケ</div>
+        <div class="recipename"><!--レシピ名--></div>
         </article>
       <!--左下の◯ここまで--> 
       
@@ -120,11 +78,11 @@
       <article class="rightbottom">
         <div class="material_s">
           <div class="material">
-            にんじん,ピーマン,合挽肉,ケチャップ
+            <!--軸-->
           </div>
-          <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"　data-transition="slideup"> </a>
+          <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
         </div>
-        <div class="recipename">さくさく野菜たっぷりコロッケ</div>
+        <div class="recipename"><!--レシピ名--></div>
         </article>
       <!--右下の◯ここまで--> 
       
@@ -132,18 +90,18 @@
       <article class="center_circle">
         <div id="verticaly" class="flickSimple">
               <ul>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
+                <li class="kako1"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako2"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako3"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako4"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako5"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako6"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako7"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako8"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako9"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako10"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako11"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
+                <li class="kako12"><a href=" " class="center" style="background-image: url(' ')"> </a></li>
              </ul>
             </div>
       </article>
