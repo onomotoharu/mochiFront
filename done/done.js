@@ -35,13 +35,17 @@ jQuery(function($) {
   // おすすめボタン
 
   $("#good").click(function(){
+
+    var goodOn = 0;
+
     if(frag_good == false){
       frag_good = true;
       $("#good img").attr("src","img/good_on.png");
-      
+      goodOn= 1;
     }else{
       frag_good = false;
       $("#good img").attr("src","img/good.png");
+      goodOn= 0;
     }
   })
 
@@ -91,59 +95,15 @@ $(document).ready(function(){
 
 $(function(){
 
-  $('#log a').hover(function(){
-    $('#log a img').attr('src', $('#log a img').attr('src').replace('_off', '_on'));
-  }, function(){
-    if (!$('#log a img').hasClass('current')) {
-      $('#log a img').attr('src', $('#log a img').attr('src').replace('_on', '_off'));
-    }
-  });
-  
-
-  $('#graph a').hover(function(){
-    $('#graph a img').attr('src', $('#graph a img').attr('src').replace('_off', '_on'));
-  }, function(){
-    if (!$('#graph a img').hasClass('current')) {
-      $('#graph a img').attr('src', $('#graph a img').attr('src').replace('_on', '_off'));
-    }
-  });
-
-  $('#fav a').hover(function(){
-    $('#fav a img').attr('src', $('#fav a img').attr('src').replace('_off', '_on'));
-  }, function(){
-    if (!$('#fav a img').hasClass('current')) {
-      $('#fav a img').attr('src', $('#fav a img').attr('src').replace('_on', '_off'));
-    }
-  });
-  
-  $('#badge a').hover(function(){
-    $('#badge a img').attr('src', $('#badge a img').attr('src').replace('_off', '_on'));
-  }, function(){
-    if (!$('#badge a img').hasClass('current')) {
-      $('#badge a img').attr('src', $('#badge a img').attr('src').replace('_on', '_off'));
-    }
-  });
-
   var doneData = {
-  recipeName : "たまごちゃーはん",
   recipePhoto : "./img/food2.jpg",
-  cookedDay : "2013/12/22",
+  doneComment : ".doneComment",
+  donePhoto : "#imageInput",
   }
 
-  var cookedUser = {
-  pic : "./img/my_icon_user.png",
-  id : "bechi",
-  comment : "おいしかったっす〜〜〜"
-  }
 
-  // レシピデータ
+  // つくった！レシピデータ
   $('.foodTitle img').attr({'src':doneData.recipePhoto});
-  $('.act_right .date').text(recipeData.cookedDay);
-  $('.title a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
-  // ユーザデータ
-  $('#myname #myphoto img').attr({'src':cookedUser.pic});
-  $('#myname .myname').text(cookedUser.id);
-  $('.my_comment').text(cookedUser.comment);
 
 });
 
