@@ -1,51 +1,18 @@
-// $(function() {
-// 	$("#item1").css({
-// 	opacity: '0.8',
-// 	background: '#000',
-// 	zIndex: '1'
-// 	});
-// 	$("#item1").click(function() {
-// 		$("").css('display', 'block');
-// 	});
-// 	$("#item1").click(function() {
-// 		$("#item1").css('display', 'none');
-// 	});
-// });
-$(function(){
-	$('#r_btn a').append("次へ")
-				 .attr("href", "../recommend/index.html")
-})
+//各料理を選択
+jQuery(function(){
 
-(function() {
+	// $(".box").click(function(){
+	// 	$(this).addClass("box_on");
+	// });
 
-	var boxEl       = null;
-	var boxSelectEl = null;
+	//クラス名変更
+	$(".box").click(function() {
+    if($(this).hasClass('box')){
+      $(this).addClass("box_on").removeClass('box');
+    } else if($(this).hasClass('box_on')) {
+      $(this).addClass("box").removeClass('box_on');
+       }
+  });
 
-	function cacheDOMs () {
+});
 
-		boxEl      = document.getElementById('item1');
-		
-	};
-
-	function setEvents () {
-
-		boxEl.addEventListener("touchstart", function(e) {
-			if(boxEl.className == "box" || boxEl.className == "boxNonSelect") {
-				boxEl.className = "boxSelect";
-			} else {
-				boxEl.className = "boxNonSelect";
-			}
-		});
-		// boxEl.addEventListener("touchmove", function(e) {
-
-		// });
-		// boxEl.addEventListener("touchend", function(e) {
-
-		// });
-	}
-
-	document.addEventListener("DOMContentLoaded", function (e) {
-		cacheDOMs();
-		setEvents();
-	}, false);
-})();
