@@ -5,7 +5,7 @@ jQuery(function(){
 	// 	$(this).addClass("box_on");
 	// });
 
-	//クラス名変更
+	//各料理を選択
 	$(".box").click(function() {
     if($(this).hasClass('box')){
       $(this).addClass("box_on").removeClass('box');
