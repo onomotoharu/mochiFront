@@ -29,16 +29,16 @@ $(function(){
 	});
 
 	App.getDetail(1,function(recipe){
-		// console.log(recipe);
+		console.log(recipe);
+		$(".fav_menu_photo").attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+		$(".fav_menu_title").text(recipe.name);
+		$(".fav_menu_money").text(recipe.required_money);
+		$(".fav_menu_time").text(recipe.necessary_time);
 	});
 
 	$(".fav_menu_title,.fav_menu_photo").click(function() {
 		location.href = "../recipe/index.html";
 	});
-	$(".fav_menu_photo").attr('src', './img/foodphoto.png');
-	$(".fav_menu_title").text(recipeData.name);
-	$(".fav_menu_money").text(recipeData.price);
-	$(".fav_menu_time").text(recipeData.time);
 
 	// マイページメニュー切替
 
