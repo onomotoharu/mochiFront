@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$('#pagename').append("みんなのごはん");
+  $('#l_btn a').attr("href", "./index.html");
 });
 
 $(function(){
@@ -19,23 +20,36 @@ $(function(){
     userId : "namaedesu",
     comment : ""
   };
-
-	$('#l_btn a').attr("href", "./index.html");
   
+  App = new CheeseController();
+
+  App.signIn("ren","test",function(json){
+    // console.log(json);
+  });
+
+
+  App.getDetail(1,function(recipe){
+    console.log(recipe);
+    $('.recipe_name a').text(recipe.name).attr({'href':recipe.source_url});
+  });
+
+  // App.getOwnActivities(function(json){
+
+  // });
+
   // レシピデータ
   $('.recipe_photo img').attr({'src':recipeData.recipePhoto});
   $('.right .date').text(recipeData.cookedDay);
-  $('.recipe_name a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
   // ユーザデータ
   $('.user_info .user_icon img').attr({'src':cookedUser.pic});
-  $('.user_info .user_id').text(cookedUser.id);
+  $('.user_info .user_id').text(localStorage.screen_id);
 
-	$('input').focus(function(){
-		$('.allcontents').css("margin", "45px 0 0 0 ");
-		$('.hyouji_btn').click(function(){
-			$('#header').css("position","fixed").css("top", "0");
-		});
-	});
+  $('input').focus(function(){
+    $('.allcontents').css("margin", "45px 0 0 0 ");
+    $('.hyouji_btn').click(function(){
+      $('#header').css("position","fixed").css("top", "0");
+    });
+  });
 
   // コメントを投稿
   $(".send").click(function(userId,comment) {
