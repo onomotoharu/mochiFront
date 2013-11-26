@@ -90,15 +90,14 @@ jQuery(function($) {
 
 
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-  $('.r_name').text("作った！したいレシピのなまえ");
+//   $('.r_name').text(
 
-});
+// });
 
 $(function(){
   var doneData = {
-  recipePhoto : "./img/food2.jpg",
   doneComment : ".doneComment",
   donePhoto : "#imageInput",
   doneDay : "new Date()",
@@ -106,21 +105,21 @@ $(function(){
 
 
   // つくった！写真
-  $('.foodTitle img').attr({'src':doneData.recipePhoto});
 
   App = new CheeseController();
 
-  App.signIn("ren","test",function(js){
-   // console.log(js);
+  App.signIn("ren","test",function(json){
+   // console.log(json);
   });
 
   App.getDetail(1,function(recipe){
     console.log(recipe);
+    $('.r_name').text(recipe.name);
+    $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+
   });
 
 
 });
-
-
 
 
