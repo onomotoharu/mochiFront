@@ -15,54 +15,59 @@
                 <![endif]-->
                 <link rel="stylesheet" type="text/css" href="../template.css">
                 <link rel="stylesheet" type="text/css" href="./comment.css">
+                <link rel="stylesheet" type="text/css" href="../iine.css">
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
                 <script language="javascript" src="../template.js"></script>
+                <script src="http://winvelab.net/cheese/jquery.base64.js"></script>
                 <script type="text/javascript" src="./comment.js"></script>
+                <script type="text/javascript" src="../iine.js"></script>
         </head>
 
         <body>
                 <script>header();</script>
                 <div class="allcontents">
-                        <div class="recipe_photo"><img src="./img/foodphoto.png"></div>
-                        <div class="right">
+                        <div class="recipebox">
+                                <div class="recipe_photo"><img></div>
+                                <div class="right">
+                                <div class="date"></div>
+                                <div class="recipe_name"><a href="#"></a></div>
+                                <div class="user_info">
+                                        <span class="user_icon"><img /></span><span class="user_id">Takarabecchi</span>さんがつくりました!!
+                                </div>
+                        </div>
+<!--                         <div class="recipebox">
+                                <div class="recipe_photo"><img></div>
+                                <div class="right">
                                 <div class="date">2013/01/01-00:00</div>
                                 <div class="recipe_name"><a href="../recipe/index.html">お芋掘りにいったら☆芋つる（軸）と油揚げの炒め煮</a></div>
                                 <div class="user_info">
                                         <span class="user_icon"><img src="./img/my_icon_user.png"></span>　<span class="user_id">Takarabecchi</span>さんがつくりました!!
                                 </div>
+                        </div> -->
                         </div>
                         <div class="comment">
-                                <!-- <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
+                                <div class="come_com"><span class="user_id">Takarabecchi</span><span class="com_txt">よいしょ〜！</span></div>
+<!--                                 <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
+                                <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>
+                                <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
                                 <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
                                 <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>
-                                <div class="hyouji_on"> -->
-                                <div>
-                                        <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
-                                        <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
-                                        <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>
-                                        <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
-                                        <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
-                                        <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>
-                                        <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
-                                        <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
-                                        <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>
-                                        <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
-                                        <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
-                                        <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>
-                                        <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
-                                        <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
-                                        <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>
-                                </div>
-                                <!-- <div class="hyouji_off">
-                                        <div class="hyouji_btn">…あとの15件を表示</div>
-                                </div> -->
-                                <div class="com_formsend">
-                                        <div class="com_form"><input type="text" name="comment" class="com_input" placeholder="コメントを書く..." autocapitalize="off"></div>
-                                        <a href="" class="send"><img src="./img/send_bt.png"></a>
-                                </div>
+                                <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
+                                <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
+                                <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>
+                                <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
+                                <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
+                                <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>
+                                <div class="come_com"><span class="user_id">Takarabecchi</span>　芋掘り行ったの？</div>
+                                <div class="come_com"><span class="user_id">Sumiren</span>　美味しかった？？</div>
+                                <div class="come_com"><span class="user_id">Tommy_hikki</span>　おつかれさま（＾＾）</div>                                
+ -->                        </div>
+                         <div class="com_formsend">
+                                <div class="com_form"><input type="text" name="comment" class="com_input" placeholder="コメントを書く..." autocapitalize="off"></div>
+                                <div class="send"><img src="./img/send_bt.png"></div>
                         </div>
 <!--                         <div class="com_btn"><img src="./img/com_off.png">コメント10</div>
- -->                        <div class="iine_btn"><img src="./img/good_off.png">イイネ！21</div>
+ -->                        <div class="iine_btn"><img src="./img/good_off.png"><span>イイネ！0</span></div>
                 </div>
                 <!--script>footer();</script-->
         </body>
