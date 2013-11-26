@@ -57,7 +57,7 @@ CheeseController.prototype.signIn = function(screen_id,password,callback){
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	localStorage.screen_id = screen_id;
-	localStorage.api_token = response.api_token;
+	localStorage.api_token = response.api_token;	
 	localStorage.api_token_secret = response.api_token_secret;
 	this.isLoggedIn = true;
 	callback(response);
@@ -67,7 +67,7 @@ CheeseController.prototype.signOut = function(callback){
 	url = "/sign_out";
 	data = null
 	type = "post";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	localStorage.clear();
 	this.isLoggedIn = false;
 	callback(response);
@@ -82,7 +82,7 @@ CheeseController.prototype.userCreate = function(screen_id,password,callback){
 	url = "/users/create";
 	data = {"screen_id": screen_id, "password":"password"};
 	type = "post";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 };
 
@@ -90,7 +90,7 @@ CheeseController.prototype.getOwnProfile = function(callback){
 	url = "/users/"  + localStorage.screen_id + "/profile";
 	data = null;
 	type = "get";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 }
 
@@ -98,7 +98,7 @@ CheeseController.prototype.getOwnBadges = function(callback){
 	url = "/users/"  + localStorage.screen_id + "/badges";
 	data = null;
 	type = "get";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 }
 
@@ -106,7 +106,7 @@ CheeseController.prototype.getOwnActivities = function(callback){
 	url = "/users/"  + localStorage.screen_id + "/activities";
 	data = null;
 	type = "get";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 }
 
@@ -114,7 +114,7 @@ CheeseController.prototype.setFollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/follow";
 	data = null;
 	type = "post";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 }
 
@@ -122,7 +122,7 @@ CheeseController.prototype.setUnfollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/unfollow";
 	data = null;
 	type = "post";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 }
 
@@ -135,7 +135,7 @@ CheeseController.prototype.getRecommend = function(callback){
 	url = "/recommend/today";
 	data = null;
 	type = "get";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 };
 
@@ -148,7 +148,7 @@ CheeseController.prototype.getTimeline = function(callback){
 	url = "/timeline";
 	data = null;
 	type = "get";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 }
 
@@ -156,7 +156,7 @@ CheeseController.prototype.goodToActivity = function(activity_id,callback){
 	url = "/activities/" + activity_id + "/good";
 	data = {"activity_id": activity_id};
 	type = "post";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 }
 
@@ -169,7 +169,7 @@ CheeseController.prototype.sendMade = function(recipe_id,callback){
 	url = "/recipes/" + recipe_id + "/made";
 	data = null;
 	type = "post";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	callback(response);
 }
 
@@ -177,21 +177,24 @@ CheeseController.prototype.sendFavorite = function(recipe_id,callback){
 	url = "/recipes/" + recipe_id + "/favorite"
 	data = null;
 	type = "post";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	callback(response);
 }
 
 CheeseController.prototype.getDetail = function(recipe_id,callback){
 	url = "/recipes/" + recipe_id +  "/detail"
 	data = null;
 	type = "get";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	callback(response);
 }
 
 CheeseController.prototype.getSample = function(callback){
 	url = "/recipes/sample";
 	data = null;
 	type = "get";
-	response = this._throwRequest(url,data,type);
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	callback(response);
 }
 
 
