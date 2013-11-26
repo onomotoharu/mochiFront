@@ -218,7 +218,7 @@
 			var o = this;
 			var ori = typeof( window.orientation ) !== 'undefined'
 				//? ( window.orientation === 0 ? 'portrait' : 'landscape' )
-				: ( window.innerWidth < window.innerHeight ? 'portrait' : 'landscape' );
+				 //( window.innerWidth < window.innerHeight ? 'portrait' : 'landscape' );
 			// var lis = o.target.find('li');
 			var lis = o.target.children();
 	

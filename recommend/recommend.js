@@ -1,12 +1,4 @@
 
-$(document).ready(function(){
-    //ヘッダー
-    $('#pagename').append("cheese!")
-    $('#r_btn a').append("更新");
-
-    //フッター
-    $('#nav_reco img').attr("src", "../img/on/reco_on.png");
-
     //仮JSON　まわりの４つ
     reco = [{"photo":"./img/foodphoto1.jpg",
             "jiku":"煮る、焼く、蒸す、炒める",
@@ -43,36 +35,64 @@ $(document).ready(function(){
             {"photo":"./img/foodphoto5.jpg",
             "link":"りんく５"}];
 
-    //左上　レシピ名・軸・
-    $('.lefttop .recipename').text(reco[0].recipename);
-    $('.lefttop .re_link').attr("class", reco[0].class+"_s");
-    $('.lefttop .axis').attr("class", reco[0].class).text(reco[0].jiku);
-    $('.lefttop a').attr("style", "background-image: url("+reco[0].photo+")").attr("href", reco[0].link);
- 
-    //右上
-    $('.righttop .recipename').text(reco[1].recipename);
-    $('.righttop .re_link').attr("class", reco[1].class+"_s");
-    $('.righttop .axis').attr("class", reco[1].class).text(reco[1].jiku);
-    $('.righttop a').attr("style", "background-image: url("+reco[1].photo+")").attr("href", reco[1].link);
 
-    //左下
-    $('.leftbottom .recipename').text(reco[2].recipename);
-    $('.leftbottom .re_link').attr("class", reco[2].class+"_s");
-    $('.leftbottom .axis').attr("class", reco[2].class).text(reco[2].jiku);
-    $('.leftbottom a').attr("style", "background-image: url("+reco[2].photo+")").attr("href", reco[2].link);
 
-    //右下
-    $('.rightbottom .recipename').text(reco[3].recipename);
-    $('.rightbottom .re_link').attr("class", reco[3].class+"_s");
-    $('.rightbottom .axis').attr("class", reco[3].class).text(reco[3].jiku);
-    $('.rightbottom a').attr("style", "background-image: url("+reco[3].photo+")").attr("href", reco[3].link);
+$(document).ready(function(){
+    //ヘッダー
+    //$('#pagename').append("cheese!")
+    $('#r_btn a').append("更新");
+
+    //フッター
+    $('#nav_reco img').attr("src", "../img/on/reco_on.png");
+
+    App = new CheeseController();
+
+    App.signIn("ren","test",function(json){
+        console.log(json);
+    });
+
+    App.getRecommend(function(recommend){
+        console.log(recommend);
+        function loadRecommend(){
+
+            //左上　レシピ名・軸・
+            $('.lefttop .recipename').text(recommend.name);
+            $('.lefttop .re_link').attr("class", recommend.category+"_s");
+            $('.lefttop .axis').attr("class", recommend.category).text(recommend.tips);
+            $('.lefttop a').attr("style", "background-image: url("+recommend.default_picture_name+")").attr("href", recommend.source_url);
+         
+            //右上
+            $('.righttop .recipename').text(reco[1].recipename);
+            $('.righttop .re_link').attr("class", reco[1].class+"_s");
+            $('.righttop .axis').attr("class", reco[1].class).text(reco[1].jiku);
+            $('.righttop a').attr("style", "background-image: url("+reco[1].photo+")").attr("href", reco[1].link);
+
+            //左下
+            $('.leftbottom .recipename').text(reco[2].recipename);
+            $('.leftbottom .re_link').attr("class", reco[2].class+"_s");
+            $('.leftbottom .axis').attr("class", reco[2].class).text(reco[2].jiku);
+            $('.leftbottom a').attr("style", "background-image: url("+reco[2].photo+")").attr("href", reco[2].link);
+
+            //右下
+            $('.rightbottom .recipename').text(reco[3].recipename);
+            $('.rightbottom .re_link').attr("class", reco[3].class+"_s");
+            $('.rightbottom .axis').attr("class", reco[3].class).text(reco[3].jiku);
+            $('.rightbottom a').attr("style", "background-image: url("+reco[3].photo+")").attr("href", reco[3].link);
+        }
+        loadRecommend();
+    });
+
+    //loadRecommend();
 
     //中央　過去ログ
-    for(var i=0; i < kako.length; i++){
-        $a = $("<a/>").attr("href", kako[i].link).addClass("center").attr("style", "background-image: url("+kako[i].photo+")");
-        $li = $("<li/>").append($a);
-        $(".center_circle ul").append($li);     
-    }
+    App.getOwnActivities(function(kakolog){
+        console.log(kakolog);
+        for(var i=0; i < kakolog.length; i++){
+            $a = $("<a/>").attr("href", kakolog[i].link).addClass("center").attr("style", "background-image: url("+kakolog[i].photo+")");
+            $li = $("<li/>").append($a);
+            $(".center_circle ul").append($li);
+        }
+    });
 
 
 //======================================↑中す
@@ -118,10 +138,12 @@ $(document).ready(function(){
 
 //=============================更新ボタン　中す
 
-/*$(function(){
+
+$(function(){
     $('#r_btn a').click(function(){
+        loadRecommend();
     });
-});*/
+});
 
 
 
