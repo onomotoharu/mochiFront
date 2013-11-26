@@ -27,7 +27,7 @@ function footer() {
 |||||||||||||||||||||||||||||||
 */
 function CheeseController(){
-	this.domain = "https://fmap.d.r3n.cc/api/v1";
+	this.domain = "http://fmap.d.r3n.cc/api/v1";
 	this.isLoggedIn = false;
 }
 
@@ -55,7 +55,7 @@ CheeseController.prototype.signIn = function(screen_id,password,callback){
 	url = "/sign_in";
 	data = {"user": {"screen_id": screen_id, "password": password}}
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	var response = $.parseJSON(this._throwRequest(url,data,type));
 	localStorage.screen_id = screen_id;
 	localStorage.api_token = response.api_token;	
 	localStorage.api_token_secret = response.api_token_secret;
