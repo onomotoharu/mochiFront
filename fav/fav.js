@@ -29,9 +29,12 @@ $(function(){
 	});
 
 	App.getDetail(1,function(recipe){
-		console.log(recipe);
+		// console.log(recipe);
 	});
 
+	$(".fav_menu_title,.fav_menu_photo").click(function() {
+		location.href = "../recipe/index.html";
+	});
 	$(".fav_menu_photo").attr('src', './img/foodphoto.png');
 	$(".fav_menu_title").text(recipeData.name);
 	$(".fav_menu_money").text(recipeData.price);
