@@ -22,6 +22,16 @@ $(function(){
 		time : "20"
 	}
 
+	App = new CheeseController();
+
+	App.signIn("ren","test",function(json){
+		// console.log(json);
+	});
+
+	App.getDetail(1,function(recipe){
+		console.log(recipe);
+	});
+
 	$(".fav_menu_photo").attr('src', './img/foodphoto.png');
 	$(".fav_menu_title").text(recipeData.name);
 	$(".fav_menu_money").text(recipeData.price);
