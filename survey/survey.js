@@ -13,6 +13,9 @@ jQuery(function(){
       $(this).addClass("box").removeClass('box_on');
        }
   });
-
+　　$(function(){
+  $('#r_btn a').append("次へ")
+         .attr("href", "../recommend/index.html")
+})
 });
 
