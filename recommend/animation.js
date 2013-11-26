@@ -13,15 +13,14 @@ $(document).ready(function() {
 			easing: "easeOutQuint"
 		});
 		
-		$(el).bind("click", function() {
+		
 			
-			$(this).addClass("current").hide(eff, option, 300, function() {
+			$(el).addClass("current").hide(eff, option, 1000, function() {
 				var self = this;
 				window.setTimeout(function() {
-					$(self).show(eff, option, 300, function() { $(this).removeClass("current"); });
-				},100);
+					$(self).show(eff, option, 1000, function() { $(this).removeClass("current"); });
+				},500);
 			});
-		});
 		
 	};
 
@@ -39,7 +38,7 @@ $(document).ready(function() {
 	effect("#dropRight", "drop", { direction: "right" });
 
 	effect("#explode9", "explode", {  });
-	effect("#explode36", "explode", { pieces: 36 });
+	effect("#explode36", "explode", { pieces: 50 });
 
 	effect("#fold", "fold", { size: 30 });
 
@@ -60,5 +59,7 @@ $(document).ready(function() {
 	effect("#slideRight", "slide", { direction: "right" });
 	
 	$("#transfer").bind("click", function() { $(this).addClass("current").effect("transfer", { to: "div:eq(0)" }, 1000, function() { $(this).removeClass("current"); }); });
+	window.onunload = function () {};
+
 
 });
