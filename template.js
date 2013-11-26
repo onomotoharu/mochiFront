@@ -74,6 +74,11 @@ CheeseController.prototype.signOut = function(callback){
 }
 
 
+CheeseController.prototype.checkAuth = function(){
+	this.isLoggedIn = true;
+}
+
+
 /*=====================
 	User
 ======================*/
@@ -203,8 +208,18 @@ CheeseController.prototype.getSample = function(callback){
 */
 
 
+// App = null;
 
 $(function(){
-	$('#l_btn a').attr("href", "javascript:history.back();");
 	App = new CheeseController();
+
+	// ## sample ##
+	// App.signIn("ren","test",function(json){
+	// 	console.log(json);
+	// });
+
+	// App.getRecommend(function(json){
+
+	// });
+
 })
