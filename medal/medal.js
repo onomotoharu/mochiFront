@@ -23,8 +23,8 @@ eval("var data="+data.responseText)
 	  $(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div>                                                 <a class="account"></a><div class="follow_btn"></div></div>');
 	   //アカウント名を追加 
 	  $("a.account").append(json[i].username);
-	  //ユーザーの画像を挿入
-	   $(".follow_pic ul li a").append('<img src="img/'+json[i].userimg+'.png">');
+	  //メダルの画像を挿入
+	   $("#medalimg a").append('<img src="medal_img/medal_b_'+json[i].medalimg+'.png">');
 	   
 	  //フォローボタンを追加
 	  $(".follow_btn").append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
