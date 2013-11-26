@@ -1,3 +1,6 @@
+
+
+
 jQuery(function($) {
 
   var placeHolder = 'コメントを書く...';
@@ -94,18 +97,30 @@ $(document).ready(function(){
 });
 
 $(function(){
-
   var doneData = {
   recipePhoto : "./img/food2.jpg",
   doneComment : ".doneComment",
   donePhoto : "#imageInput",
+  doneDay : "new Date()",
   }
 
 
-  // つくった！レシピデータ
+  // つくった！写真
   $('.foodTitle img').attr({'src':doneData.recipePhoto});
 
+  App = new CheeseController();
+
+  App.signIn("ren","test",function(js){
+   // console.log(js);
+  });
+
+  App.getDetail(1,function(recipe){
+    console.log(recipe);
+  });
+
+
 });
+
 
 
 
