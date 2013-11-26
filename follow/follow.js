@@ -26,7 +26,7 @@ $(function(){
     });
 	  //フォローボタンを追加
 	   $(".follow_btn").each(function(i){
-        $(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
+        $(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_off.png"></span></li></ul');
     });
 
 });
