@@ -13,10 +13,23 @@ $(document).ready(function(){
 });
 
 $(function(){
-  $('#nav_my img').attr("src", "../img/on/my_on.png");
-});
 
-$(function(){
+	// レシピデータをJSONから自動追加
+
+	var recipeData = {
+		name : "鮭といくらのなんたら",
+		price : "400",
+		time : "20"
+	}
+
+	$(".fav_menu_photo").attr('src', './img/foodphoto.png');
+	$(".fav_menu_title").text(recipeData.name);
+	$(".fav_menu_money").text(recipeData.price);
+	$(".fav_menu_time").text(recipeData.time);
+
+	// マイページメニュー切替
+
+	$('#nav_my img').attr("src", "../img/on/my_on.png");
 
 	$('#log a').hover(function(){
 		$('#log a img').attr('src', $('#log a img').attr('src').replace('_off', '_on'));
