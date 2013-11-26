@@ -27,24 +27,19 @@ $(function(){
     // console.log(json);
   });
 
-
+  // レシピデータ
   App.getDetail(1,function(recipe){
     console.log(recipe);
     $('.recipe_name a').text(recipe.name).attr({'href':recipe.source_url});
     $('.recipe_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+    // $('.right .date').text(recipeData.cookedDay);
   });
 
-  // App.getOwnActivities(function(json){
-
-  // });
-
-  // レシピデータ
-  // $('.recipe_photo img').attr({'src':recipeData.recipePhoto});
-  $('.right .date').text(recipeData.cookedDay);
   // ユーザデータ
-  $('.user_info .user_icon img').attr({'src':cookedUser.pic});
+  // $('.user_info .user_icon img').attr({'src':localStorage.pic});
   $('.user_info .user_id').text(localStorage.screen_id);
 
+  // inputの挙動
   $('input').focus(function(){
     $('.allcontents').css("margin", "45px 0 0 0 ");
     $('.hyouji_btn').click(function(){
