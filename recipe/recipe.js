@@ -25,3 +25,35 @@ jQuery(function($) {
 
 
 });
+
+$(function(){
+  var recipeData = {
+    recipeTitle : ".recipename",
+    recipePhoto : "",
+    time: "#time",
+    money: "#money",
+    ninzuu: ".ninzuu",
+    zairyo: "td",
+    process: ".process",
+  }
+
+
+
+
+  App = new CheeseController();
+
+  App.signIn("ren","test",function(json){
+   // console.log(json);
+  });
+
+  App.getDetail(1,function(recipe){
+    console.log(recipe);
+    $('.r_name').text(recipe.name);
+    $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+
+  });
+
+
+});
+
+
