@@ -104,7 +104,7 @@ body{
 .allcontents{
     margin: 45px 0 45px;
     z-index: 1;
-    overflow: auto;
+    overflow:hidden;
     width: 320px;
 }
 
@@ -140,6 +140,33 @@ body{
 }
 
 
+/*------------------------
+ 読み込み
+------------------------*/
+
+#loader {
+    width:100;
+    display: none;
+    position: fixed;
+    _position: absolute; /* IE6対策 */
+    top:50%;
+    left:50%;
+    margin-top: -60px; /* heightの半分のマイナス値 */
+    margin-left: -50px; /* widthの半分のマイナス値 */
+    z-index: 100;
+}
+ 
+#fade {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: #000;
+	opacity:0.6;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 50;
+}
 
 /*----------------------------------------
  全ページ共有ここまで
