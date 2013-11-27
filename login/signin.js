@@ -1,10 +1,11 @@
 
-$(function(){
+var name;
+var pass;
 
-	App.signIn("ren","test",function(json){
+$(document).ready(function(){
+	App.signIn("name","pass",function(json){
 		console.log(json);
 	});
-
-})
+});
 
 
