@@ -22,12 +22,12 @@
     background: #fff;
     position: relative;
     overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-form {
-    height: 100px;
-    width: 320px;
-}
 
 textarea {
     color: #a09488;
@@ -38,9 +38,11 @@ textarea {
     border-radius: 0px;
     border: none;
     padding: 10px;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
 }
-
-
 
 
 .textInput img {

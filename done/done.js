@@ -6,9 +6,7 @@ jQuery(function($) {
   var frag_tw     = new Boolean(false);
   var frag_fb     = new Boolean(false);
 
-  var pageH       = $("#container").height();
-
-  
+  var pageH       = $("#container").height();  
   
 
   // 写真投稿ボタン
@@ -71,10 +69,9 @@ jQuery(function($) {
   // つくったボタン
 
   $(".cookedBtn img").hide();
+
   $('.cookedBtn').click(function(){
     $(this).addClass("cookedBtn_on");
-
-
 
     // loading画像を表示
     $('head').append(
@@ -152,8 +149,6 @@ $(function(){
     $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
 
   });
-
-
 
 
   App.sendMade(1,function(toukou){
