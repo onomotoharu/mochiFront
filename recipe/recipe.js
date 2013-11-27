@@ -43,15 +43,16 @@ $(function(){
   App = new CheeseController();
 
   App.signIn("ren","test",function(json){
-   // console.log(json);
+    console.log(json);
   });
 
   App.getDetail(1,function(recipe){
     console.log(recipe);
     $('.recipename').text(recipe.name);
     $('#re_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
-    $('#time').text(recipe.necessary_time + " 分 ");
-    $('#money').text(recipe.required_money + " 円");
+    $('#time').text(recipe.necessary_time + "分");
+    $('#money').text(recipe.required_money + "円");
+    $('.aaa').text(recipe.foods[0].screen_name);
 
   });
 
