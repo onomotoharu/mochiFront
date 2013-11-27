@@ -122,7 +122,7 @@ $(document).ready(function(){
 
     App.getRecommend(function(recommend){
         console.log(recommend);
-        recoID Array = [];
+        //recoID Array = [];
     });
 
     //App.getDetail(1,function(reco_recipe){
@@ -154,20 +154,26 @@ $(document).ready(function(){
             $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+reco[3].recipe.default_picture_name+"')").attr("href", reco[3].recipe.source_url+"?recipe_id="+reco[3].recipe.id);
         }
         loadRecommend();
+
+        //更新ボタン
+        $(function(){
+            $('#r_btn a').click(function(){
+                loadRecommend();
+            });
+        });
     //});
 
     //中央　過去ログ
     App.getOwnActivities(function(kakolog){
         console.log(kakolog);
-        var newkako = kakolog.activities[0].recipe_id;
+        App.getDetail(kakolog.user[0].recipe_id,function(kako_img){
+            console.log(kako_img);
+            $img = $("<img/>").attr("src", "http://winvelab.net/cheese/img/"+kako_img.default_picture_name+")");
+            $(".center_circle ul").append($img);
+        });
     });
 
-    //newkakoのIDの画像を取得したいけどできてない
-    App.getDetail(1,function(kako_img){
-        console.log(kako_img);
-        $img = $("<img/>").attr("src", "http://winvelab.net/cheese/img/"+kako_img.default_picture_name+")");
-        $(".center_circle ul").append($img);
-    });
+    
 
 
 //======================================↑中す
@@ -209,16 +215,6 @@ $(document).ready(function(){
     });
 });
 
-
-
-//=============================更新ボタン　中す
-
-
-$(function(){
-    $('#r_btn a').click(function(){
-        location.reload();
-    });
-});
 
 
 
