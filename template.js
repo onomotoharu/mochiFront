@@ -42,6 +42,7 @@ CheeseController.prototype._throwRequest = function(url,data,type){
 		data: data,
 		url: this.domain + url,
 		beforeSend: this._authorizationHeader,
+		crossDomain: true,
 		async:false
 	}).responseText;
 }

@@ -14,31 +14,30 @@ var data=[
 
 $(function(){
 	App = new CheeseController();
-
 	// ## sample ##
 	 App.signIn("ren","test",function(json){
 	// 	console.log(json);
 	 });
 
-	App.setFollow(function(data){
-		console.log(data);
-		for(var i=0; i<data.length; i++){
+	App.setFollow(function(follow){	
+	console.log(follow);
+		for(var i=0; i<follow.length; i++){
 	 			 //リストを追加
 	  $(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div>                                                 <a class="account"></a><div class="follow_btn"></div></div>');
 	}
 	   //アカウント名を追加
     $("a.account").each(function(i){
-        $(this).append(data[i].username);
+        $(this).append(follow[i].username);
     });
 	  //ユーザーの画像を挿入
 	  $(".follow_pic ul li a").each(function(i){
-        $(this).append('<img src="img/'+data[i].userimg+'.png">');
+        $(this).append('<img src="img/'+follow[i].userimg+'.png">');
     });
 	  //フォローボタンを追加
 	   $(".follow_btn").each(function(i){
         $(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
 
-});
+})
 });
 });
 
