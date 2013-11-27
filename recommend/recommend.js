@@ -1,25 +1,94 @@
 
     //仮JSON　まわりの４つ
-    reco = [{"photo":"./img/foodphoto1.jpg",
-            "jiku":"煮る、焼く、蒸す、炒める",
-            "class": "process",
-            "recipename":"朝食・お弁当に♪ふわふわオムレツ",
-            "link": "りんく１"},
-            {"photo":"./img/foodphoto2.jpg",
-            "jiku":"ひらっちさん、あんどーさん",
-            "class": "friend",
-            "recipename":"基本的なチンジャオロース",
-            "link": "りんく２"},
-            {"photo":"./img/foodphoto3.jpg",
-            "jiku":"60分",
-            "class": "time",
-            "recipename":"さくさく野菜たっぷりコロッケ",
-            "link": "りんく３"},
-            {"photo":"./img/foodphoto4.jpg",
-            "jiku":"にんじん,ピーマン,合挽肉,ケチャップ",
-            "class": "material",
-            "recipename":"右下",
-            "link": "りんく４"}];
+    reco = [{"recommend_type":"required_money",
+            "recipe":{"id":3,
+                    "name":"書籍",
+                    "raw_text":"どこで生まれたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。",
+                    "required_money":1,
+                    "calorie":200,
+                    "steps":"我輩は猫である。| 名前はまだ無い。",
+                    "source_url":"http://www.aozora.gr.jp/cards/000148/files/789_14547.html",
+                    "source_type":"a",
+                    "level":4,
+                    "category":"書籍|日本文学|夏目漱石",
+                    "tips":"まだ読み終えてない...",
+                    "necessary_time":1,
+                    "serving":1,
+                    "created_at":"2013-11-22T02:49:06.870Z",
+                    "updated_at":"2013-11-22T02:49:06.870Z",
+                    "long_name":"吾輩は猫である/夏目漱石",
+                    "seasoning":"0|0|0.5|0.5|0|0",
+                    "methods":"0.3|0|0|0|0|0.1|0.2|0.4|0|0|0|0|0|0",
+                    "default_picture_name":"3.jpg"
+                }
+            },
+            {"recommend_type":"seasoning",
+            "recipe":{"id":3,
+                    "name":"書籍",
+                    "raw_text":"どこで生まれたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。",
+                    "required_money":1,
+                    "calorie":200,
+                    "steps":"我輩は猫である。| 名前はまだ無い。",
+                    "source_url":"http://www.aozora.gr.jp/cards/000148/files/789_14547.html",
+                    "source_type":"a",
+                    "level":4,
+                    "category":"書籍|日本文学|夏目漱石",
+                    "tips":"まだ読み終えてない...",
+                    "necessary_time":1,
+                    "serving":1,
+                    "created_at":"2013-11-22T02:49:06.870Z",
+                    "updated_at":"2013-11-22T02:49:06.870Z",
+                    "long_name":"吾輩は猫である/夏目漱石",
+                    "seasoning":"0|0|0.5|0.5|0|0",
+                    "methods":"0.3|0|0|0|0|0.1|0.2|0.4|0|0|0|0|0|0",
+                    "default_picture_name":"3.jpg"
+                }
+            },
+            {"recommend_type":"seasoning",
+            "recipe":{"id":1,
+                    "name":"かぼちゃの煮物",
+                    "raw_text":"ねこねこねこねこねこ",
+                    "required_money":1,
+                    "calorie":200,
+                    "steps":"買います|切ります|煮ます|完成",
+                    "source_url":"http://example.com",
+                    "source_type":"r",
+                    "level":4,
+                    "category":"秋|副菜|かぼちゃ",
+                    "tips":"おいしいじゃん？",
+                    "necessary_time":1,
+                    "serving":1,
+                    "created_at":"2013-11-22T02:49:06.819Z",
+                    "updated_at":"2013-11-22T02:49:06.819Z",
+                    "long_name":"シンプル！かぼちゃです！",
+                    "seasoning":"0.5|0|0.5|0|0|0",
+                    "methods":"0.3|0.3|0|0|0.3|0|0|0|0|0.1|0|0|0|0",
+                    "default_picture_name":"1.jpg"
+                }
+            },
+            {"recommend_type":"seasoning",
+            "recipe":{"id":2,
+                    "name":"月",
+                    "raw_text":"ぼうやはたいそう悲しみました。",
+                    "required_money":2,
+                    "calorie":10000,
+                    "steps":"ねぇ、おつきさまとってきて|とぼうやは言いました",
+                    "source_url":"http://example.com",
+                    "source_type":"r",
+                    "level":4,
+                    "category":"惑星|太陽系|月",
+                    "tips":"おつきさまはとても大きいのでとれないのよ",
+                    "necessary_time":5,
+                    "serving":10,
+                    "created_at":"2013-11-22T02:49:06.843Z",
+                    "updated_at":"2013-11-22T02:49:06.843Z",
+                    "long_name":"おつきさま",
+                    "seasoning":"0.5|0.5|0|0|0|0",
+                    "methods":"0|0|0.2|0.3|0.3|0|0|0|0|0|0|0|0.2|0",
+                    "default_picture_name":"2.jpg"
+                }
+            },
+            {"recommend_type":"level","recipe":{"id":3,"name":"書籍","raw_text":"どこで生まれたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。","required_money":1,"calorie":200,"steps":"我輩は猫である。| 名前はまだ無い。","source_url":"http://www.aozora.gr.jp/cards/000148/files/789_14547.html","source_type":"a","level":4,"category":"書籍|日本文学|夏目漱石","tips":"まだ読み終えてない...","necessary_time":1,"serving":1,"created_at":"2013-11-22T02:49:06.870Z","updated_at":"2013-11-22T02:49:06.870Z","long_name":"吾輩は猫である/夏目漱石","seasoning":"0|0|0.5|0.5|0|0","methods":"0.3|0|0|0|0|0.1|0.2|0.4|0|0|0|0|0|0","default_picture_name":"3.jpg"}},{"recommend_type":"necessary_time","recipe":{"id":3,"name":"書籍","raw_text":"どこで生まれたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。","required_money":1,"calorie":200,"steps":"我輩は猫である。| 名前はまだ無い。","source_url":"http://www.aozora.gr.jp/cards/000148/files/789_14547.html","source_type":"a","level":4,"category":"書籍|日本文学|夏目漱石","tips":"まだ読み終えてない...","necessary_time":1,"serving":1,"created_at":"2013-11-22T02:49:06.870Z","updated_at":"2013-11-22T02:49:06.870Z","long_name":"吾輩は猫である/夏目漱石","seasoning":"0|0|0.5|0.5|0|0","methods":"0.3|0|0|0|0|0.1|0.2|0.4|0|0|0|0|0|0","default_picture_name":"3.jpg"}}];
 
     //仮JSON　過去ログ部分
     kako = [{"photo":"./img/meat.jpg",
@@ -53,45 +122,51 @@ $(document).ready(function(){
 
     App.getRecommend(function(recommend){
         console.log(recommend);
-        function loadRecommend(){
-
-            //左上　レシピ名・軸・
-            $('.lefttop .recipename').text(recommend.name);
-            $('.lefttop .re_link').attr("class", recommend.category+"_s");
-            $('.lefttop .axis').attr("class", recommend.category).text(recommend.tips);
-            $('.lefttop a').attr("style", "background-image: url("+recommend.default_picture_name+")").attr("href", recommend.source_url);
-         
-            //右上
-            $('.righttop .recipename').text(reco[1].recipename);
-            $('.righttop .re_link').attr("class", reco[1].class+"_s");
-            $('.righttop .axis').attr("class", reco[1].class).text(reco[1].jiku);
-            $('.righttop a').attr("style", "background-image: url("+reco[1].photo+")").attr("href", reco[1].link);
-
-            //左下
-            $('.leftbottom .recipename').text(reco[2].recipename);
-            $('.leftbottom .re_link').attr("class", reco[2].class+"_s");
-            $('.leftbottom .axis').attr("class", reco[2].class).text(reco[2].jiku);
-            $('.leftbottom a').attr("style", "background-image: url("+reco[2].photo+")").attr("href", reco[2].link);
-
-            //右下
-            $('.rightbottom .recipename').text(reco[3].recipename);
-            $('.rightbottom .re_link').attr("class", reco[3].class+"_s");
-            $('.rightbottom .axis').attr("class", reco[3].class).text(reco[3].jiku);
-            $('.rightbottom a').attr("style", "background-image: url("+reco[3].photo+")").attr("href", reco[3].link);
-        }
-        loadRecommend();
+        recoID Array = [];
     });
 
-    //loadRecommend();
+    //App.getDetail(1,function(reco_recipe){
+        //console.log(reco_recipe);
+        function loadRecommend(){
+
+            //左上　レシピ名・軸・リンク・画像
+            $('.lefttop .recipename').text(reco[0].recipe.name);
+            $('.lefttop .re_link').attr("class", reco[0].recipe.category+"_s");
+            $('.lefttop .axis').attr("class", reco[0].recipe.category).text(reco[0].recipe.category);
+            $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+reco[0].recipe.default_picture_name+"')").attr("href", reco[0].recipe.source_url+"?recipe_id="+reco[0].recipe.id);
+         
+            //右上
+            $('.righttop .recipename').text(reco[1].recipe.name);
+            $('.righttop .re_link').attr("class", reco[1].recipe.category+"_s");
+            $('.righttop .axis').attr("class", reco[1].recipe.category).text(reco[1].recipe.category);
+            $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+reco[1].recipe.default_picture_name+"')").attr("href", reco[1].recipe.source_url+"?recipe_id="+reco[1].recipe.id);
+
+            //左下
+            $('.leftbottom .recipename').text(reco[2].recipe.name);
+            $('.leftbottom .re_link').attr("class", reco[2].recipe.category+"_s");
+            $('.leftbottom .axis').attr("class", reco[2].recipe.category).text(reco[2].recipe.category);
+            $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+reco[2].recipe.default_picture_name+"')").attr("href", reco[2].recipe.source_url+"?recipe_id="+reco[2].recipe.id);
+
+            //右下
+            $('.rightbottom .recipename').text(reco[3].recipe.name);
+            $('.rightbottom .re_link').attr("class", reco[3].recipe.category+"_s");
+            $('.rightbottom .axis').attr("class", reco[3].recipe.category).text(reco[3].recipe.category);
+            $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+reco[3].recipe.default_picture_name+"')").attr("href", reco[3].recipe.source_url+"?recipe_id="+reco[3].recipe.id);
+        }
+        loadRecommend();
+    //});
 
     //中央　過去ログ
     App.getOwnActivities(function(kakolog){
         console.log(kakolog);
-        for(var i=0; i < kakolog.length; i++){
-            $a = $("<a/>").attr("href", kakolog[i].link).addClass("center").attr("style", "background-image: url("+kakolog[i].photo+")");
-            $li = $("<li/>").append($a);
-            $(".center_circle ul").append($li);
-        }
+        var newkako = kakolog.activities[0].recipe_id;
+    });
+
+    //newkakoのIDの画像を取得したいけどできてない
+    App.getDetail(1,function(kako_img){
+        console.log(kako_img);
+        $img = $("<img/>").attr("src", "http://winvelab.net/cheese/img/"+kako_img.default_picture_name+")");
+        $(".center_circle ul").append($img);
     });
 
 
@@ -141,7 +216,7 @@ $(document).ready(function(){
 
 $(function(){
     $('#r_btn a').click(function(){
-        loadRecommend();
+        location.reload();
     });
 });
 
