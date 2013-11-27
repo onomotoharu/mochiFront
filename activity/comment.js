@@ -31,6 +31,7 @@ $(function(){
   App.getDetail(1,function(recipe){
     console.log(recipe);
     $('.recipe_name a').text(recipe.name).attr({'href':recipe.source_url});
+    $('.recipe_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
   });
 
   // App.getOwnActivities(function(json){
@@ -38,7 +39,7 @@ $(function(){
   // });
 
   // レシピデータ
-  $('.recipe_photo img').attr({'src':recipeData.recipePhoto});
+  // $('.recipe_photo img').attr({'src':recipeData.recipePhoto});
   $('.right .date').text(recipeData.cookedDay);
   // ユーザデータ
   $('.user_info .user_icon img').attr({'src':cookedUser.pic});
