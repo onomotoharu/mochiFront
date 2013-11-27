@@ -17,10 +17,10 @@ App.getOwnBadges(function(medals){
 // 	debugger;
 	for(var i=0 ; i<1 ; i++){	
 	  //リストを追加
-	  $(".tab_contents ul").append('<li><div id="medalimg"><a class="zoom" href="" title=""></a></div><div id="coment"><div class="medallog"></div><div id ="getdate"></div><div class="medalintro"></div></div>');
+	  $(".tab_contents ul").append('<li><div class="medalimg"><a class="zoom" href="" title=""></a></div><div id="coment"><div class="medallog"></div><div id ="getdate"></div><div class="medalintro"></div></div>');
 	  
 	  //メダルの画像とタイトルを挿入
-	  $("#medalimg a").each(function(i){
+	  $(".medalimg a").each(function(i){
 	  	$(this).append('<img src="medal_img/'+medals[i].picture_name+'">');
 // 	  	$(this).attr("title", "medals[i].description.split(" ")[0]");
 	  });

@@ -24,7 +24,7 @@
 	border-bottom:#CCC solid 1px;
 }
 
-.tab_contents ul li #medalimg{
+.tab_contents ul li .medalimg{
 	float:left;
 	width:60px;
 	height:60px;
