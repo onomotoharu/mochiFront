@@ -27,7 +27,7 @@ function footer() {
 |||||||||||||||||||||||||||||||
 */
 function CheeseController(){
-	this.domain = "https://fmap.d.r3n.cc/api/v1";
+	this.domain = "http://fmap.d.r3n.cc/api/v1";
 	this.isLoggedIn = false;
 }
 
