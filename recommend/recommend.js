@@ -133,7 +133,7 @@ $(document).ready(function(){
             $('.lefttop .recipename').text(reco[0].recipe.name);
             $('.lefttop .re_link').attr("class", reco[0].recipe.category+"_s");
             $('.lefttop .axis').attr("class", reco[0].recipe.category).text(reco[0].recipe.category);
-            $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+reco[0].recipe.default_picture_name+"')").attr("href", reco[0].recipe.source_url+"?recipe_id="+reco[0].recipe.id);
+            $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+reco[0].recipe.default_picture_name+"')").attr("href", reco[0].recipe.source_url+"?recipe_id=1");
          
             //右上
             $('.righttop .recipename').text(reco[1].recipe.name);

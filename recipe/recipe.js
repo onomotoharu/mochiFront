@@ -37,29 +37,15 @@ $(function(){
 
 
 
-function getUrlVars() 
-{ 
-    var vars = [], hash; 
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&'); 
-    for(var i = 0; i < hashes.length; i++) { 
-        hash = hashes[i].split('='); 
-        vars.push(hash[0]); 
-        vars[hash[0]] = hash[1]; 
-    } 
-    return vars;
-}
 
-var recipe_id = getUrlVars()["vars"];
-
-
-
-  App.getDetail(recipe_id,function(recipe){
+  App.getDetail(1,function(recipe){
     console.log(recipe);
     $('.recipename').text(recipe.name);
     $('#re_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
     $('#time').text(recipe.necessary_time + "分");
     $('#money').text(recipe.required_money + "円");
     $('.aaa').text(recipe.foods[0].screen_name);
+
 
 
 
