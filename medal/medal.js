@@ -15,11 +15,10 @@ App.getOwnBadges(function(medals){
 	medals = JSON.parse(medals);
 
 // 	debugger;
-	for(var i=0 ; i<4 ; i++){	
+	for(var i=0 ; i<1 ; i++){	
 	  //リストを追加
-	  $("#medalimg").append('<a class="zoom" href="" title=""></a></div><div id="coment"><div class="medallog"></div><div id ="getdate"></div><div class="medalintro"></div>');	  
-	  }
-
+	  $(".tab_contents ul").append('<li><div id="medalimg"><a class="zoom" href="" title=""></a></div><div id="coment"><div class="medallog"></div><div id ="getdate"></div><div class="medalintro"></div></div>');
+	  
 	  //メダルの画像とタイトルを挿入
 	  $("#medalimg a").each(function(i){
 	  	$(this).append('<img src="medal_img/'+medals[i].picture_name+'">');
@@ -28,7 +27,7 @@ App.getOwnBadges(function(medals){
 
 	  //バッジ名を挿入
 	  $(".medallog").each(function(i){
-	  $(this).append('<p class="b">'+medals[i].title+'</p>')
+	  	$(this).append('<p class="b">'+medals[i].title+'</p>')
 	  });
 	  
 	  //メダル取得の日付を挿入
@@ -36,9 +35,10 @@ App.getOwnBadges(function(medals){
 
 	　//バッジ名を追加 
  	  $(".medalintro").append(medals[i].description);
+	  
+	  };
 
-
-});
+	});
 
 });
 
