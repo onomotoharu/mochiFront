@@ -26,18 +26,8 @@ jQuery(function($) {
 
 });
 
+
 $(function(){
-  var recipeData = {
-    recipeTitle : ".recipename",
-    recipePhoto : "#re_photo",
-    time: ".time",
-    money: ".money",
-    ninzuu: ".ninzuu",
-    process: ".process",
-  }
-
-
-
 
   App = new CheeseController();
 
@@ -45,7 +35,25 @@ $(function(){
     console.log(json);
   });
 
-  App.getDetail(1,function(recipe){
+
+
+function getUrlVars() 
+{ 
+    var vars = [], hash; 
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&'); 
+    for(var i = 0; i < hashes.length; i++) { 
+        hash = hashes[i].split('='); 
+        vars.push(hash[0]); 
+        vars[hash[0]] = hash[1]; 
+    } 
+    return vars;
+}
+
+var recipe_id = getUrlVars()["vars"];
+
+
+
+  App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
     $('.recipename').text(recipe.name);
     $('#re_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
@@ -73,5 +81,4 @@ $(function(){
 
 
 });
-
 
