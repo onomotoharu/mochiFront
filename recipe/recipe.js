@@ -63,7 +63,7 @@ $(function(){
     }
 
     for(var i=0; i< recipe.foods.length; i++){
-      $kosuu = $("<td/>").append(recipe.foods[i].screen_name).append(recipe.foods);
+      $kosuu = $("<td/>").append(recipe.foods[i].amount).append(recipe.foods);
       $zairyo = $("<td/>").append(recipe.foods[i].screen_name).append(recipe.foods);
       $gyou= $("<tr/>").append($zairyo).append($kosuu);
       $(".material").append($gyou);
