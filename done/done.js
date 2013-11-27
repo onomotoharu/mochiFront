@@ -1,7 +1,6 @@
 
 jQuery(function($) {
 
-  var placeHolder = 'コメントを書く...';
   var frag_camera = new Boolean(false);
   var frag_good   = new Boolean(false);
   var frag_tw     = new Boolean(false);
@@ -9,24 +8,6 @@ jQuery(function($) {
 
   var pageH       = $("#container").height();
 
-  // 入力フォーム
-  $("textarea")
-    .focus(function() {
-      var self = $(this);
-      if (self.val() === placeHolder) { self.val('');}
-    })
-    .blur(function() {
-      var self = $(this);
-      if (self.val() === "") { self.val(placeHolder);}
-  });
-  
-  $(function(){
-	$('input[type=text],textarea').focus(function(){
-		$(this).addClass('focus');
-	}).blur(function(){
-		$(this).removeClass('focus');
-	});
-});
   
   
 
@@ -90,9 +71,10 @@ jQuery(function($) {
   // つくったボタン
 
   $(".cookedBtn img").hide();
-
   $('.cookedBtn').click(function(){
     $(this).addClass("cookedBtn_on");
+
+
 
     // loading画像を表示
     $('head').append(
