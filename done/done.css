@@ -30,7 +30,6 @@
 
 
 textarea {
-    color: #a09488;
     font-size: 12px;
     margin: 0;
     height: 74px;
@@ -43,6 +42,7 @@ textarea {
     -ms-user-select: auto;
     user-select: auto;
 }
+.doneComment{ color: black;}
 
 
 .textInput img {
