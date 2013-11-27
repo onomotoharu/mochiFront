@@ -29,9 +29,9 @@ jQuery(function($) {
 $(function(){
   var recipeData = {
     recipeTitle : ".recipename",
-    recipePhoto : "",
-    time: "#time",
-    money: "#money",
+    recipePhoto : "#re_photo",
+    time: ".time",
+    money: ".money",
     ninzuu: ".ninzuu",
     zairyo: "td",
     process: ".process",
@@ -48,8 +48,10 @@ $(function(){
 
   App.getDetail(1,function(recipe){
     console.log(recipe);
-    $('.r_name').text(recipe.name);
-    $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+    $('.recipename').text(recipe.name);
+    $('#re_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+    $('#time').text(recipe.necessary_time + " 分 ");
+    $('#money').text(recipe.required_money + " 円");
 
   });
 

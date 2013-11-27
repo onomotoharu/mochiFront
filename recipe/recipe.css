@@ -75,32 +75,35 @@ deta（time money
 ----------------------------------------*/
 
 .deta{
-	width: 90%;
-	margin:0 auto;
-	padding-bottom:12px;
-	overflow: hidden;
+	width: 240px;
+  height: 40px;
+  margin: 0 20px;
+  padding: 0 20px 5px 20px;
 	border-bottom: dashed 2px #3cb371;
 	text-align:center;
 }
 
-.time{ 
-	width:45%;
-	float:left;
-		font-size: 12pt;
+
+.datastyle{ 
+  width: 70px;
+  height: 40px;
+  margin-top: 10px;
+  float: left;
+  text-align: center;
+  font-size: 24px;
+  padding-right: 10px;
 }
 
-.yen{
-	width: 45%;
-	float:left;
-		font-size: 12pt;
-}
 
-.time img, .yen img{
+.deta img{
 	width: 30px;
 	height: 30px;
+  margin:0 10px 20px 0;
+  float:left;
 	position: relative;
 	bottom: -10px;
 }
+
 
 /*----------------------------------------
 material
