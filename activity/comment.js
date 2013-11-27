@@ -4,22 +4,6 @@ $(document).ready(function(){
 });
 
 $(function(){
-  var recipeData = {
-    recipeName : "おいしいよー",
-    recipePhoto : "./img/foodphoto.png",
-    recipeUrl : "../recipe/index.html",
-    cookedDay : "2013/12/22",
-  }
-
-  var cookedUser = {
-    pic : "./img/my_icon_user.png",
-    id : "bechi"
-  }
-
-  var commentObj = {
-    userId : "namaedesu",
-    comment : ""
-  };
   
   App = new CheeseController();
 
@@ -29,7 +13,6 @@ $(function(){
 
   // レシピデータ
   App.getDetail(1,function(recipe){
-    console.log(recipe);
     $('.recipe_name a').text(recipe.name).attr({'href':recipe.source_url});
     $('.recipe_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
     // $('.right .date').text(recipeData.cookedDay);
