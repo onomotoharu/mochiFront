@@ -33,7 +33,6 @@ $(function(){
     time: ".time",
     money: ".money",
     ninzuu: ".ninzuu",
-    zairyo: "td",
     process: ".process",
   }
 
@@ -54,6 +53,22 @@ $(function(){
     $('#money').text(recipe.required_money + "円");
     $('.aaa').text(recipe.foods[0].screen_name);
 
+
+
+    for(var i=0; i< recipe.steps.length; i++){
+      $pro_text = $("<div/>").addClass("pro_text").append(recipe.steps[i]);
+      $li= $("<li/>").append(i+1).addClass("number");
+      $(".process").append($li).append($pro_text);
+
+    }
+
+    for(var i=0; i< recipe.foods.length; i++){
+      $kosuu = $("<td/>").append(recipe.foods[i].screen_name).append(recipe.foods);
+      $zairyo = $("<td/>").append(recipe.foods[i].screen_name).append(recipe.foods);
+      $gyou= $("<tr/>").append($zairyo).append($kosuu);
+      $(".material").append($gyou);
+
+    }
   });
 
 
