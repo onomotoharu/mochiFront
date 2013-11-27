@@ -1,0 +1,116 @@
+<!DOCTYPE html>  
+<html lang="ja">  
+        <head>  
+    <meta charset="UTF-8">  
+    <meta http-equiv="content-script-type" content="text/javascript">  
+    <meta name="viewport" content="width=device-width,user-scalable=no">  
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    
+    <title>recommend</title>
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"> -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="../template.css">
+    <link rel="stylesheet" type="text/css" href="recommend.css">
+
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="recommend.js"></script>
+    <!--<script type="text/javascript" src="jquery.flicksimple.js"></script>-->
+    <script type="text/javascript" src="../template.js"></script>
+    <script src="http://winvelab.net/cheese/jquery.base64"></script>
+
+</head>
+
+        <body>
+
+          <script>header();</script>
+
+
+    <div class="allcontents">
+        <!-- メインコンテンツここから -->
+    <section class="content"> 
+      <!-- 関連図ここから--> 
+      
+      <!--左上の◯-->
+      <article class="lefttop">
+        <div class="recipename"><!--レシピ名--></div>
+          <div class="re_link">
+            <a href=" " class="circle" data-transition="fade" style="background-image: url(' ')"　data-transition="turn"></a>
+            <div class="axis">
+            <!--軸-->
+            </div>
+        </div>
+      </article>
+      <!--左上の◯ここまで--> 
+      
+      <!--右上の◯-->
+      <article class="righttop">
+        <div class="recipename"><!--レシピ名--></div>
+          <div class="re_link">
+            <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"></a>
+            <div class="axis">
+              <!--軸-->
+            </div>
+          </div>
+        </article>
+      <!--右上の◯ここまで--> 
+      
+      <!--左下の◯-->
+      <article class="leftbottom">
+        <div class="re_link">
+          <div class="axis">
+            <!--軸-->
+          </div>
+          <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
+        </div>
+        <div class="recipename"><!--レシピ名--></div>
+        </article>
+      <!--左下の◯ここまで--> 
+      
+      <!--右下の◯-->
+      <article class="rightbottom">
+        <div class="re_link">
+          <div class="axis">
+            <!--軸-->
+          </div>
+          <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
+        </div>
+        <div class="recipename"><!--レシピ名--></div>
+        </article>
+      <!--右下の◯ここまで--> 
+      
+      <!--真ん中の◯-->
+      <article class="center_circle">
+        <div id="verticaly">
+              <ul></ul>
+            </div>
+      </article>
+      <!--<div class="down">▲</div>-->
+    </section>
+
+  <!-- /全体ここまで --> 
+
+
+<!--<script type="text/javascript">
+  $('#verticaly').flickSimple({
+    vertical: true,
+    horizontal: false,
+    lock: true
+  });
+</script>-->
+
+</div>
+  
+
+<script>footer();</script>   
+ 
+        </body>
+</html>

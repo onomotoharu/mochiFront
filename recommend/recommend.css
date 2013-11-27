@@ -1,0 +1,447 @@
+#l_btn a{
+    display: none;
+}
+
+
+/*-------------------------
+まんなか ( ･`ω･´)  
+
+○　　○
+　●  
+○　　○
+
+--------------------------*/
+
+
+#verticaly {
+  width: 90px;
+  height: 120px;
+
+    margin: 160px 115px 0 115px ;
+    text-align:center;
+    color:#3cb371;
+    position: fixed;
+    overflow: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#verticaly ul,
+#verticaly ul.landscape {
+  /*height: 960px;*/
+  display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#verticaly ul li,
+#verticaly ul li.landscape {
+  width: 90px;
+  height: 90px;
+  float: left;
+    list-style-type: none;
+    text-align: center;
+}
+
+#verticaly ul li a {
+  display: block;
+  border:solid 5px #f5c53a;
+  margin:auto;
+  text-align :left;
+  display: inline-block;
+    border-radius:50%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+  width: 70px;
+  height:70px;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size:cover;
+
+
+}
+
+/*.flickSimple {
+    width:90px;
+    height:120px;
+    margin: 160px 115px 0 115px ;
+    text-align:center;
+    color:#3cb371;
+    position: fixed;
+    overflow: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}*/
+
+
+/*.flickSimple ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+}*/
+
+/*.flickSimple ul li {
+    float: left;
+    list-style-type: none;
+    text-align: center;
+}*/
+
+
+
+
+article span {
+	width:100%;
+	float:left;
+}
+
+
+
+/*.flickSimple a.center{
+    border:solid 5px #f5c53a;
+    margin-left :auto;
+    margin-right : auto;
+}*/
+
+
+/*.down{
+    font-size: 8px;
+    width:90px;
+    height:10px;
+    margin: 270px 115px 0 115px ;
+    position:fixed;
+    text-align:center;
+    background-color: #584400;
+    color:#fff;
+    filter: alpha(opacity=50);
+    -moz-opacity:0.50;
+    opacity:0.50;
+}*/
+
+/*.top{
+    font-size: 8px;
+    width:120px;
+    height:10px;
+    margin: 130px 100px 0 100px ;
+    position:fixed;
+    text-align:center;
+    background-color: #584400;
+    color:#fff;
+    filter: alpha(opacity=20);
+    -moz-opacity:0.20;
+    opacity:0.20;
+}*/
+
+/*-------------------------
+四隅のサークルのスタイル(^_-)-☆  
+--------------------------*/
+
+
+a.circle{
+    margin:5px auto;
+    text-align :left;
+    display: inline-block;
+    border-radius:50%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    width: 90px;
+    height: 90px;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a.circle:hover{
+    filter: alpha(opacity=50);
+    -moz-opacity:0.50;
+    opacity:0.50;
+}
+
+.recipename{
+    font-size: 9px;
+    text-align: center;
+    color:#645641;
+    height: 30px;
+    width:90px;
+    margin-top: 10px;
+    overflow: hidden;
+/*    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+*/
+}
+
+
+/*-------------------------
+●　　○
+　○
+○　　○
+
+左上
+--------------------------*/
+
+.lefttop {
+	width:90px;
+    height: 180px;
+	display:table-cell;
+	text-align:center;
+	position:fixed;
+	left: 20px;
+    margin-top: 10px;
+	color:#edd67a;
+}
+
+/*-------------------------
+○　　●
+　○
+○　　○
+
+右上
+--------------------------*/
+
+
+.righttop {
+    width:90px;
+    height: 180px;
+    /*margin-left: 205px;*/
+    right: 20px;
+    margin-top: 10px;
+	display:table-cell;
+	text-align:center;
+	position:fixed;
+	color:#edd67a;
+}
+
+
+/*-------------------------
+○　　○
+　○
+●　　○
+
+左下
+--------------------------*/
+
+
+.leftbottom {
+    width:90px;
+    height: 190px;
+    /*border: solid 1px; #000;*/
+    bottom: 45px;
+    display:table-cell;
+    text-align:center;
+    position:fixed;
+    left: 20px;
+    margin-top: 10px;
+    color:#edd67a;
+}
+
+
+/*-------------------------
+○　　○
+　○
+○　　●    
+
+右下
+--------------------------*/
+
+.rightbottom {
+    width:90px;
+    height: 190px;
+    bottom: 45px;
+    right: 20px;
+    display:table-cell;
+    text-align:center;
+    position:fixed;
+    margin-top: 10px;
+    color:#edd67a;
+
+}
+
+
+-------------------------
+軸〜〜〜(・o・)
+--------------------------
+
+
+
+/*
+お金　円 ボーダーの色　e2cf16
+---------*/
+
+.money {
+    height: 50px;
+    color: #785b25;
+    font-weight: bold;
+    font-size: 16px;
+    background-image: url("img/money.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+}
+
+
+.money_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #e2cf16;
+
+}
+
+
+
+/*
+時間　分　94cda3
+---------*/
+
+
+.time{
+    height: 50px;
+    color: #577264;
+    font-weight: bold;
+    font-size: 16px;
+    background-image: url("img/time.png");
+    background-size:50%;
+    background-position:center bottom;
+    background-repeat:no-repeat;
+}
+
+.time_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #94cda3;
+
+}
+
+
+
+/*
+食材のかぶり 食材名　69dcf7
+---------*/
+
+.material{
+    height: 50px;
+    color: #04417c;
+    font-weight: bold;
+    font-size: 10px;
+    background-image: url("img/material.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.material_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #69dcf7;
+
+}
+
+
+
+/*
+友人のおすすめ　友人の名前？　bfdd0b
+---------*/
+
+
+.friend{
+    height: 50px;
+    color: #277b39;
+    font-weight: bold;
+    font-size: 10px;
+    background-image: url("img/friend.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.friend_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #bfdd0b;
+
+}
+
+
+/*
+味付け　味の名前　bf824b
+---------*/
+
+.taste{
+    height: 50px;
+    color: #814120;
+    font-weight: bold;
+    font-size: 10px;
+    background-image: url("img/taste.png");
+    background-size:40%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+
+.taste_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #bf824b;
+
+}
+
+/*
+調理方法　 調理方法の名前　ed7b7b   
+---------*/
+
+.process{
+    height: 50px;
+    color: #ed7b7b;
+    font-weight: bold;
+    font-size: 10px;
+    background-image: url("img/process.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.process_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #ed7b7b;
+
+}
+
+/*
+いままでのレシピすべて　e168a3   
+---------*/
+
+.total{
+    height: 50px;
+    color: #a20e73;
+    font-weight: bold;
+    font-size: 10px;
+    background-image: url("img/total.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.total_s a.circle{
+    margin-left :auto;
+    margin-right : auto;
+    border:solid 5px #e168a3;
+
+}
+
+
+/*
+？？？
+---------*/
+
+.revel{
+    height: 50px;
+    color: #339933;
+    font-weight: bold;
+    font-size: 16px;
+    background-image: url("img/revel.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
