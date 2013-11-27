@@ -149,22 +149,22 @@ jQuery(function($) {
 // });
 
 $(function(){
-  var doneData = {
-  doneComment : ".doneComment",
-  donePhoto : "#imageInput",
-  doneDay : "new Date()",
-  }
+    var doneData = {
+      doneComment : ".doneComment",
+      donePhoto : "#imageInput",
+      doneDay : "new Date()",
+    }
 
-
-  // つくった！写真
 
   App = new CheeseController();
 
   App.signIn("ren","test",function(json){
-   // console.log(json);
+   console.log(json);
   });
 
-  App.getDetail(1,function(recipe){
+  recipe_id = getUrlVars()["recipe_id"];
+
+  App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
     $('.r_name').text(recipe.name);
     $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});

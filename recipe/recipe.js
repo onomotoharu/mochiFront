@@ -1,15 +1,3 @@
-function getUrlVars()
-{
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i <hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}
 
 
 jQuery(function($) {
@@ -27,7 +15,7 @@ jQuery(function($) {
 
   $('.cookedBtn').click(function(){
     $(this).addClass("cookedBtn_on");
-    location.href = "../done/index.html";
+    location.href = "../done/index.html?recipe_id="+ recipe_id;
   })
 
   // お気に入りボタン
@@ -45,10 +33,6 @@ jQuery(function($) {
   })
 
 
-});
-
-
-$(function(){
 
   App = new CheeseController();
 
@@ -56,10 +40,7 @@ $(function(){
     console.log(json);
   });
 
-
-
-
-  App.getDetail(1,function(recipe){
+  App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
     $('.recipename').text(recipe.name);
     $('#re_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
