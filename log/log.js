@@ -64,14 +64,40 @@ $(function(){
 
 	// レシピデータ
 	$('.recipe_photo img').attr({'src':recipeData.recipePhoto});
-	$('.act_right .date').text(recipeData.cookedDay);
+	// $('.act_right .date').text(recipeData.cookedDay);
 	$('.title a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
 	// ユーザデータ
 	$('#myname #myphoto img').attr({'src':cookedUser.pic});
 	$('#myname .myname').text(cookedUser.id);
 	$('.my_comment').text(cookedUser.comment);
 
+
+	App = new CheeseController();
+
+	App.signIn("ren","test",function(json){
+		// console.log(json);
+	});
+
+	App.getOwnActivities(function(activity){
+
+		// 作った日
+		var date = activity.user[0].created_at;
+		console.log(date);
+	    $('.act_right .date').text(date.split("T")[0]);
+
+	    // コメント
+    	$('.my_comment').text(activity.user[0].comment);
+
+	    // レシピID
+		recipe_id = activity.user[0].recipe_id;
+
+		// レシピデータ
+		App.getDetail(recipe_id,function(recipe){
+			console.log(recipe);
+			$('.recipe_photo img').attr({'src':recipe.default_picture_name});
+			$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
+		});
+
+	});
+
 });
-
-
-
