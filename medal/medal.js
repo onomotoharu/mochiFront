@@ -7,15 +7,22 @@ App.signIn("ren","test",function(json){
 });
 
 App.getOwnBadges(function(medals){	
-	console.log(JSON.parse(medals));
+	console.log(medals);
 	
 	//JSON.parse(medals)[0].created_at.split(" ")[0]
 	
-	var medals;
-	medals = JSON.parse(medals);
+
 
 // 	debugger;
-	for(var i=0 ; i<1 ; i++){	
+
+// 	$.each(medals,function(i,medal){
+// 	
+// 		alert(medal.title);
+// 	});
+// 	
+	
+	
+	for(var i=0 ; i < medals.length ; i++){	
 	  //リストを追加
 	  $(".tab_contents ul").append('<li><div class="medalimg"><a class="zoom" href="" title=""></a></div><div id="coment"><div class="medallog"></div><div id ="getdate"></div><div class="medalintro"></div></div>');
 	  
