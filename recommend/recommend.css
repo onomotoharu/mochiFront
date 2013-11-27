@@ -1,0 +1,377 @@
+#l_btn a{
+    display: none;
+}
+
+
+
+
+/*-------------------------
+まんなか ( ･`ω･´)  
+
+○　　○
+　●  
+○　　○
+
+--------------------------*/
+
+a.center {
+	margin:auto;
+	text-align :left;
+	display: inline-block;
+    border-radius:50%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+	width: 100px;
+	height:100px;
+	position: relative;
+ 	background-position: center center;
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+
+article span {
+	width:100%;
+	float:left;
+}
+
+.center_circle {    
+    width:120px;
+    height:150px;
+    overflow: scroll;   /* スクロール表示 */ 
+    margin: 140px 100px 0 100px ;
+    position:fixed;
+    text-align:center;
+    color:#3cb371;
+}
+
+
+.center_circle a.center{
+    border:solid 5px #f5c53a;
+    margin-left :auto;
+    margin-right : auto;
+}
+
+
+.down{
+    font-size: 8px;
+    width:120px;
+    height:10px;
+    margin: 290px 100px 0 100px ;
+    position:fixed;
+    text-align:center;
+    background-color: #584400;
+    color:#fff;
+    filter: alpha(opacity=20);
+    -moz-opacity:0.20;
+    opacity:0.20;
+}
+
+/*.top{
+    font-size: 8px;
+    width:120px;
+    height:10px;
+    margin: 130px 100px 0 100px ;
+    position:fixed;
+    text-align:center;
+    background-color: #584400;
+    color:#fff;
+    filter: alpha(opacity=20);
+    -moz-opacity:0.20;
+    opacity:0.20;
+}*/
+
+/*-------------------------
+四隅のサークルのスタイル(^_-)-☆  
+--------------------------*/
+
+
+a.circle{
+    margin:5px auto;
+    text-align :left;
+    display: inline-block;
+    border-radius:50%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.recipename{
+    font-size: 9px;
+    text-align: center;
+    color:#645641;
+    height: 30px;
+    width:95px;
+    margin-top: 10px;
+    overflow: hidden; 
+/*    text-overflow: ellipsis;  
+    -webkit-text-overflow: ellipsis;  
+    -o-text-overflow: ellipsis;  
+    white-space: nowrap;
+*/}
+
+
+/*-------------------------
+●　　○
+　○
+○　　○
+
+左上
+--------------------------*/
+
+.lefttop {
+	width:95px;
+    height: 180px;
+	display:table-cell;
+	text-align:center;
+	position:fixed;
+	margin-left: 20px;
+    margin-top: 10px;
+	color:#edd67a;
+}
+
+.lefttop a.circle{
+    margin-left :auto;
+    margin-right : auto;
+	border:solid 5px #e2cf16;
+
+}
+
+
+/*-------------------------
+○　　●
+　○
+○　　○
+
+右上
+--------------------------*/
+
+
+.righttop {
+    width:95px;
+    height: 180px;
+    /*margin-left: 205px;*/
+    right: 20px;
+    margin-top: 10px;
+	display:table-cell;
+	text-align:center;
+	position:fixed;
+	color:#edd67a;
+}
+
+.righttop a.circle{
+    margin-left :auto;
+    margin-right : auto;
+	border:solid 5px #bfdd0b;
+}
+
+
+/*-------------------------
+○　　○
+　○
+●　　○
+
+左下
+--------------------------*/
+
+
+.leftbottom {
+    width:95px;
+    height: 190px;
+    /*border: solid 1px; #000;*/
+    bottom: 45px;
+    display:table-cell;
+    text-align:center;
+    position:fixed;
+    margin-left: 20px;
+    margin-top: 10px;
+    color:#edd67a;
+}
+
+.leftbottom a.circle{
+    margin-left :auto;
+    margin-right : auto;
+	border:solid 5px #94cda3;
+}
+
+
+/*-------------------------
+○　　○
+　○
+○　　●    
+
+右下
+--------------------------*/
+
+.rightbottom {
+    width:95px;
+    height: 190px;
+    bottom: 45px;
+    right: 20px;
+    display:table-cell;
+    text-align:center;
+    position:fixed;
+    margin-left: 20px;
+    margin-top: 10px;
+    color:#edd67a;
+
+}
+
+.rightbottom a.circle{
+	border:solid 5px #bf824b;
+    margin-left :auto;
+    margin-right :auto;
+}
+
+
+
+
+
+/*-------------------------
+軸〜〜〜(・o・)
+--------------------------*/
+
+
+
+/*
+お金　円 ボーダーの色　e2cf16
+---------*/
+
+.money{
+    height: 50px;
+    color: #785b25;
+    font-weight: bold;
+    font-size: 16px;
+    background-image: url("img/money.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+}
+
+
+
+/*
+時間　分　94cda3
+---------*/
+
+
+.time{
+    height: 50px;
+    color: #577264;
+    font-weight: bold;
+    font-size: 16px;
+    background-image: url("img/time.png");
+    background-size:50%;
+    background-position:center bottom;
+    background-repeat:no-repeat;
+}
+
+
+
+
+/*
+食材のかぶり 食材名　69dcf7
+---------*/
+
+.material{
+    height: 50px;
+    color: #04417c;
+    font-weight: bold;
+    font-size: 10px;
+    background-image: url("img/material.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/*
+友人のおすすめ　友人の名前？　bfdd0b
+---------*/
+
+
+.friend{
+    height: 50px;
+    color: #277b39;
+    font-weight: bold;
+    font-size: 12px;
+    background-image: url("img/friend.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+
+
+/*
+味付け　味の名前　bf824b
+---------*/
+
+.taste{
+    height: 50px;
+    color: #814120;
+    font-weight: bold;
+    font-size: 12px;
+    background-image: url("img/taste.png");
+    background-size:40%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+
+
+/*
+調理方法　 調理方法の名前　ed7b7b   
+---------*/
+
+.process{
+    height: 50px;
+    color: #ed7b7b;
+    font-weight: bold;
+    font-size: 10px;
+    background-image: url("img/process.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+
+/*
+いままでのレシピすべて　e168a3   
+---------*/
+
+.total{
+    height: 50px;
+    color: #a20e73;
+    font-weight: bold;
+    font-size: 10px;
+    background-image: url("img/total.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+
+
+/*
+？？？
+---------*/
+
+.revel{
+    height: 50px;
+    color: #339933;
+    font-weight: bold;
+    font-size: 16px;
+    background-image: url("img/revel.png");
+    background-size:50%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}

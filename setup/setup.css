@@ -1,11 +1,22 @@
 /*-----------------------------
+ ヘッダー
+-----------------------------*/
+
+#pagename img {
+	display: none;
+}
+
+#l_btn a { display: none;}
+
+
+/*-----------------------------
  見出し
 -----------------------------*/
 
 .headline{
 	background-color: #fafad2;
-	padding: 30px 0 20px 10px;
-	font-size: 14pt;
+	padding: 20px 0 20px 10px;
+	font-size: 10pt;
 	border-bottom: solid 3px #ddd;
 }
 
@@ -15,18 +26,28 @@
 -----------------------------*/
 
 .content{
-	font-size: 16pt;
-	height: 50px;
-	padding-left: 20px;
+	font-size: 12pt;
 	border-bottom: solid 3px #ddd;
-	margin-top: 23px;
+	background-color: #fff;
 }
 
-.content table a img{
+.content a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 20px 0 20px 20px;
+}
+
+.content img{
+	height: 20px;
+	width: 20px;
+	position: relative;
+	bottom: -5px;
+}
+
+.content table img{
 	height: 32px;
 	width: 12px;
-	margin-right: 20px;
-	margin-top: -4px;
+	margin-right: 40px;
+	margin-top: -13px;
 }
-
-

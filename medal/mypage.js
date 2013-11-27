@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 	$('#pagename').append("マイページ")
 
@@ -50,6 +48,3 @@ $(function(){
 		}
 	});
 });
-
-
-

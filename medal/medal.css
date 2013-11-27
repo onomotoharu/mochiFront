@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* CSS Document */ 
 
+
+#pagename img {
+	display: none;
+}
+
 #l_btn a{
 	display: none;
 }
@@ -19,7 +24,7 @@
 	border-bottom:#CCC solid 1px;
 }
 
-.tab_contents ul li #medalimg{
+.tab_contents ul li .medalimg{
 	float:left;
 	width:60px;
 	height:60px;
@@ -68,7 +73,7 @@
 	font-size:12px;
 }
 
-.tab_contents ul li #getdate{
+.tab_contents ul li .getdate{
 	float:right;
 	width:25%;
 	color:#4D4D4D;
