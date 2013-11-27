@@ -1,6 +1,4 @@
 
-
-
 jQuery(function($) {
 
   var placeHolder = 'コメントを書く...';
@@ -9,17 +7,28 @@ jQuery(function($) {
   var frag_tw     = new Boolean(false);
   var frag_fb     = new Boolean(false);
 
-  // 入力フォーム
+  var pageH       = $("#container").height();
 
+  // 入力フォーム
   $("textarea")
     .focus(function() {
       var self = $(this);
-      if (self.val() === placeHolder) { self.val(''); }
+      if (self.val() === placeHolder) { self.val('');}
     })
     .blur(function() {
       var self = $(this);
-      if (self.val() === "") { self.val(placeHolder); }
+      if (self.val() === "") { self.val(placeHolder);}
   });
+  
+  $(function(){
+	$('input[type=text],textarea').focus(function(){
+		$(this).addClass('focus');
+	}).blur(function(){
+		$(this).removeClass('focus');
+	});
+});
+  
+  
 
   // 写真投稿ボタン
 
@@ -80,9 +89,52 @@ jQuery(function($) {
 
   // つくったボタン
 
+  $(".cookedBtn img").hide();
+
   $('.cookedBtn').click(function(){
     $(this).addClass("cookedBtn_on");
-    location.href = "../mypage/mypage.html";
+
+    // loading画像を表示
+    $('head').append(
+    '<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>');
+    $("#fade").css("height", pageH).delay(700).fadeOut(600);
+    $("#loader").delay(500).fadeOut(300);
+    $("#container").css("display", "block");
+    
+    var content = "",
+        recommend = false,
+        img = "";
+
+    // 通信に成功
+    localStorage.setItem("hoge", 1);
+    location.href = "../log/index.html";
+
+
+    // $.ajax({
+    //   method: "POST",
+    //   url: "/hoge/hoge",
+    //   data: {
+    //     hoge: content,
+    //     foo: recommend,
+    //     buzz: img
+    //   },
+    //   success: function(res) {
+    //     // 通信に成功
+    //     localStorage.setItem("hoge", 1);
+    //     location.href = "../log/index.html";
+    //   },
+    //   error: function() {
+    //     // 通信に失敗
+    //     alert("失敗だよー");
+    //   },
+    //   complete: function() {
+    //     $(".cookedBtn img").hide();
+    //     $('.cookedBtn').removeClass("cookedBtn_on");
+    //     alert("hogehoge");
+    //   }
+    // });
+
+    return false;
   })
 
 
