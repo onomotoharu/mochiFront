@@ -1,0 +1,44 @@
+.com_btn{
+	background-color: #efefef;
+	float: left;
+	height: 25px;
+	width: 90px;
+	text-align: center;
+	border-radius: 4px;
+	padding-top: 7px;
+	margin: 0 5px 0 10px;
+	clear: both;
+}
+
+.com_btn img{
+	height: 13px;
+	width: 16px;
+}
+
+div.iine_btn,div.iine_btn_on{
+	background-color: #efefef;
+	height: 22px;
+	width: 90px;
+	float: left;
+	text-align: center;
+	border-radius: 4px;
+	margin: 0 0 0 10px;
+	padding-top: 10px;
+}
+
+div.iine_btn_on{
+	background-color: #ccc;
+	height: 22px;
+	width: 90px;
+	float: left;
+	color: #fff;
+	text-align: center;
+	border-radius: 4px;
+	margin: 0 0 0 10px;
+	padding-top: 10px;
+}
+
+.iine_btn img{
+	height: 12px;
+	width: 12px;
+}
