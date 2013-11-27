@@ -1,11 +1,7 @@
 //各料理を選択
 jQuery(function(){
 
-	// $(".box").click(function(){
-	// 	$(this).addClass("box_on");
-	// });
-
-	//各料理を選択
+	
 	$(".box").click(function() {
     if($(this).hasClass('box')){
       $(this).addClass("box_on").removeClass('box');
@@ -16,6 +12,8 @@ jQuery(function(){
 　　$(function(){
   $('#r_btn a').append("次へ")
          .attr("href", "../recommend/index.html")
+
+         
 })
 });
 
