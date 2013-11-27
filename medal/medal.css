@@ -73,7 +73,7 @@
 	font-size:12px;
 }
 
-.tab_contents ul li #getdate{
+.tab_contents ul li .getdate{
 	float:right;
 	width:25%;
 	color:#4D4D4D;
