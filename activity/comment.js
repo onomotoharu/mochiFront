@@ -39,7 +39,7 @@ $(function(){
   });
 
   // 送信ボタンをクリックしたら
-  $(".send").click(function(userId,comment) {
+  $(".send").click(function() {
 
     // コメントを投稿
     App.getOwnActivities(function(activity){

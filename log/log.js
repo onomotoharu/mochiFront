@@ -49,28 +49,6 @@ $(function(){
 		}
 	});
 
-	var recipeData = {
-	recipeName : "おいしいよー",
-	recipePhoto : "./img/foodphoto.png",
-	recipeUrl : "../recipe/index.html",
-	cookedDay : "2013/12/22",
-	}
-
-	var cookedUser = {
-	pic : "./img/my_icon_user.png",
-	id : "bechi",
-	comment : "おいしかったっす〜〜〜"
-	}
-
-	// レシピデータ
-	$('.recipe_photo img').attr({'src':recipeData.recipePhoto});
-	// $('.act_right .date').text(recipeData.cookedDay);
-	$('.title a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
-	// ユーザデータ
-	$('#myname #myphoto img').attr({'src':cookedUser.pic});
-	$('#myname .myname').text(cookedUser.id);
-	$('.my_comment').text(cookedUser.comment);
-
 
 	App = new CheeseController();
 
@@ -80,23 +58,28 @@ $(function(){
 
 	App.getOwnActivities(function(activity){
 
-		// 作った日
-		var date = activity.user[0].created_at;
-		console.log(date);
-	    $('.act_right .date').text(date.split("T")[0]);
 
-	    // コメント
-    	$('.my_comment').text(activity.user[0].comment);
+		// 過去ログの配列をすべて表示
+		for(var i = 0,i<activity.user[i],i++) {
 
-	    // レシピID
-		recipe_id = activity.user[0].recipe_id;
+			// 作った日
+			var date = activity.user[0].created_at;
+			console.log(date);
+		    $('.act_right .date').text(date.split("T")[0]);
 
-		// レシピデータ
-		App.getDetail(recipe_id,function(recipe){
-			console.log(recipe);
-			$('.recipe_photo img').attr({'src':recipe.default_picture_name});
-			$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
-		});
+		    // コメント
+	    	$('.my_comment').text(activity.user[0].comment);
+
+		    // レシピID
+			recipe_id = activity.user[0].recipe_id;
+
+			// レシピデータ
+			App.getDetail(recipe_id,function(recipe){
+				console.log(recipe);
+				$('.recipe_photo img').attr({'src':recipe.default_picture_name});
+				$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
+			});
+		};
 
 	});
 
