@@ -258,9 +258,9 @@ a.circle:hover{
 }
 
 
--------------------------
-軸〜〜〜(・o・)
---------------------------
+/*-------------------------
+ 軸〜〜〜(・o・)
+--------------------------*/
 
 
 
@@ -268,11 +268,11 @@ a.circle:hover{
 お金　円 ボーダーの色　e2cf16
 ---------*/
 
-.money {
+.required_money {
     height: 50px;
     color: #785b25;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 10px; /*16px*/
     background-image: url("img/money.png");
     background-size:50%;
     background-position: center bottom;
@@ -281,7 +281,7 @@ a.circle:hover{
 }
 
 
-.money_s a.circle{
+.required_money_s a.circle{
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #e2cf16;
@@ -295,18 +295,18 @@ a.circle:hover{
 ---------*/
 
 
-.time{
+.necessary_time{
     height: 50px;
     color: #577264;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 10px; /*16px*/
     background-image: url("img/time.png");
     background-size:50%;
     background-position:center bottom;
     background-repeat:no-repeat;
 }
 
-.time_s a.circle{
+.necessary_time_s a.circle{
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #94cda3;
@@ -319,7 +319,7 @@ a.circle:hover{
 食材のかぶり 食材名　69dcf7
 ---------*/
 
-.material{
+.food{
     height: 50px;
     color: #04417c;
     font-weight: bold;
@@ -330,7 +330,7 @@ a.circle:hover{
     background-repeat: no-repeat;
 }
 
-.material_s a.circle{
+.food_s a.circle{
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #69dcf7;
@@ -390,7 +390,7 @@ a.circle:hover{
 調理方法　 調理方法の名前　ed7b7b   
 ---------*/
 
-.process{
+.methods{
     height: 50px;
     color: #ed7b7b;
     font-weight: bold;
@@ -401,7 +401,7 @@ a.circle:hover{
     background-repeat: no-repeat;
 }
 
-.process_s a.circle{
+.methods_s a.circle{
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #ed7b7b;
