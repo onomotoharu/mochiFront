@@ -24,6 +24,7 @@
 <script type="text/javascript" src="./signin.js"></script>
 
 
+
 </head>
 
 <body>
@@ -38,18 +39,18 @@
 <div class="clear"></div>
 
 
-<input type="text" id="login_id" placeholder="ユーザー名またはメールアドレス"><br>
-<input type="password" id="login_ps" placeholder="パスワード"><br>
+<input type="text" class="login_id" placeholder="ユーザー名またはメールアドレス"><br>
+<input type="password" class="login_ps" placeholder="パスワード"><br>
 
 <input type="checkbox" id="login_save" name="save" value="save"> ログイン情報を保存する
 
 <div class="clear"></div>
 
-<section id="btn_login">  
-<p><a href="../survey/index.html"><button>ログイン</button></a></p>  
+<section class="btn_login">  
+<a href="../survey/index.html"><button>ログイン</button></a>
 </section> 
 
-<section id="btn_tw">  
+<section class="btn_tw">  
 <p><button><img src="common/login_tw.png" border="0" onmouseover="this.src='common/login_tw_on.png'" onmouseout="this.src='common/login_tw.png'"　/><br>twitterでログイン</button></p>  
 </section> 
 
@@ -60,6 +61,10 @@
 <section id="btn_new">  
 <p><a href="./signup.html"><button>新規登録はこちら</button></a></p>  
 </section> 
+
+
+      <input id="trigger" type="button" value="表示">
+
 
 </section>
 </div>
