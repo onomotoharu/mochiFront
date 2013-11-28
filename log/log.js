@@ -60,18 +60,18 @@ $(function(){
 
 
 		// 過去ログの配列をすべて表示
-		for(var i = 0,i<activity.user[i],i++) {
+		for(var i = 0;i < activity.user[i];i++) {
 
 			// 作った日
-			var date = activity.user[0].created_at;
+			var date = activity.user[i].created_at;
 			console.log(date);
-		    $('.act_right .date').text(date.split("T")[0]);
+		    $('.act_right .date').text(date.split("T")[i]);
 
 		    // コメント
-	    	$('.my_comment').text(activity.user[0].comment);
+	    	$('.my_comment').text(activity.user[i].comment);
 
 		    // レシピID
-			recipe_id = activity.user[0].recipe_id;
+			recipe_id = activity.user[i].recipe_id;
 
 			// レシピデータ
 			App.getDetail(recipe_id,function(recipe){
@@ -79,6 +79,19 @@ $(function(){
 				$('.recipe_photo img').attr({'src':recipe.default_picture_name});
 				$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
 			});
+
+			// コメントボタンをクリックしたら
+			$(".com_btn").click(function() {
+				
+				// 親要素my_actのidにactivityの配列ナンバーを追加
+				$(this).parent(".my_act").attr('id', 'i');
+
+				// URLにパラメータとして渡す
+				location.href = "../activity/index.html?activity_id=1";
+
+
+			});
+
 		};
 
 	});

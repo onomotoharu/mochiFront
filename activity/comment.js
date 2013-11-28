@@ -5,7 +5,8 @@ $(document).ready(function(){
 
 $(function(){
 
-  recipe_id = getUrlVars()["recipe_id"];
+  recipe_id    = getUrlVars()["recipe_id"];
+  acitivity_id = getUrlVars()["activity_id"];
 
   App = new CheeseController();
 
