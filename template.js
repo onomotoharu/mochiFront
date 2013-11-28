@@ -234,13 +234,13 @@ $(function(){
 	App = new CheeseController();
 
 	// ## sample ##
-	App.signIn("ren","test",function(json){
-		console.log(json);
-	});
+	// App.signIn("ren","test",function(json){
+	// 	console.log(json);
+	// });
 
-	App.getRecommend(function(json){
-		console.log(json);
-	})
+	// App.getRecommend(function(json){
+	// 	console.log(json);
+	// })
 
 	// App.getRecommend(function(json){
 

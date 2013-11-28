@@ -58,42 +58,71 @@ $(function(){
 
 	App.getOwnActivities(function(activity){
 
+		// 作った日
+		var date = activity.activities[0].created_at;
+	    $('.act_right .date').text(date.split("T")[0]);
 
-		// 過去ログの配列をすべて表示
-		for(var i = 0;i < activity.user[i];i++) {
+	    // コメント
+    	$('.my_comment').text(activity.activities[0].comment);
 
-			// 作った日
-			var date = activity.user[i].created_at;
-			console.log(date);
-		    $('.act_right .date').text(date.split("T")[i]);
+	    // レシピID
+		recipe_id = activity.activities[0].recipe_id;
 
-		    // コメント
-	    	$('.my_comment').text(activity.user[i].comment);
+		// レシピデータ
+		App.getDetail(recipe_id,function(recipe){
+			console.log(recipe);
+			$('.recipe_photo img').attr({'src':recipe.default_picture_name});
+			$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
+		});
 
-		    // レシピID
-			recipe_id = activity.user[i].recipe_id;
+		// コメントボタンをクリックしたら
+		$(".com_btn").click(function() {
+			
+			// 親要素my_actのidにactivityの配列ナンバーを追加
+			$(this).parent(".my_act").attr('id', '0');
 
-			// レシピデータ
-			App.getDetail(recipe_id,function(recipe){
-				console.log(recipe);
-				$('.recipe_photo img').attr({'src':recipe.default_picture_name});
-				$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
-			});
+			// URLにパラメータとして渡す
+			location.href = "../activity/comment.html?activity_id=0";
 
-			// コメントボタンをクリックしたら
-			$(".com_btn").click(function() {
-				
-				// 親要素my_actのidにactivityの配列ナンバーを追加
-				$(this).parent(".my_act").attr('id', 'i');
-
-				// URLにパラメータとして渡す
-				location.href = "../activity/index.html?activity_id=1";
-
-
-			});
-
-		};
+		});
 
 	});
+
+
+		// // 過去ログの配列をすべて表示
+		// for(i = 0;i < activity.activities[i].length;i++) {
+
+		// 	// 作った日
+		// 	var date = activity.activities[i].created_at;
+		//     $('.act_right .date').text(date.split("T")[i]);
+
+		//     // コメント
+	 //    	$('.my_comment').text(activity.activities[i].comment);
+
+		//     // レシピID
+		// 	recipe_id = activity.activities[i].recipe_id;
+
+		// 	// レシピデータ
+		// 	App.getDetail(recipe_id,function(recipe){
+		// 		console.log(recipe);
+		// 		$('.recipe_photo img').attr({'src':recipe.default_picture_name});
+		// 		$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
+		// 	});
+
+		// 	// コメントボタンをクリックしたら
+		// 	$(".com_btn").click(function() {
+				
+		// 		// 親要素my_actのidにactivityの配列ナンバーを追加
+		// 		$(this).parent(".my_act").attr('id', 'i');
+
+		// 		// URLにパラメータとして渡す
+		// 		location.href = "../activity/index.html?activity_id=1";
+
+
+		// 	});
+
+		// };
+
+	// });
 
 });
