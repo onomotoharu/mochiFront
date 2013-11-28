@@ -4,7 +4,10 @@ $(document).ready(function(){
 });
 
 $(function(){
-  
+
+  recipe_id    = getUrlVars()["recipe_id"];
+  acitivity_id = getUrlVars()["activity_id"];
+
   App = new CheeseController();
 
   App.signIn("ren","test",function(json){
@@ -12,7 +15,7 @@ $(function(){
   });
 
   // レシピデータ
-  App.getDetail(1,function(recipe){
+  App.getDetail(recipe_id,function(recipe){
     $('.recipe_name a').text(recipe.name).attr({'href':recipe.source_url});
     $('.recipe_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
   });
@@ -37,14 +40,14 @@ $(function(){
   });
 
   // 送信ボタンをクリックしたら
-  $(".send").click(function(userId,comment) {
+  $(".send").click(function() {
 
     // コメントを投稿
     App.getOwnActivities(function(activity){
       var newComment = $("<div/>").appendTo('div.comment').addClass('come_com');
-      newComment.append($("<span/>").text(commentObj.userId).addClass('user_id'));
-      commentObj.comment = $(".com_input").val();
-      newComment.append($("<span/>").text(commentObj.comment).addClass('com_txt'));
+      newComment.append($("<span/>").text(localStorage.screen_id).addClass('user_id'));
+      activity.user[0].comment = $(".com_input").val();
+      newComment.append($("<span/>").text(activity.user[0].comment).addClass('com_txt'));
     });
 
   });
