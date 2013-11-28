@@ -228,22 +228,22 @@ CheeseController.prototype.getSample = function(callback){
 */
 
 
-// App = null;
+App = null;
 
-// $(function(){
-// 	App = new CheeseController();
+$(function(){
+	App = new CheeseController();
 
-// 	// ## sample ##
-// 	App.signIn("ren","test",function(json){
-// 		console.log(json);
-// 	});
+	// ## sample ##
+	App.signIn("ren","test",function(json){
+		console.log(json);
+	});
 
-// 	App.getRecommend(function(json){
-// 		console.log(json);
-// 	})
+	App.getRecommend(function(json){
+		console.log(json);
+	})
 
-// 	// App.getRecommend(function(json){
+	// App.getRecommend(function(json){
 
-// 	// });
+	// });
 
-// })
+})
