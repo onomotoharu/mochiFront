@@ -6,8 +6,8 @@ jQuery(function($) {
   var frag_tw     = new Boolean(false);
   var frag_fb     = new Boolean(false);
 
-  var pageH       = $("#container").height();  
-  
+  var pageH       = $("#container").height();
+
 
   // 写真投稿ボタン
 
@@ -46,7 +46,7 @@ jQuery(function($) {
     if(frag_tw == false){
       frag_tw = true;
       $("#tw img").attr("src","img/twitter_on.png");
-      
+
     }else{
       frag_tw = false;
       $("#tw img").attr("src","img/twitter.png");
@@ -59,7 +59,7 @@ jQuery(function($) {
     if(frag_fb == false){
       frag_fb = true;
       $("#fb img").attr("src","img/facebook_on.png");
-      
+
     }else{
       frag_fb = false;
       $("#fb img").attr("src","img/facebook.png");
@@ -79,7 +79,7 @@ jQuery(function($) {
     $("#fade").css("height", pageH).delay(700).fadeOut(600);
     $("#loader").delay(500).fadeOut(300);
     $("#container").css("display", "block");
-    
+
     var content = "",
         recommend = false,
         img = "";
@@ -161,11 +161,39 @@ $(function(){
           var text = $(".doneComment").val();
           alert(text);
       });
-   
+
+
+
 });
 
 
 
+jQuery(function($){
+  //送信ボタンの非表示
+  $('#submit').hide();
+
+
+  //フォームの内容が変更されたとき
+  $('#img').change(function() {
+      var preview = $('#preview');
+
+      //現在表示されているものを消す。
+      preview.find("img").fadeOut(300);
+
+      //アップロード
+      $(this).upload(
+      'upload.php',
+      $("form").serialize(),
+      function(html){
+      //サムネイルの表示
+            preview.html(html).animate({"height":preview.find("img").height()+"px"},3,function(){
+                preview.find("img").hide().fadeIn(300);
+            });
+        },'html');
+  });
+
+
+});
 
 
 
