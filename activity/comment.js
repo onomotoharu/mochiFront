@@ -30,7 +30,12 @@ $(function(){
 
     // ユーザデータ
     // $('.user_info .user_icon img').attr({'src':localStorage.pic});
-    $('.user_info .user_id').text(localStorage.screen_id);
+    $('#def_user,.user_info .user_id').text(activity.activities[0].user_id);
+    $('#def_comment').text(activity.activities[0].comment);
+
+    App.getOwnProfile(function(aaa){
+      console.log(aaa);
+    });
 
   });
 
