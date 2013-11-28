@@ -49,7 +49,8 @@ $(function(){
 		}
 	});
 
-
+	// CheeseController
+	
 	App = new CheeseController();
 
 	App.signIn("ren","test",function(json){
@@ -75,54 +76,6 @@ $(function(){
 			$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
 		});
 
-		// コメントボタンをクリックしたら
-		$(".com_btn").click(function() {
-			
-			// 親要素my_actのidにactivityの配列ナンバーを追加
-			$(this).parent(".my_act").attr('id', '0');
-
-			// URLにパラメータとして渡す
-			location.href = "../activity/comment.html?activity_id=0";
-
-		});
-
 	});
-
-
-		// // 過去ログの配列をすべて表示
-		// for(i = 0;i < activity.activities[i].length;i++) {
-
-		// 	// 作った日
-		// 	var date = activity.activities[i].created_at;
-		//     $('.act_right .date').text(date.split("T")[i]);
-
-		//     // コメント
-	 //    	$('.my_comment').text(activity.activities[i].comment);
-
-		//     // レシピID
-		// 	recipe_id = activity.activities[i].recipe_id;
-
-		// 	// レシピデータ
-		// 	App.getDetail(recipe_id,function(recipe){
-		// 		console.log(recipe);
-		// 		$('.recipe_photo img').attr({'src':recipe.default_picture_name});
-		// 		$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
-		// 	});
-
-		// 	// コメントボタンをクリックしたら
-		// 	$(".com_btn").click(function() {
-				
-		// 		// 親要素my_actのidにactivityの配列ナンバーを追加
-		// 		$(this).parent(".my_act").attr('id', 'i');
-
-		// 		// URLにパラメータとして渡す
-		// 		location.href = "../activity/index.html?activity_id=1";
-
-
-		// 	});
-
-		// };
-
-	// });
 
 });

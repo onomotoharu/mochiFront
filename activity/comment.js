@@ -1,13 +1,11 @@
 $(document).ready(function(){
 	$('#pagename').append("みんなのごはん");
-  $('#l_btn a').attr("href", "./index.html");
+  $('#l_btn a').attr("href", "javascript:history.back();");
 });
 
 $(function(){
 
   var activity_id = getUrlVars()["activity_id"];
-
-  console.log(activity_id);
 
   App = new CheeseController();
 
@@ -25,17 +23,13 @@ $(function(){
     });
 
     // つくった日
-      var date = activity.activities[activity_id].created_at;
-      $('.right .date').text(date.split("T")[0]);
+    var date = activity.activities[activity_id].created_at;
+    $('.right .date').text(date.split("T")[0]);
 
     // ユーザデータ
     // $('.user_info .user_icon img').attr({'src':localStorage.pic});
     $('#def_user,.user_info .user_id').text(activity.activities[0].user_id);
     $('#def_comment').text(activity.activities[0].comment);
-
-    App.getOwnProfile(function(aaa){
-      console.log(aaa);
-    });
 
   });
 
@@ -52,10 +46,11 @@ $(function(){
 
     // コメントを投稿
     App.getOwnActivities(function(activity){
-      var newComment = $("<div/>").appendTo('div.comment').addClass('come_com');
-      newComment.append($("<span/>").text(localStorage.screen_id).addClass('user_id'));
-      activity.activities[0].comment = $(".com_input").val();
-      newComment.append($("<span/>").text(activity.activities[0].comment).addClass('com_txt'));
+      var newCommentEl = $("<div/>").appendTo('div.comment').addClass('come_com');
+      newCommentEl.append($("<span/>").text(localStorage.screen_id).addClass('user_id'));
+      var newComment = $(".com_input").val();
+      newCommentEl.append($("<span/>").text(newComment).addClass('com_txt'));
+      
     });
 
   });
