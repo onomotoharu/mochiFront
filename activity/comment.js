@@ -20,7 +20,7 @@ $(function(){
   // つくった日
   App.getOwnActivities(function(activity){
     var date = activity.user[0].created_at;
-    $('.right .date').text(date);
+    $('.right .date').text(date.split("T")[0]);
     console.log(activity);
   });
 
