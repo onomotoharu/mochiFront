@@ -5,8 +5,7 @@ $(document).ready(function(){
 
 $(function(){
 
-  recipe_id    = getUrlVars()["recipe_id"];
-  acitivity_id = getUrlVars()["activity_id"];
+  recipe_id = getUrlVars()["recipe_id"];
 
   App = new CheeseController();
 
@@ -40,7 +39,7 @@ $(function(){
   });
 
   // 送信ボタンをクリックしたら
-  $(".send").click(function() {
+  $(".send").click(function(userId,comment) {
 
     // コメントを投稿
     App.getOwnActivities(function(activity){

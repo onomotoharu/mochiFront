@@ -49,6 +49,28 @@ $(function(){
 		}
 	});
 
+	var recipeData = {
+	recipeName : "おいしいよー",
+	recipePhoto : "./img/foodphoto.png",
+	recipeUrl : "../recipe/index.html",
+	cookedDay : "2013/12/22",
+	}
+
+	var cookedUser = {
+	pic : "./img/my_icon_user.png",
+	id : "bechi",
+	comment : "おいしかったっす〜〜〜"
+	}
+
+	// レシピデータ
+	$('.recipe_photo img').attr({'src':recipeData.recipePhoto});
+	// $('.act_right .date').text(recipeData.cookedDay);
+	$('.title a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
+	// ユーザデータ
+	$('#myname #myphoto img').attr({'src':cookedUser.pic});
+	$('#myname .myname').text(cookedUser.id);
+	$('.my_comment').text(cookedUser.comment);
+
 
 	App = new CheeseController();
 
@@ -58,41 +80,23 @@ $(function(){
 
 	App.getOwnActivities(function(activity){
 
+		// 作った日
+		var date = activity.user[0].created_at;
+		console.log(date);
+	    $('.act_right .date').text(date.split("T")[0]);
 
-		// 過去ログの配列をすべて表示
-		for(var i = 0;i < activity.user[i];i++) {
+	    // コメント
+    	$('.my_comment').text(activity.user[0].comment);
 
-			// 作った日
-			var date = activity.user[i].created_at;
-			console.log(date);
-		    $('.act_right .date').text(date.split("T")[i]);
+	    // レシピID
+		recipe_id = activity.user[0].recipe_id;
 
-		    // コメント
-	    	$('.my_comment').text(activity.user[i].comment);
-
-		    // レシピID
-			recipe_id = activity.user[i].recipe_id;
-
-			// レシピデータ
-			App.getDetail(recipe_id,function(recipe){
-				console.log(recipe);
-				$('.recipe_photo img').attr({'src':recipe.default_picture_name});
-				$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
-			});
-
-			// コメントボタンをクリックしたら
-			$(".com_btn").click(function() {
-				
-				// 親要素my_actのidにactivityの配列ナンバーを追加
-				$(this).parent(".my_act").attr('id', 'i');
-
-				// URLにパラメータとして渡す
-				location.href = "../activity/index.html?activity_id=1";
-
-
-			});
-
-		};
+		// レシピデータ
+		App.getDetail(recipe_id,function(recipe){
+			console.log(recipe);
+			$('.recipe_photo img').attr({'src':recipe.default_picture_name});
+			$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
+		});
 
 	});
 
