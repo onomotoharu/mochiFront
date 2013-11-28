@@ -157,12 +157,14 @@ $(function(){
 
   });
 
-             $(".cookedBtn").click(function(){
-                    var text = $(".doneComment").val();
-                    alert(text);
-                });
+   $(".cookedBtn").click(function(){
+          var text = $(".doneComment").val();
+          alert(text);
+      });
    
 });
+
+
 
 
 
