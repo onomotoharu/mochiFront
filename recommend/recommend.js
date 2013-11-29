@@ -17,17 +17,17 @@ $(document).ready(function(){
         console.log(recommend);
 
             //左上　レシピ名・軸・リンク・画像
-<<<<<<< HEAD
-            $('.lefttop .recipename').text(reco[0].recipe.name);
-            $('.lefttop .re_link').attr("class", reco[0].recipe.category+"_s");
-            $('.lefttop .axis').attr("class", reco[0].recipe.category).text(reco[0].recipe.category);
-            $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+reco[0].recipe.default_picture_name+"')").attr("href", reco[0].recipe.source_url+"?recipe_id=1");
-=======
+// <<<<<<< HEAD
+//             $('.lefttop .recipename').text(reco[0].recipe.name);
+//             $('.lefttop .re_link').attr("class", reco[0].recipe.category+"_s");
+//             $('.lefttop .axis').attr("class", reco[0].recipe.category).text(reco[0].recipe.category);
+//             $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+reco[0].recipe.default_picture_name+"')").attr("href", reco[0].recipe.source_url+"?recipe_id=1");
+// =======
             $('.lefttop .recipename').text(recommend[0].recipe.name);
             $('.lefttop .re_link').attr("class", recommend[0].recommend_type+"_s");
             $('.lefttop .axis').attr("class", recommend[0].recommend_type);
             $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[0].recipe.default_picture_name+"')").attr("href", recommend[0].recipe.source_url+"?recipe_id="+recommend[0].recipe.id);
->>>>>>> origin/recommend
+// >>>>>>> origin/recommend
          
             //右上
             $('.righttop .recipename').text(recommend[1].recipe.name);
