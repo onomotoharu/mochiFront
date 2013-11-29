@@ -50,6 +50,14 @@ $(function(){
     });
 });
 
+
+$(".followcount").append(data.following.length);
+
+//  今、logのindex.htmlのカウントを増やしたい。
+// →followのfollow.jsをindex.htmlで呼んで、
+// followcountにdeta.following.lengthをappendしてるんだけどね（54行目）
+// うまくいかない。←いまここ。
+
 /*
 $(function(){
 	for(var i=0; i<data.length; i++){
