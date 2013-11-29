@@ -17,21 +17,15 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href=".Elastislide/css/custom.css">
-    <link rel="stylesheet" type="text/css" href=".Elastislide/css/demo.css">
-    <link rel="stylesheet" type="text/css" href=".Elastislide/css/elastislide.css">
-
     <link rel="stylesheet" type="text/css" href="../template.css">
-    <link rel="stylesheet" type="text/css" href="./recommend.css">
+    <link rel="stylesheet" type="text/css" href="recommend.css">
 
-    <link rel="stylesheet" type="text/css" href=".Elastislide/js/jquery.elastislide.js">
-    <link rel="stylesheet" type="text/css" href=".Elastislide/js/jquerypp.custom.js">
-    <link rel="stylesheet" type="text/css" href=".Elastislide/css/modernizr.custom.17475.js">
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script language="javascript" src="../load.js"></script>
-    <script language="javascript" src="../template.js"></script>
-    <script language="javascript" src="./recommend.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="recommend.js"></script>
+    <!--<script type="text/javascript" src="jquery.flicksimple.js"></script>-->
+    <script type="text/javascript" src="../template.js"></script>
+    <script src="http://winvelab.net/cheese/jquery.base64"></script>
 
 </head>
 
@@ -40,90 +34,83 @@
           <script>header();</script>
 
 
-
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-7243260-2']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-  </script>
-  
-
     <div class="allcontents">
-    
-    <!-- メインコンテンツここから -->
+        <!-- メインコンテンツここから -->
     <section class="content"> 
       <!-- 関連図ここから--> 
       
       <!--左上の◯-->
       <article class="lefttop">
-        <div class="recipename">基本的なチンジャオロース</div>
-        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"></a>
-        <div class="money">
-          300円以下
+        <div class="recipename"><!--レシピ名--></div>
+          <div class="re_link">
+            <a href=" " class="circle" data-transition="fade" style="background-image: url(' ')"　data-transition="turn"></a>
+            <div class="axis">
+            <!--軸-->
+            </div>
         </div>
       </article>
       <!--左上の◯ここまで--> 
       
       <!--右上の◯-->
       <article class="righttop">
-      <div class="recipename">朝食・お弁当に♪ふわぐわオムレツですふわふわふわぐわふわ</div>
-        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"></a>
-        <div class="friend">
-          ひらっちさん、あんどーさん
-        </div>
+        <div class="recipename"><!--レシピ名--></div>
+          <div class="re_link">
+            <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"></a>
+            <div class="axis">
+              <!--軸-->
+            </div>
+          </div>
         </article>
       <!--右上の◯ここまで--> 
       
       <!--左下の◯-->
       <article class="leftbottom">
-        <div class="time">
-          60分
+        <div class="re_link">
+          <div class="axis">
+            <!--軸-->
+          </div>
+          <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
         </div>
-        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"> </a>
-      <div class="recipename">さくさく野菜たっぷりコロッケ</div>
+        <div class="recipename"><!--レシピ名--></div>
         </article>
       <!--左下の◯ここまで--> 
       
       <!--右下の◯-->
       <article class="rightbottom">
-        <div class="taste">
-          酢<br>しょうゆ<br>
+        <div class="re_link">
+          <div class="axis">
+            <!--軸-->
+          </div>
+          <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
         </div>
-        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"> </a>      
-        <div class="recipename">右下</div>
+        <div class="recipename"><!--レシピ名--></div>
         </article>
       <!--右下の◯ここまで--> 
       
       <!--真ん中の◯-->
       <article class="center_circle">
-      <div class="scr">
-              <ul id="carousel" class="elastislide-list">
-                  <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-                  <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
-
-              </ul>
-      </div>
+        <div id="verticaly">
+              <ul></ul>
+            </div>
       </article>
-      <div class="down">▲</div>
-
+      <!--<div class="down">▲</div>-->
     </section>
+
   <!-- /全体ここまで --> 
-  
+
+
+<!--<script type="text/javascript">
+  $('#verticaly').flickSimple({
+    vertical: true,
+    horizontal: false,
+    lock: true
+  });
+</script>-->
+
 </div>
-                
+  
 
 <script>footer();</script>   
- </div><!-- /container -->  
+ 
         </body>
 </html>
