@@ -50,9 +50,10 @@ $(function(){
       newCommentEl.append($("<span/>").text(localStorage.screen_id).addClass('user_id'));
       var newComment = $(".com_input").val();
       newCommentEl.append($("<span/>").text(newComment).addClass('com_txt'));
-      
     });
 
+    $(".send a").attr("href", "javascript:history.back();");
+    
   });
 
 });

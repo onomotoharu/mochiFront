@@ -59,6 +59,9 @@ $(function(){
 
 	App.getOwnActivities(function(activity){
 
+		// 1つの投稿を増やす（空タグ）
+		$('div.log').prepend('<div class="my_act"><div class="act_left"><div class="recipe_photo"><img /></div></div><div class="act_right"><div class="date"></div><div class="title"><a href="#"></div><div class="my_comment"></div></div><div class="act_bottom"><div class="com_btn"><img src="./img/com_off.png"><span>コメント0</span></div><div class="iine_btn"><img src="./img/good_off.png"><span>イイネ！0</span></div><div id="share"><p><a href="#open01"><img src="./img/…_off.png"></a></p></div></div></div>');
+
 		// 作った日
 		var date = activity.activities[0].created_at;
 	    $('.act_right .date').text(date.split("T")[0]);

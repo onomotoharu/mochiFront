@@ -10,25 +10,35 @@ $(function(){
 
 $(function(){
 
-	var recipeData = {
-	recipeName : "おいしいよー",
-	recipePhoto : "./img/foodphoto.png",
-	recipeUrl : "../recipe/index.html",
-	cookedDay : "2013/12/22",
-	}
+	// CheeseController
+	
+	App = new CheeseController();
 
-	var cookedUser = {
-	pic : "./img/my_icon_user.png",
-	id : "bechi"
-	}
+	App.signIn("ren","test",function(json){
+		// console.log(json);
+	});
 
-	// レシピデータ
-	$('.re_photo img').attr({'src':recipeData.recipePhoto});
-	$('.act_right .date').text(recipeData.cookedDay);
-	$('.title a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
-	// ユーザデータ
-	$('#myname #myphoto img').attr({'src':cookedUser.pic});
-	$('#myname .myname').text(cookedUser.id);
+	App.getTimeline(function(timeline) {
+
+		var timeline_id = 0;
+		console.log(timeline[timeline_id]);
+
+	    // レシピデータ
+	    var recipe_id = timeline[timeline_id].recipe_id;
+	    App.getDetail(recipe_id,function(recipe){
+	      $('.title a').text(recipe.name).attr({'href':recipe.source_url});
+	      $('.re_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+	    });
+
+	    // つくった日
+	    var date = timeline[timeline_id].created_at;
+	    $('.act_right .date').text(date.split("T")[0]);
+
+	    // ユーザデータ
+	    $('#myphoto img').attr({'src':timeline[timeline_id].picture_path});
+	    $('.myname').text(timeline[timeline_id].user_id);
+
+	});
 
 	$('.com_btn').click(function(){
 		$('.com_formsend').toggle();
