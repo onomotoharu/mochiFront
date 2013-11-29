@@ -1,0 +1,125 @@
+<!DOCTYPE html>  
+<html lang="ja">  
+        <head>  
+                <meta charset="UTF-8">  
+                <meta http-equiv="content-script-type" content="text/javascript">  
+                <meta name="viewport" content="width=device-width,user-scalable=no">  
+
+                <title>cheese!</title>
+
+                <meta name="description" content="" />
+                <meta name="keywords" content="" />
+                <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"> -->
+                <!--[if lt IE 9]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                <![endif]-->
+                <link rel="stylesheet" type="text/css" href="../template.css">
+                <link rel="stylesheet" type="text/css" href="./log.css">
+                 <link rel="stylesheet" type="text/css" href="follow.css">
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+                <script language="javascript" src="../template.js"></script>
+                <script type="text/javascript" src="./log.js"></script>
+                <script type="text/javascript" src="./jquery.canvasChart.js"></script>
+                <!--[if IE]><script type="text/javascript" src="./excanvas.js"></script><![endif]-->
+        </head>
+
+        <body>
+                <div class="success">
+                    <p><img src="../img/check.png" width="14" height="11">料理の投稿が完了しました！</p>
+                </div>
+                <script>header();</script>
+                <div class="allcontents">
+                        <section id="profile">
+                        <div id="profile_top">
+                                <div id="myphoto"><img src="./img/my_icon_user.png"></div>
+                                <div id="myname"><span class="myname"></span></div>
+                                <table align="right">
+                                        <th><td class="follow"><a href="../follow/follow.html"><p>フォロー</p><span class="followcount"></span></a></td><td class="follow"><a href="../follow/follower.html"><p>フォロワー</p><span class="followercount"></span></a></td></th>
+
+                                </table>
+                        </div>
+                        <div id="myintro"></div>
+                        </section>
+
+                        <div class="tab">
+                                <ul>
+                                        <li id="log"><a href="" class="now"><img src="./img/log_on.png" class="current"></a></li>
+                                        <li id="graph" class="tab_now"><a href="../graph/index.html"><img src="img/graph_off.png"></a></li>
+                                        <li id="fav"><a href="../fav/index.html"><img src="img/fav_off.png"></a></li>
+                                        <li id="badge"><a href="../medal/index.html"><img src="img/badge_off.png"></a></li>
+                                </ul>
+                        </div>
+                        <div class="tab_title">過去ログ</div>
+                        <div class="my_act">
+                                <div class="act_left">
+                                <div class="recipe_photo">
+                                        <img src="./img/foodphoto.png"/>
+                                </div>
+                                </div>
+                                <div class="act_right">
+                                        <div class="date" ><a>2013/10/26-10:00</a></div>
+                                        <div class="title"><a>お芋掘りにいったら☆芋つる（軸）と油揚げの炒め煮</a></div>
+                                        <div class="my_comment">コメントこれで１０字コメントこれで１０字コメントこれで１０字コメントこれで１０字コメントこれで１０字コメントこれで１０字コメントこれで１０字</div>
+                                </div>
+                                <div class="act_bottom">
+                                <div class="com_btn"><img src="./img/com_off.png">コメント10</div>
+                                <div class="iine_btn"><img src="./img/good_off.png">イイネ！21</div>
+                                <div id="share">
+                                       <p><a href="#open01"><img src="./img/…_off.png"></a></p>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="my_act">
+                                <div class="act_left">
+                                <div class="recipe_photo">
+                                        <img src="./img/foodphoto.png"/>
+                                </div>
+                                </div>
+                                <div class="act_right">
+                                        <div class="date" ><a>2013/10/26-10:00</a></div>
+                                        <div class="title"><a>肉じゃが</a></div>
+                                        <div class="my_comment">おいしかたよーーーーーー</div>
+                                </div>
+                                <div class="act_bottom">
+                                <div class="com_btn"><img src="./img/com_off.png">コメント10</div>
+                                <div class="iine_btn"><img src="./img/good_off.png">イイネ！21</div>
+                                <div id="share">
+                                        <p><a href="#open01"><img src="./img/…_off.png"></a></p>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="my_act">
+                                <div class="act_left">
+                                <div class="recipe_photo">
+                                        <img src="./img/foodphoto.png"/>
+                                </div>
+                                </div>
+                                <div class="act_right">
+                                        <div class="date" ><a>2013/10/26-10:00</a></div>
+                                        <div class="title"><a>お芋掘りにいったら☆芋つる（軸）と油揚げの炒め煮</a></div>
+                                        <div class="my_comment">おいしかたよーーーーーー</div>
+                                </div>
+                                <div class="act_bottom">
+                                <div class="com_btn"><img src="./img/com_off.png">コメント10</div>
+                                <div class="iine_btn"><img src="./img/good_off.png">イイネ！21</div>
+                                <div id="share">
+                                        <p><a href="#open01"><img src="./img/…_off.png"></a></p>
+                                </div>
+                                </div>
+                        </div>
+                            <div id="modal">
+                                
+                          <div id="open01">
+<a href="#" class="close_overlay">×</a>
+<span class="modal_window">
+<a href=""><img src="./img/twitter_off.png"><h1>twitterで投稿する</h1></a>
+<a href=""><img src="./img/facebook_off.png"><h1>facebookで投稿する</h1></a>
+<a href=""><img src="./img/delete.png"><h1>つくった！投稿を削除する</h1></a>
+<a href="#"><p>【×】CLOSE</p></a>
+</span><!--/.modal_window-->
+</div><!--/#open01-->
+</div><!--/#modal-->
+</div><!--/#share-->
+                <script>footer();</script>
+        </body>
+</html>
