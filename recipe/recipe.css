@@ -75,32 +75,35 @@ deta（time money
 ----------------------------------------*/
 
 .deta{
-	width: 90%;
-	margin:0 auto;
-	padding-bottom:12px;
-	overflow: hidden;
+	width: 240px;
+  height: 40px;
+  margin: 0 20px;
+  padding: 0 20px 5px 20px;
 	border-bottom: dashed 2px #3cb371;
 	text-align:center;
 }
 
-.time{ 
-	width:45%;
-	float:left;
-		font-size: 12pt;
+
+.datastyle{ 
+  width: 70px;
+  height: 40px;
+  margin-top: 10px;
+  float: left;
+  text-align: center;
+  font-size: 24px;
+  padding-right: 10px;
 }
 
-.yen{
-	width: 45%;
-	float:left;
-		font-size: 12pt;
-}
 
-.time img, .yen img{
+.deta img{
 	width: 30px;
 	height: 30px;
+  margin:0 10px 20px 0;
+  float:left;
 	position: relative;
 	bottom: -10px;
 }
+
 
 /*----------------------------------------
 material
@@ -191,19 +194,21 @@ process
 	width: 90%;
 	overflow: hidden;
 	margin: 0px auto;
-	border-top: solid 2px #99cc66;
+  border-top: solid 2px #99cc66;
+  border-bottom: solid 2px #99cc66;
 	padding: 10px 0 10px 0;
 	background-color: rgba(255,255,255,1);
 	line-height: 200%;
 	 
 }
 
+
 .number{
 	font-size:42px;
     color:#276E38;
-	opacity: 0.70;
-	filter: alpha(opacity=70);
-	-moz-opacity: 0.70;
+	opacity: 0.40;
+	filter: alpha(opacity=40);
+	-moz-opacity: 0.40;
 	-ms-filter: "alpha(opacity=70)";
     font-weight: bold;
 	padding: 5px;
@@ -212,8 +217,10 @@ process
 }
 
 .pro_text{
+  border-bottom: solid 2px #eee;
+  padding-bottom: 10px;
 	width: 75%;
-	margin: 0 0 10px 42px;
+	margin: 20px 0 10px 42px;
 	float:left;
 }
 
