@@ -52,13 +52,27 @@ textarea {
     right: 0;
 }
 
-input#img {
+input#imageInput {
     opacity: 0;
     position: absolute;
     width: 100px;
     height: 100px;
     right: 0px;
     z-index: 1;
+}
+
+#preview{
+/*   background-image: url(img/noimage.png);
+   background-size: 90px;
+   width: 90px;
+   height: 90px;
+*/}
+
+
+span img{
+   width: 90px;
+   height: 90px;
+
 }
 
 .iconBar {

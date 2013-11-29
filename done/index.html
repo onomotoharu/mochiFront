@@ -42,13 +42,11 @@
                                 <form>
                                         <textarea class="doneComment" rows="4" cols="20" placeholder="コメントを書く"></textarea>
                                 </form>
-                                <form method="post" enctype="multipart/form-data">
-                                        <input type="file" accept="image/*" id="img" value="" name="img">
-                                        <input type="submit" id="submit" />
-                                        <div id="preview"><div>
-                                                <img src="img/noimage.png" height="90" width="90" alt="">
-                                        </div></div>
-                                </form>
+                                <form enctype="multipart/form-data" method="post">
+                                <input type="file" accept="image/*" id="imageInput" value="" name="userfile">
+                                <div id="preview">
+                                        <img src="img/noimage.png" width="90px" name="img" id="img" class="img">
+                                </div>
 
                         </div>
 

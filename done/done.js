@@ -166,37 +166,24 @@ $(function(){
 
 });
 
+$(function() {
+  $('input[type=file]').after('<span></span>');
+
+  $('input[type=file]').change(function() {
+    var file = $(this).prop('files')[0];
+    $('#preview').find("img").fadeOut(0);
 
 
-jQuery(function($){
-  //送信ボタンの非表示
-  $('#submit').hide();
+    if (! file.type.match('image.*')) {
+      $('span').html('');
+      return;
+    }
 
-
-  //フォームの内容が変更されたとき
-  $('#img').change(function() {
-      var preview = $('#preview');
-
-      //現在表示されているものを消す。
-      preview.find("img").fadeOut(300);
-
-      //アップロード
-      $(this).upload(
-      'upload.php',
-      $("form").serialize(),
-      function(html){
-      //サムネイルの表示
-            preview.html(html).animate({"height":preview.find("img").height()+"px"},3,function(){
-                preview.find("img").hide().fadeIn(300);
-            });
-        },'html');
+    var reader = new FileReader();
+    reader.onload = function() {
+      var img_src = $('<img>').attr('src', reader.result);
+      $('span').html(img_src);
+    }
+    reader.readAsDataURL(file);
   });
-
-
 });
-
-
-
-
-
-
