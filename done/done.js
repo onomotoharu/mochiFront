@@ -151,7 +151,7 @@ $(function(){
   });
 
 
-  App.sendMade(1,function(toukou){
+  App.sendMade(recipe_id,function(toukou){
     console.log(toukou);
     // $('.r_name').text(recipe.name);
 
