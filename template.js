@@ -104,11 +104,8 @@ CheeseController.prototype.getOwnBadges = function(callback){
 	url = "/users/"  + localStorage.screen_id + "/badges";
 	data = null;
 	type = "get";
-<<<<<<< HEAD
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-=======
 	response = $.parseJSON(this._throwRequest(url,data,type));
->>>>>>> medal
 	callback(response);
 }
 
