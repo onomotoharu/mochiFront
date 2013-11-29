@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$('#pagename').append("マイページ")
 
 	$('.myname').html("名前");
-
+	
 	$('.followcount').append("ああああ");
 	$('.followercount').append("25");
 
