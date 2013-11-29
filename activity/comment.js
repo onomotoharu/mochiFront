@@ -5,8 +5,6 @@ $(document).ready(function(){
 
 $(function(){
 
-  var activity_id = getUrlVars()["activity_id"];
-
   App = new CheeseController();
 
   App.signIn("ren","test",function(json){
@@ -14,6 +12,9 @@ $(function(){
   });
 
   App.getOwnActivities(function(activity){
+
+    var activity_id = getUrlVars()["activity_id"];
+    console.log(activity.activities);
 
     // レシピデータ
     var recipe_id = activity.activities[activity_id].recipe_id;
@@ -28,8 +29,8 @@ $(function(){
 
     // ユーザデータ
     // $('.user_info .user_icon img').attr({'src':localStorage.pic});
-    $('#def_user,.user_info .user_id').text(activity.activities[0].user_id);
-    $('#def_comment').text(activity.activities[0].comment);
+    $('#def_user,.user_info .user_id').text(activity.activities[activity_id].user_id);
+    $('#def_comment').text(activity.activities[activity_id].comment);
 
   });
 

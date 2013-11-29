@@ -91,6 +91,43 @@ $(function(){
 				$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
 			});
 
+			var com_count  = activity.activities[i].comments.length;
+	    	var iine_count = activity.activities[i].likes_count;
+
+		    // コメントボタンをクリックしたら
+		    $(".com_btn").click(function() {
+
+		    	i = i-1;
+
+		        // 親要素my_actのidにactivityの配列ナンバーを追加
+		        $(this).parent(".my_act").attr('id', 'i');
+
+		        // URLにパラメータとして渡す
+		        location.href = "../activity/comment.html?activity_id=" + i;
+
+			});
+
+			// いいねボタンをクリックしたら
+			$(".iine_btn").click(function() {
+
+				i = i-1;
+
+			// イイネ数を+1して_onデザインにする
+			if($(this).hasClass('iine_btn')){
+			  $(this).addClass("iine_btn_on").removeClass('iine_btn');
+			  $(".iine_btn_on img").attr('src', './img/good_on.png');
+			  iine_count++;
+			  $(this).children('span').text("イイネ！" + iine_count);
+			} else if($(this).hasClass('iine_btn_on')) {
+			  $(this).addClass("iine_btn").removeClass('iine_btn_on');
+			  $(".iine_btn img").attr('src', './img/good_off.png');
+			  iine_count--;
+			  $(this).children('span').text("イイネ！" + iine_count);
+			}
+
+			App.goodToActivity(i,function(){});
+
+			});
 
 		};
 
