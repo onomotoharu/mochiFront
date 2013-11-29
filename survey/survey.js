@@ -1,5 +1,6 @@
 
 //各料理を選択
+
 jQuery(function(){
 
 	
@@ -18,9 +19,10 @@ jQuery(function(){
     console.log(recipe_id);  
 
 
+
 //データ送信
     App = new CheeseController();
-    
+   
     App.sendMade(recipe_id,null);
 
     console.log(recipe_id);  
@@ -29,6 +31,7 @@ jQuery(function(){
 
 
   });
+
 
 
 });
@@ -44,12 +47,18 @@ $(function(){
   App = new CheeseController();
 
   // 
-  App.signIn("ren","test",function(json){
-     console.log(json);
-    });
+  App.getSample("ren","test",function(json){
+   console.log(json);
 
-  App.getDetail(function(recipe_id){
+     App.getSample(function(recipe_id){
      console.log(recipe_id);
+
+  });
+
+
+ 
+
+
 })
 
 

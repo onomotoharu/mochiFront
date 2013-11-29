@@ -175,7 +175,7 @@ CheeseController.prototype.sendMade = function(recipe_id,callback){
 	data = null;
 	type = "post";
 	response = this._throwRequest(url,data,type);
-	callback(response);
+	
 }
 
 CheeseController.prototype.sendFavorite = function(recipe_id,callback){
