@@ -59,25 +59,40 @@ $(function(){
 
 	App.getOwnActivities(function(activity){
 
-		// 1つの投稿を増やす（空タグ）
-		$('div.log').prepend('<div class="my_act"><div class="act_left"><div class="recipe_photo"><img /></div></div><div class="act_right"><div class="date"></div><div class="title"><a href="#"></div><div class="my_comment"></div></div><div class="act_bottom"><div class="com_btn"><img src="./img/com_off.png"><span>コメント0</span></div><div class="iine_btn"><img src="./img/good_off.png"><span>イイネ！0</span></div><div id="share"><p><a href="#open01"><img src="./img/…_off.png"></a></p></div></div></div>');
+		console.log(activity);
 
-		// 作った日
-		var date = activity.activities[0].created_at;
-	    $('.act_right .date').text(date.split("T")[0]);
+		// 過去ログの数だけ表示
+		for(i=0;i<activity.activities.length;i++){
 
-	    // コメント
-    	$('.my_comment').text(activity.activities[0].comment);
+			console.log(activity.activities[i]);
 
-	    // レシピID
-		recipe_id = activity.activities[0].recipe_id;
+			// limit
 
-		// レシピデータ
-		App.getDetail(recipe_id,function(recipe){
-			console.log(recipe);
-			$('.recipe_photo img').attr({'src':recipe.default_picture_name});
-			$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
-		});
+			// 1つの投稿を増やす（空タグ）
+			$('div.log').prepend('<div class="my_act"><div class="act_left"><div class="recipe_photo"><img /></div></div><div class="act_right"><div class="date"></div><div class="title"><a href="#"></div><div class="my_comment"></div></div><div class="act_bottom"><div class="com_btn"><img src="./img/com_off.png"><span>コメント0</span></div><div class="iine_btn"><img src="./img/good_off.png"><span>イイネ！0</span></div><div id="share"><p><a href="#open01"><img src="./img/…_off.png"></a></p></div></div></div>');
+			// $('div.log').prepend($('<div class="my_act">').append('<act_'))
+
+			// 作った日
+			var date = activity.activities[i].created_at;
+		    $('.act_right .date').text(date.split("T")[0]);
+
+		    // コメント
+		    var comment = activity.activities[i].comment;
+		    // console.log(comment);
+	    	$('.my_comment').text(comment);
+
+		    // レシピID
+			recipe_id = activity.activities[i].recipe_id;
+
+			// レシピデータ
+			App.getDetail(recipe_id,function(recipe){
+				console.log(recipe);
+				$('.recipe_photo img').attr({'src':"http://winvelab.net/cheese/img/" +recipe.default_picture_name});
+				$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
+			});
+
+
+		};
 
 	});
 
