@@ -1,3 +1,4 @@
+
 //各料理を選択
 jQuery(function(){
 
@@ -16,10 +17,12 @@ jQuery(function(){
     var recipe_id = [item1,item2,item3,item4,item5,item6,item7,item8];
     console.log(recipe_id);  
 
+
 //データ送信
     App = new CheeseController();
     
     App.sendMade(recipe_id,null);
+
     console.log(recipe_id);  
 
 
@@ -28,14 +31,14 @@ jQuery(function(){
   });
 
 
-
-
-
 });
 
 $(function(){
    $('#r_btn a').append("次へ")
   .attr("href", "../recommend/index.html")
+
+
+   });
 
 
   App = new CheeseController();
@@ -47,8 +50,8 @@ $(function(){
 
   App.getDetail(function(recipe_id){
      console.log(recipe_id);
-
-
-  });
 })
+
+
+
 
