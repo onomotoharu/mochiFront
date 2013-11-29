@@ -41,6 +41,15 @@ $(function(){
 });
 });
 
+$(function(){
+	$(".toggleImage").click(function(){
+    	var  name = $("a.account").text();
+    	var image = $(".follow_pic").text();
+        console.log(name);
+        console.log(image);
+    });
+});
+
 /*
 $(function(){
 	for(var i=0; i<data.length; i++){

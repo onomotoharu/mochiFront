@@ -32,3 +32,10 @@ $(function(){
 })
 });
 });
+
+$(function(){
+	$(".toggleImage").click(function(){
+    	var  name = $("a.account").text();
+        console.log(name);
+    });
+});
