@@ -1,15 +1,17 @@
 $(function(){
-	App.signIn("screen_id","password",function(signin){
-		console.log(signin);
+	App.signIn("screen_id","screen_ps",function(signup){
+		console.log(signup);
     });
 });
 
 
 $(function(){
-	$("#trigger").click(function(){
+	$(".btn_login").click(function(){
     	var screen_id = $(".login_id").val();
+    	var screen_ac = $(".login_ac").val();
         var screen_ps = $(".login_ps").val();
         alert(screen_id);
+        alert(screen_ac);
         alert(screen_ps);
     });
 });
