@@ -29,6 +29,27 @@
     margin:10px;
 }
 
+.content_img{
+    margin:10px;
+    overflow: hidden;
+    height: 90px;
+
+}
+
+input{
+       -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
+textarea{
+       -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
 
 /*-------------------------
  画像
@@ -47,6 +68,14 @@ table img{
     margin: 15px 0;
 }
 
+#preview img{
+    max-width: 60px;
+}
+
+#preview{
+    height:60px;
+    overflow: hidden;
+}
 
 /*-------------------------
  入力欄

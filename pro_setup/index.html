@@ -1,9 +1,9 @@
-<!DOCTYPE html>  
-<html lang="ja">  
-        <head>  
-                <meta charset="UTF-8">  
-                <meta http-equiv="content-script-type" content="text/javascript">  
-                <meta name="viewport" content="width=device-width,user-scalable=no">  
+<!DOCTYPE html>
+<html lang="ja">
+        <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="content-script-type" content="text/javascript">
+                <meta name="viewport" content="width=device-width,user-scalable=no">
 
                 <title>cheese!</title>
 
@@ -22,32 +22,51 @@
         </head>
 
         <body>
-                <script>header();</script>
-                <div class="allcontents">
-                        <div class="headline">画像</div>
-                        <div class="content">
-                                <span id="nowimg"><img src="./img/egguncle.png"></span>
-                                <table align="right"><th><td><a href=""><img src="./img/imgchange.png"></a></th></td></table>
-                        </div>
-                        <div class="headline">コメント</div>
-                        <div class="content">
-                                <textarea maxlength="140" name="comment"></textarea>
-                        </div>
-                        <div class="headline">ユーザー名</div>
-                        <div class="content">
-                                <input type="text" name="username">
-                        </div>
-                        <div class="headline">メールアドレス</div>
-                        <div class="content">
-                                <input type="text" name="address">
-                        </div>
-                        <div class="headline">パスワード</div>
-                        <div class="content">
-                                <input type="password" name="pass">
-                        </div>
-                        <div class="save_btn"><a href=""><img src="./img/setkeep.png"></a></div>
+        <script>header();</script>
+        <div class="allcontents">
+
+        <div class="headline">画像</div>
+
+                <div class="content_img">
+
+                        <form enctype="multipart/form-data" method="post">
+                        <div id="preview"></div>
+                        <input type="file" accept="image/*" id="imageInput" value="" name="userfile">
+
                 </div>
-                <script>footer();</script>
+
+
+                <div class="headline">コメント</div>
+
+                <div class="content">
+                        <textarea maxlength="140" id="comment"></textarea>
                 </div>
-        </body>
+
+
+                <div class="headline">ユーザ名</div>
+
+                <div class="content">
+                        <input type="text" id="username">
+                </div>
+
+
+                <div class="headline">メールアドレス</div>
+
+                <div class="content">
+                        <input type="text" id="address">
+                </div>
+
+
+                <div class="headline">パスワード</div>
+
+                <div class="content">
+                        <input type="password" id="pass">
+                </div>
+
+
+                <div class="save_btn"><a href=""><img src="./img/setkeep.png"></a></div>
+        </div>
+        <script>footer();</script>
+</div>
+</body>
 </html>
