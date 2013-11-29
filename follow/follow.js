@@ -13,45 +13,47 @@ var data=[
 */
 
 $(function(){
+
 	App = new CheeseController();
 	// ## sample ##
-	 App.signIn("ren","test",function(json){
+	App.signIn("ren","test",function(json){
 	// 	console.log(json);
-	 });
+	});
 
 	App.getOwnProfile(function(data){	
-	console.log(data);
+
+		console.log(data);
 		for(var i=0; i<data.following.length; i++){
-	 			 //リストを追加
-	  $(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div><a class="account"></a><div class="follow_btn"></div></div>');
-	}
-	   //アカウント名を追加
-    $("a.account").each(function(i){
-        $(this).append(data.following[i].screen_id);
-    });
-	  //ユーザーの画像を挿入
-	  $(".follow_pic ul li a").each(function(i){
-        $(this).append('<img src="img/'+data.following[i].photo+'.png">');
-    });
-	  //フォローボタンを追加
-	   $(".follow_btn").each(function(i){
-        $(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
+			//リストを追加
+			$(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div><a class="account"></a><div class="follow_btn"></div></div>');
+			
+			//アカウント名を追加
+		    $("a.account").each(function(i){
+		        $(this).append(data.following[i].screen_id);
+		    });
+		  	//ユーザーの画像を挿入
+		  	$(".follow_pic ul li a").each(function(i){
+	        	$(this).append('<img src="img/'+data.following[i].photo+'.png">');
+	    	});
+		  	//フォローボタンを追加
+		   	$(".follow_btn").each(function(i){
+	        	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
 
-})
+				$(".toggleImage").click(function(){
+			    	var  name = $("a.account").text();
+			    	var image = $(".follow_pic").text();
+			        console.log(name);
+			        console.log(image);
+	   			});
+			});
+
+		};
+	});
 });
-});
-
-$(function(){
-	$(".toggleImage").click(function(){
-    	var  name = $("a.account").text();
-    	var image = $(".follow_pic").text();
-        console.log(name);
-        console.log(image);
-    });
-});
 
 
-$(".followcount").append(data.following.length);
+
+//$(".followcount").append("ああああ");
 
 //  今、logのindex.htmlのカウントを増やしたい。
 // →followのfollow.jsをindex.htmlで呼んで、
