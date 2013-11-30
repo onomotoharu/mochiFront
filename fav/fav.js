@@ -28,9 +28,10 @@ $(function(){
 
 			var recipe_id = myprofile.favorite_recipes[i].id;
 			App.getDetail(recipe_id,function(recipe){
-
 				$fav_menu_photo = $('<img/>').addClass('fav_menu_photo').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
 				$fav_menu_title = $('<div/>').addClass('fav_menu_title').text(recipe.name);
+				$fav_menu_photo_a = $('<a href="#"></a>').attr({'href':"../recipe/index.html?recipe_id=" + recipe_id}).append($fav_menu_photo);
+				$fav_menu_title_a = $('<a href="#"></a>').attr({'href':"../recipe/index.html?recipe_id=" + recipe_id}).append($fav_menu_title);
 
 				$money_img = $('<img/>').addClass('fav_icon').attr('src', './img/money.png');
 				$time_img = $('<img/>').addClass('fav_icon').attr('src', './img/time.png');
@@ -46,13 +47,8 @@ $(function(){
 
 				$fav_menu_info = $('<span/>').addClass('fav_menu_info').append($money_img.after($menu_money).after($border).after($time_img).after($menu_time));
 				$fav_info_all = $('<div/>').addClass('fav_info_all').append($fav_menu_info.after($share));
-				$fav_menu = $('<div/>').addClass('fav_menu').append($fav_menu_photo.after($fav_menu_title).after($fav_info_all));
+				$fav_menu = $('<div/>').addClass('fav_menu').append($fav_menu_photo_a.after($fav_menu_title_a).after($fav_info_all));
 				$('div.tab_title').after($fav_menu);
-
-				$(".fav_menu_title,.fav_menu_photo").click(function() {
-				location.href = "../recipe/index.html?recipe_id=" + recipe_id;
-
-			});
 
 			});
 		};

@@ -1,15 +1,17 @@
-
-
 jQuery(function($) {
 
+
+  App = new CheeseController();
+
+  App.signIn("ren","test",function(json){
+    // console.log(json);
+  });
 
   recipe_id = getUrlVars()["recipe_id"];
 
   App.getDetail(recipe_id,function(json){
     console.log(json);
   })
-
-  var frag_reFav = new Boolean(false);
 
   // つくったボタン
 
@@ -21,34 +23,31 @@ jQuery(function($) {
   // お気に入りボタン
   App.getOwnProfile(function(myprofile) {
 
+    // もしお気に入りしてなかったら
+    for(i=0;i<myprofile.favorite_recipes.length;i++) {
+      if(myprofile.favorite_recipes[i].id == recipe_id){
+        console.log("レシピある");
+        $("#re_fav img").attr("src","img/reci_btn_fav_on.png");
+      } else {
+        console.log("レシピない");
+        var frag_reFav = new Boolean(true);
+      };
+    };
 
     $("#re_fav").click(function(){
 
-      // for(i=0;i<myprofile.favorite_recipes.length;i++) {
-        // // もしお気に入りしてなかったら
-        // if(frag_reFav == false && myprofile.favorite_recipes.id[i] != recipe_id){
-          // ONにする
-          frag_reFav = true;
-          $("#re_fav img").attr("src","img/reci_btn_fav_on.png");
-          // お気に入りに追加
-          App.sendFavorite(recipe_id,function(){　});
-        // }
-        // else{
-          frag_reFav = false;
-          $("#re_fav img").attr("src","img/reci_btn_fav.png");
-        // };
-      // };
+      if(frag_reFav == true){
+        // ONにする
+        $("#re_fav img").attr("src","img/reci_btn_fav_on.png");
+        console.log("ON！");
+        // お気に入りに追加
+        App.sendFavorite(recipe_id,function(){　});
+      } else {
+        console.log("OFF!");
+      };
 
     });
 
-  });
-
-
-
-  App = new CheeseController();
-
-  App.signIn("ren","test",function(json){
-    console.log(json);
   });
 
   App.getDetail(recipe_id,function(recipe){
