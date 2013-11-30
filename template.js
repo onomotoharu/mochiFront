@@ -139,7 +139,7 @@ CheeseController.prototype.setFollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/follow";
 	data = null;
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	response = 	this._throwRequest(url,data,type);
 	if(callback!=null){callback(response);}
 }
 
