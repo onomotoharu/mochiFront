@@ -48,8 +48,7 @@ article span {
 
 .center_circle a.center{
     border:solid 5px #f5c53a;
-    margin-left :auto;
-    margin-right : auto;
+    margin:0 auto;
 }
 
 

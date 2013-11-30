@@ -32,7 +32,12 @@
     <script language="javascript" src="../load.js"></script>
     <script language="javascript" src="../template.js"></script>
     <script language="javascript" src="./recommend.js"></script>
-
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load("jquery", "1.4");
+  google.load("jqueryui", "1.7");
+</script>
+<script language="javascript" src="./animation.js"></script>
 </head>
 
         <body>
@@ -64,7 +69,8 @@
       <!--左上の◯-->
       <article class="lefttop">
         <div class="recipename">基本的なチンジャオロース</div>
-        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"></a>
+        <div class="effect" id="dropUp">
+        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')" ></a></div>
         <div class="money">
           300円以下
         </div>
@@ -74,7 +80,8 @@
       <!--右上の◯-->
       <article class="righttop">
       <div class="recipename">朝食・お弁当に♪ふわぐわオムレツですふわふわふわぐわふわ</div>
-        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"></a>
+      <div class="effect" id="dropRight">
+        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"></a></div>
         <div class="friend">
           ひらっちさん、あんどーさん
         </div>
@@ -86,7 +93,8 @@
         <div class="time">
           60分
         </div>
-        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"> </a>
+        <div class="effect" id="dropLeft">
+        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"> </a></div>
       <div class="recipename">さくさく野菜たっぷりコロッケ</div>
         </article>
       <!--左下の◯ここまで--> 
@@ -96,7 +104,8 @@
         <div class="taste">
           酢<br>しょうゆ<br>
         </div>
-        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"> </a>      
+        <div class="effect" id="dropDown">
+        <a href="../recipe/index.html" class="circle" style="background-image: url('img/meat.jpg')"> </a> </div>
         <div class="recipename">右下</div>
         </article>
       <!--右下の◯ここまで--> 
@@ -105,6 +114,7 @@
       <article class="center_circle">
       <div class="scr">
               <ul id="carousel" class="elastislide-list">
+              
                   <li><a href="../recipe/index.html" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
                   <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
                   <li><a href="#l" class="center" style="background-image: url('img/meat.jpg')"> </a></li>
