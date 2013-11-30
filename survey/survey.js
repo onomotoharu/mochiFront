@@ -3,8 +3,8 @@
 
 jQuery(function(){
 
-	
-	$(".box").click(function() {
+  
+  $(".box").click(function() {
     if($(this).hasClass('box')){
       $(this).addClass("box_on").removeClass('box');
     } 
@@ -19,9 +19,16 @@ jQuery(function(){
 　　　　App.signIn("ren","test",function(json){
         console.log(json);
   　　});
-   
-    App.sendMade(recipe_id,null);
-　　　　console.log(recipe_id);  
+   //sampleの０番目のrecipe_id
+      App.getSample(function(survey){
+        var recipe_id = [0];
+      console.log(survey);
+      
+      });
+
+      var recipe_id = [0];
+      App.sendMade(recipe_id,null);
+　　　 console.log(recipe_id);  
   　　
 　　　　});
 　　
@@ -43,7 +50,7 @@ $(document).ready(function(){
         console.log(json);
   });
 
-  App.getSample(function(suvey){
+  App.getSample(function(survey){
      console.log(survey);
   //$
 　　});
