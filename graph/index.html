@@ -1,0 +1,141 @@
+<!DOCTYPE html>  
+<html lang="ja">  
+        <head>  
+                <meta charset="UTF-8">  
+                <meta http-equiv="content-script-type" content="text/javascript">  
+                <meta name="viewport" content="width=device-width,user-scalable=no">  
+
+                <title>cheese!</title>
+
+                <meta name="description" content="" />
+                <meta name="keywords" content="" />
+                <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"> -->
+                <!--[if lt IE 9]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+                <![endif]-->
+                <link rel="stylesheet" type="text/css" href="../template.css">
+                <link rel="stylesheet" type="text/css" href="follow.css">
+                <link rel="stylesheet" type="text/css" href="./graph.css">
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+                <script language="javascript" src="../template.js"></script>
+                <script type="text/javascript" src="./graph.js"></script>
+                <script type="text/javascript" src="./jquery.canvasChart.js"></script>
+                <!--[if IE]><script type="text/javascript" src="./excanvas.js"></script><![endif]-->
+                <script type="text/javascript">
+                $(function(){
+                        $('#canvasChart').canvasChart({
+                                /*********************
+                                 * 基本設定
+                                *********************/
+                                polygon             : 6,            //頂点の数
+                                chartInput          : '.chartInput',//チャートのインプットclass
+                                valuation           : 100,          //評価値
+                                radius              : 130,          //半径
+                                bgType              : 'pol',        //背景のタイプ　 pol:多角形 or arc:円
+                                angle               : '30',         //レーダーチャートの回転度数
+            
+                                /*********************
+                                 * 背景
+                                *********************/
+                                bgStroke            : true,         //背景の線 true or false
+                                bgStrokeColor       : '#ece2d5',    //背景の線色
+                                bgLineWidth         : 4,            //背景の線の太さ
+                                bgFill              : true,        //背景の塗り true or false
+                                bgDivision          : 3,                    //背景の分割数
+            
+                                /*********************
+                                 * チャート
+                                *********************/
+                                chartStrokeColor    : ['#e07431','#9c7d25'],  //チャートの線
+                                chartFillColor      : ['rgba(224, 116, 49, 0.3)', 'none'],//チャートの塗り色 noneで塗らない
+                                chartLineWidth      : 6,//線の太さ
+            
+                                /*********************
+                                 * レーダーチャートの頂点
+                                *********************/
+                                chartPoint          : true,         //チャートの点描画 true or false
+                                chartPointType      : ['square','arc'],   //点の図形タイプ square:四角 or arc:円
+                                chartPointType2     : ['fill'],     //線か塗りつぶし　stroke or fill
+                                chartPointLineWidth : 1,            //頂点の線の太さ
+                                chartPointSize      : [0, 15],         //チャートの頂点サイズ
+                                chartPointColor     : [''],         //チャートの頂点描画色、指定無しで線と同じ色
+            
+                                /*********************
+                                 * 評価名
+                                *********************/
+                                valuationPrint      : true,         //評価名の表示　true or false
+                                valuationName       : ['米','菜','魚','肉','他', '麺'],//評価名
+                                valuationPosition   : 1,            //評価名要素の位置
+                                valuationClass      : '',           //評価名要素のclass デフォルトでvalName
+            
+                                /**********************
+                                 評価の数値
+                                **********************/
+
+                                valuationCntPrint      : false,                //評価の数値表記 true or false
+                                valuationCntClass       : '',           //評価の数値のclass　デフォルトでvalCntName
+                                printZero           : false,        //中央0の表記 true or false
+                                valuationCntDivision: 3,                    //評価の数値分割数
+                                    
+                                /*********************
+                                 * 中央からのゲージライン
+                                *********************/
+                                gauge               : true,         //中央からのゲージライン描画 true or false
+                                gaugeColor          : '',           //中央からのゲージライン描画色、指定無しで背景線と同じ色
+                                    
+                                /*********************
+                                 * ゲージラインのスケール
+                                *********************/
+                                scale               : false,         //ゲージラインの目盛り描画 true or false
+                        });
+                });
+                </script>
+        </head>
+
+        <body>
+                <script>header();</script>
+                <div class="allcontents">
+                        <section id="profile">
+                        <div id="profile_top">
+                                <div id="myphoto"><img src="./img/my_icon_user.png"></div>
+                                <div id="myname"><span class="myname"></span></div>
+                                <table align="right">
+                                        <th><td class="follow"><a href="../follow/follow.html"><p>フォロー</p><span class="followcount"></span></a></td>
+                                        <td class="follow"><a href="../follow/follower.html"><p>フォロワー</p><span class="followercount"></span></a></td></th>
+                                </table>
+                        </div>
+                        <div id="myintro"></div>
+                        </section>
+
+                        <div class="tab">
+                                <ul>
+                                        <li id="log"><a href="../log/index.html"><img src="./img/log_off.png"></a></li>
+                                        <li id="graph" class="tab_now"><a href="" class="now"><img src="img/graph_on.png" class="current"></a></li>
+                                        <li id="fav"><a href="../fav/index.html"><img src="img/fav_off.png"></a></li>
+                                        <li id="badge"><a href="../medal/index.html"><img src="img/badge_off.png"></a></li>
+                                </ul>
+                        </div>
+                        <div class="tab_title">あなたの傾向</div>
+                        <div id="canvasChart">
+                                <canvas width="320" height="320"></canvas>
+                                <div class="chartInput">
+                                        <input type="hidden" value="65" id="input1" name="input1" />
+                                        <input type="hidden" value="40" id="input2" name="input2" />
+                                        <input type="hidden" value="50" id="input3" name="input3" />
+                                        <input type="hidden" value="30" id="input4" name="input4" />
+                                        <input type="hidden" value="10" id="input5" name="input5" />
+                                        <input type="hidden" value="35" id="input6" name="input6" />
+                                </div>
+                                <div class="chartInput">
+                                        <input type="hidden" value="100" id="input1" name="input1" />
+                                        <input type="hidden" value="100" id="input2" name="input2" />
+                                        <input type="hidden" value="100" id="input3" name="input3" />
+                                        <input type="hidden" value="100" id="input4" name="input4" />
+                                        <input type="hidden" value="100" id="input5" name="input5" />
+                                        <input type="hidden" value="100" id="input6" name="input6" />
+                                </div>
+                        </div>
+                </div>
+                <script>footer();</script>
+        </body>
+</html>

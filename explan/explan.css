@@ -1,0 +1,85 @@
+li {
+    width: 320px;
+    height: 470px;
+}
+
+li.parapara {
+    width:320px;
+    height:470px;
+    overflow:hidden;
+    -webkit-background-size: 640px,470px;
+    background-size: 640px,470px;
+    -webkit-animation: para 5s steps(2,end) infinite;
+}
+
+@-webkit-keyframes para {
+100% {background-position:-640px;}
+}
+
+li:first-child {
+    background:url(img/01.png) no-repeat;
+    -webkit-background-size: 640px,470px;
+    background-size: 640px,470px;
+}
+
+li:nth-child(2) {
+    background:url(img/02.png) no-repeat;
+    -webkit-background-size: 320px,470px;
+}
+
+li:nth-child(3) {
+    background:url(img/03.png) no-repeat;
+    -webkit-background-size: 640px,470px;
+    background-size: 640px,470px;
+}
+
+li:nth-child(4) {
+    background:url(img/04.png) no-repeat;
+    -webkit-background-size: 640px,470px;
+    background-size: 640px,470px;
+}
+
+/*----------------------------------------
+ボタン btn
+----------------------------------------*/
+
+.btn_login p,.btn_login_on p {
+    font-size: 14px;
+    color: #fff;
+    letter-spacing : 0.07em;
+    text-align: center;
+    padding: 18px 0;
+}
+
+.btn_login {
+    width: 280px;
+    height: 53px;
+    margin:0 20px 35px 20px;
+    -webkit-border-radius: 24px;
+    border-radius: 24px;
+    background-color: #eb6100;
+    -webkit-box-shadow: 0 3px #9e4200;
+    -moz-box-shadow: 0 3px #9e4200;
+    box-shadow: 0 3px #9e4200;
+    border:0;
+}
+
+.btn_login_on {
+    width: 280px;
+    height: 53px;
+    margin: 3px 20px 35px 20px;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing : 0.07em;
+    border:0;
+    -webkit-border-radius: 24px;
+    border-radius: 24px;
+    background-color: #ff8a34;
+    -webkit-box-shadow: 0 -3px 1px #b05e00;
+    -moz-box-shadow: 0 -3px 1px #b05e00;
+    box-shadow: 0 -3px 1px #b05e00;
+    background-image: -webkit-linear-gradient(bottom, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+    background-image: -moz-linear-gradient(bottom, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+    background-image: -o-linear-gradient(bottom, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+    background-image: linear-gradient(to top, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+}
