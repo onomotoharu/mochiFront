@@ -103,7 +103,7 @@ $(function(){
 
 	    	// いいねボタン生成
 	    	$iine_count = $('<span>').addClass('iine_count').text(activity.activities[i].likes_count);
-	    	$iine       = $('<span/>').text("イイネ！ ");
+	    	$iine       = $('<span/>').text("イイネ！");
 	    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
 	    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine).after($iine_count));
 
@@ -127,42 +127,44 @@ $(function(){
 			// var com_count  = activity.activities[i].comments.length;
 			// var iine_count = activity.activities[i].likes_count;
 
+			// コメントボタンをクリックしたら
+		    $(".com_btn").click(function() {
+
+		    	// i = i-1;
+
+		        // 親要素my_actのidにactivityの配列ナンバーを追加
+		        $(this).parent(".my_act").attr('id', 'i');
+
+		        // URLにパラメータとして渡す
+		        location.href = "../activity/comment.html?activity_id=" + i;
+
+			});
+
+			// いいねボタンをクリックしたら
+			$(".iine_btn").click(function() {
+
+				// イイネ数を+1して_onデザインにする
+				if($(this).hasClass('iine_btn')){
+					$(this).addClass("iine_btn_on").removeClass('iine_btn');
+					$(".iine_btn_on img").attr('src', './img/good_on.png');
+					likes_count = $(this).children('.iine_count').text();
+					likes_count++;
+					$(this).children('.iine_count').append(likes_count);
+				} else if($(this).hasClass('iine_btn_on')) {
+					$(this).addClass("iine_btn").removeClass('iine_btn_on');
+					$(".iine_btn img").attr('src', './img/good_off.png');
+					likes_count = $(this).children('.iine_count');
+					likes_count--;
+					$(this).children('.iine_count').append(likes_count);
+				};
+
+			// activity_idが実装されたら
+			// App.goodToActivity(i,function(){});
+
+			// });
+
+
 		};
-
-		// コメントボタンをクリックしたら
-	    $(".com_btn").click(function() {
-
-	    	// i = i-1;
-
-	        // 親要素my_actのidにactivityの配列ナンバーを追加
-	        $(this).parent(".my_act").attr('id', 'i');
-
-	        // URLにパラメータとして渡す
-	        location.href = "../activity/comment.html?activity_id=" + i;
-
-		});
-
-		// いいねボタンをクリックしたら
-		$(".iine_btn").click(function() {
-
-			// イイネ数を+1して_onデザインにする
-			if($(this).hasClass('iine_btn')){
-				$(this).addClass("iine_btn_on").removeClass('iine_btn');
-				$(".iine_btn_on img").attr('src', './img/good_on.png');
-				bef_likes_count = $(this).children('.iine_count').text();
-				aft_likes_count = bef_likes_count++;
-				$(this).children('.iine_count').append(aft_likes_count);
-			} else if($(this).hasClass('iine_btn_on')) {
-				$(this).addClass("iine_btn").removeClass('iine_btn_on');
-				$(".iine_btn img").attr('src', './img/good_off.png');
-				likes_count = $(this).children('.iine_count');
-				likes_count--;
-				$(this).children('.iine_count').append(likes_count);
-			};
-
-		// App.goodToActivity(i,function(){});
-
-		});
 
 	});
 
