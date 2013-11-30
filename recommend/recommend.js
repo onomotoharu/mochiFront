@@ -13,6 +13,16 @@ $(document).ready(function(){
         console.log(json);
     });
 
+    //中央　過去ログ
+    App.getOwnActivities(function(kakolog){
+        console.log(kakolog);
+        var max = kakolog.activities.length - 1;
+        App.getDetail(kakolog.activities[max].recipe_id,function(kako_img){
+            console.log(kako_img);
+            $(".center_circle a").attr("style", "background-image: url('http://winvelab.net/cheese/img/"+kako_img.default_picture_name+"')");
+        });
+    });
+
     App.getRecommend(function(recommend){
         console.log(recommend);
 
@@ -86,25 +96,23 @@ $(document).ready(function(){
             if(methods[12] > 0){$(".methods").append("干す ");}
             if(methods[13] > 0){$(".methods").append("冷やす");}
 
+            $(".lefttop .last_food").addClass("last_food0");
+            $(".righttop .last_food").addClass("last_food1");
+            $(".leftbottom .last_food").addClass("last_food2");
+            $(".rightbottom .last_food").addClass("last_food3");
+
             for(var i=0;i<recommend.length;i++){
-                for(var j=0; j<recommend[i].options[0].option.length; j++){
-                    $('.last_food').append(recommend[i].options[0].option[j]+" ");
+                for(var j=0; j<recommend[i].options.length; j++){
+                    for(var k=0; k<recommend[i].options[j].option.length; k++){
+                        if(i==0){$('.last_food0').append(recommend[0].options[j].option[k]+" ");}
+                        else if(i==1){$('.last_food1').append(recommend[1].options[j].option[k]+" ");}
+                        else if(i==2){$('.last_food2').append(recommend[2].options[j].option[k]+" ");}
+                        else if(i==3){$('.last_food3').append(recommend[3].options[j].option[k]+" ");}
+                    }
                 }
             }
 
     });    
-
-
-
-    //中央　過去ログ
-    App.getOwnActivities(function(kakolog){
-        console.log(kakolog);
-        App.getDetail(kakolog.activities[0].recipe_id,function(kako_img){
-            console.log(kako_img);
-            $(".center_circle a").attr("style", "background-image: url('http://winvelab.net/cheese/img/"+kako_img.default_picture_name+"')");
-        });
-    });
-
     
 
     
