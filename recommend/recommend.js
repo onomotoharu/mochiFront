@@ -84,11 +84,17 @@ $(document).ready(function(){
             if(methods[10] > 0){$(".methods").append("煎じる ");} //?
             if(methods[11] > 0){$(".methods").append("燻す ");}
             if(methods[12] > 0){$(".methods").append("干す ");}
-            if(methods[13] > 0){$(".methods").append("冷やす ");}
+            if(methods[13] > 0){$(".methods").append("冷やす");}
+
+            for(var i=0;i<recommend.length;i++){
+                for(var j=0; j<recommend[i].options[0].option.length; j++){
+                    $('.last_food').append(recommend[i].options[0].option[j]+" ");
+                }
+            }
 
     });    
 
-        
+
 
     //中央　過去ログ
     App.getOwnActivities(function(kakolog){
