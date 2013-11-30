@@ -77,28 +77,51 @@ $(function(){
 			// 1つの投稿を増やす（空タグ）
 			// $('div.log').prepend('<div class="my_act"><div class="act_left"><div class="recipe_photo"><img /></div></div><div class="act_right"><div class="date"></div><div class="title"><a href="#"></a></div><div class="my_comment"></div></div><div class="act_bottom"><div class="com_btn"><img src="./img/com_off.png"><span>コメント0</span></div><div class="iine_btn"><img src="./img/good_off.png"><span>イイネ！0</span></div><div id="share"><p><a href="#open01"><img src="./img/…_off.png"></a></p></div></div></div>');
 
-			$recipe_photo = $('<div/>').addClass('recipe_photo').append('<img />');
-			$('.log').prepend($recipe_photo)
-
-
-			//日付 
-			var date = activity.activities[i].created_at;
-		    $('.act_right .date').text(date.split("T")[0]);
-
-		    // コメント
-		    var comment = activity.activities[i].comment;
-		    // console.log(comment);
-	    	$('.my_comment').text(comment);
-
 		    // レシピID
 			recipe_id = activity.activities[i].recipe_id;
 
 			// レシピデータ
 			App.getDetail(recipe_id,function(recipe){
-				console.log(recipe);
-				$('.recipe_photo img').attr({'src':"http://winvelab.net/cheese/img/" +recipe.default_picture_name});
-				$('.title a').text(recipe.name).attr({'href':recipe.recipeUrl});
+				// レシピ写真の追加
+				$recipe_photo_img = $('<img/>').attr({'src':"http://winvelab.net/cheese/img/" +recipe.default_picture_name});
+				$recipe_photo     = $('<div/>').addClass('recipe_photo').append($recipe_photo_img);
+				// レシピ名の追加
+				$recipe_title_a   = $('<a href="#"></a>').text(recipe.name).attr({'href':"../recipe/index.html?recipe_id=" + recipe_id});
+				$recipe_title     = $('<div/>').addClass('title').append($recipe_title_a);
 			});
+
+			//日付
+			$created_at = (activity.activities[i].created_at).split("T")[0];
+			$date = $('<div/>').addClass('date').text($created_at);
+
+		    // コメント
+		    if(activity.activities[i].comment === false) {
+		    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
+		    } else {
+	    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
+	    	};
+
+	    	// いいねボタン生成
+	    	$iine       = $('<span/>').text("イイネ！0");
+	    	$iine_img    = $('<img/>').attr('src','./img/good_off.png');
+	    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
+
+	    	// コメントボタン生成
+	    	$com        = $('<span/>').text("コメント0");
+	    	$com_img    = $('<img/>').attr('src','./img/com_off.png');
+	    	$com_btn    = $('<div/>').addClass('com_btn').append($com_img.after($com));
+
+	    	// シェアボタン生成
+	    	$share_img  = $('<img/>').attr('src', './img/…_off.png');
+	    	$open01     = $('<a href="#open01"></a>').append($share_img);
+	    	$p_open01   = $('<p/>').append($open01);
+	    	$share      = $('<div id="share"></div>').append($p_open01);
+
+	    	// 親要素生成
+			$act_left   = $('<div/>').addClass('act_left').append($recipe_photo);
+			$act_right  = $('<div/>').addClass('act_right').append($date.after($recipe_title).after($my_comment));
+			$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($iine_btn).after($share));
+			$('.log').prepend($act_left.after($act_right).after($act_bottom));
 
 			var com_count  = activity.activities[i].comments.length;
 	    	var iine_count = activity.activities[i].likes_count;
