@@ -102,9 +102,10 @@ $(function(){
 	    	};
 
 	    	// いいねボタン生成
-	    	$iine       = $('<span/>').text("イイネ！0");
-	    	$iine_img    = $('<img/>').attr('src','./img/good_off.png');
-	    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
+	    	$iine_count = $('<span>').addClass('iine_count').text(activity.activities[i].likes_count);
+	    	$iine       = $('<span/>').text("イイネ！ ");
+	    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
+	    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine).after($iine_count));
 
 	    	// コメントボタン生成
 	    	$com        = $('<span/>').text("コメント0");
@@ -123,45 +124,45 @@ $(function(){
 			$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($iine_btn).after($share));
 			$('.log').prepend($act_left.after($act_right).after($act_bottom));
 
-			var com_count  = activity.activities[i].comments.length;
-	    	var iine_count = activity.activities[i].likes_count;
+			// var com_count  = activity.activities[i].comments.length;
+			// var iine_count = activity.activities[i].likes_count;
 
-		    // コメントボタンをクリックしたら
-		    $(".com_btn").click(function() {
+		};
 
-		    	i = i-1;
+		// コメントボタンをクリックしたら
+	    $(".com_btn").click(function() {
 
-		        // 親要素my_actのidにactivityの配列ナンバーを追加
-		        $(this).parent(".my_act").attr('id', 'i');
+	    	// i = i-1;
 
-		        // URLにパラメータとして渡す
-		        location.href = "../activity/comment.html?activity_id=" + i;
+	        // 親要素my_actのidにactivityの配列ナンバーを追加
+	        $(this).parent(".my_act").attr('id', 'i');
 
-			});
+	        // URLにパラメータとして渡す
+	        location.href = "../activity/comment.html?activity_id=" + i;
 
-			// いいねボタンをクリックしたら
-			$(".iine_btn").click(function() {
+		});
 
-				i = i-1;
+		// いいねボタンをクリックしたら
+		$(".iine_btn").click(function() {
 
 			// イイネ数を+1して_onデザインにする
 			if($(this).hasClass('iine_btn')){
-			  $(this).addClass("iine_btn_on").removeClass('iine_btn');
-			  $(".iine_btn_on img").attr('src', './img/good_on.png');
-			  iine_count++;
-			  $(this).children('span').text("イイネ！" + iine_count);
+				$(this).addClass("iine_btn_on").removeClass('iine_btn');
+				$(".iine_btn_on img").attr('src', './img/good_on.png');
+				bef_likes_count = $(this).children('.iine_count').text();
+				aft_likes_count = bef_likes_count++;
+				$(this).children('.iine_count').append(aft_likes_count);
 			} else if($(this).hasClass('iine_btn_on')) {
-			  $(this).addClass("iine_btn").removeClass('iine_btn_on');
-			  $(".iine_btn img").attr('src', './img/good_off.png');
-			  iine_count--;
-			  $(this).children('span').text("イイネ！" + iine_count);
-			}
+				$(this).addClass("iine_btn").removeClass('iine_btn_on');
+				$(".iine_btn img").attr('src', './img/good_off.png');
+				likes_count = $(this).children('.iine_count');
+				likes_count--;
+				$(this).children('.iine_count').append(likes_count);
+			};
 
-			App.goodToActivity(i,function(){});
+		// App.goodToActivity(i,function(){});
 
-			});
-
-		};
+		});
 
 	});
 
