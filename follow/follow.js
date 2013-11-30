@@ -40,10 +40,11 @@ $(function(){
 	        	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
 
 				$(".toggleImage").click(function(){
-			    	var  name = $("a.account").text();
-			    	var image = $(".follow_pic").text();
-			        console.log(name);
-			        console.log(image);
+			    	var screen_id  = $("a.account").text();
+			    	// var image      = $(".follow_pic").text();
+			    	console.log(screen_id);
+			    	App.setFollow(screen_id,function(){ });
+			        
 	   			});
 			});
 
@@ -53,12 +54,6 @@ $(function(){
 
 
 
-//$(".followcount").append("ああああ");
-
-//  今、logのindex.htmlのカウントを増やしたい。
-// →followのfollow.jsをindex.htmlで呼んで、
-// followcountにdeta.following.lengthをappendしてるんだけどね（54行目）
-// うまくいかない。←いまここ。
 
 /*
 $(function(){
