@@ -1,31 +1,55 @@
-function footer() {
-	document.write ('<nav id="footer" name="nav">\n');      
-	document.write ('<ul>\n');       
-	document.write ('<li><a href=""><img src="../img/off/reco_off.png"></a></li>\n');    
-	document.write ('<li><a href=""><img src="../img/off/act_off.png"></a></li>\n');   
-	document.write ('<li><a href=""><img src="../img/on/my_on.png"></a></li>\n'); 
-	document.write ('<li><a href=""><img src="../img/off/set_off.png"></a></li>\n'); 
-	document.write ('</ul>\n');
-	document.write ('</nav>\n');     
-}
-
-
 $(document).ready(function(){
 	$('#pagename').append("マイページ")
 
-	$('.myname').html("名前");
-
-	$('.followcount').append("30");
-	$('.followercount').append("25");
-
-	$('#myintro').append("鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者");
+	$('#myintro').append("");
 });
 
 $(function(){
-  $('#nav_my img').attr("src", "../img/on/my_on.png");
-});
 
-$(function(){
+	// レシピデータ
+	App = new CheeseController();
+
+	App.signIn("ren","test",function(json){
+		// console.log(json);
+	});
+
+	App.getOwnProfile(function(myprofile){
+        console.log(myprofile);
+
+		// プロフィール部分DOM操作
+        $('.myname').html(myprofile.screen_id);
+		$('.followcount').append(myprofile.following.length);
+		$('.followercount').append(myprofile.followers.length);
+		$('#myphoto img').attr("src",myprofile.icon_name);
+		$('#myintro').append(myprofile.bio);
+
+		// お気に入りタイムラインDOM操作
+		for(i=0;i<myprofile.favorite_recipes.length;i++) {
+			// if(i == 0) {
+			// 	console.log("a");
+			// 	$('.tab_title').after('なにもないよ');
+			// 	break;
+			// } else if(i > 0) {
+			$('.tab_title').after('<div class="fav_menu"><img src="#" class="fav_menu_photo"><div class="fav_menu_title"></div><div class="fav_info_all"><span class="fav_menu_info"><img src="./img/money.png" width="25" height="25" class="fav_icon"><span class="fav_menu_money"></span>円 |<img src="./img/time.png" width="25" height="25" class="fav_icon"> <span class="fav_menu_time"></span>分</span><div id="share"><p><a href="#open01"><img src="./img/…_off.png"></a></p></div></div></div>')
+			var recipe_id = i + 1;
+			App.getDetail(recipe_id,function(recipe){
+				console.log(recipe);
+				$(".fav_menu_photo").attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+				$(".fav_menu_title").text(recipe.name);
+				$(".fav_menu_money").text(recipe.required_money);
+				$(".fav_menu_time").text(recipe.necessary_time);
+			});
+
+			$(".fav_menu_title,.fav_menu_photo").click(function() {
+				location.href = "../recipe/index.html";
+			});
+		};
+
+    });
+
+	// マイページメニュー切替
+
+	$('#nav_my img').attr("src", "../img/on/my_on.png");
 
 	$('#log a').hover(function(){
 		$('#log a img').attr('src', $('#log a img').attr('src').replace('_off', '_on'));

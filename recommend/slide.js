@@ -1,577 +1,519 @@
 /**
- * flipsnap.js
+ * jQuery.flickSimple v1.2.2
  *
- * @version  0.5.6
- * @url http://pxgrid.github.com/js-flipsnap/
- *
- * Copyright 2011 PixelGrid, Inc.
- * Licensed under the MIT License:
+ * Copyright (c) 2011 Makog. http://d.hatena.ne.jp/makog/
+ * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
  */
-
-(function(window, document, undefined) {
-
-var div = document.createElement('div');
-var prefix = ['webkit', 'moz', 'o', 'ms'];
-var saveProp = {};
-var support = Flipsnap.support = {};
-var gestureStart = false;
-
-support.transform3d = hasProp([
-  'perspectiveProperty',
-  'WebkitPerspective',
-  'MozPerspective',
-  'OPerspective',
-  'msPerspective'
-]);
-
-support.transform = hasProp([
-  'transformProperty',
-  'WebkitTransform',
-  'MozTransform',
-  'OTransform',
-  'msTransform'
-]);
-
-support.transition = hasProp([
-  'transitionProperty',
-  'WebkitTransitionProperty',
-  'MozTransitionProperty',
-  'OTransitionProperty',
-  'msTransitionProperty'
-]);
-
-support.addEventListener = 'addEventListener' in window;
-support.mspointer = window.navigator.msPointerEnabled;
-
-support.cssAnimation = (support.transform3d || support.transform) && support.transition;
-
-var eventTypes = ['touch', 'mouse'];
-var events = {
-  start: {
-    touch: 'touchstart',
-    mouse: 'mousedown'
-  },
-  move: {
-    touch: 'touchmove',
-    mouse: 'mousemove'
-  },
-  end: {
-    touch: 'touchend',
-    mouse: 'mouseup'
-  }
-};
-
-if (support.addEventListener) {
-  document.addEventListener('gesturestart', function() {
-    gestureStart = true;
-  });
-
-  document.addEventListener('gestureend', function() {
-    gestureStart = false;
-  });
-}
-
-function Flipsnap(element, opts) {
-  return (this instanceof Flipsnap)
-    ? this.init(element, opts)
-    : new Flipsnap(element, opts);
-}
-
-Flipsnap.prototype.init = function(element, opts) {
-  var self = this;
-
-  // set element
-  self.element = element;
-  if (typeof element === 'string') {
-    self.element = document.querySelector(element);
-  }
-
-  if (!self.element) {
-    throw new Error('element not found');
-  }
-
-  if (support.mspointer) {
-    self.element.style.msTouchAction = 'none';
-  }
-
-  // set opts
-  opts = opts || {};
-  self.distance = opts.distance;
-  self.maxPoint = opts.maxPoint;
-  self.disableTouch = (opts.disableTouch === undefined) ? false : opts.disableTouch;
-  self.disable3d = (opts.disable3d === undefined) ? false : opts.disable3d;
-  self.transitionDuration = (opts.transitionDuration === undefined) ? '350ms' : opts.transitionDuration + 'ms';
-
-  // set property
-  self.currentPoint = 0;
-  self.currentX = 0;
-  self.animation = false;
-  self.use3d = support.transform3d;
-  if (self.disable3d === true) {
-    self.use3d = false;
-  }
-
-  // set default style
-  if (support.cssAnimation) {
-    self._setStyle({
-      transitionProperty: getCSSVal('transform'),
-      transitionTimingFunction: 'cubic-bezier(0,0,0.25,1)',
-      transitionDuration: '0ms',
-      transform: self._getTranslate(0)
-    });
-  }
-  else {
-    self._setStyle({
-      position: 'relative',
-      left: '0px'
-    });
-  }
-
-  // initilize
-  self.refresh();
-
-  eventTypes.forEach(function(type) {
-    self.element.addEventListener(events.start[type], self, false);
-  });
-
-  return self;
-};
-
-Flipsnap.prototype.handleEvent = function(event) {
-  var self = this;
-
-  switch (event.type) {
-    case events.start.touch:
-    case events.start.mouse:
-      self._touchStart(event);
-      break;
-    case events.move.touch:
-    case events.move.mouse:
-      self._touchMove(event);
-      break;
-    case events.end.touch:
-    case events.end.mouse:
-      self._touchEnd(event);
-      break;
-    case 'click':
-      self._click(event);
-      break;
-  }
-};
-
-Flipsnap.prototype.refresh = function() {
-  var self = this;
-
-  // setting max point
-  self._maxPoint = (self.maxPoint === undefined) ? (function() {
-    var childNodes = self.element.childNodes,
-      itemLength = -1,
-      i = 0,
-      len = childNodes.length,
-      node;
-    for(; i < len; i++) {
-      node = childNodes[i];
-      if (node.nodeType === 1) {
-        itemLength++;
-      }
-    }
-
-    return itemLength;
-  })() : self.maxPoint;
-
-  // setting distance
-  if (self.distance === undefined) {
-    if (self._maxPoint < 0) {
-      self._distance = 0;
-    }
-    else {
-      self._distance = self.element.scrollWidth / (self._maxPoint + 1);
-    }
-  }
-  else {
-    self._distance = self.distance;
-  }
-
-  // setting maxX
-  self._maxX = -self._distance * self._maxPoint;
-
-  self.moveToPoint();
-};
-
-Flipsnap.prototype.hasNext = function() {
-  var self = this;
-
-  return self.currentPoint < self._maxPoint;
-};
-
-Flipsnap.prototype.hasPrev = function() {
-  var self = this;
-
-  return self.currentPoint > 0;
-};
-
-Flipsnap.prototype.toNext = function(transitionDuration) {
-  var self = this;
-
-  if (!self.hasNext()) {
-    return;
-  }
-
-  self.moveToPoint(self.currentPoint + 1, transitionDuration);
-};
-
-Flipsnap.prototype.toPrev = function(transitionDuration) {
-  var self = this;
-
-  if (!self.hasPrev()) {
-    return;
-  }
-
-  self.moveToPoint(self.currentPoint - 1, transitionDuration);
-};
-
-Flipsnap.prototype.moveToPoint = function(point, transitionDuration) {
-  var self = this;
-  
-  transitionDuration = transitionDuration === undefined
-    ? self.transitionDuration : transitionDuration + 'ms';
-
-  var beforePoint = self.currentPoint;
-
-  // not called from `refresh()`
-  if (point === undefined) {
-    point = self.currentPoint;
-  }
-
-  if (point < 0) {
-    self.currentPoint = 0;
-  }
-  else if (point > self._maxPoint) {
-    self.currentPoint = self._maxPoint;
-  }
-  else {
-    self.currentPoint = parseInt(point, 10);
-  }
-
-  if (support.cssAnimation) {
-    self._setStyle({ transitionDuration: transitionDuration });
-  }
-  else {
-    self.animation = true;
-  }
-  self._setX(- self.currentPoint * self._distance, transitionDuration);
-
-  if (beforePoint !== self.currentPoint) { // is move?
-    // `fsmoveend` is deprecated
-    // `fspointmove` is recommend.
-    self._triggerEvent('fsmoveend', true, false);
-    self._triggerEvent('fspointmove', true, false);
-  }
-};
-
-Flipsnap.prototype._setX = function(x, transitionDuration) {
-  var self = this;
-
-  self.currentX = x;
-  if (support.cssAnimation) {
-    self.element.style[ saveProp.transform ] = self._getTranslate(x);
-  }
-  else {
-    if (self.animation) {
-      self._animate(x, transitionDuration || self.transitionDuration);
-    }
-    else {
-      self.element.style.left = x + 'px';
-    }
-  }
-};
-
-Flipsnap.prototype._touchStart = function(event) {
-  var self = this;
-
-  if (self.disableTouch || self._eventType || gestureStart) {
-    return;
-  }
-
-  some(eventTypes, function(type) {
-    if (event.type === events.start[type]) {
-      self._eventType = type;
-      return true;
-    }
-  });
-
-  self.element.addEventListener(events.move[self._eventType], self, false);
-  document.addEventListener(events.end[self._eventType], self, false);
-
-  if (self._eventType === 'mouse') {
-    event.preventDefault();
-  }
-
-  if (support.cssAnimation) {
-    self._setStyle({ transitionDuration: '0ms' });
-  }
-  else {
-    self.animation = false;
-  }
-  self.scrolling = true;
-  self.moveReady = false;
-  self.startPageX = getPage(event, 'pageX');
-  self.startPageY = getPage(event, 'pageY');
-  self.basePageX = self.startPageX;
-  self.directionX = 0;
-  self.startTime = event.timeStamp;
-  self._triggerEvent('fstouchstart', true, false);
-};
-
-Flipsnap.prototype._touchMove = function(event) {
-  var self = this;
-
-  if (!self.scrolling || gestureStart) {
-    return;
-  }
-
-  var pageX = getPage(event, 'pageX'),
-    pageY = getPage(event, 'pageY'),
-    distX,
-    newX,
-    deltaX,
-    deltaY;
-
-  if (self.moveReady) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    distX = pageX - self.basePageX;
-    newX = self.currentX + distX;
-    if (newX >= 0 || newX < self._maxX) {
-      newX = Math.round(self.currentX + distX / 3);
-    }
-
-    // When distX is 0, use one previous value.
-    // For android firefox. When touchend fired, touchmove also
-    // fired and distX is certainly set to 0. 
-    self.directionX =
-      distX === 0 ? self.directionX :
-      distX > 0 ? -1 : 1;
-
-    // if they prevent us then stop it
-    var isPrevent = !self._triggerEvent('fstouchmove', true, true, {
-      delta: distX,
-      direction: self.directionX
-    });
-
-    if (isPrevent) {
-      self._touchAfter({
-        moved: false,
-        originalPoint: self.currentPoint,
-        newPoint: self.currentPoint,
-        cancelled: true
-      });
-    } else {
-      self._setX(newX);
-    }
-  }
-  else {
-    deltaX = Math.abs(pageX - self.startPageX);
-    deltaY = Math.abs(pageY - self.startPageY);
-    if (deltaX > 5) {
-      event.preventDefault();
-      event.stopPropagation();
-      self.moveReady = true;
-      self.element.addEventListener('click', self, true);
-    }
-    else if (deltaY > 5) {
-      self.scrolling = false;
-    }
-  }
-
-  self.basePageX = pageX;
-};
-
-Flipsnap.prototype._touchEnd = function(event) {
-  var self = this;
-
-  self.element.removeEventListener(events.move[self._eventType], self, false);
-  document.removeEventListener(events.end[self._eventType], self, false);
-  self._eventType = null;
-
-  if (!self.scrolling) {
-    return;
-  }
-
-  var newPoint = -self.currentX / self._distance;
-  newPoint =
-    (self.directionX > 0) ? Math.ceil(newPoint) :
-    (self.directionX < 0) ? Math.floor(newPoint) :
-    Math.round(newPoint);
-
-  if (newPoint < 0) {
-    newPoint = 0;
-  }
-  else if (newPoint > self._maxPoint) {
-    newPoint = self._maxPoint;
-  }
-
-  self._touchAfter({
-    moved: newPoint !== self.currentPoint,
-    originalPoint: self.currentPoint,
-    newPoint: newPoint,
-    cancelled: false
-  });
-
-  self.moveToPoint(newPoint);
-};
-
-Flipsnap.prototype._click = function(event) {
-  var self = this;
-
-  event.stopPropagation();
-  event.preventDefault();
-};
-
-Flipsnap.prototype._touchAfter = function(params) {
-  var self = this;
-
-  self.scrolling = false;
-  self.moveReady = false;
-
-  setTimeout(function() {
-    self.element.removeEventListener('click', self, true);
-  }, 200);
-
-  self._triggerEvent('fstouchend', true, false, params);
-};
-
-Flipsnap.prototype._setStyle = function(styles) {
-  var self = this;
-  var style = self.element.style;
-
-  for (var prop in styles) {
-    setStyle(style, prop, styles[prop]);
-  }
-};
-
-Flipsnap.prototype._animate = function(x, transitionDuration) {
-  var self = this;
-
-  var elem = self.element;
-  var begin = +new Date();
-  var from = parseInt(elem.style.left, 10);
-  var to = x;
-  var duration = parseInt(transitionDuration, 10);
-  var easing = function(time, duration) {
-    return -(time /= duration) * (time - 2);
-  };
-  var timer = setInterval(function() {
-    var time = new Date() - begin;
-    var pos, now;
-    if (time > duration) {
-      clearInterval(timer);
-      now = to;
-    }
-    else {
-      pos = easing(time, duration);
-      now = pos * (to - from) + from;
-    }
-    elem.style.left = now + "px";
-  }, 10);
-};
-
-Flipsnap.prototype.destroy = function() {
-  var self = this;
-
-  eventTypes.forEach(function(type) {
-    self.element.removeEventListener(events.start[type], self, false);
-  });
-};
-
-Flipsnap.prototype._getTranslate = function(x) {
-  var self = this;
-
-  return self.use3d
-    ? 'translate3d(' + x + 'px, 0, 0)'
-    : 'translate(' + x + 'px, 0)';
-};
-
-Flipsnap.prototype._triggerEvent = function(type, bubbles, cancelable, data) {
-  var self = this;
-
-  var ev = document.createEvent('Event');
-  ev.initEvent(type, bubbles, cancelable);
-
-  if (data) {
-    for (var d in data) {
-      if (data.hasOwnProperty(d)) {
-        ev[d] = data[d];
-      }
-    }
-  }
-
-  return self.element.dispatchEvent(ev);
-};
-
-function getPage(event, page) {
-  return event.changedTouches ? event.changedTouches[0][page] : event[page];
-}
-
-function hasProp(props) {
-  return some(props, function(prop) {
-    return div.style[ prop ] !== undefined;
-  });
-}
-
-function setStyle(style, prop, val) {
-  var _saveProp = saveProp[ prop ];
-  if (_saveProp) {
-    style[ _saveProp ] = val;
-  }
-  else if (style[ prop ] !== undefined) {
-    saveProp[ prop ] = prop;
-    style[ prop ] = val;
-  }
-  else {
-    some(prefix, function(_prefix) {
-      var _prop = ucFirst(_prefix) + ucFirst(prop);
-      if (style[ _prop ] !== undefined) {
-        saveProp[ prop ] = _prop;
-        style[ _prop ] = val;
-        return true;
-      }
-    });
-  }
-}
-
-function getCSSVal(prop) {
-  if (div.style[ prop ] !== undefined) {
-    return prop;
-  }
-  else {
-    var ret;
-    some(prefix, function(_prefix) {
-      var _prop = ucFirst(_prefix) + ucFirst(prop);
-      if (div.style[ _prop ] !== undefined) {
-        ret = '-' + _prefix + '-' + prop;
-        return true;
-      }
-    });
-    return ret;
-  }
-}
-
-function ucFirst(str) {
-  return str.charAt(0).toUpperCase() + str.substr(1);
-}
-
-function some(ary, callback) {
-  for (var i = 0, len = ary.length; i < len; i++) {
-    if (callback(ary[i], i)) {
-      return true;
-    }
-  }
-  return false;
-}
-
-window.Flipsnap = Flipsnap;
-
-})(window, window.document);
+(function($){
+
+	$.flickSimple = function( obj, param ) {
+		this.setup( $(obj), param );
+	};
+
+	$.extend( $.flickSimple.prototype, {
+		elm: null,
+		target: null,
+		disabled: false,
+		snap: 'element',
+		ratio: 5,
+		duration: 600,
+		lock: false,
+		onChange: null,
+		onResize: null,
+		onAnimationEnd: null,
+		onClick: null,
+		vertical: false,
+		horizontal: true,
+		paginate: 'x',
+
+		elmWidth: 0,
+		elmHeight: 0,
+		page: 1,
+		pageWidth: 0,
+		pageHeight: 0,
+		pageLength: 0,
+
+		android: false,
+		touchable: ( typeof ontouchstart !== 'undefined' ),
+		vender: (function() {
+			var props = [
+				[ '-webkit-transition', '-webkit-transition', '-webkit-transform', 'webkitTransitionEnd' ],
+				[ 'MozTransition',      '-moz-transition',    '-moz-transform',    'transitionend' ],
+				[ 'OTransition',        '-o-transition',      '-o-transform',      'oTransitionEnd' ],
+				[ '-ms-transition',     '-ms-transition',     '-ms-transform',     'msTransitionEnd' ],
+				[ 'transition',         'transition',         'transform',         'transitionEnd' ]
+			];
+			var div = document.createElement('div');
+			var vender = {};
+			for( var i=0,len=props.length; i<len; i++ ) {
+				if ( div.style[props[i][0]] !== void 0 ) {
+					vender.transition    = props[i][1];
+					vender.transform     = props[i][2];
+					vender.transitionend = props[i][3];
+					break;
+				}
+			}
+			return vender;
+		})(),
+		useCSSAnim: true,
+		use3d: true,
+
+		anc: null,
+		touchhold: false,
+		startX: null,
+		startY: null,
+		preX: 0,
+		preY: 0,
+		currentX: 0,
+		currentY: 0,
+		flickX: 0,
+		flickY: 0,
+		nextX: 0,
+		nextY: 0,
+		// debug: null,
+
+		setup: function( obj, param ) {
+			var o = this;
+		//	o.debug = $('#debug');
+			o.elm = obj;
+			o.elm.css( { overflow: 'hidden' } );
+			o.target = param.target || $(o.elm.children().get(0));
+			
+			var ua = navigator.userAgent.toLowerCase();
+			o.android = param.android === void 0
+				? ua.indexOf('android') !== -1
+				: param.android;
+
+			o.useCSSAnim = o.vender.transition && o.vender.transform;
+			o.use3d = ( typeof WebKitCSSMatrix !== 'undefined'
+				&& ( ua.indexOf('chrome') !== -1 || ! o.android ) );
+
+			if ( param.disabled  !== void 0 )  o.disabled = param.disabled;
+			if ( param.snap  !== void 0 )      o.snap = param.snap;
+			if ( param.ratio !== void 0 )      o.ratio = param.ratio;
+			if ( param.duration !== void 0 )   o.duration = param.duration;
+			if ( param.lock !== void 0 )       o.lock = param.lock;
+			if ( param.vertical !== void 0 )   o.vertical = param.vertical;
+			if ( param.horizontal !== void 0)  o.horizontal = param.horizontal;
+			if ( param.paginate !== void 0 )   o.paginate = param.paginate;
+
+			if ( param.vender !== void 0 )     o.vender = param.vender;
+			if ( param.useCSSAnim !== void 0 ) o.useCSSAnim = param.useCSSAnim;
+			if ( param.use3d !== void 0 )      o.use3d = param.use3d;
+
+			o.onChange       = param.onChange;
+			o.onResize       = param.onResize;
+			o.onAnimationEnd = param.onAnimationEnd;
+			o.onClick        = param.onClick;
+			
+			if ( typeof window.onorientationchange === 'object' && ! o.android  ) {
+				$(window).bind( 'orientationchange', function(){ o.updateSize(); } );
+			} else {
+				$(window).bind( 'resize', function(){ o.updateSize(); } );
+			}
+			o.init();
+
+			if ( ! o.useCSSAnim ) {
+				o.target.css({ position:'relative' });
+			} else {
+				var css = {};
+				css['position'] = 'relative';
+				css[o.vender.transition] = 'none';
+				css[o.vender.transform] = o.use3d ? 'translate3d(0,0,0)' : 'translate(0,0)';
+				o.target.css(css);
+			}
+			o.updateSize();
+			
+			if ( o.touchable ) {
+				o.elm.bind( 'touchstart', function(e){ o.touchstart(e) } )
+					.bind( 'touchmove', function(e){ o.touchmove(e) } )
+					.bind( 'touchend', function(e){ o.touchend(e) } );
+			} else {
+				o.elm.bind( 'mousedown', function(e){ o.touchstart(e) } );
+				$('body').bind( 'mouseup', function(e){ o.touchend(e) } )
+					.bind( 'mousemove', function(e){ o.touchmove(e) } );
+			}
+
+			if ( o.vender.transitionend ) {
+				o.target.bind( o.vender.transitionend, function(e) {
+					if ( o.onAnimationEnd ) {
+						o.onAnimationEnd(e);
+					}
+				} );
+			}
+			return o;
+		},
+		
+		// 次のページへ移動
+		nextPage: function( num ) {
+			return this.goTo( this.page + (num || 1) );
+		},
+		
+		// 前のページへ移動
+		prevPage: function( num ) {
+			return this.goTo( this.page - (num || 1) );
+		},
+		
+		// 指定されたページへ移動
+		goTo: function( pagenum ) {
+			if ( pagenum > this.pageLength ) {
+				pagenum = this.pageLength;
+			}
+			pagenum--;
+			
+			var pageX, pageY, rownum;
+			if ( this.paginate === 'y' ) {
+				rownum = Math.ceil( this.elmHeight / this.pageHeight ) +1;
+				pageX = Math.floor( pagenum / rownum );
+				pageY = pagenum % rownum;
+			} else {
+				rownum = Math.ceil( this.elmWidth / this.pageWidth ) +1;
+				pageY = Math.floor( pagenum / rownum );
+				pageX = pagenum % rownum;
+			}
+			var posX = pageX * this.pageWidth;
+			var posY = pageY * this.pageHeight;
+			return this.move( -posX, -posY );
+		},
+		
+		// 指定されたX座標に移動
+		move: function( posX, posY ) {
+			var o = this;
+			if ( ! o.horizontal || posX >= 0 ) {
+				posX = 0;
+			} else if ( posX < -o.elmWidth ) {
+				posX = -o.elmWidth;
+			}
+			if ( ! o.vertical || posY >= 0 ) {
+				posY = 0;
+			} else if ( posY < -o.elmHeight ) {
+				posY = -o.elmHeight;
+			}
+
+			if ( ! o.useCSSAnim ) {
+				o.target.animate( { left: posX + 'px', top: posY + 'px' },
+					function (e) {
+						if ( o.onAnimationEnd ) {
+							o.onAnimationEnd(e);
+						}
+					} );
+			} else {
+				var css = {};
+				css[o.vender.transition] = o.vender.transform + ' 0.3s ease-in';
+				css[o.vender.transform] = o.use3d
+					? 'translate3d(' + posX + 'px,' + posY + 'px,0)'
+					: 'translate(' + posX + 'px,' + posY + 'px)';
+				o.target.css(css);
+			}
+			o.nextX = posX;
+			o.nextY = posY;
+			return o.update( posX, posY );
+		},
+		
+		// 表示が変更されたら、各エレメントの大きさを計算し直す
+		updateSize: function() {
+			var o = this;
+			var ori = typeof( window.orientation ) !== 'undefined'
+				? ( window.orientation === 0 ? 'portrait' : 'landscape' )
+				: ( window.innerWidth < window.innerHeight ? 'portrait' : 'landscape' );
+			// var lis = o.target.find('li');
+			var lis = o.target.children();
+	
+			o.elm.removeClass('landscape portrait').addClass( ori );
+			// うまく反映されない場合があるので、エレメント自体にclassを振る
+			o.target.removeClass('landscape portrait').addClass( ori );
+			lis.removeClass('landscape portrait').addClass( ori );
+	
+			var targw = o.target.width();
+			var targh = o.target.height();
+			var elmw = o.elm.width();
+			var elmh = o.elm.height();
+			o.elmWidth = targw - elmw;
+			o.elmHeight = targh - elmh;
+
+			o.pageWidth = 0;
+			o.pageHeight = 0;
+			o.pageLength = 0;
+			if ( o.snap ) {
+				if ( o.snap === 'element' ) {
+					o.pageWidth = elmw;
+					o.pageHeight = elmh;
+				} else if ( o.snap === 'first' ) {
+					o.pageWidth = $(lis.get(0)).width();
+					o.pageHeight = $(lis.get(0)).height();
+				} else if ( o.snap === 'smallest' ) {
+					var smaller = 0;
+					lis.each( function() {
+						var w = $(this).width();
+						if ( smaller > w || smaller == 0 ) {
+							smaller = w;
+						}
+					} );
+					o.pageWidth = smaller;
+					
+					smaller = 0;
+					lis.each( function() {
+						var h = $(this).height();
+						if ( smaller > h || smaller == 0 ) {
+							smaller = h;
+						}
+					} );
+					o.pageHeight = smaller;
+		
+				} else if ( typeof o.snap === 'object' ) {
+					o.pageWidth = o.snap[0];
+					o.pageHeight = o.snap[1];
+				} else if ( ! isNaN(o.snap) ) {
+					o.pageWidth = o.snap;
+					o.pageHeight = o.snap;
+				}
+				
+				o.pageLength = Math.ceil( targw / o.pageWidth );
+				if ( targh > o.pageHeight ) {
+					o.pageLength *= Math.ceil( targh / o.pageHeight );
+				}
+			}
+	
+			if ( o.onResize ) {
+				o.onResize();
+			}
+			if ( o.snap ) {
+				o.goTo( o.page );
+			}
+			return o;
+		},
+
+		touchstart: function(e) {
+			var o = this;
+			var te = o.touchable ? e.originalEvent.touches[0] : e;
+			if ( o.disabled ) { return; }
+			o.startX = o.preX = te.clientX;
+			o.startY = o.preY = te.clientY;
+			o.touchhold = false;
+			var anc = e.target.tagName === 'A'
+				? $(e.target)
+				: $(e.target).closest('a');
+			if ( anc.length > 0 ) {
+				o.anc = anc;
+			}
+	
+			// 長押し対応
+			setTimeout( function() {
+				if ( o.anc ) {
+					// o.startX = null;
+					o.touchhold = true;
+					var anc = o.anc;
+					var link = $.data(anc.get(0), 'flickSimple.link' );
+					if ( link ) {
+						anc.attr('href', link);
+						setTimeout( function() {
+							anc && anc.attr('href', 'javascript:;');
+						}, 200 );
+					}
+					
+				}
+			}, 600 );
+		},
+		
+		touchmove: function(e) {
+			var o = this;
+			if ( o.disabled ) { return; }
+			if ( o.android || o.lock ) {
+				e.preventDefault();
+			}
+			if ( o.startX === null || o.startY === null ) {
+				o.anc = null;
+				return;
+			}
+			var te = o.touchable ? e.originalEvent.touches[0] : e;
+			var nowX = te.clientX;
+			var nowY = te.clientY;
+			if ( Math.abs( o.startX - nowX ) > 16 || Math.abs( o.startY - te.clientY ) > 16 ) {
+				o.anc = null;
+			}
+			o.nextX = o.horizontal ? (o.currentX || 0) + ( nowX - o.startX ) : 0;
+			o.nextY = o.vertical ? (o.currentY || 0) + ( nowY - o.startY ) : 0;
+			if ( ! o.useCSSAnim ) {
+				o.target.css( { left: o.nextX + 'px', top: o.nextY + 'px' } );
+			} else {
+				var css = {};
+				css[o.vender.transition] = 'none';
+				css[o.vender.transform] = o.use3d
+					? 'translate3d(' + o.nextX + 'px,' + o.nextY + 'px,0)'
+					: 'translate(' + o.nextX + 'px,' + o.nextY + 'px)';
+				o.target.css( css );
+			}
+			o.flickX = o.preX - nowX;
+			o.flickY = o.preY - nowY;
+			o.preX = nowX;
+			o.preY = nowY;
+		},
+	
+		touchend: function(e) {
+			var o = this;
+			if ( o.disabled || o.startX === null || o.startY === null ) { return; }
+			o.startX = null;
+			o.startY = null;
+			if ( o.anc && ! o.touchhold ) {
+				if ( o.onClick ) {
+					o.onClick( o.anc );
+				}
+				var ancr = o.anc.get(0);
+				var link = $.data(ancr, 'flickSimple.link' );
+				var targ = $.data(ancr, 'flickSimple.target' );
+				if ( link ) {
+					if ( targ && targ !== '_self' ) {
+						if ( targ === '_blank' ) {
+							targ = '';
+						}
+						window.open( link, targ );
+					} else {
+						location.href = link;
+					}
+				}
+				e.preventDefault();
+			}
+			o.touchhold = false;
+
+			var nposX = o.nextX + (o.flickX * -o.ratio);
+			var nposY = o.nextY + (o.flickY * -o.ratio);
+			if ( o.pageWidth ) {
+				var thrX = nposX % o.pageWidth;
+				if ( thrX < -o.pageWidth / 2 ) {
+					nposX -= thrX + o.pageWidth;
+				} else {
+					nposX -= thrX;
+				}
+				var thrY = nposY % o.pageHeight;
+				if ( thrY < -o.pageHeight / 2 ) {
+					nposY -= thrY + o.pageHeight;
+				} else {
+					nposY -= thrY;
+				}
+			}
+			if ( ! o.horizontal || nposX >= 0 ) {
+				nposX = 0;
+			} else if ( nposX < -o.elmWidth ) {
+				nposX = -o.elmWidth;
+			}
+			if ( ! o.vertical || nposY >= 0 ) {
+				nposY = 0;
+			} else if ( nposY < -o.elmHeight ) {
+				nposY = -o.elmHeight;
+			}
+		
+			
+			if ( ! o.useCSSAnim ) {
+				o.target.animate( { left: nposX + 'px', top: nposY + 'px' }, o.duration,
+					function (x, t, b, c, d) {
+						if ( o.onAnimationEnd ) {
+							o.onAnimationEnd(e);
+						}
+						return -c *(t/=d)*(t-2) + b;
+					} );
+			} else {
+				var css = {};
+				css[o.vender.transition] = o.vender.transform
+					+ ' ' + (o.duration / 1000) + "s ease-out";
+				css[o.vender.transform] = o.use3d
+					? 'translate3d(' + nposX + 'px,' + nposY + 'px,0)'
+					: 'translate(' + nposX + 'px,' + nposY + 'px)';
+				o.target.css( css );				
+			}
+			o.update( nposX, nposY );
+		},
+		
+		update: function( posX, posY ) {
+			var o = this;
+			if ( o.pageWidth || o.pageHeight ) {
+				var rownum;
+				if ( o.paginate === 'y' ) {
+					rownum = Math.ceil( this.elmHeight / this.pageHeight ) +1;
+					o.page = Math.ceil( -posY / o.pageHeight )
+						+ ( Math.ceil( -posX / o.pageWidth ) * rownum) +1;
+				} else {
+					rownum = Math.ceil( this.elmWidth / this.pageWidth ) +1;
+					o.page = Math.ceil( -posX / o.pageWidth )
+						+ (Math.ceil( -posY / o.pageHeight ) * rownum) +1;
+				}
+			}
+			if ( o.currentX !== posX || o.currentY !== posY ) {
+				o.currentX = posX;
+				o.currentY = posY;
+				if ( o.onChange ) {
+					o.onChange();
+				}
+			}
+			return o;
+		},
+		
+		no_mousedown: function(e) {
+			e.preventDefault();
+		},
+		
+		// 初期化（内容に変更があった場合には、呼び出すこと）
+		init: function() {
+			var o = this;
+			o.target.find('a').each( function() {
+				var obj = $(this);
+				var link = obj.attr('href');
+				var targ = obj.attr('target');
+				if ( link && link !== 'javascript:;' ) {
+					$.data(this, 'flickSimple.link', link );
+				}
+				$.data(this, 'flickSimple.target', targ || '' );
+				obj.attr('href', 'javascript:;').removeAttr('target');
+				if ( ! o.touchable ) {
+					obj.unbind( 'mousedown', o.no_mousedown )
+						.bind( 'mousedown', o.no_mousedown );
+				}
+			} );
+			
+			// 画像のドラッグをさせない
+			if ( ! o.touchable ) {
+				o.target.find('img')
+					.unbind( 'mousedown', o.no_mousedown )
+					.bind( 'mousedown', o.no_mousedown );
+			}
+			return o;
+		}
+	} );
+
+	$.fn.flickSimple = function( param ) {
+		var res = this;
+		if ( typeof param === "string" ) { // 引数が文字列の場合
+			var args = Array.prototype.slice.call(arguments, 1);
+			this.each( function() {
+				var instance = $.data(this, 'flickSimple');
+				var val;
+				if ( instance ) {
+					if ( $.isFunction(instance[param]) ) {
+						val = instance[param].apply(instance, args);
+					} else {
+						if ( args.length > 0 ) {
+							instance[param] = args[1];
+						}
+						val = instance[param];
+					}
+				}
+				if ( val !== instance ) {
+					res = val
+				}
+			});
+		} else {
+			this.each( function() {
+				var instance = $.data(this, 'flickSimple');
+				if (! instance) {
+					$.data(this, 'flickSimple', new $.flickSimple( this, param || {} ) );
+				} else {
+					res = instance;
+				}
+			} );
+		}
+		return res;
+	};
+
+})(jQuery);
