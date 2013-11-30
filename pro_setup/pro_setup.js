@@ -1,79 +1,59 @@
 $(document).ready(function(){
-	$('#pagename').append("プロフィール設定")
-	// $('textarea').maxlength();
-});
 
-App = null;
+  // $('textarea').maxlength();
 
-$(function(){
-	App = new CheeseController();
+  $('#pagename').append("プロフィール設定")
+  });
 
-	App.signIn("ren","test",function(json){
-		console.log(json);
-	});
+  App = null;
 
-	App.getOwnProfile(function(proData){
-		console.log(proData);
-		$('#comment').val(proData.bio);
-		$('#username').val(proData.screen_id);
+  $(function(){
+    App = new CheeseController();
+
+    App.signIn("ren","test",function(json){
+    console.log(json);
+  });
+
+  App.getOwnProfile(function(proData){
+    console.log(proData);
+    $('#comment').val(proData.bio);
+    $('#username').val(proData.screen_id);
+    $('#preview').attr({'src':"http://winvelab.net/cheese/img/" + proData.icon_name + ".png"});
+  });
 
 
-$(function(){
-	$('input[value=""]').val("キーワードを入力")
-		.css("color","#969696");
-    $("input").focus(function(){
-        $(this).css("background-color" , "#dbdbff");
-        if(this.value == "キーワードを入力"){
-        	$(this).val("").css("color","#000");
-        }
+   $(".save_btn").click(function(){
+
+    App.userCreate(function(screen_id,password){
+      console.log(send);
+      screen_id = $('#username').text();
+      password = $('#pass').text();
     });
-    $("input").blur(function(){
-        $(this).css("background-color" , "#fff");
-        if(this.value == ""){
-            $(this).val("キーワードを入力")
-            	.css("color","#969696");
-        }
-        if(this.value != "キーワードを入力"){
-            $(this).css("color","#000");
-
-        }
-    });
-});
-
-
-
-   $("#changeImg").click(function(){
-         alert(proData.screen_id);
-
-	});
-
-	});
-
-
+  }) ;
 
 
 //画像のサムネイル処理
-$(function() {
-  $('input[type=file]').after('<span></span>');
+  $(function() {
+    $('input[type=file]').after('<span></span>');
 
-  $('input[type=file]').change(function() {
-    var file = $(this).prop('files')[0];
-    $('#preview').find("img").fadeOut(0);
+    $('input[type=file]').change(function() {
+      var file = $(this).prop('files')[0];
+      $('#preview').find("img").fadeOut(0);
 
 
-    if (! file.type.match('image.*')) {
-      $('span').html('');
-      return;
-    }
+      if (! file.type.match('image.*')) {
+        $('span').html('');
+        return;
+      }
 
-    var reader = new FileReader();
-    reader.onload = function() {
-      var img_src = $('<img>').attr('src', reader.result);
-      $('span').html(img_src);
-    }
-    reader.readAsDataURL(file);
+      var reader = new FileReader();
+      reader.onload = function() {
+        var img_src = $('<img>').attr('src', reader.result);
+        $('span').html(img_src);
+      }
+      reader.readAsDataURL(file);
+    });
   });
-});
 
 
   $('input[type=file]').after('<div id="preview"></div>');
@@ -81,7 +61,6 @@ $(function() {
   $('input[type=file]').change(function() {
     var file = $(this).prop('files')[0];
     $('#preview').find("noimage").fadeOut(0);
-
 
     if (! file.type.match('image.*')) {
       $('#preview').html('');
@@ -95,9 +74,6 @@ $(function() {
     }
     reader.readAsDataURL(file);
   });
-
-
-
 
 
 });
