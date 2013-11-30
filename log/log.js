@@ -69,10 +69,13 @@ $(function(){
 			// limit
 
 			// 1つの投稿を増やす（空タグ）
-			$('div.log').prepend('<div class="my_act"><div class="act_left"><div class="recipe_photo"><img /></div></div><div class="act_right"><div class="date"></div><div class="title"><a href="#"></a></div><div class="my_comment"></div></div><div class="act_bottom"><div class="com_btn"><img src="./img/com_off.png"><span>コメント0</span></div><div class="iine_btn"><img src="./img/good_off.png"><span>イイネ！0</span></div><div id="share"><p><a href="#open01"><img src="./img/…_off.png"></a></p></div></div></div>');
-			// $('div.log').prepend($('<div class="my_act">').append('<act_'))
+			// $('div.log').prepend('<div class="my_act"><div class="act_left"><div class="recipe_photo"><img /></div></div><div class="act_right"><div class="date"></div><div class="title"><a href="#"></a></div><div class="my_comment"></div></div><div class="act_bottom"><div class="com_btn"><img src="./img/com_off.png"><span>コメント0</span></div><div class="iine_btn"><img src="./img/good_off.png"><span>イイネ！0</span></div><div id="share"><p><a href="#open01"><img src="./img/…_off.png"></a></p></div></div></div>');
 
-			// 
+			$recipe_photo = $('<div/>').addClass('recipe_photo').append('<img />');
+			$('.log').prepend($recipe_photo)
+
+
+			//日付 
 			var date = activity.activities[i].created_at;
 		    $('.act_right .date').text(date.split("T")[0]);
 
