@@ -25,23 +25,28 @@ $(function(){
 
 		// お気に入りタイムラインDOM操作
 		for(i=0;i<myprofile.favorite_recipes.length;i++) {
-			// if(i == 0) {
-			// 	console.log("a");
-			// 	$('.tab_title').after('なにもないよ');
-			// 	break;
-			// } else if(i > 0) {
-			$('.tab_title').after('<div class="fav_menu"><img src="#" class="fav_menu_photo"><div class="fav_menu_title"></div><div class="fav_info_all"><span class="fav_menu_info"><img src="./img/money.png" width="25" height="25" class="fav_icon"><span class="fav_menu_money"></span>円 |<img src="./img/time.png" width="25" height="25" class="fav_icon"> <span class="fav_menu_time"></span>分</span><div id="share"><p><a href="#open01"><img src="./img/…_off.png"></a></p></div></div></div>')
-			var recipe_id = i + 1;
+
+			var recipe_id = i;
 			App.getDetail(recipe_id,function(recipe){
-				console.log(recipe);
-				$(".fav_menu_photo").attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
-				$(".fav_menu_title").text(recipe.name);
-				$(".fav_menu_money").text(recipe.required_money);
-				$(".fav_menu_time").text(recipe.necessary_time);
+
+				$fav_menu_photo = $('<img/>').addClass('fav_menu_photo').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+				$fav_menu_title = $('<div/>').addClass('fav_menu_title').text(recipe.name);
+
+				$money_img = $('<img/>').addClass('fav_icon').attr('src', './img/money.png');
+				$time_img = $('<img/>').addClass('fav_icon').attr('src', './img/time.png');
+				$menu_money = $('<span/>').addClass('fav_menu_money').text(recipe.required_money);
+				$menu_time = $('<span/>').addClass('fav_menu_time').text(recipe.necessary_time);
+				$border = $('<span/>').text(' | ');
+
+				$fav_menu      = $('<div/>').addClass('fav_menu').append($fav_menu_photo.after($fav_menu_title));
+				$fav_menu_info = $('<span/>').addClass('fav_menu_info').append($money_img.after($menu_money).after($border).after($time_img).after($menu_time));
+				$fav_info_all = $('<div/>').addClass('fav_info_all').append($fav_menu_all.after($share));
+				$('div.tab_title').after($fav_menu.after($fav_menu_info).after($fav_info_all));
+
 			});
 
 			$(".fav_menu_title,.fav_menu_photo").click(function() {
-				location.href = "../recipe/index.html";
+				location.href = "../recipe/index.html?index.html" + recipe_id;
 			});
 		};
 

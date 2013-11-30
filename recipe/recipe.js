@@ -21,22 +21,23 @@ jQuery(function($) {
   // お気に入りボタン
   App.getOwnProfile(function(myprofile) {
 
-    $("#re_fav").click(function(myprofile){
 
-      for(i=0;i<myprofile.favorite_recipes.length;i++) {
-        // もしお気に入りしてなかったら
-        if(frag_reFav == false && myprofile.favorite_recipes.id[i] != recipe_id){
+    $("#re_fav").click(function(){
+
+      // for(i=0;i<myprofile.favorite_recipes.length;i++) {
+        // // もしお気に入りしてなかったら
+        // if(frag_reFav == false && myprofile.favorite_recipes.id[i] != recipe_id){
           // ONにする
           frag_reFav = true;
           $("#re_fav img").attr("src","img/reci_btn_fav_on.png");
           // お気に入りに追加
-          App.sendFavorite(recipe_id,function(){});
-        }
-        else{
+          App.sendFavorite(recipe_id,function(){　});
+        // }
+        // else{
           frag_reFav = false;
           $("#re_fav img").attr("src","img/reci_btn_fav.png");
-        };
-      };
+        // };
+      // };
 
     });
 
