@@ -101,8 +101,13 @@ input{
 
 .save_btn{
     text-align: center;
-    margin: 5px auto 10px;
-}
+    margin: 5px auto 60px auto;
+    width: 40px;
+    height: 30px;
+    background-color: #ccc;
+    text-align: center;
+
+    }
 
 .save_btn img{
     height: 35px;

@@ -22,10 +22,19 @@ $(document).ready(function(){
   });
 
 
-      screen_id = $('#username').text();
-      password = $('#pass').text();
-      bio = $('#comment').text();
+   $('.save_btn').click(function(){
+          var screen_id = $('#username').val();
+          var password = $('#pass').val();
+          alert(screen_id+password);
+      });
+
+
+      var screen_id = $('#username').text();
+      var password = $('#pass').text();
+      var bio = $('#comment').text();
       App.userCreate(screen_id,password,function(){})
+      console.log(screen_id+password);
+
 
 //画像のサムネイル処理
   $(function() {
