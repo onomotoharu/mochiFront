@@ -233,26 +233,17 @@ CheeseController.prototype.getSample = function(callback){
 ||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> master-hirayama
 App = null;
 
 $(function(){
 	App = new CheeseController();
 
 	// ## sample ##
-<<<<<<< HEAD
-	App.signIn("ren","test",function(json){
-		console.log(json);
-	});
-=======
 	// App.signIn("ren","test",function(json){
 	// 	console.log(json);
 	// });
->>>>>>> master-hirayama
 
 	// App.deleteActivity(1,null)
 
