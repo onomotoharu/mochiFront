@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //function footer() {
 //  document.write ('<nav id="footer" name="nav">\n');      
 //  document.write ('<ul>\n');       
@@ -8,11 +9,19 @@
 //  document.write ('</ul>\n');
 //  document.write ('</nav>\n');     
 //}
+=======
+>>>>>>> setup
 
 $(document).ready(function(){
   $('#pagename').append("設定")
 });
 
-$(function(){
-  $('#nav_set img').attr("src", "../img/on/set_on.png");
-});
+function logOutEnter(){
+	myRet = confirm("cheeseをログアウトしますか？");
+	if(myRet == true){
+		App.signOut(function(logout){
+			console.log(logout);
+			location.href = '../login/signin.html';
+		});
+	}
+}
