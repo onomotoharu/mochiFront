@@ -71,6 +71,8 @@ $(function() {
 
 			console.log(activity.activities[i]);
 
+			activity_id = activity.activities[i].id;
+
 		    // レシピID
 			recipe_id = activity.activities[i].recipe_id;
 
@@ -112,52 +114,51 @@ $(function() {
 	    	$p_open01   = $('<p/>').append($open01);
 	    	$share      = $('<div id="share"></div>').append($p_open01);
 
+	    	$activity_id = $('<div/>').addClass('activity_id').text(activity_id);
+
 	    	// 親要素生成
 			$act_left   = $('<div/>').addClass('act_left').append($recipe_photo);
 			$act_right  = $('<div/>').addClass('act_right').append($date.after($recipe_title).after($my_comment));
-			$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($iine_btn).after($share));
+			$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn).after($share));
 			$('.log').prepend($act_left.after($act_right).after($act_bottom));
 
 			// var com_count  = activity.activities[i].comments.length;
 			// var iine_count = activity.activities[i].likes_count;
 
-			// コメントボタンをクリックしたら
-		    $(".com_btn").click(function() {
-
-		    	// i = i-1;
-
-		        // 親要素my_actのidにactivityの配列ナンバーを追加
-		        $(this).parent(".my_act").attr('id', 'i');
-
-		        // URLにパラメータとして渡す
-		        location.href = "../activity/comment.html?activity_id=" + i;
-
-			});
-
-			// いいねボタンをクリックしたら
-			$(".iine_btn").click(function() {
-
-				// イイネ数を+1して_onデザインにする
-				if($(this).hasClass('iine_btn')){
-					$(this).addClass("iine_btn_on").removeClass('iine_btn');
-					$(".iine_btn_on img").attr('src', './img/good_on.png');
-					likes_count = $(this).children('.iine_count').text();
-					likes_count++;
-					$(this).children('.iine_count').append(likes_count);
-				} else if($(this).hasClass('iine_btn_on')) {
-					$(this).addClass("iine_btn").removeClass('iine_btn_on');
-					$(".iine_btn img").attr('src', './img/good_off.png');
-					likes_count = $(this).children('.iine_count');
-					likes_count--;
-					$(this).children('.iine_count').append(likes_count);
-				};
-
-				// activity_idが実装されたら
-				// App.goodToActivity(i,function(){});
-
-			});
-
 		};
+
+		// コメントボタンをクリックしたら
+	    $(".com_btn").click(function() {
+
+		activity_id = $(this).next(activity_id).text();
+        // URLにパラメータとして渡す
+        location.href = "../activity/comment.html?activity_id=" + activity_id;
+
+
+		});
+
+		// いいねボタンをクリックしたら
+		$(".iine_btn").click(function() {
+
+			// イイネ数を+1して_onデザインにする
+			if($(this).hasClass('iine_btn')){
+				$(this).addClass("iine_btn_on").removeClass('iine_btn');
+				$(".iine_btn_on img").attr('src', './img/good_on.png');
+				likes_count = $(this).children('.iine_count').text();
+				likes_count++;
+				$(this).children('.iine_count').append(likes_count);
+			} else if($(this).hasClass('iine_btn_on')) {
+				$(this).addClass("iine_btn").removeClass('iine_btn_on');
+				$(".iine_btn img").attr('src', './img/good_off.png');
+				likes_count = $(this).children('.iine_count');
+				likes_count--;
+				$(this).children('.iine_count').append(likes_count);
+			};
+
+			// activity_idが実装されたら
+			// App.goodToActivity(i,function(){});
+
+		});
 
 	});
 

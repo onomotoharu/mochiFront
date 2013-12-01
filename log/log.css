@@ -119,7 +119,9 @@
 	margin: 15pt 20px 10pt;
 }
 
-
+.activity_id {
+	display: none;
+}
 
 
 /*----------------------------

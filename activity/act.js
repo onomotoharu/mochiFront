@@ -80,40 +80,39 @@ $(function(){
 			$act_right   = $('<div/>').addClass('act_right').append($date.after($title).after($user));
 			$act_bottom  = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn).after($share));
 			$('.all_act').prepend($act_left.after($act_right).after($act_bottom));
-
-			var com_count   = timeline[i].comments.length;
-			var iine_count  = timeline[i].likes_count;
-
-		    // コメントボタンをクリックしたら
-		    $(".com_btn").click(function() {
-
-		    	activity_id = $(this).next(activity_id).text();
-		        // URLにパラメータとして渡す
-		        location.href = "../activity/comment.html?activity_id=" + activity_id;
-
-			});
-
-			// いいねボタンをクリックしたら
-			$(".iine_btn").click(function() {
-
-				// イイネ数を+1して_onデザインにする
-				if($(this).hasClass('iine_btn')){
-				  $(this).addClass("iine_btn_on").removeClass('iine_btn');
-				  $(".iine_btn_on img").attr('src', './img/good_on.png');
-				  iine_count++;
-				  $(this).children('span').text("イイネ！" + iine_count);
-				} else if($(this).hasClass('iine_btn_on')) {
-				  $(this).addClass("iine_btn").removeClass('iine_btn_on');
-				  $(".iine_btn img").attr('src', './img/good_off.png');
-				  iine_count--;
-				  $(this).children('span').text("イイネ！" + iine_count);
-				};
-
-				App.goodToActivity(activity_id,function(){});
-
-			});
-
+			
 		};
+
+
+	    // コメントボタンをクリックしたら
+	    $(".com_btn").click(function() {
+
+	    	activity_id = $(this).next(activity_id).text();
+	        // URLにパラメータとして渡す
+	        location.href = "../activity/comment.html?activity_id=" + activity_id;
+
+		});
+
+		// いいねボタンをクリックしたら
+		$(".iine_btn").click(function() {
+
+			// イイネ数を+1して_onデザインにする
+			if($(this).hasClass('iine_btn')){
+			  $(this).addClass("iine_btn_on").removeClass('iine_btn');
+			  $(".iine_btn_on img").attr('src', './img/good_on.png');
+			  iine_count++;
+			  $(this).children('span').text("イイネ！" + iine_count);
+			} else if($(this).hasClass('iine_btn_on')) {
+			  $(this).addClass("iine_btn").removeClass('iine_btn_on');
+			  $(".iine_btn img").attr('src', './img/good_off.png');
+			  iine_count--;
+			  $(this).children('span').text("イイネ！" + iine_count);
+			};
+
+			App.goodToActivity(activity_id,function(){});
+
+		});
+
 
 	});
 
