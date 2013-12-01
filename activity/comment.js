@@ -19,8 +19,7 @@ $(function(){
     // 該当アクティビティを取得
     for(var i = 0;i<timeline.length;i++) {
       if(timeline[i].activity_id == activity_id){
-        activity_no = i;
-        console.log(activity_id+activity_no);
+        console.log(activity_id+i);
 
         // レシピデータ
         // var recipe_id = timeline[i].recipe_id;
