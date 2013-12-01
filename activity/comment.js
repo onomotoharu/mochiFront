@@ -33,33 +33,10 @@ $(function(){
         var date = timeline[i].created_at;
         $('.right .date').text(date.split("T")[0]);
 
-        // アクティビティID
-        $activity_id = $('<div/>').addClass('activity_id').text(activity_id);
-
         // ユーザデータ
-        // $('.user_info .user_icon img').attr({'src':localStorage.pic
+        // $('.user_info .user_icon img').attr({'src':localStorage.pic});
         $('#def_user,.user_info .user_id').text(timeline[i].screen_id);
         $('#def_comment').text(timeline[i].comment);
-
-        // いいねボタンをクリックしたら
-        $('.iine_btn,.iine_btn_on').click(function() {
-
-          // イイネ数を+1して_onデザインにする
-          if($(this).hasClass('iine_btn')){
-            console.log("+1");
-            $(this).addClass("iine_btn_on").removeClass('iine_btn');
-            $(".iine_btn_on img").attr('src', './img/good_on.png');
-            iine_count++;
-            $(this).children('span').text("イイネ！" + iine_count);
-          } else if($(this).hasClass('iine_btn_on')) {
-            $(this).addClass("iine_btn").removeClass('iine_btn_on');
-            $(".iine_btn img").attr('src', './img/good_off.png');
-            iine_count--;
-            $(this).children('span').text("イイネ！" + iine_count);
-          };
-
-          App.goodToActivity(activity_id,function(){});
-        });
       };
     };
   });
