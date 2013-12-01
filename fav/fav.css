@@ -185,11 +185,16 @@
 	bottom: -5px;
 }
 
-.fav_icon{
+.fav_menu_money, .fav_menu_time{
 	position: relative;
 	bottom: -5px;
-	width: 25px;
-	height:25px;
+}
+
+.fav_icon{
+	position: relative;
+	bottom: -10px;
+	width: 20px;
+	height:20px;
 }
 
 .shareicon{
