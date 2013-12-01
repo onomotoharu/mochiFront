@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#pagename').append("cheese!")
+	$('#pagename').append("プロフィール設定")
 });
 
 $('textarea').maxlength();

@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-	$('#pagename').append("cheese!")
+	$('#pagename').append("マイページ")
 
 	$('.myname').html("名前");
 
@@ -48,41 +48,28 @@ $(function(){
 			$('#badge a img').attr('src', $('#badge a img').attr('src').replace('_on', '_off'));
 		}
 	});
-});
 
+	var recipeData = {
+	recipeName : "おいしいよー",
+	recipePhoto : "./img/foodphoto.png",
+	recipeUrl : "../recipe/index.html",
+	cookedDay : "2013/12/22",
+	}
 
-jQuery(function($) {
+	var cookedUser = {
+	pic : "./img/my_icon_user.png",
+	id : "bechi",
+	comment : "おいしかったっす〜〜〜"
+	}
 
-  var frag_com     = new Boolean(false);
-  var frag_iine     = new Boolean(false);
-
-
-  // コメントボタン
-
-  $(".com_btn").click(function(){
-    if(frag_com == false){
-      frag_com = true;
-      $(".com_btn img").attr("src","img/com_on.png");
-      
-    }else{
-      frag_com = false;
-      $(".com_btn img").attr("src","img/com_off.png");
-    }
-  })
-
-  // イイネ！ボタン
-
-  $(".iine_btn").click(function(){
-    if(frag_iine == false){
-      frag_iine = true;
-      $(".iine_btn img").attr("src","img/good_on.png");
-      
-    }else{
-      frag_iine = false;
-      $(".iine_btn img").attr("src","img/good_off.png");
-    }
-  })
-
+	// レシピデータ
+	$('.recipe_photo img').attr({'src':recipeData.recipePhoto});
+	$('.act_right .date').text(recipeData.cookedDay);
+	$('.title a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
+	// ユーザデータ
+	$('#myname #myphoto img').attr({'src':cookedUser.pic});
+	$('#myname .myname').text(cookedUser.id);
+	$('.my_comment').text(cookedUser.comment);
 
 });
 

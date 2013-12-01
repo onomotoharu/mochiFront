@@ -1,6 +1,5 @@
-
 $(document).ready(function(){
-	$('#pagename').append("cheese!")
+	$('#pagename').append("みんなのごはん")
 });
 
 
@@ -10,6 +9,26 @@ $(function(){
 
 
 $(function(){
+
+	var recipeData = {
+	recipeName : "おいしいよー",
+	recipePhoto : "./img/foodphoto.png",
+	recipeUrl : "../recipe/index.html",
+	cookedDay : "2013/12/22",
+	}
+
+	var cookedUser = {
+	pic : "./img/my_icon_user.png",
+	id : "bechi"
+	}
+
+	// レシピデータ
+	$('.re_photo img').attr({'src':recipeData.recipePhoto});
+	$('.act_right .date').text(recipeData.cookedDay);
+	$('.title a').text(recipeData.recipeName).attr({'href':recipeData.recipeUrl});
+	// ユーザデータ
+	$('#myname #myphoto img').attr({'src':cookedUser.pic});
+	$('#myname .myname').text(cookedUser.id);
 
 	$('.com_btn').click(function(){
 		$('.com_formsend').toggle();
@@ -27,40 +46,4 @@ $(function(){
 		$('input').css("margin-top", "16px")
 
 	});
-});
-
-jQuery(function($) {
-
-  var frag_com     = new Boolean(false);
-  var frag_iine     = new Boolean(false);
-
-
-  // コメントボタン
-
-  $(".com_btn").click(function(){
-    if(frag_com == false){
-      frag_com = true;
-      $(".com_btn img").attr("src","img/com_on.png");
-      location.href = "comment.html";
-      
-    }else{
-      frag_com = false;
-      $(".com_btn img").attr("src","img/com_off.png");
-    }
-  })
-
-  // イイネ！ボタン
-
-  $(".iine_btn").click(function(){
-    if(frag_iine == false){
-      frag_iine = true;
-      $(".iine_btn img").attr("src","img/good_on.png");
-      
-    }else{
-      frag_iine = false;
-      $(".iine_btn img").attr("src","img/good_off.png");
-    }
-  })
-
-
 });

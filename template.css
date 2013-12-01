@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+ *{
+-webkit-touch-callout: none;
+-webkit-text-size-adjust: none;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-user-select: none;
+}
+
 body,p,h1,h2,h3,h4,h5,h6,
 span,small,strong,
 div,ul,li,
@@ -61,6 +68,11 @@ a,a:visited,a:hover,a:active {
 }
 
 #header ul li a img{
+    width:25px;
+    height:25px;
+}
+
+#header ul li:first-child a img {
     width:20px;
     height:25px;
 }
@@ -69,6 +81,9 @@ a,a:visited,a:hover,a:active {
     width: 60%;
     padding-top: 10px;
     font-weight: bold;
+    margin: 5px 0;
+    font-size: 14px;
+    letter-spacing: 0.2em;
 }
 
 

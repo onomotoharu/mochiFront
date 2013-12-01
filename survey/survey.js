@@ -11,10 +11,10 @@
 // 		$("#item1").css('display', 'none');
 // 	});
 // });
-
-$(document).ready(function(){
-	$('#pagename').append("cheese!")
- });
+$(function(){
+	$('#r_btn a').append("次へ")
+				 .attr("href", "../recommend/index.html")
+})
 
 (function() {
 
