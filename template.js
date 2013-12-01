@@ -89,10 +89,14 @@ CheeseController.prototype.signOut = function(callback){
 	data = null
 	type = "post";
 <<<<<<< HEAD
+<<<<<<< HEAD
 	response = 	this._throwRequest(url,data,type);
 =======
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
 >>>>>>> origin/survey_new
+=======
+	response = 	this._throwRequest(url,data,type);
+>>>>>>> setup
 	localStorage.clear();
 	this.isLoggedIn = false;
 	if(callback!=null){callback(response);}
@@ -298,6 +302,7 @@ $(function(){
 
 	// ## sample ##
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// App.signIn("ren","test",function(json){
 	// 	console.log(json);
 	// });
@@ -313,6 +318,12 @@ $(function(){
 	})
 >>>>>>> origin/master-hirayama
 
+=======
+	// App.signIn("ren","test",function(json){
+	// 	console.log(json);
+	// });
+
+>>>>>>> setup
 	// App.deleteActivity(1,null)
 
 	// App.getRecommend(function(json){
