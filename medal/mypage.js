@@ -1,20 +1,23 @@
 $(document).ready(function(){
 	$('#pagename').append("マイページ")
 
-	$('.myname').html("名前");
+	App = new CheeseController();
 
-	$('.followcount').append("30");
-	$('.followercount').append("25");
+    App.signIn("ren","test",function(json){
+        console.log(json);
+    });
 
-	$('#myintro').append("鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者");
-});
+    App.getOwnProfile(function(myprofile){
+        console.log(myprofile);
+        $('.myname').html(myprofile.screen_id);
+		$('.followcount').append(myprofile.following.length);
+		$('.followercount').append(myprofile.followers.length);
+		$('#myphoto img').attr("src",myprofile.icon_name);
+		$('#myintro').append(myprofile.bio);    
+    });
 
-$(function(){
   $('#nav_my img').attr("src", "../img/on/my_on.png");
-});
 
-
-$(function(){
 
 	$('.list a').hover(function(){
 		$('.list a img').attr('src', $('.list a img').attr('src').replace('_off', '_on'));
