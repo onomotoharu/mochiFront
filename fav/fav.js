@@ -58,7 +58,7 @@ $(function(){
 		    	$share      = $('<div id="share"></div>').append($p_open01);
 
 				$fav_menu_info = $('<span/>').addClass('fav_menu_info').append($money_img.after($menu_money).after($border).after($time_img).after($menu_time));
-				$fav_info_all = $('<div/>').addClass('fav_info_all').append($fav_menu_info.after($share));
+				$fav_info_all = $('<div/>').addClass('fav_info_all').append($fav_menu_info);
 				$fav_menu = $('<div/>').addClass('fav_menu').append($fav_menu_photo_a.after($fav_menu_title_a).after($fav_info_all));
 				$('div.tab_title').after($fav_menu);
 
