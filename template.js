@@ -62,6 +62,7 @@ CheeseController.prototype._throwRequest = function(url,data,type){
 		data: data,
 		url: this.domain + url,
 		beforeSend: this._authorizationHeader,
+		crossDomain: true,
 		async:false
 	}).responseText;
 }
@@ -75,7 +76,7 @@ CheeseController.prototype.signIn = function(screen_id,password,callback){
 	url = "/sign_in";
 	data = {"user": {"screen_id": screen_id, "password": password}};
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	var response = $.parseJSON(this._throwRequest(url,data,type));
 	localStorage.screen_id = screen_id;
 	localStorage.api_token = response.api_token;	
 	localStorage.api_token_secret = response.api_token_secret;
@@ -87,7 +88,7 @@ CheeseController.prototype.signOut = function(callback){
 	url = "/sign_out";
 	data = null
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	response = 	this._throwRequest(url,data,type);
 	localStorage.clear();
 	this.isLoggedIn = false;
 	if(callback!=null){callback(response);}
@@ -185,6 +186,12 @@ CheeseController.prototype.goodToActivity = function(activity_id,callback){
 	if(callback!=null){callback(response);}
 }
 
+// CheeseController.prototype.deleteActivity = function(activity_id,callback){
+// 	url = "/activities/" + activity_id + "/good";
+// 	type = "delete";
+// 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+// 	if(callback!=null){callback(response);}
+// }
 
 /*=====================
 	Recipe
@@ -222,7 +229,6 @@ CheeseController.prototype.getSample = function(callback){
 	if(callback!=null){callback(response);}
 }
 
-
 /*
 ||||||||||||||||||||||||||||||||||||||||||||||||||
 */
@@ -234,6 +240,7 @@ $(function(){
 	App = new CheeseController();
 
 	// ## sample ##
+<<<<<<< HEAD
 	// App.signIn("ren","test",function(json){
 	// 	console.log(json);
 	// });
@@ -241,6 +248,15 @@ $(function(){
 	// App.getRecommend(function(json){
 	// 	console.log(json);
 	// })
+=======
+	App.signIn("ren","test",function(json){
+	});
+
+	App.getRecommend(function(json){
+	})
+>>>>>>> origin/master-hirayama
+
+	// App.deleteActivity(1,null)
 
 	// App.getRecommend(function(json){
 

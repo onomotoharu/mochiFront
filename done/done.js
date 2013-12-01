@@ -7,6 +7,7 @@ jQuery(function($) {
 
   var pageH       = $("#container").height();
 
+<<<<<<< HEAD
     // 入力フォーム
     $("textarea")
       .focus(function() {
@@ -27,6 +28,8 @@ jQuery(function($) {
   });
   
   
+=======
+>>>>>>> origin/master-hirayama
 
   // 写真投稿ボタン
 
@@ -147,28 +150,32 @@ jQuery(function($) {
 // });
 
 $(function(){
-  var doneData = {
-  doneComment : ".doneComment",
-  donePhoto : "#imageInput",
-  doneDay : "new Date()",
-  }
+    var doneData = {
+      doneComment : ".doneComment",
+      donePhoto : "#imageInput",
+      doneDay : "new Date()",
+    }
 
-
-  // つくった！写真
 
   App = new CheeseController();
 
   App.signIn("ren","test",function(json){
-   // console.log(json);
+   console.log(json);
   });
 
-  App.getDetail(1,function(recipe){
+  recipe_id = getUrlVars()["recipe_id"];
+
+  App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
     $('.r_name').text(recipe.name);
     $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
 
   });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master-hirayama
   App.sendMade(recipe_id,function(toukou){
     console.log(toukou);
     // $('.r_name').text(recipe.name);
@@ -179,7 +186,15 @@ $(function(){
           alert(text);
   });
 
+   $(".cookedBtn").click(function(){
+          var text = $(".doneComment").val();
+          alert(text);
+      });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master-hirayama
 
 });
 
@@ -203,4 +218,8 @@ $(function() {
     }
     reader.readAsDataURL(file);
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> origin/master-hirayama

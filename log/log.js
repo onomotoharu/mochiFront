@@ -2,8 +2,8 @@ $(document).ready(function(){
 	$('#pagename').append("マイページ")
 
 	$('.myname').html("名前");
-
-	$('.followcount').append("30");
+	
+	$('.followcount').append("ああああ");
 	$('.followercount').append("25");
 
 	$('#myintro').append("鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者");

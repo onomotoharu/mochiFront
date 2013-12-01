@@ -1,13 +1,20 @@
 jQuery(function($) {
+<<<<<<< HEAD
+=======
 
+
+  App = new CheeseController();
+>>>>>>> origin/master-hirayama
+
+  App.signIn("ren","test",function(json){
+    // console.log(json);
+  });
 
   recipe_id = getUrlVars()["recipe_id"];
 
   App.getDetail(recipe_id,function(json){
     console.log(json);
   })
-
-  var frag_reFav = new Boolean(false);
 
   // つくったボタン
 
@@ -16,6 +23,7 @@ jQuery(function($) {
     location.href = "../done/index.html?recipe_id="+ recipe_id;
   })
 
+<<<<<<< HEAD
   // お気に入りボタン
   App.getOwnProfile(function(myprofile) {
 
@@ -48,6 +56,8 @@ jQuery(function($) {
     console.log(json);
   });
 
+=======
+>>>>>>> origin/master-hirayama
   App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
     $('.recipename').text(recipe.name);
@@ -55,9 +65,8 @@ jQuery(function($) {
     $('#time').text(recipe.necessary_time + "分");
     $('#money').text(recipe.required_money + "円");
     $('.aaa').text(recipe.foods[0].screen_name);
-
-
-
+    $fav = $('<div id="fav"><img src="./img/reci_btn_fav.png"></div>');
+    $('.recipename').after($fav).addClass('fav_false');
 
     for(var i=0; i< recipe.steps.length; i++){
       $pro_text = $("<div/>").addClass("pro_text").append(recipe.steps[i]);
@@ -75,4 +84,42 @@ jQuery(function($) {
     }
   });
 
+<<<<<<< HEAD
+=======
+  // お気に入りボタン
+  App.getOwnProfile(function(myprofile) {
+
+    console.log(myprofile);
+
+    // もしお気に入りしてなかったら
+    for(i=0;i<myprofile.favorite_recipes.length;i++) {
+      if(myprofile.favorite_recipes[i].id == recipe_id){
+        console.log("レシピある");
+        $('#fav').removeClass('fav_false').addClass('fav_true');
+        $("#fav img").attr("src","img/reci_btn_fav_on.png");
+      } else {
+        console.log("レシピない");
+        $('#fav').addClass('fav_false');
+      };
+    };
+
+  });
+
+  $("#fav").click(function(){
+
+    if($('#fav').hasClass('fav_false')){
+      // ONにする
+      $("#fav img").attr("src","img/reci_btn_fav_on.png");
+      console.log("あ");
+      $(this).removeClass('fav_false').addClass('fav_true');
+      // お気に入りに追加
+      App.sendFavorite(recipe_id,function(){　});
+    } else if($('#fav').hasClass('fav_true')) {
+      console.log("い");
+    };
+
+});
+
+
+>>>>>>> origin/master-hirayama
 });

@@ -1046,7 +1046,7 @@
 		_afterLoad: function () {
 			var coming   = F.coming,
 				previous = F.current,
-				placeholder = 'fancybox-placeholder',
+				placeholder = 'fancybox-placeholder2',
 				current,
 				content,
 				type,

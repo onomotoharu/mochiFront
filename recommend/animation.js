@@ -15,11 +15,11 @@ $(document).ready(function() {
 		
 		
 			
-			$(el).addClass("current").hide(eff, option, 1000, function() {
+			$(el).addClass("current").hide(eff, option, 700, function() {
 				var self = this;
 				window.setTimeout(function() {
-					$(self).show(eff, option, 1000, function() { $(this).removeClass("current"); });
-				},500);
+					$(self).show(eff, option, 700, function() { $(this).removeClass("current"); });
+				},100);
 			});
 		
 	};

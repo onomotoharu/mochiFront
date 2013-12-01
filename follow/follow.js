@@ -2,15 +2,76 @@ $(function(){
 	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png"))
 				 .attr("href", "../search/index.html")
 <<<<<<< HEAD
+<<<<<<< HEAD
 });
 
+=======
+})
+
+/*
+>>>>>>> origin/master-hirayama
 var data=[
 {"username":"tomomi","userimg":"mob1"},
 {"username":"tommy","userimg":"mob2"},
 {"username":"becchi","userimg":"mob3"},
 {"username":"ando","userimg":"mob4"}
 ]
+*/
 
+App = null;
+
+$(function(){
+
+	App = new CheeseController();
+	// ## sample ##
+	App.signIn("ren","test",function(json){
+	// 	console.log(json);
+	});
+
+	App.getOwnProfile(function(data){	
+
+		console.log(data);
+		for(var i=0; i<data.following.length; i++){
+			//リストを追加
+			$(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div><a class="account"></a><div class="follow_btn"></div></div>');
+		}
+			
+			//アカウント名を追加
+		    $("a.account").each(function(i){
+		        $(this).append(data.following[i].screen_id);
+		    });
+		  	//ユーザーの画像を挿入
+		  	$(".follow_pic ul li a").each(function(i){
+	        	$(this).append('<img src="img/'+data.following[i].photo+'.png">');
+	    	});
+		  	//フォローボタンを追加
+		   	$(".follow_btn").each(function(i){
+	        	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_off.png"></span></li></ul');
+				});
+
+	});
+			$(".toggleImage").click(function(){
+				App.setFollow("screen_id",function(data){
+					$(".btn_login").click(function(){
+					var screen_id = data.followers[i].screen_id;
+					console.log(screen_id);
+				});
+				});
+			});
+});
+
+
+
+
+
+//$(".followcount").append("ああああ");
+
+//  今、logのindex.htmlのカウントを増やしたい。
+// →followのfollow.jsをindex.htmlで呼んで、
+// followcountにdeta.following.lengthをappendしてるんだけどね（54行目）
+// うまくいかない。←いまここ。
+
+/*
 $(function(){
 	for(var i=0; i<data.length; i++){
 	 			 //リストを追加

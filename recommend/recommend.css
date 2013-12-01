@@ -16,6 +16,7 @@
 #verticaly {
   width: 90px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   height: 90px;
 }
 
@@ -44,15 +45,20 @@
 #verticaly ul li,
 #verticaly ul li.landscape {
   width: 90px;
+=======
+>>>>>>> origin/master-hirayama
   height: 90px;
-  float: left;
-    list-style-type: none;
-    text-align: center;
 }
 
+<<<<<<< HEAD
 #verticaly ul li a {
   display: block;
 >>>>>>> done
+=======
+#verticaly a{
+  width: 70px;
+  height: 70px;
+>>>>>>> origin/master-hirayama
   border:solid 5px #f5c53a;
   margin:auto;
   text-align :left;
@@ -61,14 +67,18 @@
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   width: 70px;
   height:70px;
 >>>>>>> done
+=======
+>>>>>>> origin/master-hirayama
   position: relative;
   background-position: center center;
   background-repeat: no-repeat;
   background-size:cover;
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 
@@ -101,11 +111,16 @@
     text-align: center;
 }
 =======
+=======
+}
+>>>>>>> origin/master-hirayama
 
-
+#verticaly a img{
+    width: 70px;
+    height: 70px;
 }
 
-/*.flickSimple {
+.flickSimple {
     width:90px;
     height:120px;
     margin: 160px 115px 0 115px ;
@@ -114,29 +129,27 @@
     position: fixed;
     overflow: auto;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-}*/
+}
 
 
-/*.flickSimple ul {
-    display: block;
+.flickSimple a {
+    display: inline-block;
     margin: 0;
     padding: 0;
-}*/
+}
 
-/*.flickSimple ul li {
+.flickSimple a img {
     float: left;
     list-style-type: none;
     text-align: center;
-}*/
-
-
-
-
-article span {
-	width:100%;
-	float:left;
 }
 
+article span {
+    width:100%;
+    float:left;
+}
+
+<<<<<<< HEAD
 >>>>>>> done
 
 article span {
@@ -156,6 +169,12 @@ article span {
     margin-right : auto;
 }*/
 >>>>>>> done
+=======
+.flickSimple .center{
+    border:solid 5px #f5c53a;
+    margin:0 auto;
+}
+>>>>>>> origin/master-hirayama
 
 /*margin:5px auto;
     text-align :left;
@@ -328,6 +347,7 @@ a.circle:hover{
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*-------------------------
  軸〜〜〜(・o・)
 --------------------------*/
@@ -336,6 +356,11 @@ a.circle:hover{
 軸〜〜〜(・o・)
 --------------------------
 >>>>>>> done
+=======
+/*-------------------------
+ 軸〜〜〜(・o・)
+--------------------------*/
+>>>>>>> origin/master-hirayama
 
 
 
@@ -344,10 +369,14 @@ a.circle:hover{
 ---------*/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .required_money {
 =======
 .money {
 >>>>>>> done
+=======
+.required_money {
+>>>>>>> origin/master-hirayama
     height: 50px;
     color: #785b25;
     font-weight: bold;
@@ -361,10 +390,14 @@ a.circle:hover{
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .required_money_s a.circle{
 =======
 .money_s a.circle{
 >>>>>>> done
+=======
+.required_money_s a.circle{
+>>>>>>> origin/master-hirayama
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #e2cf16;
@@ -390,10 +423,14 @@ a.circle:hover{
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .necessary_time_s a.circle{
 =======
 .time_s a.circle{
 >>>>>>> done
+=======
+.necessary_time_s a.circle{
+>>>>>>> origin/master-hirayama
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #94cda3;
@@ -418,10 +455,14 @@ a.circle:hover{
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .last_food_s a.circle{
 =======
 .material_s a.circle{
 >>>>>>> done
+=======
+.last_food_s a.circle{
+>>>>>>> origin/master-hirayama
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #69dcf7;
@@ -471,10 +512,14 @@ a.circle:hover{
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .seasoning_s a.circle{
 =======
 .taste_s a.circle{
 >>>>>>> done
+=======
+.seasoning_s a.circle{
+>>>>>>> origin/master-hirayama
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #bf824b;
@@ -497,10 +542,14 @@ a.circle:hover{
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .methods_s a.circle{
 =======
 .process_s a.circle{
 >>>>>>> done
+=======
+.methods_s a.circle{
+>>>>>>> origin/master-hirayama
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #ed7b7b;
@@ -523,10 +572,14 @@ a.circle:hover{
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .food_s a.circle{
 =======
 .total_s a.circle{
 >>>>>>> done
+=======
+.food_s a.circle{
+>>>>>>> origin/master-hirayama
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #e168a3;

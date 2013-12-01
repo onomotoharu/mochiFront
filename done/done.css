@@ -42,11 +42,7 @@ textarea {
     -ms-user-select: auto;
     user-select: auto;
 }
-
-.focus{
-	color:#000;
-}
-
+.doneComment{ color: black;}
 
 .textInput img {
     padding: 5px;
