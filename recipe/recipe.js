@@ -1,5 +1,3 @@
-
-
 jQuery(function($) {
 
 
@@ -77,6 +75,4 @@ jQuery(function($) {
     }
   });
 
-
 });
-

@@ -15,12 +15,44 @@
 
 #verticaly {
   width: 90px;
+<<<<<<< HEAD
   height: 90px;
 }
 
 #verticaly a{
   width: 70px;
   height: 70px;
+=======
+  height: 120px;
+
+    margin: 160px 115px 0 115px ;
+    text-align:center;
+    color:#3cb371;
+    position: fixed;
+    overflow: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#verticaly ul,
+#verticaly ul.landscape {
+  /*height: 960px;*/
+  display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#verticaly ul li,
+#verticaly ul li.landscape {
+  width: 90px;
+  height: 90px;
+  float: left;
+    list-style-type: none;
+    text-align: center;
+}
+
+#verticaly ul li a {
+  display: block;
+>>>>>>> done
   border:solid 5px #f5c53a;
   margin:auto;
   text-align :left;
@@ -28,10 +60,16 @@
     border-radius:50%;
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
+<<<<<<< HEAD
+=======
+  width: 70px;
+  height:70px;
+>>>>>>> done
   position: relative;
   background-position: center center;
   background-repeat: no-repeat;
   background-size:cover;
+<<<<<<< HEAD
 }
 
 #verticaly a img{
@@ -62,16 +100,62 @@
     list-style-type: none;
     text-align: center;
 }
+=======
+
+
+}
+
+/*.flickSimple {
+    width:90px;
+    height:120px;
+    margin: 160px 115px 0 115px ;
+    text-align:center;
+    color:#3cb371;
+    position: fixed;
+    overflow: auto;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}*/
+
+
+/*.flickSimple ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+}*/
+
+/*.flickSimple ul li {
+    float: left;
+    list-style-type: none;
+    text-align: center;
+}*/
+
+
+
+
+article span {
+	width:100%;
+	float:left;
+}
+
+>>>>>>> done
 
 article span {
     width:100%;
     float:left;
 }
 
+<<<<<<< HEAD
 .flickSimple .center{
     border:solid 5px #f5c53a;
     margin:0 auto;
 }
+=======
+/*.flickSimple a.center{
+    border:solid 5px #f5c53a;
+    margin-left :auto;
+    margin-right : auto;
+}*/
+>>>>>>> done
 
 /*margin:5px auto;
     text-align :left;
@@ -243,9 +327,15 @@ a.circle:hover{
 }
 
 
+<<<<<<< HEAD
 /*-------------------------
  軸〜〜〜(・o・)
 --------------------------*/
+=======
+-------------------------
+軸〜〜〜(・o・)
+--------------------------
+>>>>>>> done
 
 
 
@@ -253,7 +343,11 @@ a.circle:hover{
 お金　円 ボーダーの色　e2cf16
 ---------*/
 
+<<<<<<< HEAD
 .required_money {
+=======
+.money {
+>>>>>>> done
     height: 50px;
     color: #785b25;
     font-weight: bold;
@@ -266,7 +360,11 @@ a.circle:hover{
 }
 
 
+<<<<<<< HEAD
 .required_money_s a.circle{
+=======
+.money_s a.circle{
+>>>>>>> done
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #e2cf16;
@@ -291,7 +389,11 @@ a.circle:hover{
     background-repeat:no-repeat;
 }
 
+<<<<<<< HEAD
 .necessary_time_s a.circle{
+=======
+.time_s a.circle{
+>>>>>>> done
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #94cda3;
@@ -315,7 +417,11 @@ a.circle:hover{
     background-repeat: no-repeat;
 }
 
+<<<<<<< HEAD
 .last_food_s a.circle{
+=======
+.material_s a.circle{
+>>>>>>> done
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #69dcf7;
@@ -364,7 +470,11 @@ a.circle:hover{
 }
 
 
+<<<<<<< HEAD
 .seasoning_s a.circle{
+=======
+.taste_s a.circle{
+>>>>>>> done
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #bf824b;
@@ -386,7 +496,11 @@ a.circle:hover{
     background-repeat: no-repeat;
 }
 
+<<<<<<< HEAD
 .methods_s a.circle{
+=======
+.process_s a.circle{
+>>>>>>> done
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #ed7b7b;
@@ -408,7 +522,11 @@ a.circle:hover{
     background-repeat: no-repeat;
 }
 
+<<<<<<< HEAD
 .food_s a.circle{
+=======
+.total_s a.circle{
+>>>>>>> done
     margin-left :auto;
     margin-right : auto;
     border:solid 5px #e168a3;
