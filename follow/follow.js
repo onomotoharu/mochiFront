@@ -4,7 +4,7 @@ $(function(){
 });
 
 /*
->>>>>>> origin/master-hirayama
+
 var data=[
 {"username":"tomomi","userimg":"mob1"},
 {"username":"tommy","userimg":"mob2"},
@@ -218,8 +218,7 @@ eval("var data="+data.responseText)
   //beforeSend: authorizationHeader
 });
 });
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 function jsonParser(data) {
         var message = data.errorCode;
@@ -228,6 +227,7 @@ function jsonParser(data) {
         return message;
     }
 */
+
 /*
  $(function(){
 	 			//リストを追加
