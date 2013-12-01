@@ -1,4 +1,7 @@
 
+App = null;
+
+
 jQuery(function($) {
 
   var frag_camera = new Boolean(false);
@@ -149,6 +152,7 @@ $(function(){
     $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
 
   });
+  App = new CheeseController();
 
 
   App.sendMade(recipe_id,function(toukou){
