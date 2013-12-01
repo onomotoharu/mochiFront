@@ -24,15 +24,15 @@ $(function() {
 			$('#log a img').attr('src', $('#log a img').attr('src').replace('_on', '_off'));
 		}
 	});
-	
 
-	$('#graph a').hover(function(){
-		$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_off', '_on'));
-	}, function(){
-		if (!$('#graph a img').hasClass('current')) {
-			$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_on', '_off'));
-		}
-	});
+
+	// $('#graph a').hover(function(){
+	// 	$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_off', '_on'));
+	// }, function(){
+	// 	if (!$('#graph a img').hasClass('current')) {
+	// 		$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_on', '_off'));
+	// 	}
+	// });
 
 	$('#fav a').hover(function(){
 		$('#fav a img').attr('src', $('#fav a img').attr('src').replace('_off', '_on'));
@@ -41,7 +41,7 @@ $(function() {
 			$('#fav a img').attr('src', $('#fav a img').attr('src').replace('_on', '_off'));
 		}
 	});
-	
+
 	$('#badge a').hover(function(){
 		$('#badge a img').attr('src', $('#badge a img').attr('src').replace('_off', '_on'));
 	}, function(){
@@ -51,7 +51,7 @@ $(function() {
 	});
 
 	// CheeseController
-	
+
 	App = new CheeseController();
 
 	App.signIn("ren","test",function(json){
