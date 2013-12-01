@@ -232,7 +232,6 @@ CheeseController.prototype.getSample = function(callback){
 ||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-
 App = null;
 
 $(function(){
