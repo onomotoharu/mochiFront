@@ -1,6 +1,11 @@
 @charset "UTF-8";
 /* CSS Document */
 
+
+#graph a:hover{
+	background-color:#fff;
+}
+
 /*-----------------------------
  タブタイトル（共通）
 -----------------------------*/
@@ -13,6 +18,7 @@
 	padding-top: 10px;
 	font-size: 15px;
 }
+
 
 #pagename img {
 	display: none;
