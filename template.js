@@ -87,7 +87,7 @@ CheeseController.prototype.signOut = function(callback){
 	url = "/sign_out";
 	data = null
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	response = 	this._throwRequest(url,data,type);
 	localStorage.clear();
 	this.isLoggedIn = false;
 	if(callback!=null){callback(response);}
@@ -139,7 +139,7 @@ CheeseController.prototype.setFollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/follow";
 	data = null;
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	response = 	this._throwRequest(url,data,type);
 	if(callback!=null){callback(response);}
 }
 
@@ -185,6 +185,12 @@ CheeseController.prototype.goodToActivity = function(activity_id,callback){
 	if(callback!=null){callback(response);}
 }
 
+// CheeseController.prototype.deleteActivity = function(activity_id,callback){
+// 	url = "/activities/" + activity_id + "/good";
+// 	type = "delete";
+// 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+// 	if(callback!=null){callback(response);}
+// }
 
 /*=====================
 	Recipe
@@ -222,7 +228,6 @@ CheeseController.prototype.getSample = function(callback){
 	if(callback!=null){callback(response);}
 }
 
-
 /*
 ||||||||||||||||||||||||||||||||||||||||||||||||||
 */
@@ -234,13 +239,11 @@ $(function(){
 	App = new CheeseController();
 
 	// ## sample ##
-	App.signIn("ren","test",function(json){
-		console.log(json);
-	});
+	// App.signIn("ren","test",function(json){
+	// 	console.log(json);
+	// });
 
-	App.getRecommend(function(json){
-		console.log(json);
-	})
+	// App.deleteActivity(1,null)
 
 	// App.getRecommend(function(json){
 
