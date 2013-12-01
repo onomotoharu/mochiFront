@@ -1,13 +1,7 @@
 $(function(){
 	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png"))
 				 .attr("href", "../search/index.html")
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 });
-
-=======
-})
 
 /*
 >>>>>>> origin/master-hirayama
@@ -234,8 +228,6 @@ function jsonParser(data) {
         return message;
     }
 */
-=======
->>>>>>> origin/profile_setup
 /*
  $(function(){
 	 			//リストを追加
