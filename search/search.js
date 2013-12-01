@@ -1,11 +1,11 @@
 $(function(){
 
-/*$(document).ready(function(){
+$(document).ready(function(){
 	$('#pagename').append("cheese!")
- });*/
+ });
 
 $('.cheese a').hover(function(){
-		$('.cheese a img').attr('src', $('.cheese a img').attr('src').replace('_on', '_off'));
+		$('.cheese a img').attr('src', $('.cheese a img').attr('src').replace('_off', '_on'));
 	}, function(){
 		if (!$('.cheese a img').hasClass('current')) {
 			$('.cheese a img').attr('src', $('.cheese a img').attr('src').replace('_on', '_off'));
