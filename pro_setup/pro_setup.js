@@ -1,7 +1,5 @@
 $(document).ready(function(){
-
   // $('textarea').maxlength();
-
   $('#pagename').append("プロフィール設定")
   });
 
@@ -21,19 +19,12 @@ $(document).ready(function(){
     $('#preview').attr({'src':"http://winvelab.net/cheese/img/" + proData.icon_name + ".png"});
   });
 
-
-   $('.save_btn').click(function(){
-          var screen_id = $('#username').val();
-          var password = $('#pass').val();
-          alert(screen_id+password);
-      });
+  var screen_id = $('#username').text();
+  var password = $('#pass').text();
+  var bio = $('#comment').text();
+  App.userCreate(screen_id,password,function(){})
 
 
-      var screen_id = $('#username').text();
-      var password = $('#pass').text();
-      var bio = $('#comment').text();
-      App.userCreate(screen_id,password,function(){})
-      console.log(screen_id+password);
 
 
 //画像のサムネイル処理
