@@ -1,21 +1,14 @@
-
-
-$(document).ready(function(){
-	$('#pagename').append("マイページ")
-
-	$('.myname').html("名前");
-
-	$('.followcount').append("30");
-	$('.followercount').append("25");
-
-	$('#myintro').append("鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者");
-});
-
 $(function(){
-  $('#nav_my img').attr("src", "../img/on/my_on.png");
-});
+	$('#nav_my img').attr("src", "../img/on/my_on.png");
 
-$(function(){
+	App.getOwnProfile(function(myprofile){
+		// プロフィール部分DOM操作
+        $('.myname').html(myprofile.screen_id);
+		$('.followcount').append(myprofile.following.length);
+		$('.followercount').append(myprofile.followers.length);
+		$('#myphoto img').attr("src",myprofile.icon_name);
+		$('#myintro').append(myprofile.bio);
+	});
 
 	$('#log a').hover(function(){
 		$('#log a img').attr('src', $('#log a img').attr('src').replace('_off', '_on'));

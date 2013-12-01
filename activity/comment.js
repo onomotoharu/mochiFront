@@ -60,14 +60,12 @@ $(function(){
       newCommentEl.append($("<span/>").text(newComment).addClass('com_txt'));
     });
 
-    App.sendCommentToActivity(activity_id,text,callback) {
-      console.log("コメント送信");
-    });
+    // App.sendCommentToActivity(activity_id,text,callback) {
+    //   console.log("コメント送信");
+    // });
 
     $(".send a").attr("href", "javascript:history.back();");
     
   });
 
 });
-
-

@@ -16,8 +16,11 @@
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
     <link rel="stylesheet" type="text/css" href="../template.css">
     <link rel="stylesheet" type="text/css" href="recommend.css">
+
+
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="recommend.js"></script>
     <script type="text/javascript" src="jquery.flicksimple.js"></script>
@@ -25,13 +28,16 @@
     <script type="text/javascript" src="../template.js"></script>
     <script src="http://winvelab.net/cheese/jquery.base64"></script>
     <script type="text/javascript" src="./jquery.canvasChart.js"></script>
+
 </head>
 
-  <body>
-    <script>header();</script>
+        <body>
+
+          <script>header();</script>
+
+
     <div class="allcontents">
-    
-    <!-- メインコンテンツここから -->
+        <!-- メインコンテンツここから -->
     <section class="content"> 
       <!-- 関連図ここから--> 
       
@@ -43,7 +49,6 @@
             <div class="axis">
             <!--軸-->
             </div>
-
         </div>
       </article>
       <!--左上の◯ここまで--> 
@@ -62,8 +67,11 @@
       
       <!--左下の◯-->
       <article class="leftbottom">
-        <div class="time">
-          60分
+        <div class="re_link">
+          <div class="axis">
+            <!--軸-->
+          </div>
+          <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
         </div>
         <div class="recipename"><!--レシピ名--></div>
         </article>
@@ -71,8 +79,11 @@
       
       <!--右下の◯-->
       <article class="rightbottom">
-        <div class="taste">
-          酢<br>しょうゆ<br>
+        <div class="re_link">
+          <div class="axis">
+            <!--軸-->
+          </div>
+          <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
         </div>
         <div class="recipename"><!--レシピ名--></div>
         </article>
@@ -80,17 +91,28 @@
       
       <!--真ん中の◯-->
       <article class="center_circle">
-        <div id="verticaly">
-              <ul></ul>
+        <div id="verticaly"  class="flickSimple">
+              <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
             </div>
       </article>
-      <div class="down">▲</div>
-
+      <!--<div class="down">▲</div>-->
     </section>
+
   <!-- /全体ここまで --> 
-  
+
+
+<script type="text/javascript">
+  $('#verticaly').flickSimple({
+    vertical: true,
+    horizontal: false,
+    lock: true
+  });
+</script>
+
 </div>
+  
+
 <script>footer();</script>   
- </div><!-- /container -->  
+ 
         </body>
 </html>

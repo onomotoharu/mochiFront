@@ -6,8 +6,16 @@ App.signIn("ren","test",function(json){
 	console.log(json);
 });
 
+App.getOwnProfile(function(myprofile){
+	// プロフィール部分DOM操作
+    $('.myname').html(myprofile.screen_id);
+	$('.followcount').append(myprofile.following.length);
+	$('.followercount').append(myprofile.followers.length);
+	$('#myphoto img').attr("src",myprofile.icon_name);
+	$('#myintro').append(myprofile.bio);
+});
+
 App.getOwnBadges(function(medals){	
-	console.log(medals);
 	
 	//JSON.parse(medals)[0].created_at.split(" ")[0]
 	
