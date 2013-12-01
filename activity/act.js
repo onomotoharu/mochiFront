@@ -52,47 +52,44 @@ $(function(){
 		    // 投稿ユーザ名生成
 		    // $myphoto_img = $('<img/>').attr({'src':timeline[i].});
 		    // $myphoto     = $('<div/>').addClass('myphoto').append($myphoto_img);
-		    $myname      = $('<span/>').addClass('myname').text(timeline[i].screen_id);
-		    $myname_text = "さんがつくりました！";
-		    $user        = $('<div/>').addClass('user').append($myname.after($myname_text));
+		    $myname       = $('<span/>').addClass('myname').text(timeline[i].screen_id);
+		    $myname_text  = "さんがつくりました！";
+		    $user         = $('<div/>').addClass('user').append($myname.after($myname_text));
 		    // $user        = $('<div/>').addClass('user').append($myphoto.after($myname).after($myname_text));
 
 	    	// いいねボタン生成
-	    	$iine       = $('<span/>').text("イイネ！0");
-	    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
-	    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
+	    	$iine        = $('<span/>').text("イイネ！0");
+	    	$iine_img    = $('<img/>').attr('src','./img/good_off.png');
+	    	$iine_btn    = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
 
 	    	// コメントボタン生成
-	    	$com        = $('<span/>').text("コメント0");
-	    	$com_img    = $('<img/>').attr('src','./img/com_off.png');
-	    	$com_btn    = $('<div/>').addClass('com_btn').append($com_img.after($com));
+	    	$com         = $('<span/>').text("コメント0");
+	    	$com_img     = $('<img/>').attr('src','./img/com_off.png');
+	    	$com_btn     = $('<div/>').addClass('com_btn').append($com_img.after($com));
 
 	    	// シェアボタン生成
-	    	$share_img  = $('<img/>').attr('src', './img/…_off.png');
-	    	$open01     = $('<a href="#open01"></a>').append($share_img);
-	    	$p_open01   = $('<p/>').append($open01);
-	    	$share      = $('<div id="share"></div>').append($p_open01);
+	    	$share_img   = $('<img/>').attr('src', './img/…_off.png');
+	    	$open01      = $('<a href="#open01"></a>').append($share_img);
+	    	$p_open01    = $('<p/>').append($open01);
+	    	$share       = $('<div id="share"></div>').append($p_open01);
+
+	    	$activity_id = $('<div/>').addClass('activity_id').text(activity_id);
 
 	    	// 親要素生成
-			$act_left_b = $('<div/>').addClass('act_left').append($re_photo);
-			$act_left   = $act_left_b.addClass(activity_id);
-			$act_right  = $('<div/>').addClass('act_right').append($date.after($title).after($user));
-			$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($iine_btn).after($share));
+			$act_left    = $('<div/>').addClass('act_left').append($re_photo);
+			$act_right   = $('<div/>').addClass('act_right').append($date.after($title).after($user));
+			$act_bottom  = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn).after($share));
 			$('.all_act').prepend($act_left.after($act_right).after($act_bottom));
 
-			var com_count  = timeline[i].comments.length;
-	    	var iine_count = timeline[i].likes_count;
+			var com_count   = timeline[i].comments.length;
+			var iine_count  = timeline[i].likes_count;
 
 		    // コメントボタンをクリックしたら
 		    $(".com_btn").click(function() {
 
-		    	i = i-1;
-
-		        // 親要素my_actのidにactivityの配列ナンバーを追加
-		        $(this).parent(".my_act").attr('id', 'i');
-
+		    	activity_id = $(this).next(activity_id).text();
 		        // URLにパラメータとして渡す
-		        location.href = "../activity/comment.html?activity_id=" + i;
+		        location.href = "../activity/comment.html?activity_id=" + activity_id;
 
 			});
 
@@ -104,7 +101,6 @@ $(function(){
 				  $(this).addClass("iine_btn_on").removeClass('iine_btn');
 				  $(".iine_btn_on img").attr('src', './img/good_on.png');
 				  iine_count++;
-  				  console.log(iine_count);
 				  $(this).children('span').text("イイネ！" + iine_count);
 				} else if($(this).hasClass('iine_btn_on')) {
 				  $(this).addClass("iine_btn").removeClass('iine_btn_on');

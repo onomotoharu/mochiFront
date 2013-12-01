@@ -112,6 +112,10 @@ table{
 	height:25px;
 }
 
+.activity_id {
+	display: none;
+}
+
 /*---------------------------------
  写真投稿あり
 ---------------------------------*/
@@ -132,6 +136,7 @@ table{
 ◆CSS
 /* ContentsArea
 -------------------------- */
+
 #share {
 	margin: 0 auto;
 	padding: 10px 0 50px 0;
