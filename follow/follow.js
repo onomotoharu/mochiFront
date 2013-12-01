@@ -26,6 +26,7 @@ $(function(){
 		for(var i=0; i<data.following.length; i++){
 			//リストを追加
 			$(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div><a class="account"></a><div class="follow_btn"></div></div>');
+		}
 			
 			//アカウント名を追加
 		    $("a.account").each(function(i){
@@ -37,19 +38,21 @@ $(function(){
 	    	});
 		  	//フォローボタンを追加
 		   	$(".follow_btn").each(function(i){
-	        	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
+	        	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_off.png"></span></li></ul');
+				});
 
-				$(".toggleImage").click(function(){
-			    	var  name = $("a.account").text();
-			    	var image = $(".follow_pic").text();
-			        console.log(name);
-			        console.log(image);
-	   			});
-			});
-
-		};
 	});
+	
+	App.setFollow("screen_id",function(data){
+			$(".toggleImage").click(function(){
+			    	var button = $(this);
+					button.attr("disabled", true);
+					console.log(button);
+				});
+			});
 });
+
+
 
 
 
