@@ -18,24 +18,24 @@ function getUrlVars()
 
 //template
 function header() {
-	document.write ('<nav id="header" name="nav">\n');
-	document.write ('<ul>\n');
-	document.write ('<li id="l_btn"><a href=""><img src="../img/back.png"></a></li>\n');
-	document.write ('<li id="pagename"><img src="../img/h_logo.png" height="20" width="69"></li>\n');
+	document.write ('<nav id="header" name="nav">\n');      
+	document.write ('<ul>\n');       
+	document.write ('<li id="l_btn"><a href=""><img src="../img/back.png"></a></li>\n');    
+	document.write ('<li id="pagename"><img src="../img/h_logo.png" height="20" width="69"></li>\n');   
 	document.write ('<li id="r_btn"><a href=""></a></li>\n');
 	document.write ('</ul>\n');
-	document.write ('</nav>\n');
+	document.write ('</nav>\n');  
 }
 
 function footer() {
-	document.write ('<nav id="footer" name="nav">\n');
-	document.write ('<ul>\n');
-	document.write ('<li id="nav_reco"><a href="../recommend/index.html"><img src="../img/off/reco_off.png"></a></li>\n');
-	document.write ('<li id="nav_act"><a href="../activity/index.html"><img src="../img/off/act_off.png"></a></li>\n');
-	document.write ('<li id="nav_my"><a href="../log/index.html"><img src="../img/off/my_off.png"></a></li>\n');
-	document.write ('<li id="nav_set"><a href="../setup/index.html"><img src="../img/off/set_off.png"></a></li>\n');
+	document.write ('<nav id="footer" name="nav">\n');      
+	document.write ('<ul>\n');       
+	document.write ('<li id="nav_reco"><a href="../recommend/index.html"><img src="../img/off/reco_off.png"></a></li>\n');    
+	document.write ('<li id="nav_act"><a href="../activity/index.html"><img src="../img/off/act_off.png"></a></li>\n');   
+	document.write ('<li id="nav_my"><a href="../log/index.html"><img src="../img/off/my_off.png"></a></li>\n'); 
+	document.write ('<li id="nav_set"><a href="../setup/index.html"><img src="../img/off/set_off.png"></a></li>\n'); 
 	document.write ('</ul>\n');
-	document.write ('</nav>\n');
+	document.write ('</nav>\n');     
 }
 
 
@@ -67,7 +67,7 @@ CheeseController.prototype._throwRequest = function(url,data,type){
 	}).responseText;
 }
 
-
+ 
 /*=====================
 	Auth
 ======================*/
@@ -78,7 +78,7 @@ CheeseController.prototype.signIn = function(screen_id,password,callback){
 	type = "post";
 	var response = $.parseJSON(this._throwRequest(url,data,type));
 	localStorage.screen_id = screen_id;
-	localStorage.api_token = response.api_token;
+	localStorage.api_token = response.api_token;	
 	localStorage.api_token_secret = response.api_token_secret;
 	this.isLoggedIn = true;
 	if(callback!=null){callback(response);}
@@ -88,7 +88,11 @@ CheeseController.prototype.signOut = function(callback){
 	url = "/sign_out";
 	data = null
 	type = "post";
+<<<<<<< HEAD
+	response = 	this._throwRequest(url,data,type);
+=======
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+>>>>>>> origin/survey_new
 	localStorage.clear();
 	this.isLoggedIn = false;
 	if(callback!=null){callback(response);}
@@ -106,10 +110,15 @@ CheeseController.prototype.checkAuth = function(){
 
 CheeseController.prototype.createUser = function(screen_id,password,callback){
 	url = "/users/create";
-	data = {"user": {"screen_id": screen_id, "password": password, "password_confirmation": password}}
+	data = {"user": {"screen_id": screen_id, "password": password, "password_confirmation": password}}	
 	type = "post";
+<<<<<<< HEAD
 	response = this._throwRequest(url,data,type);
 	if(callback!=null){callback(response);}
+=======
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	callback(response);
+>>>>>>> origin/survey_new
 };
 
 CheeseController.prototype.getOwnProfile = function(callback){
@@ -117,7 +126,11 @@ CheeseController.prototype.getOwnProfile = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 CheeseController.prototype.getOwnBadges = function(callback){
@@ -125,7 +138,11 @@ CheeseController.prototype.getOwnBadges = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 CheeseController.prototype.getOwnActivities = function(callback){
@@ -133,7 +150,11 @@ CheeseController.prototype.getOwnActivities = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 CheeseController.prototype.setFollow = function(screen_id,callback){
@@ -141,7 +162,11 @@ CheeseController.prototype.setFollow = function(screen_id,callback){
 	data = null;
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 CheeseController.prototype.setUnfollow = function(screen_id,callback){
@@ -149,7 +174,11 @@ CheeseController.prototype.setUnfollow = function(screen_id,callback){
 	data = null;
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 
@@ -162,7 +191,11 @@ CheeseController.prototype.getRecommend = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 };
 
 
@@ -175,7 +208,11 @@ CheeseController.prototype.getTimeline = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 CheeseController.prototype.goodToActivity = function(activity_id,callback){
@@ -183,7 +220,11 @@ CheeseController.prototype.goodToActivity = function(activity_id,callback){
 	data = {"activity_id": activity_id};
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 // CheeseController.prototype.deleteActivity = function(activity_id,callback){
@@ -202,7 +243,11 @@ CheeseController.prototype.sendMade = function(recipe_id,callback){
 	data = null;
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 CheeseController.prototype.sendFavorite = function(recipe_id,callback){
@@ -210,7 +255,11 @@ CheeseController.prototype.sendFavorite = function(recipe_id,callback){
 	data = null;
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 CheeseController.prototype.getDetail = function(recipe_id,callback){
@@ -218,7 +267,11 @@ CheeseController.prototype.getDetail = function(recipe_id,callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 CheeseController.prototype.getSample = function(callback){
@@ -226,7 +279,11 @@ CheeseController.prototype.getSample = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
+<<<<<<< HEAD
 	if(callback!=null){callback(response);}
+=======
+	callback(response);
+>>>>>>> origin/survey_new
 }
 
 /*
@@ -240,7 +297,7 @@ $(function(){
 	App = new CheeseController();
 
 	// ## sample ##
-	
+<<<<<<< HEAD
 	// App.signIn("ren","test",function(json){
 	// 	console.log(json);
 	// });
@@ -248,6 +305,13 @@ $(function(){
 	// App.getRecommend(function(json){
 	// 	console.log(json);
 	// })
+=======
+	App.signIn("ren","test",function(json){
+	});
+
+	App.getRecommend(function(json){
+	})
+>>>>>>> origin/master-hirayama
 
 	// App.deleteActivity(1,null)
 

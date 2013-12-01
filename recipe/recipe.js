@@ -1,6 +1,10 @@
 jQuery(function($) {
+<<<<<<< HEAD
+=======
+
 
   App = new CheeseController();
+>>>>>>> origin/master-hirayama
 
   App.signIn("ren","test",function(json){
     // console.log(json);
@@ -19,6 +23,7 @@ jQuery(function($) {
     location.href = "../done/index.html?recipe_id="+ recipe_id;
   })
 
+<<<<<<< HEAD
   // お気に入りボタン
   App.getOwnProfile(function(myprofile) {
 
@@ -43,6 +48,16 @@ jQuery(function($) {
 
   });
 
+
+
+  App = new CheeseController();
+
+  App.signIn("ren","test",function(json){
+    console.log(json);
+  });
+
+=======
+>>>>>>> origin/master-hirayama
   App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
     $('.recipename').text(recipe.name);
@@ -69,6 +84,8 @@ jQuery(function($) {
     }
   });
 
+<<<<<<< HEAD
+=======
   // お気に入りボタン
   App.getOwnProfile(function(myprofile) {
 
@@ -103,4 +120,6 @@ jQuery(function($) {
 
 });
 
+
+>>>>>>> origin/master-hirayama
 });

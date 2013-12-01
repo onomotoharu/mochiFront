@@ -7,6 +7,7 @@ jQuery(function($) {
 
   var pageH       = $("#container").height();
 
+<<<<<<< HEAD
     // 入力フォーム
     $("textarea")
       .focus(function() {
@@ -25,6 +26,10 @@ jQuery(function($) {
   		$(this).removeClass('focus');
   	});
   });
+  
+  
+=======
+>>>>>>> origin/master-hirayama
 
   // 写真投稿ボタン
 
@@ -167,6 +172,10 @@ $(function(){
 
   });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master-hirayama
   App.sendMade(recipe_id,function(toukou){
     console.log(toukou);
     // $('.r_name').text(recipe.name);
@@ -181,6 +190,11 @@ $(function(){
           var text = $(".doneComment").val();
           alert(text);
       });
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master-hirayama
 
 });
 
@@ -204,4 +218,8 @@ $(function() {
     }
     reader.readAsDataURL(file);
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> origin/master-hirayama
