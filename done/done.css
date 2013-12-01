@@ -16,8 +16,9 @@
 
 .textInput {
     width: 320px;
-    height: 99px;
+    height: 94px;
     border-top: #CCCCCC solid 1px;
+    border-bottom: #CCCCCC solid 1px;
     display: -webkit-box;
     background: #fff;
     position: relative;
@@ -33,7 +34,8 @@ textarea {
     font-size: 12px;
     margin: 0;
     height: 74px;
-    width: 205px;
+    /*width: 205px;*/
+    width: 320px;
     border-radius: 0px;
     border: none;
     padding: 10px;

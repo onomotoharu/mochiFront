@@ -1,11 +1,34 @@
 jQuery(function($) {
 
+  $('#l_btn a').attr("href", "javascript:history.back();");
+
   var frag_camera = new Boolean(false);
   var frag_good   = new Boolean(false);
   var frag_tw     = new Boolean(false);
   var frag_fb     = new Boolean(false);
 
   var pageH       = $("#container").height();
+
+  var doneData = {
+    doneComment : ".doneComment",
+    donePhoto : "#imageInput",
+    doneDay : "new Date()",
+  };
+
+  recipe_id = getUrlVars()["recipe_id"];
+
+  App = new CheeseController();
+
+  App.signIn("ren","test",function(json){
+   console.log(json);
+  });
+
+  App.getDetail(recipe_id,function(recipe){
+    console.log(recipe);
+    $('.r_name').text(recipe.name);
+    $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+
+  });
 
   // 入力フォーム
     $("textarea")
@@ -88,7 +111,15 @@ jQuery(function($) {
   $(".cookedBtn img").hide();
 
   $('.cookedBtn').click(function(){
+    
     $(this).addClass("cookedBtn_on");
+
+    App.sendMade(recipe_id,function(toukou){
+      console.log(toukou);
+    });
+
+    var text = $(".doneComment").val();
+    alert(text);
 
     // loading画像を表示
     $('head').append(
@@ -105,73 +136,40 @@ jQuery(function($) {
     localStorage.setItem("hoge", 1);
     location.href = "../log/index.html";
 
-
-    // $.ajax({
-    //   method: "POST",
-    //   url: "/hoge/hoge",
-    //   data: {
-    //     hoge: content,
-    //     foo: recommend,
-    //     buzz: img
-    //   },
-    //   success: function(res) {
-    //     // 通信に成功
-    //     localStorage.setItem("hoge", 1);
-    //     location.href = "../log/index.html";
-    //   },
-    //   error: function() {
-    //     // 通信に失敗
-    //     alert("失敗だよー");
-    //   },
-    //   complete: function() {
-    //     $(".cookedBtn img").hide();
-    //     $('.cookedBtn').removeClass("cookedBtn_on");
-    //     alert("hogehoge");
-    //   }
-    // });
-
     return false;
-  })
+
+  });
 
 
 });
 
-
-
-// $(document).ready(function(){
-
-//   $('.r_name').text(
-
-// });
-
 $(function(){
-    var doneData = {
-      doneComment : ".doneComment",
-      donePhoto : "#imageInput",
-      doneDay : "new Date()",
-    }
+  //   var doneData = {
+  //     doneComment : ".doneComment",
+  //     donePhoto : "#imageInput",
+  //     doneDay : "new Date()",
+  //   }
 
 
-  App = new CheeseController();
+  // App = new CheeseController();
 
-  App.signIn("ren","test",function(json){
-   console.log(json);
-  });
+  // App.signIn("ren","test",function(json){
+  //  console.log(json);
+  // });
 
-  recipe_id = getUrlVars()["recipe_id"];
+  // recipe_id = getUrlVars()["recipe_id"];
 
-  App.getDetail(recipe_id,function(recipe){
-    console.log(recipe);
-    $('.r_name').text(recipe.name);
-    $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+  // App.getDetail(recipe_id,function(recipe){
+  //   console.log(recipe);
+  //   $('.r_name').text(recipe.name);
+  //   $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
 
-  });
+  // });
 
   App.sendMade(recipe_id,function(toukou){
     console.log(toukou);
-    // $('.r_name').text(recipe.name);
-
   });
+
    $(".cookedBtn").click(function(){
           var text = $(".doneComment").val();
           alert(text);
