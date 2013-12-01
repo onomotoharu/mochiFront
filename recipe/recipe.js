@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 jQuery(function($) {
   
   $('#l_btn a').attr("href", "javascript:history.back();");
+=======
+　　jQuery(function($) {
+
+>>>>>>> master-hirayama
 
   App = new CheeseController();
 
@@ -99,7 +104,7 @@ jQuery(function($) {
       console.log("あ");
       $(this).removeClass('fav_false').addClass('fav_true');
       // お気に入りに追加
-      App.sendFavorite(recipe_id,function(){　});
+      App.sendFavorite(recipe_id,function(){});
     } else if($('#fav').hasClass('fav_true')) {
       console.log("い");
     };
