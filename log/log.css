@@ -176,6 +176,10 @@
 	display: none;
 }
 
+.log {
+	background: #fff;
+}
+
 .my_act{
 	background-color: #fff;
 	border-top: solid 2px #DDD;
@@ -213,6 +217,10 @@
 	font-weight: bold;
 }
 
+.title a,.title:hover,.title:visited,.title:active{
+	color:#61AD42;
+}
+
 .my_comment{
 	background-color: #ffffe0;
 	margin: 5px 0;
@@ -227,7 +235,7 @@
 }
 
 .act_bottom:last-child{
-	border-bottom: 0;
+	border-bottom: #ddd 2px solid;
 }
 
 .com_btn{

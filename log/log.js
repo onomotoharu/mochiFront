@@ -70,63 +70,70 @@ $(function() {
 
 		console.log(activity);
 
-		// 過去ログの数だけ表示
 		for(i=0;i<activity.activities.length;i++){
 
-			console.log(activity.activities[i]);
+			// 過去ログの数だけ表示
+			if(activity.activities[i].type_code == 100){
 
-			activity_id = activity.activities[i].id;
+			    // レシピID
+				recipe_id = activity.activities[i].recipe_id;
 
-		    // レシピID
-			recipe_id = activity.activities[i].recipe_id;
+				// レシピデータ
+				App.getDetail(recipe_id,function(recipe){
+					// レシピ写真の追加
+					$recipe_photo_img = $('<img/>').attr({'src':"http://winvelab.net/cheese/img/" +recipe.default_picture_name});
+					$recipe_photo     = $('<div/>').addClass('recipe_photo').append($recipe_photo_img);
+					// レシピ名の追加
+					$recipe_title_a   = $('<a href="#"></a>').text(recipe.name).attr({'href':"../recipe/index.html?recipe_id=" + recipe_id});
+					$recipe_title     = $('<div/>').addClass('title').append($recipe_title_a);
+				});
 
-			// レシピデータ
-			App.getDetail(recipe_id,function(recipe){
-				// レシピ写真の追加
-				$recipe_photo_img = $('<img/>').attr({'src':"http://winvelab.net/cheese/img/" +recipe.default_picture_name});
-				$recipe_photo     = $('<div/>').addClass('recipe_photo').append($recipe_photo_img);
-				// レシピ名の追加
-				$recipe_title_a   = $('<a href="#"></a>').text(recipe.name).attr({'href':"../recipe/index.html?recipe_id=" + recipe_id});
-				$recipe_title     = $('<div/>').addClass('title').append($recipe_title_a);
-			});
+				//日付
+				$created_at = (activity.activities[i].created_at).split("T")[0];
+				$date = $('<div/>').addClass('date').text($created_at);
 
-			//日付
-			$created_at = (activity.activities[i].created_at).split("T")[0];
-			$date = $('<div/>').addClass('date').text($created_at);
+			    // コメント
+			    if(activity.activities[i].comment == "") {
+			    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
+			    	$('.my_comment').css({display: 'none'});
+			    } else {
+		    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
+		    	};
 
-		    // コメント
-		    if(activity.activities[i].comment == null) {
-		    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
-		    	$('.my_comment').css({display: 'none'});
-		    } else {
-	    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
-	    	};
+		    	// いいねボタン生成
+		    	if(activity.activities[i].is_liked == false) {
+		    		$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
+			    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
+			    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
+			    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
+			    } else if(activity.activities[i].is_liked == true){
+			    	$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
+			    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
+			    	$iine_img   = $('<img/>').attr('src','./img/good_on.png');
+			    	$iine_btn   = $('<div/>').addClass('iine_btn_on').append($iine_img.after($iine));
+			    };
 
-	    	// いいねボタン生成
-	    	$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
-	    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
-	    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
-	    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
+		    	// コメントボタン生成
+		    	$com_count  =  $('<span/>').text(activity.activities[i].comments.length);
+		    	$com        = $('<span/>').text("コメント").after($com_count);
+		    	$com_img    = $('<img/>').attr('src','./img/com_off.png');
+		    	$com_btn    = $('<div/>').addClass('com_btn').append($com_img.after($com));
 
-	    	// コメントボタン生成
-	    	$com_count  =  $('<span/>').text(activity.activities[i].comments.length);
-	    	$com        = $('<span/>').text("コメント").after($com_count);
-	    	$com_img    = $('<img/>').attr('src','./img/com_off.png');
-	    	$com_btn    = $('<div/>').addClass('com_btn').append($com_img.after($com));
+		    	// シェアボタン生成
+		    	$share_img  = $('<img/>').attr('src', './img/…_off.png');
+		    	$open01     = $('<a href="#open01"></a>').append($share_img);
+		    	$p_open01   = $('<p/>').append($open01);
+		    	$share      = $('<div id="share"></div>').append($p_open01);
 
-	    	// シェアボタン生成
-	    	$share_img  = $('<img/>').attr('src', './img/…_off.png');
-	    	$open01     = $('<a href="#open01"></a>').append($share_img);
-	    	$p_open01   = $('<p/>').append($open01);
-	    	$share      = $('<div id="share"></div>').append($p_open01);
+		    	activity_id  = activity.activities[i].id;
+		    	$activity_id = $('<div/>').addClass('activity_id').text(activity_id);
 
-	    	$activity_id = $('<div/>').addClass('activity_id').text(activity_id);
-
-	    	// 親要素生成
-			$act_left   = $('<div/>').addClass('act_left').append($recipe_photo);
-			$act_right  = $('<div/>').addClass('act_right').append($date.after($recipe_title).after($my_comment));
-			$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn).after($share));
-			$('.log').prepend($act_left.after($act_right).after($act_bottom));
+		    	// 親要素生成
+				$act_left   = $('<div/>').addClass('act_left').append($recipe_photo);
+				$act_right  = $('<div/>').addClass('act_right').append($date.after($recipe_title).after($my_comment));
+				$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn).after($share));
+				$('.log').prepend($act_left.after($act_right).after($act_bottom));
+			};
 
 		};
 
@@ -139,6 +146,7 @@ $(function() {
 
 
 		});
+
 
 		// いいねボタンをクリックしたら
 		$('.iine_btn,.iine_btn_on').click(function() {
@@ -155,15 +163,17 @@ $(function() {
 						iine_count++;
 						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
+						App.goodToActivity(activity_id,function(){});
+						activity.activities[i].is_liked = true;
 					} else if($(this).hasClass('iine_btn_on')) {
 						$(this).addClass("iine_btn").removeClass('iine_btn_on');
 						$(".iine_btn img").attr('src', './img/good_off.png');
 						iine_count--;
 						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
+						App.goodToActivity(activity_id,function(){});
+						activity.activities[i].is_liked = false;
 					};
-
-					App.goodToActivity(activity_id,function(){});
 				};
 			};
 
