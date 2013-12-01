@@ -99,7 +99,7 @@ $(function() {
 	    	};
 
 	    	// いいねボタン生成
-	    	$iine_count = $('<span>').text(activity.activities[i].likes_count);
+	    	$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
 	    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
 	    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
 	    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
@@ -151,13 +151,13 @@ $(function() {
 						$(this).addClass("iine_btn_on").removeClass('iine_btn');
 						$(".iine_btn_on img").attr('src', './img/good_on.png');
 						iine_count++;
-						$(this).children('span').text("イイネ！" + iine_count);
+						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
 					} else if($(this).hasClass('iine_btn_on')) {
 						$(this).addClass("iine_btn").removeClass('iine_btn_on');
 						$(".iine_btn img").attr('src', './img/good_off.png');
 						iine_count--;
-						$(this).children('span').text("イイネ！" + iine_count);
+						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
 					};
 
