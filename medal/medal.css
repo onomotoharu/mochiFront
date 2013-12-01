@@ -6,6 +6,123 @@
 	background-color:#fff;
 }
 
+/*-------------------------
+ プロフィール（共通）
+-------------------------*/
+
+#profile{
+	width:100%;
+    color : #000;
+	overflow: hidden;
+	padding: 5px;
+}
+
+#profile_top{
+	height: 33px;
+	margin: 10px 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+#myphoto img{
+	height:30px;
+	width:30px;
+	float:left;
+	overflow: hidden;
+}
+
+#myname{
+	width:30%;
+    color: #000;
+   	font-size: 8pt;
+	float:left;
+	overflow: hidden;
+	margin-left: 8pt;
+}
+
+.myname{
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+#profile_top table{
+	border-spacing: 5pt 0;
+	position:absolute;
+	right:0;
+}
+
+.follow{
+	font-size: 8pt;
+	text-align: center;
+	width: 70px;
+	height: 25px;
+	color: #fff;
+	border-radius: 5px 5px;
+}
+
+.follow p{
+	color: #fff;
+}
+
+.follow a{
+	background: url("./img/follow_back.png") no-repeat;
+	background-size:70px 30px;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+
+.followcount,.followercount{
+	font-size: 8pt;
+	color: #fff;
+}
+
+#myintro{
+	font-size: 9pt;
+	margin: 15pt 20px 10pt;
+}
+
+/*----------------------------
+ タブ切り替え（共通）
+-----------------------------*/
+
+.tab{
+	background-color: #fff;
+}
+
+.tab ul{
+	height: 45px;
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
+	list-style-type: none;
+}
+
+.tab ul li{
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+
+.tab ul li a{
+	display: block;
+	position: relative;
+}
+
+.tab ul li a img{
+	height: 26px;
+	margin: 7pt auto;
+}
+
+.tab ul li a:hover{
+	background-color: #ffd047;
+}
+
+.tab a.now{
+	background-color: #ffd047;
+}
+
 /*-----------------------------
  タブタイトル（共通）
 -----------------------------*/
