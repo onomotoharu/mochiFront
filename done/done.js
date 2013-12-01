@@ -114,9 +114,9 @@ jQuery(function($) {
     
     $(this).addClass("cookedBtn_on");
 
-    // App.sendMade(recipe_id,function(toukou){
-    //   console.log(toukou);
-    // });
+    App.sendMade(recipe_id,function(toukou){
+      console.log(toukou);
+    });
 
     var text = $(".doneComment").val();
     // alert(text);
