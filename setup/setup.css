@@ -1,6 +1,13 @@
 
 
 /*-----------------------------
+ ヘッダー
+-----------------------------*/
+
+#l_btn a { display: none;}
+
+
+/*-----------------------------
  見出し
 -----------------------------*/
 
@@ -41,5 +48,17 @@
 	width: 12px;
 	margin-right: 40px;
 	margin-top: -13px;
+}
+
+p#rakuten {
+	text-align: center;
+	margin: 20px 15px 0 15px;
+}
+
+p#credit {
+	text-align: center;
+	margin:30px 0;
+	font-size: 0.75em;
+	letter-spacing: 0.1em;
 }
 

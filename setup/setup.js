@@ -1,5 +1,13 @@
 $(document).ready(function(){
-  $('#pagename').append("設定")
+
+	$('#nav_set img').attr("src", "../img/on/set_on.png");
+
+	App = new CheeseController();
+
+	App.signIn("ren","test",function(json){
+	 	console.log(json);
+	});
+
 });
 
 function logOutEnter(){
@@ -9,5 +17,5 @@ function logOutEnter(){
 			console.log(logout);
 			location.href = '../login/signin.html';
 		});
-	};
-};
+	}
+}
