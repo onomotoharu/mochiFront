@@ -1,4 +1,4 @@
-@charset "UTF-8";
+	@charset "UTF-8";
 /* CSS Document */ 
 
 #l_btn a{
@@ -32,24 +32,20 @@
 	padding-left:10px;
 }
 
-.box{
- margin:0 0 10px;
- }
-
-.box img{
+.box img,.box_on img {
 	width:100%;
 }
 
 
 
-#coment{
+#comment{
 	margin-top:-5px;
 	width:145px;
 	height:25px;
 	background-color: #ffe22d;
 }
 
-#coment p{
+#comment p{
 	text-align:left;
 	line-height:15px;
 	font-family: "Hiragino Kaku Gothic Pro";
@@ -68,26 +64,29 @@
 	width: 100%;
 }
 
+/*
 .boxNonSelect {
 	opacity: 1;
 	background: #000;
 	z-index: -1;
 	margin:0 0 10px;
-}
+}*/
 
-/*.box a{
+.box{
 	width:100%;
 	background:#000;
 	display:block;
 	filter:alpha(opacity=100);
 	-moz-opacity:1;
 	opacity:1;
+	margin:0 0 10px;
 }
 
-.box a:hover{
+.box_on{
 	filter:alpha(opacity=80);
 	-moz-opacity:0.8;
 	opacity:0.8;
-}*/
+	margin:0 0 10px;
+}
 
 [data-columns]::before { display: none; }
