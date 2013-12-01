@@ -131,7 +131,7 @@ $(function() {
 		    	// 親要素生成
 				$act_left   = $('<div/>').addClass('act_left').append($recipe_photo);
 				$act_right  = $('<div/>').addClass('act_right').append($date.after($recipe_title).after($my_comment));
-				$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn).after($share));
+				$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn));
 				$('.log').prepend($act_left.after($act_right).after($act_bottom));
 			};
 
