@@ -140,10 +140,9 @@ $(function() {
 		// コメントボタンをクリックしたら
 	    $(".com_btn").click(function() {
 
-		activity_id = $(this).next(activity_id).text();
-        // URLにパラメータとして渡す
-        location.href = "../activity/comment.html?activity_id=" + activity_id;
-
+			activity_id = $(this).next(activity_id).text();
+	        // URLにパラメータとして渡す
+	        location.href = "../activity/comment.html?activity_id=" + activity_id;
 
 		});
 
