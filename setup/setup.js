@@ -1,5 +1,4 @@
 
-
 $(document).ready(function(){
 
 	$('#nav_set img').attr("src", "../img/on/set_on.png");
