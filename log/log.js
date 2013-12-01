@@ -91,8 +91,9 @@ $(function() {
 			$date = $('<div/>').addClass('date').text($created_at);
 
 		    // コメント
-		    if(activity.activities[i].comment === undefined) {
+		    if(activity.activities[i].comment == null) {
 		    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
+		    	$('.my_comment').css({display: 'none'});
 		    } else {
 	    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
 	    	};
