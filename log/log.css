@@ -1,3 +1,7 @@
+#graph a:hover{
+	background-color:#fff;
+}
+
 /*-------------------------
 ヘッダー
 -------------------------*/
@@ -6,8 +10,6 @@
 	display: none;
 }
 
-<<<<<<< HEAD
-=======
 #pagename img {
 	display: none;
 }
@@ -38,14 +40,12 @@
 	padding:5px 5px 0 0;
 }
 
->>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
-
 /*-------------------------
  プロフィール（共通）
 -------------------------*/
 
 #profile{
-	width:310px;
+	width:100%;
     color : #000;
 	overflow: hidden;
 	padding: 5px;
@@ -93,39 +93,27 @@
 	border-radius: 5px 5px;
 }
 
-<<<<<<< HEAD
 .follow p{
-=======
-.follow a p{
->>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
 	color: #fff;
 }
 
 .follow a{
-<<<<<<< HEAD
-=======
 	background: url("./img/follow_back.png") no-repeat;
 	background-size:70px 30px;
->>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
 	display: block;
 	width: 100%;
 	height: 100%;
 }
 
-<<<<<<< HEAD
-=======
-.follow a:hover{
+/*フォロー実装されたらONにしてね！*/
+/*.follow a:hover{
 	background: url("./img/follow_back_on.png")no-repeat;
 	display: block;
 	background-size:70px 30px;
 	width: 100%;
 	height: 100%;
-}
+}*/
 
-
-
-
->>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
 .followcount,.followercount{
 	font-size: 8pt;
 	color: #fff;
@@ -135,8 +123,6 @@
 	font-size: 9pt;
 	margin: 15pt 20px 10pt;
 }
-
-
 
 
 /*----------------------------
@@ -198,6 +184,14 @@
  過去ログ
 ----------------------------------------*/
 
+.activity_id {
+	display: none;
+}
+
+.log {
+	background: #fff;
+}
+
 .my_act{
 	background-color: #fff;
 	border-top: solid 2px #DDD;
@@ -207,6 +201,10 @@
 	float: left;
 	width: 80px;
 	padding: 10px;
+}
+
+.recipe_title2 {
+	margin:20px 0 0 0;
 }
 
 
@@ -231,6 +229,10 @@
 	font-weight: bold;
 }
 
+.title a,.title:hover,.title:visited,.title:active{
+	color:#61AD42;
+}
+
 .my_comment{
 	background-color: #ffffe0;
 	margin: 5px 0;
@@ -241,6 +243,11 @@
 	clear: both;
 	width: 100%;
 	height: 45px;
+	border-bottom: #ddd 1px solid;
+}
+
+.act_bottom:last-child{
+	border-bottom: #ddd 2px solid;
 }
 
 .com_btn{
@@ -283,8 +290,103 @@
 	margin: 4px 20px 0 0;
 }
 
-
 #share img{
 	width:25px;
 	height:25px;
+<<<<<<< HEAD
+}
+
+/* ContentsArea
+-------------------------- */
+#share {
+	margin: 0 auto;
+	width: 100%;
+}
+
+#share p a img{
+	width:40px;
+	height:30px;
+	float:right;
+	margin-right:10px;
+	margin-top:-31px;
+}
+
+#open01{
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+}
+
+.close_overlay {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	text-indent: -9999px;
+	position: absolute;
+	background: #000;
+	opacity: 0.5;
+	z-index: 5;
+}
+
+.modal_window {
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -160px;
+	width: 320px;
+	height: 210px;
+	text-align:left;
+	display: block;
+	background:#fff;
+	position: absolute;
+	z-index: 10;
+}
+
+
+.modal_window h1{
+	margin-top: 20px;
+	width:100%;
+	height:50px;
+	line-height:30px;
+	color: #333;
+	font-size: 15px;
+	font-weight: bold;
+	text-align:left;
+	background: #fff;
+	border-bottom:#FC3 1px solid;
+}
+
+.modal_window a img{
+	width:30px;
+	line-height:-30px;
+	float:left;
+	margin-top: 20px;
+	padding-left:70px;
+}
+
+
+.modal_window p {
+	padding: 30px 15px 15px 15px;
+	font-size: 12px;
+	line-height: 160%;
+	text-align:center;
+}
+
+
+/* CSS3 ModalWindow SET
+-------------------------- */
+@-webkit-keyframes modalFadeIn {
+	0% {opacity:0;display:block;}
+	100% {opacity:1;}
+}
+div#modal div:target {
+	-webkit-animation-name: modalFadeIn;
+  	-webkit-animation-duration: 0.3s;
+  	-webkit-animation-iteration-count: 1;
+	opacity: 1;
+	display:block;
 }

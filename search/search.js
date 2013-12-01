@@ -1,12 +1,8 @@
 $(function(){
 
-/*$(document).ready(function(){
-	$('#pagename').append("cheese!")
- });*/
+	$('.cheese a').hover(function(){
+		$('.cheese a img').attr('src', $('.cheese a img').attr('src').replace('_off', '_on'));}, function(){
 
-$('.cheese a').hover(function(){
-		$('.cheese a img').attr('src', $('.cheese a img').attr('src').replace('_on', '_off'));
-	}, function(){
 		if (!$('.cheese a img').hasClass('current')) {
 			$('.cheese a img').attr('src', $('.cheese a img').attr('src').replace('_on', '_off'));
 		}
@@ -28,4 +24,15 @@ $('.cheese a').hover(function(){
 		}
 	});
 	
-		});
+});
+
+$(function(){
+	$(".toggleImage").click(function(){
+    	a = $(this).parent('.follow');
+    	console.log(a);
+    	// var name = $("this a.account").text();
+    	// var image = $(".follow_pic img").attr("src");
+     //    console.log(name);
+     //    console.log(image);
+    });
+});

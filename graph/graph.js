@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 	$('#pagename').append("マイページ")
 
@@ -16,6 +14,16 @@ $(function(){
 });
 
 $(function(){
+	$('#nav_my img').attr("src", "../img/on/my_on.png");
+
+	App.getOwnProfile(function(myprofile){
+		// プロフィール部分DOM操作
+        $('.myname').html(myprofile.screen_id);
+		$('.followcount').append(myprofile.following.length);
+		$('.followercount').append(myprofile.followers.length);
+		$('#myphoto img').attr("src",myprofile.icon_name);
+		$('#myintro').append(myprofile.bio);
+	});
 
 	$('#log a').hover(function(){
 		$('#log a img').attr('src', $('#log a img').attr('src').replace('_off', '_on'));

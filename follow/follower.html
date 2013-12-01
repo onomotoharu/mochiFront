@@ -18,12 +18,13 @@
                 <link rel="apple-touch-icon-precomposed" href="../img/icon.png" />
 
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+                <script src="http://winvelab.net/cheese/jquery.base64.js"></script>
                 <script language="javascript" src="../load.js"></script>
                 <script language="javascript" src="../template.js"></script>
                 <script type="text/javascript" src="./follower.js"></script>
                 <script type="text/javascript">
                 window.onload = function(){
-                        img1 = 'img/follow3_off.png', img2 = 'img/follow3_on.png';
+                        img1 = 'img/follow3_on.png', img2 = 'img/follow3_off.png';
                         var i, e = document.getElementsByTagName('span');
                         for (i=0; i<e.length; i++) if (e[i].className=='toggleImage') e[i].onclick = setImage();
                 }

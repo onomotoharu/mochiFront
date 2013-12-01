@@ -1,50 +1,47 @@
 $(document).ready(function(){
 	$('#pagename').append("みんなのごはん");
-  $('#l_btn a').attr("href", "./index.html");
+  $('#l_btn a').attr("href", "javascript:history.back();");
 });
 
 $(function(){
-  var recipeData = {
-    recipeName : "おいしいよー",
-    recipePhoto : "./img/foodphoto.png",
-    recipeUrl : "../recipe/index.html",
-    cookedDay : "2013/12/22",
-  }
 
-  var cookedUser = {
-    pic : "./img/my_icon_user.png",
-    id : "bechi"
-  }
-
-  var commentObj = {
-    userId : "namaedesu",
-    comment : ""
-  };
-  
   App = new CheeseController();
 
   App.signIn("ren","test",function(json){
     // console.log(json);
   });
 
+  App.getTimeline(function(timeline){
 
-  App.getDetail(1,function(recipe){
-    console.log(recipe);
-    $('.recipe_name a').text(recipe.name).attr({'href':recipe.source_url});
-    $('.recipe_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+    console.log(timeline);
+    var activity_id = getUrlVars()["activity_id"];
+
+    // 該当アクティビティを取得
+    for(var i = 0;i<timeline.length;i++) {
+      if(timeline[i].activity_id == activity_id){
+        console.log(activity_id+i);
+
+        // レシピデータ
+        var recipe_id = timeline[i].recipe_id;
+        // var recipe_id = 1;
+        App.getDetail(recipe_id,function(recipe){
+          $('.recipe_name a').text(recipe.name).attr({'href':recipe.source_url});
+          $('.recipe_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
+        });
+
+        // つくった日
+        var date = timeline[i].created_at;
+        $('.right .date').text(date.split("T")[0]);
+
+        // ユーザデータ
+        // $('.user_info .user_icon img').attr({'src':localStorage.pic});
+        $('#def_user,.user_info .user_id').text(timeline[i].screen_id);
+        $('#def_comment').text(timeline[i].comment);
+      };
+    };
   });
 
-  // App.getOwnActivities(function(json){
-
-  // });
-
-  // レシピデータ
-  // $('.recipe_photo img').attr({'src':recipeData.recipePhoto});
-  $('.right .date').text(recipeData.cookedDay);
-  // ユーザデータ
-  $('.user_info .user_icon img').attr({'src':cookedUser.pic});
-  $('.user_info .user_id').text(localStorage.screen_id);
-
+  // inputの挙動
   $('input').focus(function(){
     $('.allcontents').css("margin", "45px 0 0 0 ");
     $('.hyouji_btn').click(function(){
@@ -52,17 +49,23 @@ $(function(){
     });
   });
 
-  // コメントを投稿
-  $(".send").click(function(userId,comment) {
+  // 送信ボタンをクリックしたら
+  $(".send").click(function() {
 
-    var newComment = $("<div/>").appendTo('div.comment').addClass('come_com');
+    // コメントを投稿
+    App.getOwnActivities(function(activity){
+      var newCommentEl = $("<div/>").appendTo('div.comment').addClass('come_com');
+      newCommentEl.append($("<span/>").text(localStorage.screen_id).addClass('user_id'));
+      var newComment = $(".com_input").val();
+      newCommentEl.append($("<span/>").text(newComment).addClass('com_txt'));
+    });
 
-    newComment.append($("<span/>").text(commentObj.userId).addClass('user_id'));
-    commentObj.comment = $(".com_input").val();
-    newComment.append($("<span/>").text(commentObj.comment).addClass('com_txt'));
+    // App.sendCommentToActivity(activity_id,text,callback) {
+    //   console.log("コメント送信");
+    // });
 
+    $(".send a").attr("href", "javascript:history.back();");
+    
   });
 
 });
-
-
