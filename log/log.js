@@ -93,7 +93,7 @@ $(function() {
 				$date = $('<div/>').addClass('date').text($created_at);
 
 			    // コメント
-			    if(activity.activities[i].comment == null) {
+			    if(activity.activities[i].comment == "") {
 			    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
 			    	$('.my_comment').css({display: 'none'});
 			    } else {
@@ -101,21 +101,17 @@ $(function() {
 		    	};
 
 		    	// いいねボタン生成
-		    	$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
-		    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
-		    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
-		    	if(activity.activities[i].id == 5) {
+		    	if(activity.activities[i].is_liked == false) {
+		    		$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
+			    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
+			    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
 			    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
-			    	$(".iine_btn_on img").attr('src', './img/good_on.png');
-			    } else if(activity.activities[i].id = 1){
+			    } else if(activity.activities[i].is_liked == true){
+			    	$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
+			    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
+			    	$iine_img   = $('<img/>').attr('src','./img/good_on.png');
 			    	$iine_btn   = $('<div/>').addClass('iine_btn_on').append($iine_img.after($iine));
-			    	$(".iine_btn_on img").attr('src', './img/good_off.png');
 			    };
-		    	// if(activity.activities[i].liked == false) {
-			    // 	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
-			    // } else if(activity.activities[i].liked == true){
-			    // 	$iine_btn   = $('<div/>').addClass('iine_btn_on').append($iine_img.after($iine));
-			    // };
 
 		    	// コメントボタン生成
 		    	$com_count  =  $('<span/>').text(activity.activities[i].comments.length);
@@ -168,6 +164,7 @@ $(function() {
 						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
 						App.goodToActivity(activity_id,function(){});
+						activity.activities[i].is_liked = true;
 					} else if($(this).hasClass('iine_btn_on')) {
 						$(this).addClass("iine_btn").removeClass('iine_btn_on');
 						$(".iine_btn img").attr('src', './img/good_off.png');
@@ -175,6 +172,7 @@ $(function() {
 						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
 						App.goodToActivity(activity_id,function(){});
+						activity.activities[i].is_liked = false;
 					};
 				};
 			};
