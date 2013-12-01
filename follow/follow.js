@@ -14,8 +14,6 @@ var data=[
 App = null;
 
 $(function(){
-	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png"))
-				 .attr("href", "../search/index.html")
 
 	App = new CheeseController();
 	// ## sample ##
@@ -52,9 +50,9 @@ $(function(){
 					$(this).addClass("on").removeClass("off");
 					$(".toggleImage img").attr("src", "./img/follow3_on.png");
 					alert("onになるよ");
-					var index = $(".toggleImage img").index(this);
-					console.log(index);　
-					screen_id = data.following[index].screen_id;
+					var index = $(".toggleImage img").index(this);　
+					screen_id = data.followers[index].screen_id;
+					console.log(screen_id);
 					App.setFollow(screen_id,function(id){
 						console.log(id);　
 					});
@@ -63,9 +61,11 @@ $(function(){
 		    		$(this).addClass("off").removeClass("on");
 		    		$(".toggleImage img").attr("src", "./img/follow3_off.png");
 					alert("offだよ");
-					screen_id = data.following[i].screen_id;
+					var unindex = $(".toggleImage img").index(this);
+					screen_id = data.following[unindex].screen_id;
+					console.log(screen_id);
 					App.setUnfollow(screen_id,function(id){
-						console.log(screen_id);
+						console.log(id);
 					});
 				}
 			});
