@@ -140,7 +140,11 @@ CheeseController.prototype.setFollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/follow";
 	data = null;
 	type = "post";
+<<<<<<< HEAD
 	response = 	this._throwRequest(url,data,type);
+=======
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+>>>>>>> master
 	if(callback!=null){callback(response);}
 }
 
@@ -240,9 +244,13 @@ $(function(){
 	App = new CheeseController();
 
 	// ## sample ##
-	// App.signIn("ren","test",function(json){
-	// 	console.log(json);
-	// });
+	App.signIn("ren","test",function(json){
+		console.log(json);
+	});
+
+	App.getRecommend(function(json){
+		console.log(json);
+	})
 
 	// App.deleteActivity(1,null)
 
