@@ -140,14 +140,12 @@ $(function() {
 		$('.iine_btn,.iine_btn_on').click(function() {
 
 			activity_id = $(this).prev(activity_id).text();
-			console.log("くりっく！" + activity_id);
 			for(var i = 0;i<activity.activities.length;i++) {
 				if(activity.activities[i].id == activity_id){
 					iine_count  = activity.activities[i].likes_count;
 
 					// イイネ数を+1して_onデザインにする
 					if($(this).hasClass('iine_btn')){
-						console.log("+1");
 						$(this).addClass("iine_btn_on").removeClass('iine_btn');
 						$(".iine_btn_on img").attr('src', './img/good_on.png');
 						iine_count++;
