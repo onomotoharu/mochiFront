@@ -1,6 +1,18 @@
 @charset "UTF-8";
-/* CSS Document */ 
+/* CSS Document */
 
+/*-----------------------------
+ タブタイトル（共通）
+-----------------------------*/
+
+.tab_title{
+	background-color: #e7e4e0;
+	color: #808080;
+	height: 25px;
+	padding-left: 10px;
+	padding-top: 10px;
+	font-size: 15px;
+}
 
 #pagename img {
 	display: none;
