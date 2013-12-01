@@ -13,9 +13,8 @@ $(function(){
 
   App.getOwnActivities(function(activity){
 
-    var activity_id = getUrlVars()["activity_id"];
-    console.log(activity.activities);
-
+    console.log(activity);
+    var activity_id = getUrlVars()["activity_id"]-1;
     // レシピデータ
     var recipe_id = activity.activities[activity_id].recipe_id;
     App.getDetail(recipe_id,function(recipe){
