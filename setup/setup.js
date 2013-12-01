@@ -15,7 +15,9 @@ $(document).ready(function(){
 function logOutEnter(){
 	myRet = confirm("cheeseをログアウトしますか？");
 	if(myRet == true){
-		App.signOut();
-		location.href = '../login/signin.html';
+		App.signOut(function(logout){
+			console.log(logout);
+			location.href = '../login/signin.html';
+		});
 	}
 }
