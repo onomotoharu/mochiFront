@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     App = new CheeseController();
 
-    App.signIn("ren","test",function(json){
+    App.signIn("nao","test",function(json){
         console.log(json);
     });
 
@@ -53,8 +53,6 @@ $(document).ready(function(){
             for(var i=0;i<recommend.length;i++){
                 $(".required_money").addClass("money"+recommend[i].recipe.required_money);
                 $(".necessary_time").addClass("time"+recommend[i].recipe.necessary_time);
-                seasoning = recommend[i].recipe.seasoning.split("|");
-                methods = recommend[i].recipe.methods.split("|");
                 $(".food").text(recommend[i].recipe.created_at.split("T")[0]);
             }
 
@@ -74,27 +72,55 @@ $(document).ready(function(){
             $(".time5").text("約1時間");
             $(".time6").text("1時間以上");
 
-            if(seasoning[0] > 0){$(".seasoning").append("砂糖 ");}
-            if(seasoning[1] > 0){$(".seasoning").append("塩 ");}
-            if(seasoning[2] > 0){$(".seasoning").append("酢 ");}
-            if(seasoning[3] > 0){$(".seasoning").append("醤油 ");}
-            if(seasoning[4] > 0){$(".seasoning").append("味噌 ");}
-            if(seasoning[5] > 0){$(".seasoning").append("みりん");}
+            $(".lefttop .seasoning").addClass("seasoning0");
+            $(".righttop .seasoning").addClass("seasoning1");
+            $(".leftbottom .seasoning").addClass("seasoning2");
+            $(".rightbottom .seasoning").addClass("seasoning3");
+
+            seasoning_c = new Array("砂糖 ", "塩 ", "酢 ", "醤油 ", "味噌 ",　"みりん");
+
+            for(var i=0;i<recommend.length;i++){
+                seasoning = recommend[i].recipe.seasoning.split("|");
+                for(var j=0; j<seasoning.length; j++){
+                    if(i==0){
+                        if(seasoning[j] > 0){$('.seasoning0').append(seasoning_c[j]);}
+                    }
+                    else if(i==1){
+                        if(seasoning[j] > 0){$('.seasoning1').append(seasoning_c[j]);}
+                    }
+                    else if(i==2){
+                        if(seasoning[j] > 0){$('.seasoning2').append(seasoning_c[j]);}
+                    }
+                    else if(i==3){
+                        if(seasoning[j] > 0){$('.seasoning3').append(seasoning_c[j]);}
+                    }
+                }
+            }
  
-            if(methods[0] > 0){$(".methods").append("煮る ");}
-            if(methods[1] > 0){$(".methods").append("炒める ");}
-            if(methods[2] > 0){$(".methods").append("蒸す ");}
-            if(methods[3] > 0){$(".methods").append("焼く ");}
-            if(methods[4] > 0){$(".methods").append("漬ける ");}
-            if(methods[5] > 0){$(".methods").append("和える ");}
-            if(methods[6] > 0){$(".methods").append("掛ける ");} //?
-            if(methods[7] > 0){$(".methods").append("揚げる ");}
-            if(methods[8] > 0){$(".methods").append("茹でる ");}
-            if(methods[9] > 0){$(".methods").append("混ぜる ");}
-            if(methods[10] > 0){$(".methods").append("煎じる ");} //?
-            if(methods[11] > 0){$(".methods").append("燻す ");}
-            if(methods[12] > 0){$(".methods").append("干す ");}
-            if(methods[13] > 0){$(".methods").append("冷やす");}
+            $(".lefttop .methods").addClass("methods0");
+            $(".righttop .methods").addClass("methods1");
+            $(".leftbottom .methods").addClass("methods2");
+            $(".rightbottom .methods").addClass("methods3");
+
+            methods_c = new Array("煮る ", "炒める ", "蒸す ", "焼く ", "漬ける ",　"和える ", "掛ける ", "揚げる ", "茹でる ", "混ぜる ", "煎じる ","燻す ", "干す ", "冷やす");
+
+            for(var i=0;i<recommend.length;i++){
+                methods = recommend[i].recipe.methods.split("|");
+                for(var j=0; j<methods.length; j++){
+                    if(i==0){
+                        if(methods[j] > 0){$('.methods0').append(methods_c[j]);}
+                    }
+                    else if(i==1){
+                        if(methods[j] > 0){$('.methods1').append(methods_c[j]);}
+                    }
+                    else if(i==2){
+                        if(methods[j] > 0){$('.methods2').append(methods_c[j]);}
+                    }
+                    else if(i==3){
+                        if(methods[j] > 0){$('.methods3').append(methods_c[j]);}
+                    }
+                }
+            }
 
             $(".lefttop .last_food").addClass("last_food0");
             $(".righttop .last_food").addClass("last_food1");
