@@ -75,33 +75,32 @@ deta（time money
 ----------------------------------------*/
 
 .deta{
-	width: 240px;
+	width: 260px;
   height: 40px;
   margin: 0 20px;
-  padding: 0 20px 5px 20px;
+  padding: 0 10px 5px 10px;
 	border-bottom: dashed 2px #3cb371;
 	text-align:center;
 }
 
 
 .datastyle{ 
-  width: 70px;
+  width: 100px;
   height: 40px;
   margin-top: 15px;
   float: left;
   text-align: center;
-  font-size: 14px;
-  padding-right: 10px;
+  font-size: 17px;
 }
 
 
 .deta img{
-	width: 30px;
-	height: 30px;
-  margin:0 10px 20px 0;
-  float:left;
-	position: relative;
-	bottom: -10px;
+  width: 30px;
+  height: 30px;
+  margin: 0 0 20px 0;
+  float: left;
+  position: relative;
+  bottom: -10px;
 }
 
 
