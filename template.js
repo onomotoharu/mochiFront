@@ -88,11 +88,7 @@ CheeseController.prototype.signOut = function(callback){
 	url = "/sign_out";
 	data = null
 	type = "post";
-<<<<<<< HEAD
-	response = 	this._throwRequest(url,data,type);
-=======
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
->>>>>>> origin/survey_new
 	localStorage.clear();
 	this.isLoggedIn = false;
 	if(callback!=null){callback(response);}
