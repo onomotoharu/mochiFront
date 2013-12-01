@@ -1,4 +1,6 @@
 jQuery(function($) {
+  
+  $('#l_btn a').attr("href", "javascript:history.back();");
 
   App = new CheeseController();
 
