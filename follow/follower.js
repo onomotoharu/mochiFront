@@ -1,7 +1,7 @@
-$(function(){
-	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png"))
-				 .attr("href", "../search/index.html")
-});
+// $(function(){
+// 	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png"))
+// 				 .attr("href", "../search/index.html")
+// });
 
 
 $(function(){
@@ -11,7 +11,7 @@ $(function(){
 	// 	console.log(json);
 	});
 
-	App.getOwnProfile(function(data){	
+	App.getOwnProfile(function(data){
 	console.log(data);
 	for(var i=0; i<data.followers.length; i++){
 		//リストを追加
@@ -38,4 +38,3 @@ $(function(){
 	});
 });
 
-	
