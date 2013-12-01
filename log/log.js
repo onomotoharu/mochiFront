@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	$('#pagename').append("マイページ")
 
@@ -14,7 +13,7 @@ $(function(){
   $('#nav_my img').attr("src", "../img/on/my_on.png");
 });
 
-$(function(){
+$(function() {
 
 	if(localStorage.getItem("hoge") !== null) {
 	  $('.success').slideUp(0).slideDown('fast').delay(2500).slideUp('fast', function() {
@@ -72,11 +71,6 @@ $(function(){
 
 			console.log(activity.activities[i]);
 
-			// limit
-
-			// 1つの投稿を増やす（空タグ）
-			// $('div.log').prepend('<div class="my_act"><div class="act_left"><div class="recipe_photo"><img /></div></div><div class="act_right"><div class="date"></div><div class="title"><a href="#"></a></div><div class="my_comment"></div></div><div class="act_bottom"><div class="com_btn"><img src="./img/com_off.png"><span>コメント0</span></div><div class="iine_btn"><img src="./img/good_off.png"><span>イイネ！0</span></div><div id="share"><p><a href="#open01"><img src="./img/…_off.png"></a></p></div></div></div>');
-
 		    // レシピID
 			recipe_id = activity.activities[i].recipe_id;
 
@@ -95,7 +89,7 @@ $(function(){
 			$date = $('<div/>').addClass('date').text($created_at);
 
 		    // コメント
-		    if(activity.activities[i].comment === false) {
+		    if(activity.activities[i].comment === undefined) {
 		    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
 		    } else {
 	    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
@@ -158,11 +152,10 @@ $(function(){
 					$(this).children('.iine_count').append(likes_count);
 				};
 
-			// activity_idが実装されたら
-			// App.goodToActivity(i,function(){});
+				// activity_idが実装されたら
+				// App.goodToActivity(i,function(){});
 
-			// });
-
+			});
 
 		};
 
