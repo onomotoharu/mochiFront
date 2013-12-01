@@ -114,18 +114,17 @@ jQuery(function($) {
     
     $(this).addClass("cookedBtn_on");
 
-    App.sendMade(recipe_id,function(toukou){
-      console.log(toukou);
-    });
+    // App.sendMade(recipe_id,function(toukou){
+    //   console.log(toukou);
+    // });
 
     var text = $(".doneComment").val();
-    alert(text);
+    // alert(text);
 
     // loading画像を表示
-    $('head').append(
-    '<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>');
-    $("#fade").css("height", pageH).delay(700).fadeOut(600);
-    $("#loader").delay(500).fadeOut(300);
+    $('head').append('<style type="text/css">#container { display: none; } #fade, #loader { display: block; }</style>');
+    $("#fade").css("height", pageH).delay(300).fadeOut(1500);
+    $("#loader").delay(300).fadeOut(1000);
     $("#container").css("display", "block");
 
     var content = "",
@@ -133,8 +132,10 @@ jQuery(function($) {
         img = "";
 
     // 通信に成功
-    localStorage.setItem("hoge", 1);
-    location.href = "../log/index.html";
+    setTimeout(function(){
+        localStorage.setItem("hoge", 1)
+        location.href = "../log/index.html";
+      },1300);
 
     return false;
 
