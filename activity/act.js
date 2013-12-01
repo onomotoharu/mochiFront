@@ -27,6 +27,9 @@ $(function(){
 
 			console.log(timeline[i]);
 
+			// アクティビティID取得
+			activity_id = timeline[i].activity_id;
+
 		    // レシピID取得
 			// recipe_id = timeline[i].recipe_id;
 			recipe_id = 1;
@@ -71,7 +74,8 @@ $(function(){
 	    	$share      = $('<div id="share"></div>').append($p_open01);
 
 	    	// 親要素生成
-			$act_left   = $('<div/>').addClass('act_left').append($re_photo);
+			$act_left_b = $('<div/>').addClass('act_left').append($re_photo);
+			$act_left   = $act_left_b.addClass(activity_id);
 			$act_right  = $('<div/>').addClass('act_right').append($date.after($title).after($user));
 			$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($iine_btn).after($share));
 			$('.all_act').prepend($act_left.after($act_right).after($act_bottom));
@@ -109,35 +113,13 @@ $(function(){
 				  $(this).children('span').text("イイネ！" + iine_count);
 				};
 
-				// App.goodToActivity(i,function(){});
+				App.goodToActivity(activity_id,function(){});
 
 			});
 
 		};
 
 	});
-
-	// App.getTimeline(function(timeline) {
-
-	// 	var timeline_id = 0;
-	// 	console.log(timeline[timeline_id]);
-
-	//     // レシピデータ
-	//     var recipe_id = timeline[timeline_id].recipe_id;
-	//     App.getDetail(recipe_id,function(recipe){
-	//       $('.title a').text(recipe.name).attr({'href':recipe.source_url});
-	//       $('.re_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
-	//     });
-
-	//     // つくった日
-	//     var date = timeline[timeline_id].created_at;
-	//     $('.act_right .date').text(date.split("T")[0]);
-
-	//     // ユーザデータ
-	//     $('#myphoto img').attr({'src':timeline[timeline_id].picture_path});
-	//     $('.myname').text(timeline[timeline_id].user_id);
-
-	// });
 
 	$('.com_btn').click(function(){
 		$('.com_formsend').toggle();
