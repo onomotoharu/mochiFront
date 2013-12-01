@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 
 $(document).ready(function(){
     //ヘッダー
     //$('#pagename').append("cheese!")
     $('#r_btn a').append("更新");
-=======
-// $(document).ready(function(){
-// 	$('#pagename').append("cheese!")
-//  });
->>>>>>> ajax
+
 
     //フッター
     $('#nav_reco img').attr("src", "../img/on/reco_on.png");

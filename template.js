@@ -45,14 +45,10 @@ function footer() {
         CheeseController
 |||||||||||||||||||||||||||||||
 */
-<<<<<<< HEAD
-function CheeseController(){
-	this.domain = "https://fmap.d.r3n.cc/api/v1";
-=======
 
 function CheeseController(){
 	this.domain = "http://fmap.d.r3n.cc/api/v1";
->>>>>>> ajax
+
 	this.isLoggedIn = false;
 }
 
@@ -78,39 +74,24 @@ CheeseController.prototype._throwRequest = function(url,data,type){
 
 CheeseController.prototype.signIn = function(screen_id,password,callback){
 	url = "/sign_in";
-<<<<<<< HEAD
-	data = {"user": {"screen_id": screen_id, "password": password}}
-=======
 	data = {"user": {"screen_id": screen_id, "password": password}};
->>>>>>> ajax
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	localStorage.screen_id = screen_id;
 	localStorage.api_token = response.api_token;	
 	localStorage.api_token_secret = response.api_token_secret;
 	this.isLoggedIn = true;
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 };
 
 CheeseController.prototype.signOut = function(callback){
 	url = "/sign_out";
 	data = null
 	type = "post";
-<<<<<<< HEAD
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
-	localStorage.clear();
-	this.isLoggedIn = false;
-	callback(response);
-=======
 	response = 	this._throwRequest(url,data,type);
 	localStorage.clear();
 	this.isLoggedIn = false;
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 
@@ -123,21 +104,13 @@ CheeseController.prototype.checkAuth = function(){
 	User
 ======================*/
 
-<<<<<<< HEAD
-CheeseController.prototype.userCreate = function(screen_id,password,callback){
-	url = "/users/create";
-	data = {"screen_id": screen_id, "password":"password"};
-	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
-	callback(response);
-=======
+
 CheeseController.prototype.createUser = function(screen_id,password,callback){
 	url = "/users/create";
 	data = {"user": {"screen_id": screen_id, "password": password, "password_confirmation": password}}	
 	type = "post";
 	response = this._throwRequest(url,data,type);
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 };
 
 CheeseController.prototype.getOwnProfile = function(callback){
@@ -145,11 +118,7 @@ CheeseController.prototype.getOwnProfile = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 CheeseController.prototype.getOwnBadges = function(callback){
@@ -157,11 +126,7 @@ CheeseController.prototype.getOwnBadges = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 CheeseController.prototype.getOwnActivities = function(callback){
@@ -169,24 +134,15 @@ CheeseController.prototype.getOwnActivities = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 CheeseController.prototype.setFollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/follow";
 	data = null;
 	type = "post";
-<<<<<<< HEAD
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
-	callback(response);
-=======
 	response = 	this._throwRequest(url,data,type);
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 CheeseController.prototype.setUnfollow = function(screen_id,callback){
@@ -194,11 +150,7 @@ CheeseController.prototype.setUnfollow = function(screen_id,callback){
 	data = null;
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 
@@ -211,11 +163,7 @@ CheeseController.prototype.getRecommend = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 };
 
 
@@ -228,11 +176,7 @@ CheeseController.prototype.getTimeline = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 CheeseController.prototype.goodToActivity = function(activity_id,callback){
@@ -240,11 +184,6 @@ CheeseController.prototype.goodToActivity = function(activity_id,callback){
 	data = {"activity_id": activity_id};
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-}
-
-=======
 	if(callback!=null){callback(response);}
 }
 
@@ -254,7 +193,7 @@ CheeseController.prototype.goodToActivity = function(activity_id,callback){
 // 	response = 	$.parseJSON(this._throwRequest(url,data,type));
 // 	if(callback!=null){callback(response);}
 // }
->>>>>>> ajax
+
 
 /*=====================
 	Recipe
@@ -265,11 +204,7 @@ CheeseController.prototype.sendMade = function(recipe_id,callback){
 	data = null;
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 CheeseController.prototype.sendFavorite = function(recipe_id,callback){
@@ -277,11 +212,7 @@ CheeseController.prototype.sendFavorite = function(recipe_id,callback){
 	data = null;
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 CheeseController.prototype.getDetail = function(recipe_id,callback){
@@ -289,11 +220,7 @@ CheeseController.prototype.getDetail = function(recipe_id,callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-=======
 	if(callback!=null){callback(response);}
->>>>>>> ajax
 }
 
 CheeseController.prototype.getSample = function(callback){
@@ -301,26 +228,16 @@ CheeseController.prototype.getSample = function(callback){
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-<<<<<<< HEAD
-	callback(response);
-}
-
-
-=======
 	if(callback!=null){callback(response);}
 }
 
->>>>>>> ajax
 /*
 ||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
 
-<<<<<<< HEAD
-// App = null;
-=======
+
 App = null;
->>>>>>> ajax
 
 $(function(){
 	App = new CheeseController();
@@ -330,11 +247,8 @@ $(function(){
 	// 	console.log(json);
 	// });
 
-<<<<<<< HEAD
-=======
 	// App.deleteActivity(1,null)
 
->>>>>>> ajax
 	// App.getRecommend(function(json){
 
 	// });
