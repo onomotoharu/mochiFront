@@ -123,9 +123,6 @@ $(function() {
 			$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn).after($share));
 			$('.log').prepend($act_left.after($act_right).after($act_bottom));
 
-			// var com_count  = activity.activities[i].comments.length;
-			// var iine_count = activity.activities[i].likes_count;
-
 		};
 
 		// コメントボタンをクリックしたら
@@ -139,25 +136,29 @@ $(function() {
 		});
 
 		// いいねボタンをクリックしたら
-		$(".iine_btn").click(function() {
+		$('.iine_btn,.iine_btn_on').click(function() {
 
-			// イイネ数を+1して_onデザインにする
-			if($(this).hasClass('iine_btn')){
-				$(this).addClass("iine_btn_on").removeClass('iine_btn');
-				$(".iine_btn_on img").attr('src', './img/good_on.png');
-				likes_count = $(this).children('.iine_count').text();
-				likes_count++;
-				$(this).children('.iine_count').append(likes_count);
-			} else if($(this).hasClass('iine_btn_on')) {
-				$(this).addClass("iine_btn").removeClass('iine_btn_on');
-				$(".iine_btn img").attr('src', './img/good_off.png');
-				likes_count = $(this).children('.iine_count');
-				likes_count--;
-				$(this).children('.iine_count').append(likes_count);
+			activity_id = $(this).prev(activity_id).text();
+			console.log("くりっく！" + activity_id);
+			for(var i = 0;i<activity.activities.length;i++) {
+				if(activity.activities[i].id == activity_id){
+					iine_count  = activity.activities[i].likes_count;
+
+					// イイネ数を+1して_onデザインにする
+					if($(this).hasClass('iine_btn')){
+						console.log("+1");
+						$(this).addClass("iine_btn_on").removeClass('iine_btn');
+						$(".iine_btn_on img").attr('src', './img/good_on.png');
+						$(this).children('span').text("イイネ！" + iine_count);
+					} else if($(this).hasClass('iine_btn_on')) {
+						$(this).addClass("iine_btn").removeClass('iine_btn_on');
+						$(".iine_btn img").attr('src', './img/good_off.png');
+						$(this).children('span').text("イイネ！" + iine_count);
+					};
+
+					App.goodToActivity(activity_id,function(){});
+				};
 			};
-
-			// activity_idが実装されたら
-			// App.goodToActivity(i,function(){});
 
 		});
 
