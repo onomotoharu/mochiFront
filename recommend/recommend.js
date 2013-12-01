@@ -1,3 +1,5 @@
+App = null;
+
 
 $(document).ready(function(){
     //ヘッダー
@@ -31,26 +33,26 @@ $(document).ready(function(){
             $('.lefttop .recipename').text(recommend[0].recipe.name);
             $('.lefttop .re_link').attr("class", recommend[0].recommend_type+"_s");
             $('.lefttop .axis').attr("class", recommend[0].recommend_type);
-            $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[0].recipe.default_picture_name+"')").attr("href", recommend[0].recipe.source_url+"?recipe_id="+recommend[0].recipe.id);
+            $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[0].recipe.default_picture_name+"')").attr("style", "background-image: url('../recipe/index.html?recipe_id"+recommend[0].recipe.id"')";
          
             //右上
             $('.righttop .recipename').text(recommend[1].recipe.name);
             $('.righttop .re_link').attr("class", recommend[1].recommend_type+"_s");
             $('.righttop .axis').attr("class", recommend[1].recommend_type);
-            $('.righttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[1].recipe.default_picture_name+"')").attr("href", recommend[1].recipe.source_url+"?recipe_id="+recommend[1].recipe.id);
+            $('.righttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[1].recipe.default_picture_name+"')").attr("style", "background-image: url('../recipe/index.html?recipe_id"+recommend[1].recipe.id"')";
 
             //左下
             $('.leftbottom .recipename').text(recommend[2].recipe.name);
             $('.leftbottom .re_link').attr("class", recommend[2].recommend_type+"_s");
             $('.leftbottom .axis').attr("class", recommend[2].recommend_type);
-            $('.leftbottom a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[2].recipe.default_picture_name+"')").attr("href", recommend[2].recipe.source_url+"?recipe_id="+recommend[2].recipe.id);
+            $('.leftbottom a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[2].recipe.default_picture_name+"')").attr("style", "background-image: url('../recipe/index.html?recipe_id"+recommend[2].recipe.id"')";
 
             //右下
             $('.rightbottom .recipename').text(recommend[3].recipe.name);
             $('.rightbottom .re_link').attr("class", recommend[3].recommend_type+"_s");
             $('.rightbottom .axis').attr("class", recommend[3].recommend_type);
-            $('.rightbottom a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[3].recipe.default_picture_name+"')").attr("href", recommend[3].recipe.source_url+"?recipe_id="+recommend[3].recipe.id);
-
+            $('.rightbottom a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[3].recipe.default_picture_name+"')").attr("style", "background-image: url('../recipe/index.html?recipe_id"+recommend[3].recipe.id"')";
+ 
             for(var i=0;i<recommend.length;i++){
                 $(".required_money").addClass("money"+recommend[i].recipe.required_money);
                 $(".necessary_time").addClass("time"+recommend[i].recipe.necessary_time);
