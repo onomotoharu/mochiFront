@@ -4,7 +4,12 @@ App = null;
 $(document).ready(function(){
     //ヘッダー
     //$('#pagename').append("cheese!")
-    $('#r_btn a').append("更新");
+    // $('#r_btn a').append("更新");
+    $reloadBtn = $('<img/>').attr('src', '../img/reload.png').css({
+        width: '25',
+        height: '25'
+    });;
+    $('#r_btn a').append($reloadBtn);
 
 
     //フッター
