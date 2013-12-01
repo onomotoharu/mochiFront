@@ -22,8 +22,8 @@ $(function(){
         console.log(activity_id+i);
 
         // レシピデータ
-        // var recipe_id = timeline[i].recipe_id;
-        var recipe_id = 1;
+        var recipe_id = timeline[i].recipe_id;
+        // var recipe_id = 1;
         App.getDetail(recipe_id,function(recipe){
           $('.recipe_name a').text(recipe.name).attr({'href':recipe.source_url});
           $('.recipe_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
