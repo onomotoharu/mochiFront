@@ -10,6 +10,11 @@
 	display: none;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> origin/profile_setup
 #pagename img {
 	display: none;
 }
@@ -40,6 +45,11 @@
 	padding:5px 5px 0 0;
 }
 
+<<<<<<< HEAD
+=======
+>>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
+
+>>>>>>> origin/profile_setup
 /*-------------------------
  プロフィール（共通）
 -------------------------*/
@@ -93,19 +103,52 @@
 	border-radius: 5px 5px;
 }
 
+<<<<<<< HEAD
 .follow p{
+=======
+<<<<<<< HEAD
+.follow p{
+=======
+.follow a p{
+>>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
+>>>>>>> origin/profile_setup
 	color: #fff;
 }
 
 .follow a{
+<<<<<<< HEAD
 	background: url("./img/follow_back.png") no-repeat;
 	background-size:70px 30px;
+=======
+<<<<<<< HEAD
+=======
+	background: url("./img/follow_back.png") no-repeat;
+	background-size:70px 30px;
+>>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
+>>>>>>> origin/profile_setup
 	display: block;
 	width: 100%;
 	height: 100%;
 }
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+.follow a:hover{
+	background: url("./img/follow_back_on.png")no-repeat;
+	display: block;
+	background-size:70px 30px;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+>>>>>>> 67081f75ba14e1c83bc53039639482147373d9ba
+>>>>>>> origin/profile_setup
 .followcount,.followercount{
 	font-size: 8pt;
 	color: #fff;
@@ -285,6 +328,7 @@
 #share img{
 	width:25px;
 	height:25px;
+<<<<<<< HEAD
 }
 
 /* ContentsArea
@@ -381,3 +425,6 @@ div#modal div:target {
 	opacity: 1;
 	display:block;
 }
+=======
+}
+>>>>>>> origin/profile_setup

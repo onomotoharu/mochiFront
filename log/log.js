@@ -49,7 +49,7 @@ $(function() {
 			$('#badge a img').attr('src', $('#badge a img').attr('src').replace('_on', '_off'));
 		}
 	});
-
+	
 	// CheeseController
 
 	App = new CheeseController();

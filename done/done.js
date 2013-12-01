@@ -143,45 +143,6 @@ jQuery(function($) {
 
 });
 
-$(function(){
-  //   var doneData = {
-  //     doneComment : ".doneComment",
-  //     donePhoto : "#imageInput",
-  //     doneDay : "new Date()",
-  //   }
-
-
-  // App = new CheeseController();
-
-  // App.signIn("ren","test",function(json){
-  //  console.log(json);
-  // });
-
-  // recipe_id = getUrlVars()["recipe_id"];
-
-  // App.getDetail(recipe_id,function(recipe){
-  //   console.log(recipe);
-  //   $('.r_name').text(recipe.name);
-  //   $('.foodTitle img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
-
-  // });
-
-  App.sendMade(recipe_id,function(toukou){
-    console.log(toukou);
-  });
-
-   $(".cookedBtn").click(function(){
-          var text = $(".doneComment").val();
-          alert(text);
-  });
-
-   $(".cookedBtn").click(function(){
-      var text = $(".doneComment").val();
-      alert(text);
-    });
-
-});
-
 $(function() {
   $('input[type=file]').after('<span></span>');
 

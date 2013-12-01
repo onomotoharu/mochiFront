@@ -1,3 +1,18 @@
+$(document).ready(function(){
+	$('#pagename').append("マイページ")
+
+	$('.myname').html("名前");
+
+	$('.followcount').append("30");
+	$('.followercount').append("25");
+
+	$('#myintro').append("鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者鶴川民のししゃも信者");
+});
+
+$(function(){
+  $('#nav_my img').attr("src", "../img/on/my_on.png");
+});
+
 $(function(){
 	$('#nav_my img').attr("src", "../img/on/my_on.png");
 

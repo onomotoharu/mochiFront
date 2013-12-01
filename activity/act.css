@@ -1,6 +1,7 @@
 #graph a:hover{
 	background-color:#fff;
 }
+
 /*---------------------------------
  ヘッダー
 ---------------------------------*/
@@ -148,7 +149,6 @@ table{
 ◆CSS
 /* ContentsArea
 -------------------------- */
-
 #share {
 	margin: 0 auto;
 	padding: 10px 0 50px 0;
@@ -234,7 +234,11 @@ table{
 	100% {opacity:1;}
 }
 div#modal div:target {
+<<<<<<< HEAD
 	-webkit-animation-name: modalFadeIn;
+=======
+	-webkit-animation-name: modalFadeIn; 
+>>>>>>> origin/profile_setup
   	-webkit-animation-duration: 0.3s;
   	-webkit-animation-iteration-count: 1;
 	opacity: 1;

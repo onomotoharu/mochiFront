@@ -17,5 +17,5 @@ function logOutEnter(){
 			console.log(logout);
 			location.href = '../login/signin.html';
 		});
-	}
-}
+	};
+};

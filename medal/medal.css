@@ -24,6 +24,11 @@
 	display: none;
 }
 
+
+#pagename img {
+	display: none;
+}
+
 #l_btn a{
 	display: none;
 }

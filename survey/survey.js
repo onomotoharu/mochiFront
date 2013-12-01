@@ -1,4 +1,3 @@
-
 var recipe_id;
 recipe_id = 0;
 
@@ -96,7 +95,3 @@ $(function(){
   });
   
 });
-
-
-
-

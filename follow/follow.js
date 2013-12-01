@@ -3,6 +3,7 @@ $(function(){
 				 .attr("href", "../search/index.html")
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 });
 
 =======
@@ -94,6 +95,8 @@ $(function(){
 /*
 $(function (){
 =======
+=======
+>>>>>>> origin/profile_setup
 });
 
 	
@@ -104,12 +107,16 @@ $(function (){
 $(function (){
 var data = $.ajax({url: "sample.json",async: false});
 eval("var data="+data.responseText)
+<<<<<<< HEAD
 >>>>>>> comment_iine
+=======
+>>>>>>> origin/profile_setup
  　$.ajax({
   type:'GET',
   url:'sample.json',
   dataType:'json',
   success: function(data){
+<<<<<<< HEAD
 <<<<<<< HEAD
   for(var i in data){
 	   console.log(data[1].username);
@@ -124,6 +131,8 @@ eval("var data="+data.responseText)
 	  $(".follow_btn").append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
   }},
 =======
+=======
+>>>>>>> origin/profile_setup
   console.log(data[1].username);
    for(var i=0; i<2; i++){
 	  
@@ -137,13 +146,17 @@ eval("var data="+data.responseText)
 	  //フォローボタンを追加
 	  $(".follow_btn").append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
    }},
+<<<<<<< HEAD
 >>>>>>> comment_iine
+=======
+>>>>>>> origin/profile_setup
   error: function(jqXHR, textStatus, errorThrown){
       alert(textStatus+": "+errorThrown);
   },
   //beforeSend: authorizationHeader
 });
 });
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function jsonParser(data) {
@@ -153,6 +166,8 @@ function jsonParser(data) {
         return message;
     }
 */
+=======
+>>>>>>> origin/profile_setup
 /*
  $(function(){
 	 			//リストを追加
