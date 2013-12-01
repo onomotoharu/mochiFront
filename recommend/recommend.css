@@ -45,20 +45,11 @@
 #verticaly ul li,
 #verticaly ul li.landscape {
   width: 90px;
-=======
->>>>>>> origin/master-hirayama
   height: 90px;
 }
 
-<<<<<<< HEAD
 #verticaly ul li a {
   display: block;
->>>>>>> done
-=======
-#verticaly a{
-  width: 70px;
-  height: 70px;
->>>>>>> origin/master-hirayama
   border:solid 5px #f5c53a;
   margin:auto;
   text-align :left;
@@ -66,9 +57,6 @@
     border-radius:50%;
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   width: 70px;
   height:70px;
 >>>>>>> done
