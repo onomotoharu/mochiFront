@@ -30,12 +30,11 @@ $(function(){
 	    	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
 
 			$(".toggleImage").click(function(){
-				App.setFollow("screen_id",function(){ });
-		    	var  screen_id = data.followers[i].screen_id;
+				var screen_id = (data.following[i].screen_id);
+				App.setFollow("screen_id",function(){});
 		        console.log(screen_id);
 			});
 		});
 	});
 });
-
 	

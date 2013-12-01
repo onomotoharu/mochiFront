@@ -23,12 +23,11 @@ $(function(){
 	});
 
 	App.getOwnProfile(function(data){	
+	console.log(data);
 
-		console.log(data);
 		for(var i=0; i<data.following.length; i++){
 			//リストを追加
 			$(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div><a class="account"></a><div class="follow_btn"></div></div>');
-		}
 			
 			//アカウント名を追加
 		    $("a.account").each(function(i){
@@ -40,18 +39,30 @@ $(function(){
 	    	});
 		  	//フォローボタンを追加
 		   	$(".follow_btn").each(function(i){
-	        	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_off.png"></span></li></ul');
+	        	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_off.png" class="off"></span></li></ul>');
 				});
-
-	});
+	
 			$(".toggleImage").click(function(){
-				App.setFollow("screen_id",function(data){
-					$(".btn_login").click(function(){
-					var screen_id = data.followers[i].screen_id;
-					console.log(screen_id);
-				});
-				});
+				var img_url =$(".toggleImage img").attr("src");
+				var img_moji = "img/follow3_off.png";
+				if($(img_url == img_moji)){
+			console.log("onになるよ");
+			var id = (data.following[i]);
+			App.setFollow(screen_id,function(id){
+				console.log(id);
 			});
+		    
+		} else {
+			console.log("offだよ");
+			var screen_id = (data.followers[i]);
+			App.setUnfollow(screen_id,function(id){
+				console.log(screen_id);
+			});
+		}
+				});
+				}
+				});
+				
 });
 
 
