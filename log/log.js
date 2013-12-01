@@ -70,13 +70,10 @@ $(function() {
 
 		console.log(activity);
 
-
-		// 過去ログの数だけ表示
 		for(i=0;i<activity.activities.length;i++){
 
+			// 過去ログの数だけ表示
 			if(activity.activities[i].type_code == 100){
-
-				activity_id = activity.activities[i].id;
 
 			    // レシピID
 				recipe_id = activity.activities[i].recipe_id;
@@ -107,7 +104,18 @@ $(function() {
 		    	$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
 		    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
 		    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
-		    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
+		    	if(activity.activities[i].id == 5) {
+			    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
+			    	$(".iine_btn_on img").attr('src', './img/good_on.png');
+			    } else if(activity.activities[i].id = 1){
+			    	$iine_btn   = $('<div/>').addClass('iine_btn_on').append($iine_img.after($iine));
+			    	$(".iine_btn_on img").attr('src', './img/good_off.png');
+			    };
+		    	// if(activity.activities[i].liked == false) {
+			    // 	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
+			    // } else if(activity.activities[i].liked == true){
+			    // 	$iine_btn   = $('<div/>').addClass('iine_btn_on').append($iine_img.after($iine));
+			    // };
 
 		    	// コメントボタン生成
 		    	$com_count  =  $('<span/>').text(activity.activities[i].comments.length);
@@ -121,6 +129,7 @@ $(function() {
 		    	$p_open01   = $('<p/>').append($open01);
 		    	$share      = $('<div id="share"></div>').append($p_open01);
 
+		    	activity_id  = activity.activities[i].id;
 		    	$activity_id = $('<div/>').addClass('activity_id').text(activity_id);
 
 		    	// 親要素生成
@@ -141,6 +150,7 @@ $(function() {
 
 
 		});
+
 
 		// いいねボタンをクリックしたら
 		$('.iine_btn,.iine_btn_on').click(function() {
