@@ -20,8 +20,8 @@
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
                 <script language="javascript" src="../template.js"></script>
                 <script type="text/javascript" src="./log.js"></script>
-                <script type="text/javascript" src="../iine.js"></script>
                 <script type="text/javascript" src="./jquery.canvasChart.js"></script>
+                <script src="http://winvelab.net/cheese/jquery.base64.js"></script>
                 <!--[if IE]><script type="text/javascript" src="./excanvas.js"></script><![endif]-->
         </head>
 
@@ -52,36 +52,37 @@
                                 </ul>
                         </div>
                         <div class="tab_title">過去ログ</div>
-                        <div class="my_act">
+                        <div class="log">
+                            <!-- <div class="my_act">
                                 <div class="act_left">
-                                <div class="recipe_photo"><img /></div>
+                                    <div class="recipe_photo"><img /></div>
                                 </div>
                                 <div class="act_right">
-                                        <div class="date" ></div>
+                                        <div class="date"></div>
                                         <div class="title"><a href="#"></div>
-                                        <div class="my_comment">コメントこれで１０字コメントこれで１０字コメントこれで１０字コメントこれで１０字コメントこれで１０字コメントこれで１０字コメントこれで１０字</div>
+                                        <div class="my_comment"></div>
                                 </div>
                                 <div class="act_bottom">
-                                    <a href="../activity/comment.html"><div class="com_btn"><img src="./img/com_off.png"><span>コメント0</span></div></a>
+                                    <div class="com_btn"><img src="./img/com_off.png"><span>コメント0</span></div>
                                     <div class="iine_btn"><img src="./img/good_off.png"><span>イイネ！0</span></div>
                                     <div id="share">
                                            <p><a href="#open01"><img src="./img/…_off.png"></a></p>
                                     </div>
                                 </div>
+                            </div> -->
                         </div>
+                        <div id="share">
                         <div id="modal">
-                                
                         <div id="open01">
-<a href="#" class="close_overlay">×</a>
-<span class="modal_window">
-<a href=""><img src="./img/twitter_off.png"><h1>twitterで投稿する</h1></a>
-<a href=""><img src="./img/facebook_off.png"><h1>facebookで投稿する</h1></a>
-<a href=""><img src="./img/delete.png"><h1>つくった！投稿を削除する</h1></a>
-<a href="#"><p>【×】CLOSE</p></a>
-</span><!--/.modal_window-->
-</div><!--/#open01-->
-</div><!--/#modal-->
-</div><!--/#share-->
+                        <a href="#" class="close_overlay">×</a>
+                        <span class="modal_window">
+                        <a href=""><img src="./img/twitter_off.png"><h1>twitterで投稿する</h1></a>
+                        <a href=""><img src="./img/delete.png"><h1>つくった！投稿を削除する</h1></a>
+                        <a href="#"><p>【×】CLOSE</p></a>
+                        </span><!--/.modal_window-->
+                        </div><!--/#open01-->
+                        </div><!--/#modal-->
+                        </div><!--/#share-->
                 <script>footer();</script>
         </body>
 </html>
