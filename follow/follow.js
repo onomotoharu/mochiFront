@@ -11,7 +11,69 @@ var data=[
 {"username":"ando","userimg":"mob4"}
 ]
 */
+App = null;
 
+$(function(){
+	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png"))
+				 .attr("href", "../search/index.html")
+
+	App = new CheeseController();
+	// ## sample ##
+	App.signIn("ren","test",function(json){
+	// 	console.log(json);
+	});
+
+	App.getOwnProfile(function(data){	
+		console.log(data);
+
+		for(var i=0; i<data.following.length; i++){
+			//リストを追加
+			$pic_img = $("<img/>").attr("src", "img/"+data.following[i].photo+".png");
+			$pic_a = $("<a/>").attr("href", "").append($pic_img);
+			$pic_li = $("<li/>").append($pic_a);
+			$pic_ul = $("<ul/>").append($pic_li);
+			$pic = $("<div/>").addClass("follow_pic").append($pic_ul);
+
+			$account = $("<a/>").addClass("account").append(data.following[i].screen_id);
+
+			$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+			$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
+			$btn_li = $("<li/>").append($btn_span);
+			$btn_ul = $("<ul/>").append($btn_li);
+			$btn = $("<div/>").addClass("follow_btn").append($btn_ul);
+
+			$follow = $("<div/>").addClass("follow").append($pic).append($account).append($btn);
+
+			$(".allcontents").append($follow);
+
+			//クリックイベント
+			$(".toggleImage img").click(function(){
+				if($(this).hasClass("off")){
+					$(this).addClass("on").removeClass("off");
+					$(".toggleImage img").attr("src", "./img/follow3_on.png");
+					alert("onになるよ");
+					var index = $(".toggleImage img").index(this);
+					console.log(index);　
+					screen_id = data.following[index].screen_id;
+					App.setFollow(screen_id,function(id){
+						console.log(id);　
+					});
+					$(this).addClass("on").removeClass("off");
+		    	} else if ($(this).hasClass("on")){
+		    		$(this).addClass("off").removeClass("on");
+		    		$(".toggleImage img").attr("src", "./img/follow3_off.png");
+					alert("offだよ");
+					screen_id = data.following[i].screen_id;
+					App.setUnfollow(screen_id,function(id){
+						console.log(screen_id);
+					});
+				}
+			});
+		}
+	});
+});
+
+/*
 App = null;
 
 $(function(){
@@ -39,35 +101,30 @@ $(function(){
 	    	});
 		  	//フォローボタンを追加
 		   	$(".follow_btn").each(function(i){
-	        	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_off.png" class="off"></span></li></ul>');
+	        	$(this).append('<ul><li><span class="toggleImage"><img src="img/follow3_off.png"></span></li></ul>');
 				});
-	
 			$(".toggleImage").click(function(){
-				var img_url =$(".toggleImage img").attr("src");
-				var img_moji = "img/follow3_off.png";
-				if($(img_url == img_moji)){
-			console.log("onになるよ");
-			var id = (data.following[i]);
-			App.setFollow(screen_id,function(id){
-				console.log(id);
+			//	var img_url =$(".toggleImage img").attr("src");
+			//	var img_off = "img/follow3_off.png"
+			//	var img_on = "img/follow3_on.png";
+			//	if($(img_url == img_off)){
+			var screen_id = (data.following[i]);
+			App.setFollow(screen_id,function(data){
+				console.log(data);
 			});
 		    
-		} else {
-			console.log("offだよ");
+		//} else if($(img_url == img_on)){
 			var screen_id = (data.followers[i]);
-			App.setUnfollow(screen_id,function(id){
-				console.log(screen_id);
+			App.setUnfollow(screen_id,function(data){
+				console.log(data);
 			});
-		}
+		//}
 				});
-				}
+	}
 				});
-				
 });
 
-
-
-
+*/
 
 //$(".followcount").append("ああああ");
 
