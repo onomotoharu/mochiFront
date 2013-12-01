@@ -12,6 +12,8 @@ var data=[
 ]
 */
 
+App = null;
+
 $(function(){
 
 	App = new CheeseController();
@@ -42,12 +44,12 @@ $(function(){
 				});
 
 	});
-	
-	App.setFollow("screen_id",function(data){
 			$(".toggleImage").click(function(){
-			    	var button = $(this);
-					button.attr("disabled", true);
-					console.log(button);
+				App.setFollow("screen_id",function(data){
+					$(".btn_login").click(function(){
+					var screen_id = data.followers[i].screen_id;
+					console.log(screen_id);
+				});
 				});
 			});
 });
