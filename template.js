@@ -18,24 +18,24 @@ function getUrlVars()
 
 //template
 function header() {
-	document.write ('<nav id="header" name="nav">\n');      
-	document.write ('<ul>\n');       
-	document.write ('<li id="l_btn"><a href=""><img src="../img/back.png"></a></li>\n');    
-	document.write ('<li id="pagename"><img src="../img/h_logo.png" height="20" width="69"></li>\n');   
+	document.write ('<nav id="header" name="nav">\n');
+	document.write ('<ul>\n');
+	document.write ('<li id="l_btn"><a href=""><img src="../img/back.png"></a></li>\n');
+	document.write ('<li id="pagename"><img src="../img/h_logo.png" height="20" width="69"></li>\n');
 	document.write ('<li id="r_btn"><a href=""></a></li>\n');
 	document.write ('</ul>\n');
-	document.write ('</nav>\n');  
+	document.write ('</nav>\n');
 }
 
 function footer() {
-	document.write ('<nav id="footer" name="nav">\n');      
-	document.write ('<ul>\n');       
-	document.write ('<li id="nav_reco"><a href="../recommend/index.html"><img src="../img/off/reco_off.png"></a></li>\n');    
-	document.write ('<li id="nav_act"><a href="../activity/index.html"><img src="../img/off/act_off.png"></a></li>\n');   
-	document.write ('<li id="nav_my"><a href="../log/index.html"><img src="../img/off/my_off.png"></a></li>\n'); 
-	document.write ('<li id="nav_set"><a href="../setup/index.html"><img src="../img/off/set_off.png"></a></li>\n'); 
+	document.write ('<nav id="footer" name="nav">\n');
+	document.write ('<ul>\n');
+	document.write ('<li id="nav_reco"><a href="../recommend/index.html"><img src="../img/off/reco_off.png"></a></li>\n');
+	document.write ('<li id="nav_act"><a href="../activity/index.html"><img src="../img/off/act_off.png"></a></li>\n');
+	document.write ('<li id="nav_my"><a href="../log/index.html"><img src="../img/off/my_off.png"></a></li>\n');
+	document.write ('<li id="nav_set"><a href="../setup/index.html"><img src="../img/off/set_off.png"></a></li>\n');
 	document.write ('</ul>\n');
-	document.write ('</nav>\n');     
+	document.write ('</nav>\n');
 }
 
 
@@ -67,7 +67,7 @@ CheeseController.prototype._throwRequest = function(url,data,type){
 	}).responseText;
 }
 
- 
+
 /*=====================
 	Auth
 ======================*/
@@ -78,7 +78,7 @@ CheeseController.prototype.signIn = function(screen_id,password,callback){
 	type = "post";
 	var response = $.parseJSON(this._throwRequest(url,data,type));
 	localStorage.screen_id = screen_id;
-	localStorage.api_token = response.api_token;	
+	localStorage.api_token = response.api_token;
 	localStorage.api_token_secret = response.api_token_secret;
 	this.isLoggedIn = true;
 	if(callback!=null){callback(response);}
@@ -114,7 +114,7 @@ CheeseController.prototype.checkAuth = function(){
 
 CheeseController.prototype.createUser = function(screen_id,password,callback){
 	url = "/users/create";
-	data = {"user": {"screen_id": screen_id, "password": password, "password_confirmation": password}}	
+	data = {"user": {"screen_id": screen_id, "password": password, "password_confirmation": password}}
 	type = "post";
 <<<<<<< HEAD
 	response = this._throwRequest(url,data,type);

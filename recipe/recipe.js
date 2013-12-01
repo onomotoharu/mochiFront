@@ -64,9 +64,15 @@ jQuery(function($) {
     $('#re_photo img').attr({'src':"http://winvelab.net/cheese/img/" + recipe.default_picture_name});
     $('#time').text(recipe.necessary_time + "分");
     $('#money').text(recipe.required_money + "円");
+<<<<<<< HEAD
     $('.aaa').text(recipe.foods[0].screen_name);
     $fav = $('<div id="fav"><img src="./img/reci_btn_fav.png"></div>');
     $('.recipename').after($fav).addClass('fav_false');
+=======
+
+
+
+>>>>>>> origin/recipe-and-done
 
     for(var i=0; i< recipe.steps.length; i++){
       $pro_text = $("<div/>").addClass("pro_text").append(recipe.steps[i]);
