@@ -66,6 +66,7 @@ $(function() {
 		$('#myphoto img').attr("src",myprofile.icon_name);
 		$('#myintro').append(myprofile.bio);
 	});
+
 	App.getOwnActivities(function(activity){
 
 		console.log(activity);
