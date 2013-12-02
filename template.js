@@ -165,6 +165,17 @@ CheeseController.prototype.getRecommend = function(callback){
 };
 
 
+
+CheeseController.prototype.updateRecommend = function(callback){
+	url = "/recommend/today/update";
+	data = null;
+	type = "post";
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	if(callback!=null){callback(response);}
+};
+
+
+
 /*=====================
 	Activity
 ======================*/
@@ -179,18 +190,27 @@ CheeseController.prototype.getTimeline = function(callback){
 
 CheeseController.prototype.goodToActivity = function(activity_id,callback){
 	url = "/activities/" + activity_id + "/good";
-	data = {"activity_id": activity_id};
+	data = null;
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	response = 	this._throwRequest(url,data,type);
 	if(callback!=null){callback(response);}
 }
 
-// CheeseController.prototype.deleteActivity = function(activity_id,callback){
-// 	url = "/activities/" + activity_id + "/good";
-// 	type = "delete";
-// 	response = 	$.parseJSON(this._throwRequest(url,data,type));
-// 	if(callback!=null){callback(response);}
-// }
+CheeseController.prototype.sendCommentToActivity = function(activity_id,text,callback){
+	url = "/activities/" + activity_id + "/comment";
+	data = {"comment" : text};
+	type = "post";
+	response = 	this._throwRequest(url,data,type);
+	if(callback!=null){callback(response);}
+}
+
+CheeseController.prototype.deleteActivity = function(activity_id,callback){
+	url = "/activities/" + activity_id + "/delete";
+	data = null;
+	type = "post";
+	response = this._throwRequest(url,data,type);
+	if(callback!=null){callback(response);}
+}
 
 
 /*=====================
@@ -247,8 +267,8 @@ $(function(){
 
 	// App.deleteActivity(1,null)
 
-	// App.getRecommend(function(json){
-
-	// });
+	App.updateRecommend(function(json){
+		console.log(json);
+	});
 
 })
