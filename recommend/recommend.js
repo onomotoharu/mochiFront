@@ -14,7 +14,7 @@ $(document).ready(function(){
 
     App = new CheeseController();
 
-    App.signIn("nao","test",function(json){
+    App.signIn("ren","test",function(json){
         console.log(json);
     });
 
