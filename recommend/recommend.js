@@ -135,13 +135,28 @@ $(document).ready(function(){
             $(".leftbottom .last_food").addClass("last_food2");
             $(".rightbottom .last_food").addClass("last_food3");
 
+            $(".lefttop .friend").addClass("friend0");
+            $(".righttop .friend").addClass("friend1");
+            $(".leftbottom .friend").addClass("friend2");
+            $(".rightbottom .friend").addClass("friend3");
+
             for(var i=0;i<recommend.length;i++){
                 for(var j=0; j<recommend[i].options.length; j++){
-                    for(var k=0; k<recommend[i].options[j].option.length; k++){
-                        if(i==0){$('.last_food0').append(recommend[0].options[j].option[k]+" ");}
-                        else if(i==1){$('.last_food1').append(recommend[1].options[j].option[k]+" ");}
-                        else if(i==2){$('.last_food2').append(recommend[2].options[j].option[k]+" ");}
-                        else if(i==3){$('.last_food3').append(recommend[3].options[j].option[k]+" ");}
+                    if(j==0){
+                        for(var k=0; k<recommend[i].options[j].option.length; k++){
+                            if(i==0){$('.last_food0').append(recommend[i].options[j].option[k]+" ");}
+                            else if(i==1){$('.last_food1').append(recommend[i].options[j].option[k]+" ");}
+                            else if(i==2){$('.last_food2').append(recommend[i].options[j].option[k]+" ");}
+                            else if(i==3){$('.last_food3').append(recommend[i].options[j].option[k]+" ");}
+                        }
+                    }
+                    if(j==1){
+                        for(var k=0; k<recommend[i].options[j].option.length; k++){
+                            if(i==0){$('.friend0').append(recommend[i].options[j].option[k]+" ");}
+                            else if(i==1){$('.friend1').append(recommend[i].options[j].option[k]+" ");}
+                            else if(i==2){$('.friend2').append(recommend[i].options[j].option[k]+" ");}
+                            else if(i==3){$('.friend3').append(recommend[i].options[j].option[k]+" ");}
+                        }
                     }
                 }
             }
