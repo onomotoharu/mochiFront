@@ -141,22 +141,18 @@ $(document).ready(function(){
             $(".rightbottom .friend").addClass("friend3");
 
             for(var i=0;i<recommend.length;i++){
-                for(var j=0; j<recommend[i].options.length; j++){
-                    if(j==0){
-                        for(var k=0; k<recommend[i].options[j].option.length; k++){
-                            if(i==0){$('.last_food0').append(recommend[i].options[j].option[k]+" ");}
-                            else if(i==1){$('.last_food1').append(recommend[i].options[j].option[k]+" ");}
-                            else if(i==2){$('.last_food2').append(recommend[i].options[j].option[k]+" ");}
-                            else if(i==3){$('.last_food3').append(recommend[i].options[j].option[k]+" ");}
-                        }
+                if(recommend[i].options.length > 0){
+                    for(var j=0; j<recommend[i].options[0].option.length; j++){
+                        if(i==0){$('.last_food0').append(recommend[i].options[0].option[j]+" ");}
+                        else if(i==1){$('.last_food1').append(recommend[i].options[0].option[j]+" ");}
+                        else if(i==2){$('.last_food2').append(recommend[i].options[0].option[j]+" ");}
+                        else if(i==3){$('.last_food3').append(recommend[i].options[0].option[j]+" ");}
                     }
-                    if(j==1){
-                        for(var k=0; k<recommend[i].options[j].option.length; k++){
-                            if(i==0){$('.friend0').append(recommend[i].options[j].option[k]+" ");}
-                            else if(i==1){$('.friend1').append(recommend[i].options[j].option[k]+" ");}
-                            else if(i==2){$('.friend2').append(recommend[i].options[j].option[k]+" ");}
-                            else if(i==3){$('.friend3').append(recommend[i].options[j].option[k]+" ");}
-                        }
+                    for(var j=0; j<recommend[i].options[1].option.length; j++){
+                        if(i==0){$('.friend0').append(recommend[i].options[1].option[j]+" ");}
+                        else if(i==1){$('.friend1').append(recommend[i].options[1].option[j]+" ");}
+                        else if(i==2){$('.friend2').append(recommend[i].options[1].option[j]+" ");}
+                        else if(i==3){$('.friend3').append(recommend[i].options[1].option[j]+" ");}
                     }
                 }
             }
