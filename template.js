@@ -192,7 +192,7 @@ CheeseController.prototype.goodToActivity = function(activity_id,callback){
 	url = "/activities/" + activity_id + "/good";
 	data = null;
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	response = 	this._throwRequest(url,data,type);
 	if(callback!=null){callback(response);}
 }
 
