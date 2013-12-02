@@ -26,8 +26,15 @@ $(function(){
 			$pic = $("<div/>").addClass("follow_pic").append($pic_ul);
 
 			$account = $("<a/>").addClass("account").append(data.followers[i].screen_id);
-
+			$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+			for(var j=0; j<data.following.length; j++){
+			if(data.followers[i].screen_id == data.followers[j].screen_id){
+			$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+			}else{
 			$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+			}
+			}
+			
 			$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
 			$btn_li = $("<li/>").append($btn_span);
 			$btn_ul = $("<ul/>").append($btn_li);
@@ -59,11 +66,13 @@ $(function(){
 					console.log(screen_id);
 					App.setUnfollow(screen_id,function(id){
 						console.log(id);
+						$(this).addClass("off").removeClass("n");
 					});
 				}
 			});
 		}
 	});
+	
 });
 /*
 $(function(){

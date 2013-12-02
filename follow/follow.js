@@ -67,6 +67,7 @@ $(function(){
 					console.log(screen_id);
 					App.setUnfollow(screen_id,function(id){
 						console.log(id);
+						$(this).addClass("off").removeClass("on");
 					});
 				}
 			});
