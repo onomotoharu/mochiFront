@@ -148,11 +148,13 @@ $(document).ready(function(){
                         else if(i==2){$('.last_food2').append(recommend[i].options[0].option[j]+" ");}
                         else if(i==3){$('.last_food3').append(recommend[i].options[0].option[j]+" ");}
                     }
-                    for(var j=0; j<recommend[i].options[1].option.length; j++){
-                        if(i==0){$('.friend0').append(recommend[i].options[1].option[j]+" ");}
-                        else if(i==1){$('.friend1').append(recommend[i].options[1].option[j]+" ");}
-                        else if(i==2){$('.friend2').append(recommend[i].options[1].option[j]+" ");}
-                        else if(i==3){$('.friend3').append(recommend[i].options[1].option[j]+" ");}
+                    if(recommend[i].options.length > 1){
+                        for(var j=0; j<recommend[i].options[1].option.length; j++){
+                            if(i==0){$('.friend0').append(recommend[i].options[1].option[j]+" ");}
+                            else if(i==1){$('.friend1').append(recommend[i].options[1].option[j]+" ");}
+                            else if(i==2){$('.friend2').append(recommend[i].options[1].option[j]+" ");}
+                            else if(i==3){$('.friend3').append(recommend[i].options[1].option[j]+" ");}
+                        }
                     }
                 }
             }
