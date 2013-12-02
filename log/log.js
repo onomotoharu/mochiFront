@@ -95,7 +95,7 @@ $(function() {
 			    // コメント
 			    if(activity.activities[i].comment == "") {
 			    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
-			    	$('.my_comment').css({display: 'none'});
+			    	$my_comment = $('.my_comment').css({display: 'none'});
 			    } else {
 		    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
 		    	};
