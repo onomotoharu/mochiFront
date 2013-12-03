@@ -4,14 +4,6 @@ recipe_id = 0;
 $(function(){
   $('#r_btn a').append("次へ").attr("href", "../recommend/index.html");
 
-  // ページを開いたらデータを取得
-  App = new CheeseController();
-
-  // ## sample ##
-  App.signIn(localStorage.screen_id.value,"test",function(json){
-    console.log(json);
-  });
-
   App.getSample(function(survey){
     console.log(survey);
 
