@@ -27,13 +27,16 @@ $(function(){
 			
 			$account = $("<a/>").addClass("account").append(data.followers[i].screen_id);
 			
-			for(var j=0; j<data.following.length; j++){
-			if(data.followers[i].screen_id == data.followers[j].screen_id){
+			for(var j=0; j<=data.following.length; j++){
+			if(data.following.length == 0){
+			$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+			}else if(data.followers[i].screen_id == data.following[j].screen_id){
 			$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
 			}else{
 			$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
 			}
 			}
+
 			
 			$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
 			$btn_li = $("<li/>").append($btn_span);
@@ -46,22 +49,22 @@ $(function(){
 
 			//クリックイベント
 			$(".toggleImage img").click(function(){
-				if($(this).hasClass("off")){
-					$(this).addClass("on").removeClass("off");
+				if($(this).hasClass("on")){
+					$(this).addClass("off").removeClass("on");
 					$(".toggleImage img").attr("src", "./img/follow3_off.png");
-					alert("onになるよ");
+					alert("フォローするよ");
 					var index = $(".toggleImage img").index(this);　
 					screen_id = data.followers[index].screen_id;
 					console.log(screen_id);
 					App.setFollow(screen_id,function(id){
 						console.log(id);　
 					});
-		    	} else if ($(this).hasClass("on")){
-		    		$(this).addClass("off").removeClass("on");
+		    	} else if ($(this).hasClass("off")){
+		    		$(this).addClass("on").removeClass("off");
 		    		$(".toggleImage img").attr("src", "./img/follow3_on.png");
-					alert("offだよ");
-					var index = $(".toggleImage img").index(this);
-					screen_id = data.following[index].screen_id;
+					alert("フォロー解除だよ");
+					var unindex = $(".toggleImage img").index(this);
+					screen_id = data.following[unindex].screen_id;
 					console.log(screen_id);
 					App.setUnfollow(screen_id,function(id){
 						console.log(id);
