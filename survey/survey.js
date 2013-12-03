@@ -7,7 +7,8 @@ $(function(){
   // ページを開いたらデータを取得
   App = new CheeseController();
 
-  App.signIn("ren","test",function(json){
+  // ## sample ##
+  App.signIn(localStorage.screen_id.value,"test",function(json){
     console.log(json);
   });
 
