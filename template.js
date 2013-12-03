@@ -196,9 +196,9 @@ CheeseController.prototype.goodToActivity = function(activity_id,callback){
 	if(callback!=null){callback(response);}
 }
 
-CheeseController.prototype.sendCommentToActivity = function(activity_id,text,callback){
+CheeseController.prototype.sendCommentToActivity = function(activity_id,comment,callback){
 	url = "/activities/" + activity_id + "/comment";
-	data = {"comment" : text};
+	data = {"comment" : comment};
 	type = "post";
 	response = 	this._throwRequest(url,data,type);
 	if(callback!=null){callback(response);}
@@ -216,9 +216,9 @@ CheeseController.prototype.deleteActivity = function(activity_id,callback){
 	Recipe
 ======================*/
 
-CheeseController.prototype.sendMade = function(recipe_id,callback){
+CheeseController.prototype.sendMade = function(recipe_id,comment,callback){
 	url = "/recipes/" + recipe_id + "/made";
-	data = null;
+	data = {"comment" : comment};
 	type = "post";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	if(callback!=null){callback(response);}
@@ -258,14 +258,14 @@ $(function(){
 	App = new CheeseController();
 
 	// ## sample ##
-	App.signIn("ren","test",function(json){
-		console.log(json);
-	});
+	// App.signIn("ren","test",function(json){
+	// 	console.log(json);
+	// });
 
-	// App.deleteActivity(1,null)
+	// // App.deleteActivity(1,null)
 
-	App.updateRecommend(function(json){
-		console.log(json);
-	});
+	// App.updateRecommend(function(json){
+	// 	console.log(json);
+	// });
 
 })
