@@ -161,18 +161,25 @@ $(function() {
 						$(this).addClass("iine_btn_on").removeClass('iine_btn');
 						$(".iine_btn_on img").attr('src', './img/good_on.png');
 						iine_count++;
-						$(this).children('span.iine_count').text(iine_count);
-						activity_id = activity.activities[i].id;
+						console.log(iine_count);
 						App.goodToActivity(activity_id,function(){});
-						activity.activities[i].is_liked = true;
+						App.getOwnProfile(function(){
+							console.log(iine_count);
+							iine_count  = activity.activities[i].likes_count;
+							$(this).children('span.iine_count').text(iine_count);
+							console.log($(this));
+							activity_id = activity.activities[i].id;
+						});
 					} else if($(this).hasClass('iine_btn_on')) {
 						$(this).addClass("iine_btn").removeClass('iine_btn_on');
 						$(".iine_btn img").attr('src', './img/good_off.png');
 						iine_count--;
-						$(this).children('span.iine_count').text(iine_count);
-						activity_id = activity.activities[i].id;
 						App.goodToActivity(activity_id,function(){});
-						activity.activities[i].is_liked = false;
+						App.getOwnProfile(function(){
+							iine_count  = activity.activities[i].likes_count;
+							$(this).children('span.iine_count').text(iine_count);
+							activity_id = activity.activities[i].id;
+						});
 					};
 				};
 			};
