@@ -114,11 +114,13 @@ jQuery(function($) {
     
     $(this).addClass("cookedBtn_on");
 
-    App.sendMade(recipe_id,function(toukou){
-      console.log(toukou);
+    text = $(".doneComment").val();
+
+    App.sendMade(recipe_id,text,function(toukou){
+      // console.log(toukou);
     });
 
-    var text = $(".doneComment").val();
+    // var text = $(".doneComment").val();
     // alert(text);
 
     // loading画像を表示
