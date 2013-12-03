@@ -268,7 +268,6 @@ $(function(){
 	// App.deleteActivity(1,null)
 
 	App.updateRecommend(function(json){
-		console.log(json);
 	});
 
 })

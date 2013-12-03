@@ -15,7 +15,6 @@ $(function(){
 	});
 
 	App.getOwnProfile(function(data){	
-		console.log(data);
 
 		for(var i=0; i<data.followers.length; i++){
 			//リストを追加
@@ -55,19 +54,15 @@ $(function(){
 					alert("フォローするよ");
 					var index = $(".toggleImage img").index(this);　
 					screen_id = data.followers[index].screen_id;
-					console.log(screen_id);
-					App.setFollow(screen_id,function(id){
-						console.log(id);　
+					App.setFollow(screen_id,function(id){　
 					});
 		    	} else if ($(this).hasClass("off")){
 		    		$(this).addClass("on").removeClass("off");
 		    		$(".toggleImage img").attr("src", "./img/follow3_on.png");
 					alert("フォロー解除だよ");
 					var unindex = $(".toggleImage img").index(this);
-					screen_id = data.following[unindex].screen_id;
-					console.log(screen_id);
+					screen_id = data.followers[unindex].screen_id;
 					App.setUnfollow(screen_id,function(id){
-						console.log(id);
 					});
 				}
 			});
