@@ -7,9 +7,6 @@ $(function(){
 
   App = new CheeseController();
 
-  App.signIn("ren","test",function(json){
-    // console.log(json);
-  });
 
   App.getTimeline(function(timeline){
 
@@ -75,7 +72,7 @@ $(function(){
       });
 
       // $(".send a").attr("href", "javascript:history.back();");
-      
+
     });
 
   });

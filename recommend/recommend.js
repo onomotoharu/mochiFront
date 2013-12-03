@@ -14,9 +14,6 @@ $(document).ready(function(){
 
     App = new CheeseController();
 
-    App.signIn("ren","test",function(json){
-        console.log(json);
-    });
 
     //中央　過去ログ
     App.getOwnActivities(function(kakolog){
@@ -36,7 +33,7 @@ $(document).ready(function(){
             $('.lefttop .re_link').attr("class", recommend[0].recommend_type+"_s");
             $('.lefttop .axis').attr("class", recommend[0].recommend_type);
             $('.lefttop a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[0].recipe.default_picture_name+"')").attr("href", "../recipe/index.html?recipe_id="+recommend[0].recipe.id);
-         
+
             //右上
             $('.righttop .recipename').text(recommend[1].recipe.name);
             $('.righttop .re_link').attr("class", recommend[1].recommend_type+"_s");
@@ -54,7 +51,7 @@ $(document).ready(function(){
             $('.rightbottom .re_link').attr("class", recommend[3].recommend_type+"_s");
             $('.rightbottom .axis').attr("class", recommend[3].recommend_type);
             $('.rightbottom a').attr("style", "background-image: url('http://winvelab.net/cheese/img/"+recommend[3].recipe.default_picture_name+"')").attr("href", "../recipe/index.html?recipe_id="+recommend[3].recipe.id);
- 
+
             for(var i=0;i<recommend.length;i++){
                 $(".required_money").addClass("money"+recommend[i].recipe.required_money);
                 $(".necessary_time").addClass("time"+recommend[i].recipe.necessary_time);
@@ -101,7 +98,7 @@ $(document).ready(function(){
                     }
                 }
             }
- 
+
             $(".lefttop .methods").addClass("methods0");
             $(".righttop .methods").addClass("methods1");
             $(".leftbottom .methods").addClass("methods2");
@@ -156,10 +153,10 @@ $(document).ready(function(){
                 }
             }
 
-    });    
-    
+    });
 
-    
+
+
 
 
 //======================================↑中す
@@ -171,10 +168,10 @@ $(document).ready(function(){
 
     $('.recipename').each(function() {
         var $target = $(this);
- 
+
         // オリジナルの文章を取得する
         var html = $target.html();
- 
+
         // 対象の要素を、高さにautoを指定し非表示で複製する
         var $clone = $target.clone();
         $clone
@@ -185,16 +182,16 @@ $(document).ready(function(){
             })
             .width($target.width())
             .height('auto');
- 
+
         // DOMを一旦追加
         $target.after($clone);
- 
+
         // 指定した高さになるまで、1文字ずつ消去していく
         while((html.length > 0) && ($clone.height() > $target.height())) {
             html = html.substr(0, html.length - 1);
             $clone.html(html + '...');
         }
- 
+
         // 文章を入れ替えて、複製した要素を削除する
         $target.html($clone.html());
         $clone.remove();

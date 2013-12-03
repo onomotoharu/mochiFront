@@ -49,14 +49,10 @@ $(function() {
 			$('#badge a img').attr('src', $('#badge a img').attr('src').replace('_on', '_off'));
 		}
 	});
-	
+
 	// CheeseController
 
 	App = new CheeseController();
-
-	App.signIn("ren","test",function(json){
-		// console.log(json);
-	});
 
 	App.getOwnProfile(function(myprofile){
 		// プロフィール部分DOM操作

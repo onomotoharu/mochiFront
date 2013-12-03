@@ -1,7 +1,4 @@
 $(function(){
-	App.signIn("screen_id","screen_ps",function(signin){
-		console.log(signin);
-    });
 });
 
 

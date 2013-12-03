@@ -24,19 +24,14 @@ App = null;
 $(function(){
 
 	App = new CheeseController();
-	// ## sample ##
-	App.signIn("ren","test",function(json){
-	// 	console.log(json);
-	});
-
-	App.getOwnProfile(function(data){	
+	App.getOwnProfile(function(data){
 
 		console.log(data);
 		for(var i=0; i<data.following.length; i++){
 			//リストを追加
 			$(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div><a class="account"></a><div class="follow_btn"></div></div>');
 		}
-			
+
 			//アカウント名を追加
 		    $("a.account").each(function(i){
 		        $(this).append(data.following[i].screen_id);
@@ -99,7 +94,7 @@ $(function (){
 >>>>>>> origin/profile_setup
 });
 
-	
+
 
 
 
@@ -122,11 +117,11 @@ eval("var data="+data.responseText)
 	   console.log(data[1].username);
 	  //リストを追加
 	  $(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div>                                                 <a class="account"></a><div class="follow_btn"></div></div>');
-	   //アカウント名を追加 
+	   //アカウント名を追加
 	  $("a.account").append(data[i].username);
 	  //ユーザーの画像を挿入
 	   $(".follow_pic ul li a").append('<img src="img/'+data[i].userimg+'.png">');
-	   
+
 	  //フォローボタンを追加
 	  $(".follow_btn").append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
   }},
@@ -135,14 +130,14 @@ eval("var data="+data.responseText)
 >>>>>>> origin/profile_setup
   console.log(data[1].username);
    for(var i=0; i<2; i++){
-	  
+
 	  //リストを追加
 	  $(".allcontents").append('<div class="follow"><div class="follow_pic"><ul><li><a href=""></a></li></ul></div>                                                 <a class="account"></a><div class="follow_btn"></div></div>');
-	   //アカウント名を追加 
+	   //アカウント名を追加
 	  $("a.account").append(json[i].username);
 	  //ユーザーの画像を挿入
 	   $(".follow_pic ul li a").append('<img src="img/'+json[i].userimg+'.png">');
-	   
+
 	  //フォローボタンを追加
 	  $(".follow_btn").append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
    }},
@@ -174,10 +169,9 @@ function jsonParser(data) {
 	  			$(".allcontents").append('<div class="follow"><div class="follow_pic"></div>                                                 <a class="account"></a><div class="follow_btn"></div></div>');
                 //ユーザーの画像を挿入
            $(".follow_pic").append('<ul><li><a href=""><img src="img/mob1.png"></a></li></ul>');
-                //アカウント名を追加 
+                //アカウント名を追加
            $("a.account").append("ONOmotoharu");
                 //フォローボタンを追加
              $(".follow_btn").append('<ul><li><span class="toggleImage"><img src="img/follow3_on.png"></span></li></ul');
 
 });*/
-            

@@ -19,10 +19,6 @@ jQuery(function($) {
 
   App = new CheeseController();
 
-  App.signIn("ren","test",function(json){
-   console.log(json);
-  });
-
   App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
     $('.r_name').text(recipe.name);
@@ -40,7 +36,7 @@ jQuery(function($) {
         var self = $(this);
         if (self.val() === "") { self.val(placeHolder);}
     });
-    
+
     $(function(){
   	$('input[type=text],textarea').focus(function(){
   		$(this).addClass('focus');
@@ -111,7 +107,7 @@ jQuery(function($) {
   $(".cookedBtn img").hide();
 
   $('.cookedBtn').click(function(){
-    
+
     $(this).addClass("cookedBtn_on");
 
     text = $(".doneComment").val();
