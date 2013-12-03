@@ -127,7 +127,7 @@ CheeseController.prototype.getOwnBadges = function(callback){
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	if(callback!=null){callback(response);}
-}
+ß}
 
 CheeseController.prototype.getOwnActivities = function(callback){
 	url = "/users/"  + localStorage.screen_id + "/activities";
