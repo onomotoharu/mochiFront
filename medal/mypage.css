@@ -1,21 +1,3 @@
-@charset "UTF-8";
-/* CSS Document */
-
-
-#graph a:hover{
-	background-color:#fff;
-}
-/*-------------------------
-ヘッダー
--------------------------*/
-
-#l_btn a{
-	display: none;
-}
-
-#pagename img {
-	display: none;
-}
 /*-------------------------
  プロフィール（共通）
 -------------------------*/
@@ -81,14 +63,6 @@
 	height: 100%;
 }
 
-/*フォロー実装されたらONにしてね！*/
-/*.follow a:hover{
-	background: url("./img/follow_back_on.png")no-repeat;
-	display: block;
-	background-size:70px 30px;
-	width: 100%;
-	height: 100%;
-}*/
 
 .followcount,.followercount{
 	font-size: 8pt;
@@ -99,6 +73,8 @@
 	font-size: 9pt;
 	margin: 15pt 20px 10pt;
 }
+
+
 
 
 /*----------------------------
@@ -156,70 +132,20 @@
 }
 
 
-.tab_contents ul{
-	overflow:hidden;
+
+/*-----------------------------
+ タブ中身（グラフとか）
+-----------------------------*/
+
+.tab_title{
+	background: #E7E4E0;
+	color: #808080;
+	height: 25px;
+	padding-left: 10px;
+	padding-top: 15px;
 }
 
-.tab_contents ul li{
-	padding:5px 10px 4px 10px;
-	background:#fff;
-	width:100%;
-	height:60px;
-	border-bottom:#CCC solid 1px;
-}
-
-.tab_contents ul li .medalimg{
-	float:left;
-	width:60px;
-	height:60px;
-}
-
-.tab_contents ul li img{
-	float:left;
-	width:60px;
-	height:60px;
-}
-
-#tab_contents ul li #coment{
-	float:left;
-	width:80%;
-	height:60px;
-}
-
-.tab_contents ul li .medallog{
-	float:left;
-	padding-left:10px;
-	width:50%;
-	height:25px;
-}
-
-.tab_contents ul li .medallog p.a{
-	color:#ff6633;
+.tab_title p{
+	color: #808080;
 	font-size:15px;
-	font-weight:bold;
-}
-.tab_contents ul li .medallog p.b{
-	color:#61AD42;
-	font-size:15px;
-	font-weight:bold;
-}
-.tab_contents ul li .medallog p.c{
-	color:#3D85AD;
-	font-size:15px;
-	font-weight:bold;
-}
-
-.tab_contents ul li .medalintro{
-	float:left;
-	padding-left:10px;
-	width:75%;
-	color:#4D4D4D;
-	font-size:12px;
-}
-
-.tab_contents ul li .getdate{
-	float:right;
-	width:25%;
-	color:#4D4D4D;
-	font-size:11px;
 }
