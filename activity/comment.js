@@ -28,11 +28,11 @@ $(function(){
 
         // 既に投稿されたコメントを生成
         for(var j = 0;j < timeline[i].comments.length;j++) {
-          console.log(timeline[i]);
+          $user     = timeline[i].comments[j].screen_id;
+          $com_user = $('<span/>').addClass('user_id').append($user);
           $com      = timeline[i].comments[j].comment;
-          console.log($com);
           $com_txt  = $('<span/>').addClass('com_txt').text($com);
-          $come_com = $('<div/>').addClass('come_com').append($com_txt);
+          $come_com = $('<div/>').addClass('come_com').append($com_user.after($com_txt));
           $('.comment').append($come_com)
         };
 
@@ -42,8 +42,10 @@ $(function(){
 
         // ユーザデータ
         // $('.user_info .user_icon img').attr({'src':localStorage.pic});
-        $('#def_user,.user_info .user_id').text(timeline[i].screen_id);
-        $('#def_comment').text(timeline[i].comment);
+        if(timeline[i].comment !== "") {
+          $('#def_user,.user_info .user_id').text(timeline[i].screen_id);
+          $('#def_comment').text(timeline[i].comment);
+        };
       };
     };
 

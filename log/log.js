@@ -164,7 +164,7 @@ $(function() {
 						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
 						App.goodToActivity(activity_id,function(){});
-						activity.activities[i].is_liked = true;
+						location.reload();
 					} else if($(this).hasClass('iine_btn_on')) {
 						$(this).addClass("iine_btn").removeClass('iine_btn_on');
 						$(".iine_btn img").attr('src', './img/good_off.png');
@@ -172,7 +172,7 @@ $(function() {
 						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
 						App.goodToActivity(activity_id,function(){});
-						activity.activities[i].is_liked = false;
+						location.reload();
 					};
 				};
 			};
