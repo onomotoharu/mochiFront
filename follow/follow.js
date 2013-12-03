@@ -47,27 +47,25 @@ $(function(){
 
 			//クリックイベント
 			$(".toggleImage img").click(function(){
-				if($(this).hasClass("off")){
-					$(this).addClass("on").removeClass("off");
-					$(".toggleImage img").attr("src", "./img/follow3_on.png");
-					alert("onになるよ");
+				if($(this).hasClass("on")){
+					$(this).addClass("off").removeClass("on");
+					$(".toggleImage img").attr("src", "./img/follow3_off.png");
+					alert("フォローするよ");
 					var index = $(".toggleImage img").index(this);　
 					screen_id = data.followers[index].screen_id;
 					console.log(screen_id);
 					App.setFollow(screen_id,function(id){
 						console.log(id);　
 					});
-					$(this).addClass("on").removeClass("off");
-		    	} else if ($(this).hasClass("on")){
-		    		$(this).addClass("off").removeClass("on");
-		    		$(".toggleImage img").attr("src", "./img/follow3_off.png");
-					alert("offだよ");
-					var unindex = $(".toggleImage img").index(this);
-					screen_id = data.following[unindex].screen_id;
+		    	} else if ($(this).hasClass("off")){
+		    		$(this).addClass("on").removeClass("off");
+		    		$(".toggleImage img").attr("src", "./img/follow3_on.png");
+					alert("フォロー解除だよ");
+					var index = $(".toggleImage img").index(this);
+					screen_id = data.following[index].screen_id;
 					console.log(screen_id);
 					App.setUnfollow(screen_id,function(id){
 						console.log(id);
-						$(this).addClass("off").removeClass("on");
 					});
 				}
 			});

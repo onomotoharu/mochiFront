@@ -24,9 +24,9 @@ $(function(){
 			$pic_li = $("<li/>").append($pic_a);
 			$pic_ul = $("<ul/>").append($pic_li);
 			$pic = $("<div/>").addClass("follow_pic").append($pic_ul);
-
+			
 			$account = $("<a/>").addClass("account").append(data.followers[i].screen_id);
-			$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+			
 			for(var j=0; j<data.following.length; j++){
 			if(data.followers[i].screen_id == data.followers[j].screen_id){
 			$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
@@ -56,17 +56,15 @@ $(function(){
 					App.setFollow(screen_id,function(id){
 						console.log(id);　
 					});
-					$(this).addClass("on").removeClass("off");
 		    	} else if ($(this).hasClass("on")){
 		    		$(this).addClass("off").removeClass("on");
 		    		$(".toggleImage img").attr("src", "./img/follow3_on.png");
 					alert("offだよ");
-					var unindex = $(".toggleImage img").index(this);
-					screen_id = data.following[unindex].screen_id;
+					var index = $(".toggleImage img").index(this);
+					screen_id = data.following[index].screen_id;
 					console.log(screen_id);
 					App.setUnfollow(screen_id,function(id){
 						console.log(id);
-						$(this).addClass("off").removeClass("n");
 					});
 				}
 			});
