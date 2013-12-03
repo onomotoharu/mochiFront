@@ -161,27 +161,18 @@ $(function() {
 						$(this).addClass("iine_btn_on").removeClass('iine_btn');
 						$(".iine_btn_on img").attr('src', './img/good_on.png');
 						iine_count++;
-						console.log(iine_count);
+						$(this).children('span.iine_count').text(iine_count);
+						activity_id = activity.activities[i].id;
 						App.goodToActivity(activity_id,function(){});
-						App.getOwnProfile(function(){
-							iine_count  = activity.activities[i].likes_count;
-							console.log(iine_count);
-							$(this).children('span.iine_count').text(iine_count);
-							console.log($(this));
-							activity_id = activity.activities[i].id;
-						});
+						location.reload();
 					} else if($(this).hasClass('iine_btn_on')) {
 						$(this).addClass("iine_btn").removeClass('iine_btn_on');
 						$(".iine_btn img").attr('src', './img/good_off.png');
 						iine_count--;
-						console.log(iine_count);
+						$(this).children('span.iine_count').text(iine_count);
+						activity_id = activity.activities[i].id;
 						App.goodToActivity(activity_id,function(){});
-						App.getOwnProfile(function(){
-							iine_count  = activity.activities[i].likes_count;
-							console.log(iine_count);
-							$(this).children('span.iine_count').text(iine_count);
-							activity_id = activity.activities[i].id;
-						});
+						location.reload();
 					};
 				};
 			};
