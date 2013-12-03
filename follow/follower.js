@@ -26,7 +26,7 @@ $(function(){
 			
 			$account = $("<a/>").addClass("account").append(data.followers[i].screen_id);
 			
-			for(var j=0; j<=data.following.length; j++){
+			for(var j=0; j<= data.following.length; j++){
 			if(data.following.length == 0){
 			$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
 			}else if(data.followers[i].screen_id == data.following[j].screen_id){
