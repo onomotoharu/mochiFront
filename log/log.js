@@ -164,8 +164,8 @@ $(function() {
 						console.log(iine_count);
 						App.goodToActivity(activity_id,function(){});
 						App.getOwnProfile(function(){
-							console.log(iine_count);
 							iine_count  = activity.activities[i].likes_count;
+							console.log(iine_count);
 							$(this).children('span.iine_count').text(iine_count);
 							console.log($(this));
 							activity_id = activity.activities[i].id;
@@ -174,9 +174,11 @@ $(function() {
 						$(this).addClass("iine_btn").removeClass('iine_btn_on');
 						$(".iine_btn img").attr('src', './img/good_off.png');
 						iine_count--;
+						console.log(iine_count);
 						App.goodToActivity(activity_id,function(){});
 						App.getOwnProfile(function(){
 							iine_count  = activity.activities[i].likes_count;
+							console.log(iine_count);
 							$(this).children('span.iine_count').text(iine_count);
 							activity_id = activity.activities[i].id;
 						});
