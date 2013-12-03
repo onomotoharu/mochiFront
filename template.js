@@ -48,7 +48,6 @@ function footer() {
 
 function CheeseController(){
 	this.domain = "http://fmap.d.r3n.cc/api/v1";
-
 	this.isLoggedIn = false;
 }
 
@@ -104,7 +103,6 @@ CheeseController.prototype.checkAuth = function(){
 	User
 ======================*/
 
-
 CheeseController.prototype.createUser = function(screen_id,password,callback){
 	url = "/users/create";
 	data = {"user": {"screen_id": screen_id, "password": password, "password_confirmation": password}}	
@@ -149,9 +147,11 @@ CheeseController.prototype.setUnfollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/unfollow";
 	data = null;
 	type = "post";
-	response = 	this._throwRequest(url,data,type) 
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	if(callback!=null){callback(response);}
 }
+
+
 /*=====================
 	Recommned
 ======================*/
@@ -212,7 +212,6 @@ CheeseController.prototype.deleteActivity = function(activity_id,callback){
 	if(callback!=null){callback(response);}
 }
 
-
 /*=====================
 	Recipe
 ======================*/
@@ -253,8 +252,6 @@ CheeseController.prototype.getSample = function(callback){
 ||||||||||||||||||||||||||||||||||||||||||||||||||
 */
 
-
-
 App = null;
 
 $(function(){
@@ -267,13 +264,8 @@ $(function(){
 
 	// // App.deleteActivity(1,null)
 
-<<<<<<< HEAD
 	// App.updateRecommend(function(json){
 	// 	console.log(json);
 	// });
-=======
-	App.updateRecommend(function(json){
-	});
->>>>>>> karimaster
 
 })
