@@ -18,10 +18,15 @@ $(document).ready(function(){
     //中央　過去ログ
     App.getOwnActivities(function(kakolog){
         console.log(kakolog);
-        App.getDetail(kakolog.activities[0].recipe_id,function(kako_img){
-            console.log(kako_img);
-            $(".center_circle a").attr("style", "background-image: url('http://winvelab.net/cheese/img/"+kako_img.default_picture_name+"')");
-        });
+        
+        for(i=kakolog.activities.length-1; i>-1; i--){
+            if(kakolog.activities[i].type_code == 100){
+                App.getDetail(kakolog.activities[i].recipe_id,function(kako_img){
+                    console.log(kako_img);
+                    $(".center_circle a").attr("style", "background-image: url('http://winvelab.net/cheese/img/"+kako_img.default_picture_name+"')");
+                })
+            }
+        }
     });
 
     App.getRecommend(function(recommend){
@@ -200,5 +205,6 @@ $(document).ready(function(){
 
 // 更新ボタン
 $('#r_btn a').click(function(){
-    location.reload();
+    App.updateRecommend(function(json){
+    });
 });
