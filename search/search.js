@@ -26,12 +26,7 @@ $(function(){
 	
 });
 
-App = null;
-
 $(function(){
-
-	App = new CheeseController();
-
 	App.searchFriends(function(data){
 
 		for(var i=0; i<data.length; i++){
