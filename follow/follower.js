@@ -3,13 +3,7 @@ $(function(){
 	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png")).attr("href", "../search/index.html");
 });
 
-
-App = null;
-
 $(function(){
-
-	App = new CheeseController();
-
 	App.getOwnProfile(function(data){	
 
 		for(var i=0; i<data.followers.length; i++){

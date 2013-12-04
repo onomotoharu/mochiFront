@@ -52,8 +52,6 @@ $(function() {
 
 	// CheeseController
 
-	App = new CheeseController();
-
 	App.getOwnProfile(function(myprofile){
 		// プロフィール部分DOM操作
 	    $('.myname').html(myprofile.screen_id);
