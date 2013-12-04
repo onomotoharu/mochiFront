@@ -53,6 +53,7 @@ jQuery(function($) {
     else if(recipe.necessary_time == 4){time = "約30分";}
     else if(recipe.necessary_time == 5){time = "約1時間";}
     else if(recipe.necessary_time == 6){time = "1時間以上";}
+    else if(recipe.necessary_time == 0){time = "不明";}
     $('#time').text(time);
     if(recipe.required_money == 1){money = "100円以下";}
     else if(recipe.required_money == 2){money = "300円前後";}
@@ -62,6 +63,7 @@ jQuery(function($) {
     else if(recipe.required_money == 6){money = "3000円前後";}
     else if(recipe.required_money == 7){money = "5000円前後";}
     else if(recipe.required_money == 8){money = "10000円以上";}
+    else if(recipe.required_money == 0){money = "不明";}
     $('#money').text(money);
     $('.aaa').text(recipe.foods[0].screen_name);
     $fav = $('<div id="fav"><img src="./img/reci_btn_fav.png"></div>').addClass('fav_false');
