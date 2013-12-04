@@ -12,12 +12,7 @@ var data=[
 {"username":"ando","userimg":"mob4"}
 ]
 */
-App = null;
-
 $(function(){
-
-	App = new CheeseController();
-
 	App.getOwnProfile(function(data){	
 
 		for(var i=0; i<data.following.length; i++){

@@ -2,10 +2,6 @@ jQuery(function($) {
 
   $('#l_btn a').attr("href", "javascript:history.back();");
 
-  App = new CheeseController();
-
-
-
   recipe_id = getUrlVars()["recipe_id"];
 
   App.getDetail(recipe_id,function(json){

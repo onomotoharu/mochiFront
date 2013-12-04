@@ -6,7 +6,6 @@ $(document).ready(function(){
   App = null;
 
   $(function(){
-    App = new CheeseController();
 
   App.getOwnProfile(function(proData){
     console.log(proData);
