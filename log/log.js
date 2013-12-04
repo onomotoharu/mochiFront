@@ -82,7 +82,7 @@ $(function() {
 					$recipe_photo     = $('<div/>').addClass('recipe_photo').append($recipe_photo_img);
 					// レシピ名の追加
 					$recipe_title_a   = $('<a href="#"></a>').text(recipe.name).attr({'href':"../recipe/index.html?recipe_id=" + recipe_id});
-					$recipe_title     = $('<div/>').addClass('title').append($recipe_title_a);
+					$recipe_title     = $('<div/>').addClass('title').addClass('').append($recipe_title_a);
 				});
 
 				//日付
@@ -91,9 +91,9 @@ $(function() {
 
 			    // コメント
 			    if(activity.activities[i].comment == "undefined") {
-			    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
-			    	$my_comment = $('.my_comment').css({display: 'none'});
-			    } else if(activity.activities[i].comment != "") {
+			    	$recipe_title.removeClass('title').addClass('recipe_title2');
+			    	$my_comment = $('<div/>').addClass('my_comment').css({display: 'none'});
+			    } else if(activity.activities[i].comment != "undefined") {
 		    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
 		    	};
 
