@@ -2,7 +2,7 @@ var recipe_id;
 recipe_id = 0;
 
 $(function(){
-  $('#r_btn a').append("次へ").attr("href", "../recommend/index.html");
+  // $('#r_btn a').append("次へ").attr("href", "../recommend/index.html");
 
   App.getSample(function(survey){
     console.log(survey);
@@ -84,6 +84,7 @@ $(function(){
       App.sendMade(recipe_id, function(recipe){
         console.log(recipe);
       });
+      location.href = "../recommend/index.html";
     });
   });
   

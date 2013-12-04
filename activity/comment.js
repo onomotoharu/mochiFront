@@ -4,11 +4,6 @@ $(document).ready(function(){
 });
 
 $(function(){
-
-
-  App = new CheeseController();
-
-
   App.getTimeline(function(timeline){
 
     // 該当アクティビティを取得
