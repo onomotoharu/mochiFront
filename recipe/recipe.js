@@ -8,10 +8,6 @@ jQuery(function($) {
 
   recipe_id = getUrlVars()["recipe_id"];
 
-  App.getDetail(recipe_id,function(json){
-    console.log(json);
-  })
-
   // つくったボタン
 
   $('.cookedBtn').click(function(){
@@ -19,29 +15,6 @@ jQuery(function($) {
     location.href = "../done/index.html?recipe_id="+ recipe_id;
   })
 
-  // お気に入りボタン
-  App.getOwnProfile(function(myprofile) {
-
-    $("#re_fav").click(function(myprofile){
-
-      for(i=0;i<myprofile.favorite_recipes.length;i++) {
-        // もしお気に入りしてなかったら
-        if(frag_reFav == false && myprofile.favorite_recipes.id[i] != recipe_id){
-          // ONにする
-          frag_reFav = true;
-          $("#re_fav img").attr("src","img/reci_btn_fav_on.png");
-          // お気に入りに追加
-          App.sendFavorite(recipe_id,function(){});
-        }
-        else{
-          frag_reFav = false;
-          $("#re_fav img").attr("src","img/reci_btn_fav.png");
-        };
-      };
-
-    });
-
-  });
 
   App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
@@ -94,11 +67,11 @@ jQuery(function($) {
     // もしお気に入りしてなかったら
     for(i=0;i<myprofile.favorite_recipes.length;i++) {
       if(myprofile.favorite_recipes[i].id == recipe_id){
-        console.log("レシピある");
+        console.log("登録してる");
         $('#fav').removeClass('fav_false').addClass('fav_true');
         $("#fav img").attr("src","img/reci_btn_fav_on.png");
       } else {
-        console.log("レシピない");
+        console.log("登録してない");
         $('#fav').addClass('fav_false');
       };
     };
@@ -110,12 +83,12 @@ jQuery(function($) {
     if($('#fav').hasClass('fav_false')){
       // ONにする
       $("#fav img").attr("src","img/reci_btn_fav_on.png");
-      console.log("あ");
+      console.log("お気に入りしたよ");
       $(this).removeClass('fav_false').addClass('fav_true');
       // お気に入りに追加
       App.sendFavorite(recipe_id,function(){　});
     } else if($('#fav').hasClass('fav_true')) {
-      console.log("い");
+      console.log("お気に入りしてあるよ");
     };
 
   });
