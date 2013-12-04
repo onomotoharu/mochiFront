@@ -208,3 +208,8 @@ $('#r_btn a').click(function(){
     App.updateRecommend(function(json){
     });
 });
+
+$('.center_circle a').click(function(){
+    App.updateRecommend(function(json){
+    });
+})
