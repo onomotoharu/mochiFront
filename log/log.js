@@ -82,7 +82,7 @@ $(function() {
 					$recipe_photo     = $('<div/>').addClass('recipe_photo').append($recipe_photo_img);
 					// レシピ名の追加
 					$recipe_title_a   = $('<a href="#"></a>').text(recipe.name).attr({'href':"../recipe/index.html?recipe_id=" + recipe_id});
-					$recipe_title     = $('<div/>').addClass('title').addClass('').append($recipe_title_a);
+					$recipe_title     = $('<div/>').addClass('title').append($recipe_title_a);
 				});
 
 				//日付
