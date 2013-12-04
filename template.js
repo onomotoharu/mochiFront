@@ -185,7 +185,7 @@ CheeseController.prototype.getRecommend = function(callback){
 CheeseController.prototype.updateRecommend = function(callback){
 	url = "/recommend/today/update";
 	data = null;
-	type = "post";
+	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	if(callback!=null){callback(response);}
 };
