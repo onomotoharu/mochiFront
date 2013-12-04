@@ -5,10 +5,11 @@ $(function(){
 
 $(function(){
 	App.getOwnProfile(function(data){	
+	console.log(data); 
 
 		for(var i=0; i<data.followers.length; i++){
 			//リストを追加
-			$pic_img = $("<img/>").attr("src", "img/"+data.followers[i].photo+".png");
+			$pic_img = $("<img/>").attr("src", "img/"+data.followers[i].icon_name+".png");
 			$pic_a = $("<a/>").attr("href", "").append($pic_img);
 			$pic_li = $("<li/>").append($pic_a);
 			$pic_ul = $("<ul/>").append($pic_li);
@@ -16,21 +17,22 @@ $(function(){
 			
 			$account = $("<a/>").addClass("account").append(data.followers[i].screen_id);
 			
-			if(data[i].is_followed){
-				$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
-				}else{
-					$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
-				}
 			
+			if(data.followers[i].is_followed){
+				$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+			}else{
+				$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+			}
 			/*
 			if(data.following.length == 0){
 				$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
-					}else if(data.followers[i].screen_id == data.following[i].screen_id){
+					}else if(data[i].is_followed){
 						$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
 					}else{
 						$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
 			}
 			*/
+			
 
 			
 			$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
