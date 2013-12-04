@@ -39,16 +39,14 @@ $(function(){
 			$(".toggleImage img").click(function(){
 				if($(this).hasClass("on")){
 					$(this).addClass("off").removeClass("on");
-					$(".toggleImage img").attr("src", "./img/follow3_off.png");
-					alert("フォローするよ");
+					$(this).attr("src", "./img/follow3_off.png");
 					var index = $(".toggleImage img").index(this);　
 					screen_id = data.following[index].screen_id;
 					App.setFollow(screen_id,function(id){
 					});
 		    	} else if ($(this).hasClass("off")){
 		    		$(this).addClass("on").removeClass("off");
-		    		$(".toggleImage img").attr("src", "./img/follow3_on.png");
-					alert("フォロー解除だよ");
+		    		$(this).attr("src", "./img/follow3_on.png");
 					var index = $(".toggleImage img").index(this);
 					screen_id = data.following[index].screen_id;
 					App.setUnfollow(screen_id,function(id){
