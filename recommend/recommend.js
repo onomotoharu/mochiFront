@@ -18,8 +18,7 @@ $(document).ready(function(){
     //中央　過去ログ
     App.getOwnActivities(function(kakolog){
         console.log(kakolog);
-        var max = kakolog.activities.length - 1;
-        App.getDetail(kakolog.activities[max].recipe_id,function(kako_img){
+        App.getDetail(kakolog.activities[0].recipe_id,function(kako_img){
             console.log(kako_img);
             $(".center_circle a").attr("style", "background-image: url('http://winvelab.net/cheese/img/"+kako_img.default_picture_name+"')");
         });
