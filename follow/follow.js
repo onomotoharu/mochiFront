@@ -17,10 +17,6 @@ App = null;
 $(function(){
 
 	App = new CheeseController();
-	// ## sample ##
-	App.signIn("ren","test",function(json){
-	// 	console.log(json);
-	});
 
 	App.getOwnProfile(function(data){	
 
