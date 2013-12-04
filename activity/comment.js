@@ -5,6 +5,7 @@ $(document).ready(function(){
 
 $(function(){
 
+
   App = new CheeseController();
 
 
@@ -33,6 +34,23 @@ $(function(){
           $('.comment').append($come_com)
         };
 
+        // いいねボタン生成
+        if(timeline[i].is_liked == false) {
+          $iine_count = $('<span>').text(timeline[i].likes_count).addClass('iine_count');
+          $iine       = $('<span/>').text("イイネ！").after($iine_count);
+          $iine_img   = $('<img/>').attr('src','./img/good_off.png');
+          $iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
+          $activity_id = $('<div/>').addClass('activity_id').text(activity_id);
+          $('.com_formsend').after($iine_btn.after($activity_id));
+        } else if(timeline[i].is_liked == true){
+          $iine_count = $('<span>').text(timeline[i].likes_count).addClass('iine_count');
+          $iine       = $('<span/>').text("イイネ！").after($iine_count);
+          $iine_img   = $('<img/>').attr('src','./img/good_on.png');
+          $iine_btn   = $('<div/>').addClass('iine_btn_on').append($iine_img.after($iine));
+          $activity_id = $('<div/>').addClass('activity_id').text(activity_id);
+          $('.com_formsend').after($iine_btn.after($activity_id));
+        };
+
         // つくった日
         var date = timeline[i].created_at;
         $('.right .date').text(date.split("T")[0]);
@@ -54,6 +72,37 @@ $(function(){
       });
     });
 
+    // いいねボタンをクリックしたら
+    $('.iine_btn,.iine_btn_on').click(function() {
+
+      activity_id = $(this).next('.activity_id').text();
+      for(var j = 0;j<timeline.length;j++) {
+        if(timeline[j].activity_id == activity_id){
+          iine_count  = timeline[j].likes_count;
+
+          // イイネ数を+1して_onデザインにする
+          if($(this).hasClass('iine_btn')){
+            $(this).addClass("iine_btn_on").removeClass('iine_btn');
+            $(".iine_btn_on img").attr('src', './img/good_on.png');
+            iine_count++;
+            App.goodToActivity(activity_id,function(){});
+            $(this).children('span.iine_count').text(iine_count);
+            $(this).prev('.activity_id').text(activity_id);
+            location.reload();
+          } else if($(this).hasClass('iine_btn_on')) {
+            $(this).addClass("iine_btn").removeClass('iine_btn_on');
+            $(".iine_btn img").attr('src', './img/good_off.png');
+            iine_count--;
+            App.goodToActivity(activity_id,function(){});
+            $(this).children('span.iine_count').text(iine_count);
+            $(this).prev('.activity_id').text(activity_id);
+            location.reload();
+          };
+        };
+      };
+
+    });
+
     // 送信ボタンをクリックしたら
     $(".send").click(function() {
 
@@ -71,7 +120,7 @@ $(function(){
 
       });
 
-      // $(".send a").attr("href", "javascript:history.back();");
+      $(".send a").attr("href", "javascript:history.back();");
 
     });
 
