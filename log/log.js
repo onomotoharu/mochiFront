@@ -90,7 +90,7 @@ $(function() {
 				$date = $('<div/>').addClass('date').text($created_at);
 
 			    // コメント
-			    if(activity.activities[i].comment == "") {
+			    if(activity.activities[i].comment == "undefined") {
 			    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
 			    	$my_comment = $('.my_comment').css({display: 'none'});
 			    } else if(activity.activities[i].comment != "") {

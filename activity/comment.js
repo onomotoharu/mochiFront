@@ -13,6 +13,7 @@ $(function(){
 
     // 該当アクティビティを取得
     for(var i = 0;i<timeline.length;i++) {
+      console.log(timeline[i]);
       var activity_id = getUrlVars()["activity_id"];
       if(timeline[i].activity_id == activity_id){
 
