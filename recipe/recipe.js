@@ -1,12 +1,10 @@
 jQuery(function($) {
-  
+
   $('#l_btn a').attr("href", "javascript:history.back();");
 
   App = new CheeseController();
 
-  App.signIn("ren","test",function(json){
-    // console.log(json);
-  });
+
 
   recipe_id = getUrlVars()["recipe_id"];
 

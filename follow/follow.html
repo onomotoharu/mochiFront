@@ -25,11 +25,11 @@
                
                 
                 <script type="text/javascript">
-                window.onload = function(){
+                /*window.onload = function(){
                         img1 = 'img/follow3_off.png', img2 = 'img/follow3_on.png';
                         var i, e = document.getElementsByTagName('span');
                         for (i=0; i<e.length; i++) if (e[i].className=='toggleImage') e[i].onclick = setImage();
-                }
+                }*/
                 function setImage() {
                         var flg = false;
                         return function() {
@@ -46,21 +46,23 @@
         </head>
 
         <body>
-                <script>header();</script>
-                	<div class="allcontents">
-
-						
-                                        <!--
-                                         <div class="follow">
-                                                        <div class="follow_pic"><ul><li><a href=""><img src="img/mob2.png"></a></li></ul></div>
-                                                        <a>ONOmotoharu</a>
-                            <div class="follow_btn"><ul><li>
-                                                        <span class="toggleImage">
-<img src="img/follow3_on.png" alt="">
-</span></li></ul></div>
-                                                </div>-->
+        <script>header();</script>
+            <div class="allcontents">
+            <!--<div class="follow">
+                <div class="follow_pic">
+                    <ul>
+                        <li><a href=""><img src=""></a></li>
+                    </ul>
+                </div>
+                <a class="account"></a>
+                <div class="follow_btn">
+                    <ul>
+                        <li><span class="toggleImage"><img src="img/follow3_on.png" class="off"></span></li>
+                    </ul>
+                </div>
+            </div>-->
                                         
-                	</div>
-                <script>footer();</script>
+            </div>
+        <script>footer();</script>
         </body>
 </html>

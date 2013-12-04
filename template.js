@@ -62,7 +62,12 @@ CheeseController.prototype._throwRequest = function(url,data,type){
 		data: data,
 		url: this.domain + url,
 		beforeSend: this._authorizationHeader,
-		async:false
+		async:false,
+		statusCode: {
+    403: function(xhr) {
+      alert("認証エラーです");
+      location.href = "../login/signin.html" ;
+    }}
 	}).responseText;
 }
 
@@ -75,7 +80,9 @@ CheeseController.prototype.signIn = function(screen_id,password,callback){
 	url = "/sign_in";
 	data = {"user": {"screen_id": screen_id, "password": password}};
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	responseRaw = this._throwRequest(url,data,type)
+	console.log(responseRaw);
+	response = 	$.parseJSON(responseRaw);
 	localStorage.screen_id = screen_id;
 	localStorage.api_token = response.api_token;	
 	localStorage.api_token_secret = response.api_token_secret;
@@ -147,7 +154,7 @@ CheeseController.prototype.setUnfollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/unfollow";
 	data = null;
 	type = "post";
-	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	response = 	this._throwRequest(url,data,type);
 	if(callback!=null){callback(response);}
 }
 

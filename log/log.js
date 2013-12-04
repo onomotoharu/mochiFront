@@ -49,14 +49,10 @@ $(function() {
 			$('#badge a img').attr('src', $('#badge a img').attr('src').replace('_on', '_off'));
 		}
 	});
-	
+
 	// CheeseController
 
 	App = new CheeseController();
-
-	App.signIn("ren","test",function(json){
-		// console.log(json);
-	});
 
 	App.getOwnProfile(function(myprofile){
 		// プロフィール部分DOM操作
@@ -66,6 +62,7 @@ $(function() {
 		$('#myphoto img').attr("src",myprofile.icon_name);
 		$('#myintro').append(myprofile.bio);
 	});
+
 	App.getOwnActivities(function(activity){
 
 		console.log(activity);
@@ -96,7 +93,7 @@ $(function() {
 			    if(activity.activities[i].comment == "") {
 			    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
 			    	$my_comment = $('.my_comment').css({display: 'none'});
-			    } else {
+			    } else if(activity.activities[i].comment != "") {
 		    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
 		    	};
 
@@ -132,7 +129,7 @@ $(function() {
 				$act_left   = $('<div/>').addClass('act_left').append($recipe_photo);
 				$act_right  = $('<div/>').addClass('act_right').append($date.after($recipe_title).after($my_comment));
 				$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn));
-				$('.log').prepend($act_left.after($act_right).after($act_bottom));
+				$('.log').append($act_left.after($act_right).after($act_bottom));
 			};
 
 		};
@@ -163,7 +160,7 @@ $(function() {
 						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
 						App.goodToActivity(activity_id,function(){});
-						activity.activities[i].is_liked = true;
+						location.reload();
 					} else if($(this).hasClass('iine_btn_on')) {
 						$(this).addClass("iine_btn").removeClass('iine_btn_on');
 						$(".iine_btn img").attr('src', './img/good_off.png');
@@ -171,7 +168,7 @@ $(function() {
 						$(this).children('span.iine_count').text(iine_count);
 						activity_id = activity.activities[i].id;
 						App.goodToActivity(activity_id,function(){});
-						activity.activities[i].is_liked = false;
+						location.reload();
 					};
 				};
 			};

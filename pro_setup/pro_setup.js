@@ -8,10 +8,6 @@ $(document).ready(function(){
   $(function(){
     App = new CheeseController();
 
-    App.signIn("ren","test",function(json){
-    console.log(json);
-  });
-
   App.getOwnProfile(function(proData){
     console.log(proData);
     $('#comment').val(proData.bio);

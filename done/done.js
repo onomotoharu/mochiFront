@@ -19,10 +19,6 @@ jQuery(function($) {
 
   App = new CheeseController();
 
-  App.signIn("ren","test",function(json){
-   console.log(json);
-  });
-
   App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
     $('.r_name').text(recipe.name);
@@ -40,7 +36,7 @@ jQuery(function($) {
         var self = $(this);
         if (self.val() === "") { self.val(placeHolder);}
     });
-    
+
     $(function(){
   	$('input[type=text],textarea').focus(function(){
   		$(this).addClass('focus');
@@ -111,14 +107,16 @@ jQuery(function($) {
   $(".cookedBtn img").hide();
 
   $('.cookedBtn').click(function(){
-    
+
     $(this).addClass("cookedBtn_on");
 
-    App.sendMade(recipe_id,function(toukou){
-      console.log(toukou);
+    text = $(".doneComment").val();
+
+    App.sendMade(recipe_id,text,function(toukou){
+      // console.log(toukou);
     });
 
-    var text = $(".doneComment").val();
+    // var text = $(".doneComment").val();
     // alert(text);
 
     // loading画像を表示

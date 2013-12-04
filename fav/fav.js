@@ -7,9 +7,6 @@ $(function(){
 	// レシピデータ
 	App = new CheeseController();
 
-	App.signIn("ren","test",function(json){
-		// console.log(json);
-	});
 
 	App.getOwnProfile(function(myprofile){
         console.log(myprofile);
