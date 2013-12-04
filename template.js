@@ -66,7 +66,7 @@ CheeseController.prototype._throwRequest = function(url,data,type){
 		statusCode: {
     403: function(xhr) {
       alert("認証エラーです");
-      location.href = "../login/signin.html" ;
+      // location.href = "../login/signin.html" ;
     }}
 	}).responseText;
 }
@@ -141,6 +141,15 @@ CheeseController.prototype.getOwnActivities = function(callback){
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	if(callback!=null){callback(response);}
 }
+
+CheeseController.prototype.searchFriends = function(callback){
+	url = "/users/search/friends";
+	data = null;
+	type = "get";
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	if(callback!=null){callback(response);}
+}
+
 
 CheeseController.prototype.setFollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/follow";
