@@ -167,6 +167,14 @@ CheeseController.prototype.setUnfollow = function(screen_id,callback){
 	if(callback!=null){callback(response);}
 }
 
+CheeseController.prototype.getGraph = function(screen_id,callback){
+	url = "/users/"  + screen_id + "/graph";
+	data = null;
+	type = "get";
+	response = 	this._throwRequest(url,data,type);
+	if(callback!=null){callback(response);}
+}
+
 
 /*=====================
 	Recommned
