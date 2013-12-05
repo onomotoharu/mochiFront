@@ -267,6 +267,7 @@ App = null;
 
 $(function(){
 	App = new CheeseController();
+	console.log(App);
 
 	// ## sample ##
 	// App.signIn("ren","test",function(json){

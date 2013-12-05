@@ -147,9 +147,8 @@ $(document).ready(function(){
     $('#nav_reco img').attr("src", "../img/on/reco_on.png");
 
     //中央　過去ログ
+
     App.getOwnActivities(function(kakolog){
-    
-        
         for(i=kakolog.activities.length-1; i>-1; i--){
             if(kakolog.activities[i].type_code == 100){
                 App.getDetail(kakolog.activities[i].recipe_id,function(kako_img){
