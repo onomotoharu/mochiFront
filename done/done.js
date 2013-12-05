@@ -16,9 +16,6 @@ jQuery(function($) {
   };
 
   recipe_id = getUrlVars()["recipe_id"];
-
-  App = new CheeseController();
-
   App.getDetail(recipe_id,function(recipe){
     console.log(recipe);
     $('.r_name').text(recipe.name);

@@ -146,9 +146,6 @@ $(document).ready(function(){
     //フッター
     $('#nav_reco img').attr("src", "../img/on/reco_on.png");
 
-    App = new CheeseController();
-
-
     //中央　過去ログ
     App.getOwnActivities(function(kakolog){
     
@@ -223,7 +220,4 @@ $(document).ready(function(){
             render(json);
         });
     })
-
-
-
 });
