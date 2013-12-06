@@ -1,30 +1,19 @@
-<<<<<<< HEAD
 
-profile = [{"name":"takarabe",
-			"follow":"10",
-			"follower":"20",
-			"intro":"鶴川民のししゃも信者",
-			"icon":"./img/my_icon_user.png"}];
-
-$(function(){
-=======
 $(document).ready(function(){
->>>>>>> origin/graphoapi
 	$('#pagename').append("マイページ")
 	$('#myphoto img').attr("src",profile[0].icon);
 	$('#myintro').append(profile[0].intro);
 
-
   	$('#nav_my img').attr("src", "../img/on/my_on.png");
-
-<<<<<<< HEAD
-=======
-$(function(){
-  $('#nav_my img').attr("src", "../img/on/my_on.png");
-});
 
 $(function(){
 	$('#nav_my img').attr("src", "../img/on/my_on.png");
+
+	App = new CheeseController();
+
+    App.signIn("ren","test",function(json){
+        console.log(json);
+    });
 
 	App.getOwnProfile(function(myprofile){
 		// プロフィール部分DOM操作
@@ -34,7 +23,6 @@ $(function(){
 		$('#myphoto img').attr("src",myprofile.icon_name);
 		$('#myintro').append(myprofile.bio);
 	});
->>>>>>> origin/graphoapi
 
 	$('#log a').hover(function(){
 		$('#log a img').attr('src', $('#log a img').attr('src').replace('_off', '_on'));
@@ -64,19 +52,6 @@ $(function(){
 			$('#badge a img').attr('src', $('#badge a img').attr('src').replace('_on', '_off'));
 		}
 	});
-
-	App = new CheeseController();
-
-    App.signIn("ren","test",function(json){
-        console.log(json);
-    });
-
-    App.getOwnProfile(function(myprofile){
-        console.log(myprofile);
-        $('.myname').html(myprofile.screen_id);
-		$('.followcount').append(myprofile.following.length);
-		$('.followercount').append(myprofile.followers.length);
-        
-    });
+	
 });
 
