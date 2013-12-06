@@ -6,7 +6,7 @@ $('head').append(
 jQuery.event.add(window,"load",function() { 
     var pageH = $("#container").height();
  
-    $("#fade").css("height", pageH).delay(700).fadeOut(600);
+    $("#fade").css("height", pageH).delay(700).fadeOut(1000);
     $("#loader").delay(500).fadeOut(300);
     $("#container").css("display", "block");
 });

@@ -82,7 +82,7 @@ a{
 ログイン　login 
 ----------------------------------------*/
 
-#login_id{
+/*.login_id{
 	width: 272px;
 	height: 40px;
 	background-color: #fff;
@@ -98,11 +98,39 @@ a{
 
 	margin: 10px 17px;
 	
+	-webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+	
+
+}*/
+
+.screen_id {
+	width: 272px;
+	height: 40px;
+	background-color: #fff;
+
+	border: solid 2px #c8bb90;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	font-family: "Hiragino Kaku Gothic Pro";
+	font-size: 12px;
+	color: #c8c8c8;
+
+	margin: 10px 17px;
+	
+	-webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+	
 
 }
 
-
-#login_ps{
+.password {
 	width: 272px;
 	height: 40px;
 	margin: 0 17px 20px 17px;
@@ -117,6 +145,10 @@ a{
 	font-size: 12px;
 	color: #c8c8c8;
 
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
 }
 
 
@@ -140,7 +172,7 @@ a{
 ボタン btn
 ----------------------------------------*/
 
-#btn_login button{
+.btn_login button{
 	width: 280px;
 	height: 53px;
 	margin:0 20px 35px 20px;
@@ -157,79 +189,7 @@ a{
 	font-size: 14px;
 	color: #fff;
 	letter-spacing : 0.07em;
-}
-
-
-#btn_tw button{
-	width: 130px;
-	height: 50px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-box-shadow: 0 3px #4a818f;
-	-moz-box-shadow: 0 3px #4a818f;
-	box-shadow: 0 3px #4a818f;
-
-	background-color: #66b0c3;
-	-webkit-box-shadow: 0 3px #4a818f;
-	-moz-box-shadow: 0 3px #4a818f;
-	box-shadow: 0 3px #4a818f;
-	
-	font-family: "Hiragino Kaku Gothic Pro";
-	font-size: 10px;
-	color: #fff;
-	letter-spacing : 0.07em;
-	float:left;
-	margin-left:20px
-}
-#btn_tw img{
-	height:20px;
-}
-
-#btn_fb button{
-	width: 130px;
-	height: 50px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-box-shadow: 0 3px #4a818f;
-	-moz-box-shadow: 0 3px #4a818f;
-	box-shadow: 0 3px #4a818f;
-
-	font-family: "Hiragino Kaku Gothic Pro";
-	font-size: 10px;
-	color: #fff;
-	letter-spacing : 0.07em;
-
-	background-color: #4984b1;
-	-webkit-box-shadow: 0 3px #335d7d;
-	-moz-box-shadow: 0 3px #335d7d;
-	box-shadow: 0 3px #335d7d;
-	
-	margin:0 20px;
-
-}
-#btn_fb img{
-	height:20px;
-}
-
-#btn_new button{
-	width: 280px;
-	height: 50px;
-	background-color: #98b012;
-	-webkit-box-shadow: 0 3px #6c7d0c;
-	-moz-box-shadow: 0 3px #6c7d0c;
-	box-shadow: 0 3px #6c7d0c;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-
-	margin:12px 20px 50px 20px;
-
-	font-family: "Hiragino Kaku Gothic Pro";
-	font-size: 14px;
-	color: #fff;
-	letter-spacing : 0.07em;
+	border: 0;
 }
 
 

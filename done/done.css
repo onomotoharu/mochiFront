@@ -16,35 +16,35 @@
 
 .textInput {
     width: 320px;
-    height: 99px;
+    height: 94px;
     border-top: #CCCCCC solid 1px;
+    border-bottom: #CCCCCC solid 1px;
     display: -webkit-box;
     background: #fff;
     position: relative;
     overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-form {
-    height: 100px;
-    width: 320px;
-}
 
 textarea {
-    color: #a09488;
     font-size: 12px;
     margin: 0;
     height: 74px;
-    width: 205px;
+    /*width: 205px;*/
+    width: 320px;
     border-radius: 0px;
     border: none;
     padding: 10px;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
 }
-
-.focus{
-	color:#000;
-}
-
-
+.doneComment{ color: black;}
 
 .textInput img {
     padding: 5px;
@@ -60,6 +60,20 @@ input#imageInput {
     height: 100px;
     right: 0px;
     z-index: 1;
+}
+
+#preview{
+/*   background-image: url(img/noimage.png);
+   background-size: 90px;
+   width: 90px;
+   height: 90px;
+*/}
+
+
+span img{
+   width: 90px;
+   height: 90px;
+
 }
 
 .iconBar {

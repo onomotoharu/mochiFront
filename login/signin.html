@@ -16,11 +16,13 @@
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+<script type="text/javascript" src="../template.js"></script>
 <link rel="stylesheet" type="text/css" href="./signin.css">
 <link rel="stylesheet" type="text/css" href="../template.css">
 <link rel="apple-touch-icon-precomposed" href="../img/icon.png" />
 
 <script type="text/javascript" src="./signin.js"></script>
+
 
 
 </head>
@@ -36,29 +38,30 @@
 
 <div class="clear"></div>
 
+<input type="text" class="login_id" placeholder="ユーザー名"><br>
+<input type="password" class="login_ps" placeholder="パスワード"><br>
 
-<input type="text" id="login_id" placeholder="ユーザー名またはメールアドレス"><br>
-<input type="password" id="login_ps" placeholder="パスワード"><br>
-
-<input type="checkbox" id="login_save" name="save" value="save"> ログイン情報を保存する
+<!-- <input type="checkbox" id="login_save" name="save" value="save"> ログイン情報を保存する -->
 
 <div class="clear"></div>
 
-<section id="btn_login">  
-<p><a href="../survey/index.html"><button>ログイン</button></a></p>  
+<section class="btn_login">  
+<a href="../survey/index.html"><button id="loginButton">ログイン</button></a>
 </section> 
 
-<section id="btn_tw">  
+
+<!-- <section class="btn_tw">  
 <p><button><img src="common/login_tw.png" border="0" onmouseover="this.src='common/login_tw_on.png'" onmouseout="this.src='common/login_tw.png'"　/><br>twitterでログイン</button></p>  
 </section> 
 
 <section id="btn_fb">  
 <p><button><img src="common/login_fb.png" border="0" onmouseover="this.src='common/login_fb_on.png'" onmouseout="this.src='common/login_fb.png'"　/><br>facebookでログイン</button></p>  
 </section> 
-
+ -->
 <section id="btn_new">  
 <p><a href="./signup.html"><button>新規登録はこちら</button></a></p>  
 </section> 
+
 
 </section>
 </div>

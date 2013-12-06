@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 profile = [{"name":"takarabe",
 			"follow":"10",
@@ -6,6 +7,9 @@ profile = [{"name":"takarabe",
 			"icon":"./img/my_icon_user.png"}];
 
 $(function(){
+=======
+$(document).ready(function(){
+>>>>>>> origin/graphoapi
 	$('#pagename').append("マイページ")
 	$('#myphoto img').attr("src",profile[0].icon);
 	$('#myintro').append(profile[0].intro);
@@ -13,6 +17,24 @@ $(function(){
 
   	$('#nav_my img').attr("src", "../img/on/my_on.png");
 
+<<<<<<< HEAD
+=======
+$(function(){
+  $('#nav_my img').attr("src", "../img/on/my_on.png");
+});
+
+$(function(){
+	$('#nav_my img').attr("src", "../img/on/my_on.png");
+
+	App.getOwnProfile(function(myprofile){
+		// プロフィール部分DOM操作
+        $('.myname').html(myprofile.screen_id);
+		$('.followcount').append(myprofile.following.length);
+		$('.followercount').append(myprofile.followers.length);
+		$('#myphoto img').attr("src",myprofile.icon_name);
+		$('#myintro').append(myprofile.bio);
+	});
+>>>>>>> origin/graphoapi
 
 	$('#log a').hover(function(){
 		$('#log a img').attr('src', $('#log a img').attr('src').replace('_off', '_on'));

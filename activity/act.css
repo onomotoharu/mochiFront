@@ -1,3 +1,7 @@
+#graph a:hover{
+	background-color:#fff;
+}
+
 /*---------------------------------
  ヘッダー
 ---------------------------------*/
@@ -64,12 +68,16 @@ table{
 }
 
 .title{
-	font-size:13px;
+	font-size:15px;
 	font-weight: bold;
 	margin-top: 6px;
 }
 
-#myname{
+.title a,.title:hover,.title:visited,.title:active{
+	color:#61AD42;
+}
+
+.user{
 	height: 30px;
 	color: #000;
 	font-size: 8px;
@@ -78,7 +86,7 @@ table{
 	margin-bottom: 10px;
 }
 
-#myphoto img{
+.myphoto img{
 	height:25px;
 	width:25px;
 	float: left;
@@ -96,14 +104,19 @@ table{
 	clear: both;
 	width: 100%;
 	height: 45px;
+	border-bottom: #ddd 1px solid;
+}
+
+.act_bottom:last-child{
+	border-bottom: 0;
 }
 
 #share{
-	text-align:right;
-	width:25px;
-	height:25px;
+	text-align: right;
+	width: 25px;
+	height: 25px;
 	float: right;
-	margin: 8px 20px 0 0;
+	margin: 0 10px 0 0;
 }
 
 
@@ -112,37 +125,8 @@ table{
 	height:25px;
 }
 
-.com_btn{
-	background-color: #efefef;
-	float: left;
-	height: 25px;
-	width: 90px;
-	text-align: center;
-	border-radius: 4px;
-	padding-top: 7px;
-	margin: 5px 5px 0 10px;
-	clear: both;
-}
-
-.com_btn img{
-	height: 13px;
-	width: 16px;
-}
-
-.iine_btn{
-	background-color: #efefef;
-	height: 25px;
-	width: 90px;
-	float: left;
-	text-align: center;
-	border-radius: 4px;
-	padding-top: 7px;
-	margin-top: 5px;
-}
-
-.iine_btn img{
-	height: 13px;
-	width: 12px;
+.activity_id {
+	display: none;
 }
 
 /*---------------------------------
@@ -172,11 +156,9 @@ table{
 }
 
 #share p a img{
-	width:40px;
-	height:30px;
-	float:right;
-	margin-top:0px;
-	margin-right:0px;
+	width: 40px;
+	height: 30px;
+	float: right;
 }
 
 #open01{
@@ -252,7 +234,11 @@ table{
 	100% {opacity:1;}
 }
 div#modal div:target {
+<<<<<<< HEAD
+	-webkit-animation-name: modalFadeIn;
+=======
 	-webkit-animation-name: modalFadeIn; 
+>>>>>>> origin/profile_setup
   	-webkit-animation-duration: 0.3s;
   	-webkit-animation-iteration-count: 1;
 	opacity: 1;
