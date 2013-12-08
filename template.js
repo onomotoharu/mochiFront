@@ -121,6 +121,14 @@ CheeseController.prototype.getOwnProfile = function(callback){
 	if(callback!=null){callback(response);}
 }
 
+CheeseController.prototype.getProfile = function(screen_id,callback){
+	url = "/users/"  + screen_id + "/profile";
+	data = null;
+	type = "get";
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	if(callback!=null){callback(response);}
+}
+
 CheeseController.prototype.getOwnBadges = function(callback){
 	url = "/users/"  + localStorage.screen_id + "/badges";
 	data = null;
@@ -162,9 +170,17 @@ CheeseController.prototype.setUnfollow = function(screen_id,callback){
 	if(callback!=null){callback(response);}
 }
 
+CheeseController.prototype.getGraph = function(screen_id,callback){
+	url = "/users/"  + screen_id + "/graph";
+	data = null;
+	type = "get";
+	response =	$.parseJSON(this._throwRequest(url,data,type));
+	if(callback!=null){callback(response);}
+}
+
 
 /*=====================
-	Recommned
+	Recommend
 ======================*/
 
 CheeseController.prototype.getRecommend = function(callback){
