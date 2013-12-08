@@ -1,27 +1,28 @@
 
 $(document).ready(function(){
 	$('#pagename').append("マイページ")
-	$('#myphoto img').attr("src",profile[0].icon);
-	$('#myintro').append(profile[0].intro);
 
   	$('#nav_my img').attr("src", "../img/on/my_on.png");
 
-$(function(){
-	$('#nav_my img').attr("src", "../img/on/my_on.png");
-
-	App = new CheeseController();
-
-    App.signIn("ren","test",function(json){
-        console.log(json);
-    });
-
 	App.getOwnProfile(function(myprofile){
+
 		// プロフィール部分DOM操作
         $('.myname').html(myprofile.screen_id);
 		$('.followcount').append(myprofile.following.length);
 		$('.followercount').append(myprofile.followers.length);
 		$('#myphoto img').attr("src",myprofile.icon_name);
 		$('#myintro').append(myprofile.bio);
+		screen_id = myprofile.screen_id;
+
+		App.getGraph(screen_id, function(graph){
+			console.log(graph);
+			/*$("#input1").attr("value", graph.category[0]);
+			$("#input2").attr("value", graph.category[1]);
+			$("#input3").attr("value", graph.category[2]);
+			$("#input4").attr("value", graph.category[3]);
+			$("#input5").attr("value", graph.category[4]);
+			$("#input6").attr("value", graph.category[5]);*/
+		});
 	});
 
 	$('#log a').hover(function(){
