@@ -53,9 +53,9 @@ $(function(){
     $(".box").click(function() {
       if($(this).hasClass('box')){
         $(".box_on").addClass("box").removeClass('box_on'); //.box_onが複数にならないように
-        $(this).addClass("box_on").removeClass('box');
+        $(this).addClass("box_on animated pulse").removeClass('box');
       } else if ($(this).hasClass('box_on')) {
-        $(this).addClass("box").removeClass('box_on');
+        $(this).addClass("box shake").removeClass('box_on pulse');
       }
 
       if($("#item1").hasClass("box_on")){recipe_id = survey[0].id;}
@@ -84,7 +84,7 @@ $(function(){
       App.sendMade(recipe_id, function(recipe){
         console.log(recipe);
       });
-      location.href = "../recommend/index.html";
+      // location.href = "../recommend/index.html";
     });
   });
   
