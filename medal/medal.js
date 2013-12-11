@@ -96,7 +96,7 @@ $(function(){
 
 	  //メダル取得の日付を挿入
  	  $(".getdate").each(function(i){
-	  $(this).append(medals[i].created_at.split(" ")[0]);
+	  $(this).append(medals[i].created_at.split("T")[0]);
 	  });
 
 	　//バッジ名を追加
