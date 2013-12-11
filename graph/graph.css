@@ -52,7 +52,7 @@
 	right:0;
 }
 
-.follow{
+.follow, .follower{
 	font-size: 8pt;
 	text-align: center;
 	width: 70px;
@@ -60,11 +60,11 @@
 	border-radius: 5px 5px;
 }
 
-.follow p{
+.follow p, .follower p{
 	color: #fff;
 }
 
-.follow a{
+.follow a, .follower a{
 	background: url("./img/follow_back.png") no-repeat;
 	background-size:70px 30px;
 	display: block;

@@ -4,36 +4,36 @@ $(function(){
 });
 
 $(function(){
-	App.getOwnProfile(function(data){	
-	console.log(data); 
+	
+	screen_id = getUrlVars()["recipe_id"];
 
-		for(var i=0; i<data.followers.length; i++){
+	App.getOwnProfile(function(myprofile){
+		if(screen_id == null){
+			for(var i=0; i<myprofile.followers.length; i++){
 			//リストを追加
-			$pic_img = $("<img/>").attr("src", "img/"+data.followers[i].icon_name+".png");
+			$pic_img = $("<img/>").attr("src", "img/"+myprofile.followers[i].icon_name+".png");
 			$pic_a = $("<a/>").attr("href", "").append($pic_img);
 			$pic_li = $("<li/>").append($pic_a);
 			$pic_ul = $("<ul/>").append($pic_li);
 			$pic = $("<div/>").addClass("follow_pic").append($pic_ul);
 			
-			$account = $("<a/>").addClass("account").append(data.followers[i].screen_id);
+			$account = $("<a/>").attr("href", "../log/index.html?recipe_id="+myprofile.followers[i].screen_id).addClass("account").append(myprofile.followers[i].screen_id);
 			
 			
-			if(data.followers[i].is_followed){
+			if(myprofile.followers[i].is_followed){
 				$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
 			}else{
 				$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
 			}
 			/*
-			if(data.following.length == 0){
+			if(myprofile.following.length == 0){
 				$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
-					}else if(data[i].is_followed){
+					}else if(myprofile[i].is_followed){
 						$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
 					}else{
 						$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
 			}
 			*/
-			
-
 			
 			$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
 			$btn_li = $("<li/>").append($btn_span);
@@ -50,17 +50,43 @@ $(function(){
 					$(this).addClass("off").removeClass("on");
 					$(this).attr("src", "./img/follow3_off.png");
 					var index = $(".toggleImage img").index(this);　
-					screen_id = data.followers[index].screen_id;
+					screen_id = myprofile.followers[index].screen_id;
 					App.setFollow(screen_id,function(id){　
 					});
 		    	} else if ($(this).hasClass("off")){
 		    		$(this).addClass("on").removeClass("off");
 		    		$(this).attr("src", "./img/follow3_on.png");
 					var unindex = $(".toggleImage img").index(this);
-					screen_id = data.followers[unindex].screen_id;
+					screen_id = myprofile.followers[unindex].screen_id;
 					App.setUnfollow(screen_id,function(id){
 					});
 				}
+			});
+		}
+		}else{	
+			App.getProfile(screen_id, function(profile){
+				for(var i=0; profile.followers.length; i++){
+					//リストを追加
+					$pic_img = $("<img/>").attr("src", "img/"+profile.followers[i].photo+".png");
+					$pic_a = $("<a/>").attr("href", "").append($pic_img);
+					$pic_li = $("<li/>").append($pic_a);
+					$pic_ul = $("<ul/>").append($pic_li);
+					$pic = $("<div/>").addClass("follow_pic").append($pic_ul);
+
+					$account = $("<a/>").attr("href", "../log/index.html?recipe_id="+profile.followers[i].screen_id).addClass("account").append(profile.followers[i].screen_id);
+
+					$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+					$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
+					$btn_li = $("<li/>").append($btn_span);
+					$btn_ul = $("<ul/>").append($btn_li);
+					$btn = $("<div/>").addClass("follow_btn").append($btn_ul);
+
+					$follow = $("<div/>").addClass("follow").append($pic).append($account).append($btn);
+
+					$(".allcontents").append($follow);
+
+				}
+
 			});
 		}
 	});

@@ -1,20 +1,38 @@
 
 var max=0;
 
-$(document).ready(function(){
+$(function(){
 	$('#pagename').append("マイページ")
 
-  	$('#nav_my img').attr("src", "../img/on/my_on.png");
+	screen_id = getUrlVars()["recipe_id"];
 
-	App.getOwnProfile(function(myprofile){
+    App.getOwnProfile(function(myprofile){
+        if(screen_id == null){
+            $('#nav_my img').attr("src", "../img/on/my_on.png");
+            // プロフィール部分DOM操作
+            $('.myname').html(myprofile.screen_id);
+            $('.followcount').append(myprofile.following.length);
+            $('.followercount').append(myprofile.followers.length);
+            $('#myphoto img').attr("src",myprofile.icon_name);
+            $('#myintro').append(myprofile.bio);
+            screen_id = myprofile.screen_id;
+        }else{  
+            App.getProfile(screen_id, function(profile){
+                $('.myname').html(profile.screen_id);
+                $('.followcount').append(profile.following.length);
+                $('.followercount').append(profile.followers.length);
+                $('#myphoto img').attr("src",profile.icon_name);
+                $('#myintro').append(profile.bio);
 
-		// プロフィール部分DOM操作
-        $('.myname').html(myprofile.screen_id);
-		$('.followcount').append(myprofile.following.length);
-		$('.followercount').append(myprofile.followers.length);
-		$('#myphoto img').attr("src",myprofile.icon_name);
-		$('#myintro').append(myprofile.bio);
-		screen_id = myprofile.screen_id;
+                $('.follow a').attr("href", "../follow/follow.html?recipe_id="+screen_id);
+                $('.follower a').attr("href", "../follow/follower.html?recipe_id="+screen_id);
+
+                $('#log a').attr("href", "../log/index.html?recipe_id="+screen_id);
+                $('#fav a').attr("href", "../fav/index.html?recipe_id="+screen_id);
+                $('#badge a').attr("href", "../medal/index.html?recipe_id="+screen_id);
+            });
+        }
+    });
 
 		App.getGraph(screen_id, function(graph){
 			console.log(graph);
@@ -33,7 +51,6 @@ $(document).ready(function(){
 			$("#input6").attr("value", graph.category[5]);
 			$("#input7, #input8, #input9, #input10, #input11, #input12").attr("value", max);
 		});
-	});
 
 	$('#canvasChart').canvasChart({
         /*********************
