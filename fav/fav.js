@@ -1,18 +1,10 @@
 $(document).ready(function(){
-	$('#pagename').append("マイページ")
-
-	$('#myintro').append("");
+	$('#pagename').append("マイページ");
 });
 
 $(function(){
 
 	// レシピデータ
-	App = new CheeseController();
-
-	App.signIn("ren","test",function(json){
-		// console.log(json);
-	});
-
 	App.getOwnProfile(function(myprofile){
         console.log(myprofile);
 
@@ -35,8 +27,22 @@ $(function(){
 
 				$money_img = $('<img/>').addClass('fav_icon').attr('src', './img/money.png');
 				$time_img = $('<img/>').addClass('fav_icon').attr('src', './img/time.png');
-				$menu_money = $('<span/>').addClass('fav_menu_money').text(recipe.required_money + "円");
-				$menu_time = $('<span/>').addClass('fav_menu_time').text(recipe.necessary_time + "分");
+				if(recipe.required_money == 1){money = "100円以下";}
+    			else if(recipe.required_money == 2){money = "300円前後";}
+    			else if(recipe.required_money == 3){money = "500円前後";}
+    			else if(recipe.required_money == 4){money = "1000円前後";}
+    			else if(recipe.required_money == 5){money = "2000円前後";}
+    			else if(recipe.required_money == 6){money = "3000円前後";}
+    			else if(recipe.required_money == 7){money = "5000円前後";}
+    			else if(recipe.required_money == 8){money = "10000円以上";}
+				$menu_money = $('<span/>').addClass('fav_menu_money').text(money);
+				if(recipe.necessary_time == 1){time = "5分以下";}
+    			else if(recipe.necessary_time == 2){time = "約10分";}
+    			else if(recipe.necessary_time == 3){time = "約15分";}
+    			else if(recipe.necessary_time == 4){time = "約30分";}
+    			else if(recipe.necessary_time == 5){time = "約1時間";}
+    			else if(recipe.necessary_time == 6){time = "1時間以上";}
+				$menu_time = $('<span/>').addClass('fav_menu_time').text(time);
 				$border = $('<span/>').text(' | ');
 
 				// シェアボタン生成
@@ -46,7 +52,7 @@ $(function(){
 		    	$share      = $('<div id="share"></div>').append($p_open01);
 
 				$fav_menu_info = $('<span/>').addClass('fav_menu_info').append($money_img.after($menu_money).after($border).after($time_img).after($menu_time));
-				$fav_info_all = $('<div/>').addClass('fav_info_all').append($fav_menu_info.after($share));
+				$fav_info_all = $('<div/>').addClass('fav_info_all').append($fav_menu_info);
 				$fav_menu = $('<div/>').addClass('fav_menu').append($fav_menu_photo_a.after($fav_menu_title_a).after($fav_info_all));
 				$('div.tab_title').after($fav_menu);
 
@@ -66,15 +72,15 @@ $(function(){
 			$('#log a img').attr('src', $('#log a img').attr('src').replace('_on', '_off'));
 		}
 	});
-	
 
-	$('#graph a').hover(function(){
-		$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_off', '_on'));
-	}, function(){
-		if (!$('#graph a img').hasClass('current')) {
-			$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_on', '_off'));
-		}
-	});
+
+	// $('#graph a').hover(function(){
+	// 	$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_off', '_on'));
+	// }, function(){
+	// 	if (!$('#graph a img').hasClass('current')) {
+	// 		$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_on', '_off'));
+	// 	}
+	// });
 
 	$('#fav a').hover(function(){
 		$('#fav a img').attr('src', $('#fav a img').attr('src').replace('_off', '_on'));
@@ -83,7 +89,7 @@ $(function(){
 			$('#fav a img').attr('src', $('#fav a img').attr('src').replace('_on', '_off'));
 		}
 	});
-	
+
 	$('#badge a').hover(function(){
 		$('#badge a img').attr('src', $('#badge a img').attr('src').replace('_off', '_on'));
 	}, function(){

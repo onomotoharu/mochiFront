@@ -70,7 +70,8 @@ article span {
 
 .flickSimple .center{
     border:solid 5px #f5c53a;
-    margin:0 auto;
+    margin-left :auto;
+    margin-right : auto;
 }
 
 /*margin:5px auto;
@@ -166,14 +167,14 @@ a.circle:hover{
 --------------------------*/
 
 .lefttop {
-	width:90px;
+    width:90px;
     height: 180px;
-	display:table-cell;
-	text-align:center;
-	position:fixed;
-	left: 20px;
+    display:table-cell;
+    text-align:center;
+    position:fixed;
+    left: 20px;
     margin-top: 10px;
-	color:#edd67a;
+    color:#edd67a;
 }
 
 /*-------------------------
@@ -191,10 +192,10 @@ a.circle:hover{
     /*margin-left: 205px;*/
     right: 20px;
     margin-top: 10px;
-	display:table-cell;
-	text-align:center;
-	position:fixed;
-	color:#edd67a;
+    display:table-cell;
+    text-align:center;
+    position:fixed;
+    color:#edd67a;
 }
 
 

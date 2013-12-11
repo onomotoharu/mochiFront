@@ -1,3 +1,7 @@
+#graph a:hover{
+	background-color:#fff;
+}
+
 #pagename img {
 	display: none;
 }
@@ -83,9 +87,6 @@
 	font-size: 9pt;
 	margin: 15pt 20px 10pt;
 }
-
-
-
 
 /*----------------------------
  タブ切り替え（共通）
@@ -184,11 +185,16 @@
 	bottom: -5px;
 }
 
-.fav_icon{
+.fav_menu_money, .fav_menu_time{
 	position: relative;
 	bottom: -5px;
-	width: 25px;
-	height:25px;
+}
+
+.fav_icon{
+	position: relative;
+	bottom: -10px;
+	width: 20px;
+	height:20px;
 }
 
 .shareicon{
@@ -285,7 +291,7 @@
 	100% {opacity:1;}
 }
 div#modal div:target {
-	-webkit-animation-name: modalFadeIn; 
+	-webkit-animation-name: modalFadeIn;
   	-webkit-animation-duration: 0.3s;
   	-webkit-animation-iteration-count: 1;
 	opacity: 1;

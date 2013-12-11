@@ -7,6 +7,12 @@
 -webkit-user-select: none;
 }
 
+input,textarea {
+-webkit-touch-callout: auto;
+-webkit-text-size-adjust: auto;
+-webkit-user-select: auto;
+}
+
 body,p,h1,h2,h3,h4,h5,h6,
 span,small,strong,
 div,ul,li,
@@ -135,8 +141,9 @@ body{
 }
 
 #footer ul img{
-    width:72px;
-    height:45px;
+    width: 67px;
+    height: 40px;
+    padding-top: 3px;
 }
 
 
