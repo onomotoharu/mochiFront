@@ -88,17 +88,13 @@ $(function(){
 				$('#followbtn').click(function(){
 					if($('#followbtn').hasClass('off')){
 						$('#followbtn').addClass('on').removeClass('off').text('フォロー中');
-						App.setFollow(screen_id,function(id){
-							console.log("した");
-						});
+						App.setFollow(screen_id,function(id){});
 						profile.followers.length = profile.followers.length + 1;
 						$('.followercount').empty().append(profile.followers.length);
 					}
 					else if($('#followbtn').hasClass('on')){
 						$('#followbtn').addClass('off').removeClass('on').text('フォローする');
-						App.setUnfollow(screen_id,function(id){
-							console.log("はずした");
-						});
+						App.setUnfollow(screen_id,function(id){});
 						profile.followers.length = profile.followers.length - 1;
 						$('.followercount').empty().append(profile.followers.length);
 					}
