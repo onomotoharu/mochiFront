@@ -3,8 +3,13 @@
 }
 
 
+#pageAll{
+    width: 280px;
+    margin: 0 auto;
+}
+
 /*-------------------------
-まんなか ( ･`ω･´)
+まんなか™ ( ･`ω･´)
 
 ○　　○
 　●
@@ -14,15 +19,15 @@
 
 
 #verticaly {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 120px;
+  margin: 180px 110px auto 90px;
 }
 
 #verticaly a{
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   border:solid 5px #f5c53a;
-  margin:auto;
   text-align :left;
   display: inline-block;
     border-radius:50%;
@@ -34,16 +39,10 @@
   background-size:cover;
 }
 
-#verticaly a img{
-    width: 70px;
-    height: 70px;
-}
 
 .flickSimple {
-    width:90px;
-    height:120px;
-    margin: 160px 115px 0 115px ;
-    text-align:center;
+/*    margin: 160px 115px 0 115px ;
+*/    text-align:center;
     color:#3cb371;
     position: fixed;
     overflow: auto;
@@ -147,7 +146,7 @@ a.circle:hover{
     text-align: center;
     color:#645641;
     height: 30px;
-    width:90px;
+    width:120px;
     margin-top: 10px;
     overflow: hidden;
 /*    white-space: nowrap;
@@ -167,12 +166,12 @@ a.circle:hover{
 --------------------------*/
 
 .lefttop {
-    width:90px;
+    width:120px;
     height: 180px;
     display:table-cell;
     text-align:center;
     position:fixed;
-    left: 20px;
+    left: 10px;
     margin-top: 10px;
     color:#edd67a;
 }
@@ -187,10 +186,10 @@ a.circle:hover{
 
 
 .righttop {
-    width:90px;
+    width:120px;
     height: 180px;
     /*margin-left: 205px;*/
-    right: 20px;
+    right: 10px;
     margin-top: 10px;
     display:table-cell;
     text-align:center;
@@ -209,14 +208,14 @@ a.circle:hover{
 
 
 .leftbottom {
-    width:90px;
+    width:120px;
     height: 190px;
     /*border: solid 1px; #000;*/
-    bottom: 45px;
+    bottom: 110px;
     display:table-cell;
     text-align:center;
     position:fixed;
-    left: 20px;
+    left: 10px;
     margin-top: 10px;
     color:#edd67a;
 }
@@ -231,10 +230,10 @@ a.circle:hover{
 --------------------------*/
 
 .rightbottom {
-    width:90px;
+    width:120px;
     height: 190px;
-    bottom: 45px;
-    right: 20px;
+    bottom: 110px;
+    right: 10px;
     display:table-cell;
     text-align:center;
     position:fixed;
@@ -255,10 +254,10 @@ a.circle:hover{
 ---------*/
 
 .required_money {
-    height: 50px;
+    height: 60px;
     color: #785b25;
     font-weight: bold;
-    font-size: 10px; /*16px*/
+    font-size: 12px; /*16px*/
     background-image: url("img/money.png");
     background-size:50%;
     background-position: center bottom;
@@ -282,10 +281,10 @@ a.circle:hover{
 
 
 .necessary_time{
-    height: 50px;
+    height: 60px;
     color: #577264;
     font-weight: bold;
-    font-size: 10px; /*16px*/
+    font-size: 12px; /*16px*/
     background-image: url("img/time.png");
     background-size:50%;
     background-position:center bottom;
@@ -306,10 +305,10 @@ a.circle:hover{
 ---------*/
 
 .last_food{
-    height: 50px;
+    height: 60px;
     color: #04417c;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     background-image: url("img/material.png");
     background-size:50%;
     background-position: center bottom;
@@ -331,10 +330,10 @@ a.circle:hover{
 
 
 .friend{
-    height: 50px;
+    height: 60px;
     color: #277b39;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     background-image: url("img/friend.png");
     background-size:50%;
     background-position: center bottom;
@@ -354,12 +353,12 @@ a.circle:hover{
 ---------*/
 
 .seasoning{
-    height: 50px;
+    height: 60px;
     color: #814120;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     background-image: url("img/taste.png");
-    background-size:40%;
+    background-size:38%;
     background-position: center bottom;
     background-repeat: no-repeat;
 }
@@ -377,10 +376,10 @@ a.circle:hover{
 ---------*/
 
 .methods{
-    height: 50px;
+    height: 60px;
     color: #ed7b7b;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     background-image: url("img/process.png");
     background-size:50%;
     background-position: center bottom;
@@ -399,10 +398,10 @@ a.circle:hover{
 ---------*/
 
 .food{
-    height: 50px;
+    height: 60px;
     color: #a20e73;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 12px;
     background-image: url("img/total.png");
     background-size:50%;
     background-position: center bottom;
@@ -422,7 +421,7 @@ a.circle:hover{
 ---------*/
 
 .level{
-    height: 50px;
+    height: 60px;
     color: #339933;
     font-weight: bold;
     font-size: 16px;
