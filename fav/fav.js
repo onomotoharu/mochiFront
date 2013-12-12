@@ -10,7 +10,7 @@ $(function(){
         screen_id = getUrlVars()["recipe_id"];
 
 		App.getOwnProfile(function(myprofile){
-        if(screen_id == null){
+        if(screen_id == null || screen_id == myprofile.screen_id){
 
         	$('#nav_my img').attr("src", "../img/on/my_on.png");
 
@@ -20,6 +20,9 @@ $(function(){
             $('.followercount').append(myprofile.followers.length);
             $('#myphoto img').attr("src",myprofile.icon_name);
             $('#myintro').append(myprofile.bio);
+
+            $('#followbtn').css("display", "none");
+
 			for(i=0;i<myprofile.favorite_recipes.length;i++) {
 				var recipe_id = myprofile.favorite_recipes[i].id;
 				// お気に入りタイムラインDOM操作

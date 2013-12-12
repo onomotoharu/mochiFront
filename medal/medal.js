@@ -55,7 +55,7 @@ $(function(){
 		screen_id = getUrlVars()["recipe_id"];
 
 		App.getOwnProfile(function(myprofile){
-			if(screen_id == null){
+			if(screen_id == null || screen_id == myprofile.screen_id){
 				$('#nav_my img').attr("src", "../img/on/my_on.png");
 				// プロフィール部分DOM操作
 			    $('.myname').html(myprofile.screen_id);
@@ -63,6 +63,9 @@ $(function(){
 				$('.followercount').append(myprofile.followers.length);
 				$('#myphoto img').attr("src",myprofile.icon_name);
 				$('#myintro').append(myprofile.bio);
+
+				$('#followbtn').css("display", "none");
+				
 			}else{	
 				App.getProfile(screen_id, function(profile){
 					$('.myname').html(profile.screen_id);
