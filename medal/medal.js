@@ -23,13 +23,13 @@ $(function() {
 	});
 
 
-	// $('#graph a').hover(function(){
-	// 	$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_off', '_on'));
-	// }, function(){
-	// 	if (!$('#graph a img').hasClass('current')) {
-	// 		$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_on', '_off'));
-	// 	}
-	// });
+	$('#graph a').hover(function(){
+		$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_off', '_on'));
+	}, function(){
+		if (!$('#graph a img').hasClass('current')) {
+			$('#graph a img').attr('src', $('#graph a img').attr('src').replace('_on', '_off'));
+		}
+	});
 
 	$('#fav a').hover(function(){
 		$('#fav a img').attr('src', $('#fav a img').attr('src').replace('_off', '_on'));
@@ -65,7 +65,7 @@ $(function(){
 				$('#myintro').append(myprofile.bio);
 
 				$('#followbtn').css("display", "none");
-				
+
 			}else{	
 				App.getProfile(screen_id, function(profile){
 					$('.myname').html(profile.screen_id);
