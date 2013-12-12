@@ -54,19 +54,23 @@ $(function() {
 	screen_id = getUrlVars()["recipe_id"];
 
 	App.getOwnProfile(function(myprofile){
-		if(screen_id == null){
+		if(screen_id == null || screen_id == myprofile.screen_id){
 			$('#nav_my img').attr("src", "../img/on/my_on.png");
 			// プロフィール部分DOM操作
 		    $('.myname').html(myprofile.screen_id);
-			$('.followcount').append(myprofile.following.length);
-			$('.followercount').append(myprofile.followers.length);
+			$('.followcount').text(myprofile.following.length);
+			$('.followercount').text(myprofile.followers.length);
 			$('#myphoto img').attr("src",myprofile.icon_name);
 			$('#myintro').append(myprofile.bio);
+
+			$('#followbtn').css("display", "none");
 		}else{
 			App.getProfile(screen_id, function(profile){
+
+				console.log(profile);
 				$('.myname').html(profile.screen_id);
-				$('.followcount').append(profile.following.length);
-				$('.followercount').append(profile.followers.length);
+				$('.followcount').text(profile.following.length);
+				$('.followercount').text(profile.followers.length);
 				$('#myphoto img').attr("src",profile.icon_name);
 				$('#myintro').append(profile.bio);
 
@@ -77,6 +81,33 @@ $(function() {
 				$('#fav a').attr("href", "../fav/index.html?recipe_id="+screen_id);
 				$('#badge a').attr("href", "../medal/index.html?recipe_id="+screen_id);
 
+				for(i=0; i<myprofile.following.length; i++){
+					if(myprofile.following[i].screen_id == profile.screen_id){
+						$('#followbtn').addClass("on").removeClass("off").text("フォロー中");
+					}
+					else{
+						$('#followbtn').text("フォローする");
+					}
+				}
+
+				$('#followbtn').click(function(){
+					if($('#followbtn').hasClass('off')){
+						$('#followbtn').addClass('on').removeClass('off').text('フォロー中');
+						App.setFollow(screen_id,function(id){
+							console.log("した");
+						});
+						profile.followers.length = profile.followers.length + 1;
+						$('.followercount').empty().append(profile.followers.length);
+					}
+					else if($('#followbtn').hasClass('on')){
+						$('#followbtn').addClass('off').removeClass('on').text('フォローする');
+						App.setUnfollow(screen_id,function(id){
+							console.log("はずした");
+						});
+						profile.followers.length = profile.followers.length - 1;
+						$('.followercount').empty().append(profile.followers.length);
+					}
+				});
 			});
 		}
 	});

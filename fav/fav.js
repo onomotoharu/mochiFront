@@ -76,6 +76,34 @@ $(function(){
                 $('#graph a').attr("href", "../graph/index.html?recipe_id="+screen_id);
                 $('#badge a').attr("href", "../medal/index.html?recipe_id="+screen_id);
 
+                for(i=0; i<myprofile.following.length; i++){
+					if(myprofile.following[i].screen_id == profile.screen_id){
+						$('#followbtn').addClass("on").removeClass("off").text("フォロー中");
+					}
+					else{
+						$('#followbtn').text("フォローする");
+					}
+				}
+
+				$('#followbtn').click(function(){
+					if($('#followbtn').hasClass('off')){
+						$('#followbtn').addClass('on').removeClass('off').text('フォロー中');
+						App.setFollow(screen_id,function(id){
+							console.log("した");
+						});
+						profile.followers.length = profile.followers.length + 1;
+						$('.followercount').empty().append(profile.followers.length);
+					}
+					else if($('#followbtn').hasClass('on')){
+						$('#followbtn').addClass('off').removeClass('on').text('フォローする');
+						App.setUnfollow(screen_id,function(id){
+							console.log("はずした");
+						});
+						profile.followers.length = profile.followers.length - 1;
+						$('.followercount').empty().append(profile.followers.length);
+					}
+				});
+
                 for(i=0;i<profile.favorite_recipes.length;i++) {
 
                 	console.log(profile);

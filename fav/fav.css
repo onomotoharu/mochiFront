@@ -87,6 +87,26 @@
 	margin: 15pt 20px 10pt;
 }
 
+
+#followbtn{
+	width: 250px;
+	height: 21px;
+	margin: 5px auto;
+	padding-top: 4px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.off{
+	background-color: #ffd047;
+}
+
+.on{
+	background-color: #61AD42;
+	color: #fff;
+}
+
 /*----------------------------
  タブ切り替え（共通）
 -----------------------------*/
