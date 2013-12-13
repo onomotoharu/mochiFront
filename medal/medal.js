@@ -66,6 +66,40 @@ $(function(){
 
 				$('#followbtn').css("display", "none");
 
+				App.getOwnBadges(function(mymedals){
+					console.log(mymedals);
+
+					//JSON.parse(mymedals)[0].created_at.split(" ")[0]
+					// 	debugger;
+					// 	$.each(mymedals,function(i,medal){
+					//
+					// 		alert(medal.title);
+					// 	});
+					//
+
+					for(var i=0 ; i < mymedals.length ; i++){
+						//リストを追加
+						$(".tab_contents").append('<ul><li><div class="medalimg"><a class="zoom" style="display:block;" href="" title=""></a></div><div id="coment"><div class="medallog"></div><div class ="getdate"></div><div class="medalintro"></div></div></li></ul>');
+					};
+					//メダルの画像とタイトルを挿入
+					$(".medalimg a").each(function(i){
+					  	$(this).append('<img src="medal_img/'+mymedals[i].picture_name+'">');
+						//$(this).attr("title", "mymedals[i].description.split(" ")[0]");
+					});
+					//バッジ名を挿入
+					$(".medallog").each(function(i){
+					  	$(this).append('<p class="b">'+mymedals[i].title+'</p>');
+					});
+					//メダル取得の日付を挿入
+					$(".getdate").each(function(i){
+						$(this).append(mymedals[i].created_at.split("T")[0]);
+					});
+					//バッジ名を追加
+					$(".medalintro").each(function(i){
+					  	$(this).append(mymedals[i].description);
+					});
+				});
+
 			}else{	
 				App.getProfile(screen_id, function(profile){
 					$('.myname').html(profile.screen_id);
@@ -82,75 +116,65 @@ $(function(){
 					$('#fav a').attr("href", "../fav/index.html?recipe_id="+screen_id);
 
 					for(i=0; i<myprofile.following.length; i++){
-					if(myprofile.following[i].screen_id == profile.screen_id){
-						$('#followbtn').addClass("on").removeClass("off").text("フォロー中");
+						if(myprofile.following[i].screen_id == profile.screen_id){
+							$('#followbtn').addClass("on").removeClass("off").text("フォロー中");
+						}
+						else{
+							$('#followbtn').text("フォローする");
+						}
 					}
-					else{
-						$('#followbtn').text("フォローする");
-					}
-				}
 
-				$('#followbtn').click(function(){
-					if($('#followbtn').hasClass('off')){
-						$('#followbtn').addClass('on').removeClass('off').text('フォロー中');
-						App.setFollow(screen_id,function(id){});
-						profile.followers.length = profile.followers.length + 1;
-						$('.followercount').empty().append(profile.followers.length);
-					}
-					else if($('#followbtn').hasClass('on')){
-						$('#followbtn').addClass('off').removeClass('on').text('フォローする');
-						App.setUnfollow(screen_id,function(id){});
-						profile.followers.length = profile.followers.length - 1;
-						$('.followercount').empty().append(profile.followers.length);
-					}
-				});
+					$('#followbtn').click(function(){
+						if($('#followbtn').hasClass('off')){
+							$('#followbtn').addClass('on').removeClass('off').text('フォロー中');
+							App.setFollow(screen_id,function(id){});
+							profile.followers.length = profile.followers.length + 1;
+							$('.followercount').empty().append(profile.followers.length);
+						}
+						else if($('#followbtn').hasClass('on')){
+							$('#followbtn').addClass('off').removeClass('on').text('フォローする');
+							App.setUnfollow(screen_id,function(id){});
+							profile.followers.length = profile.followers.length - 1;
+							$('.followercount').empty().append(profile.followers.length);
+						}
+					});
+
+					App.getBadges(screen_id, function(medals){
+						console.log(medals);
+
+						//JSON.parse(medals)[0].created_at.split(" ")[0]
+						// 	debugger;
+						// 	$.each(medals,function(i,medal){
+						//
+						// 		alert(medal.title);
+						// 	});
+						//
+
+						for(var i=0 ; i < medals.length ; i++){
+							//リストを追加
+							$(".tab_contents").append('<ul><li><div class="medalimg"><a class="zoom" style="display:block;" href="" title=""></a></div><div id="coment"><div class="medallog"></div><div class ="getdate"></div><div class="medalintro"></div></div></li></ul>');
+						};
+						//メダルの画像とタイトルを挿入
+						$(".medalimg a").each(function(i){
+						  	$(this).append('<img src="medal_img/'+medals[i].picture_name+'">');
+							//$(this).attr("title", "medals[i].description.split(" ")[0]");
+						});
+						//バッジ名を挿入
+						$(".medallog").each(function(i){
+						  	$(this).append('<p class="b">'+medals[i].title+'</p>');
+						});
+						//メダル取得の日付を挿入
+						$(".getdate").each(function(i){
+							$(this).append(medals[i].created_at.split("T")[0]);
+						});
+						//バッジ名を追加
+						$(".medalintro").each(function(i){
+							$(this).append(medals[i].description);
+						});
+					});
 
 				});
 			}
 		});
-
-
-	App.getOwnBadges(function(medals){
-		console.log(medals);
-
-	//JSON.parse(medals)[0].created_at.split(" ")[0]
-
-
-
-// 	debugger;
-
-// 	$.each(medals,function(i,medal){
-//
-// 		alert(medal.title);
-// 	});
-//
-
-
-	for(var i=0 ; i < medals.length ; i++){
-	  //リストを追加
-	  $(".tab_contents").append('<ul><li><div class="medalimg"><a class="zoom" style="display:block;" href="" title=""></a></div><div id="coment"><div class="medallog"></div><div class ="getdate"></div><div class="medalintro"></div></div></li></ul>');
-	    };
-	  //メダルの画像とタイトルを挿入
-	  $(".medalimg a").each(function(i){
-	  $(this).append('<img src="medal_img/'+medals[i].picture_name+'">');
-// 	  	$(this).attr("title", "medals[i].description.split(" ")[0]");
-		});
-
-	  //バッジ名を挿入
-	  $(".medallog").each(function(i){
-	  $(this).append('<p class="b">'+medals[i].title+'</p>');
-	  });
-
-	  //メダル取得の日付を挿入
- 	  $(".getdate").each(function(i){
-	  $(this).append(medals[i].created_at.split("T")[0]);
-	  });
-
-	　//バッジ名を追加
- 	  $(".medalintro").each(function(i){
-	  $(this).append(medals[i].description);
-	  });
-	});
-
 });
 
