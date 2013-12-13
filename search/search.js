@@ -26,6 +26,43 @@ $(function(){
 	
 });
 
+//友達検索
+/*
+$(function(){
+			App.search(function(data){
+			$("#searchBtn1").click(function(){
+				var username = $('#keywords1').val();
+				for(var j=0; j<data.length; j++){
+				if(username == data[j].icon_name){
+					
+			$pic_img = $("<img/>").attr("src", "img/"+username+".png");
+			$pic_a = $("<a/>").attr("href", "").append($pic_img);
+			$pic_li = $("<li/>").append($pic_a);
+			$pic_ul = $("<ul/>").append($pic_li);
+			$pic = $("<div/>").addClass("follow_pic").append($pic_ul);
+
+			$account = $("<a/>").addClass("account").append(data[i].screen_id);
+			
+			if(data[i].is_followed){
+				$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+				}else{
+					$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+				}
+			$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
+			$btn_li = $("<li/>").append($btn_span);
+			$btn_ul = $("<ul/>").append($btn_li);
+			$btn = $("<div/>").addClass("follow_btn").append($btn_ul);
+
+			$follow = $("<div/>").addClass("follow").append($pic).append($account).append($btn);
+
+			$(".subcontent").append($follow);
+				}
+				}
+			});
+			});
+			});
+*/
+
 $(function(){
 	App.searchFriends(function(data){
 
@@ -61,6 +98,8 @@ $(function(){
 
 			$(".subcontent").append($follow);
 			}
+			
+			
 
 			//クリックイベント
 			$(".toggleImage img").click(function(){
