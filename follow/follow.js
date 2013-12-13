@@ -69,13 +69,13 @@ $(function(){
 
 					$account = $("<a/>").attr("href", "../log/index.html?recipe_id="+profile.following[i].screen_id).addClass("account").append(profile.following[i].screen_id);
 
-					$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+					/*$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
 					$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
 					$btn_li = $("<li/>").append($btn_span);
 					$btn_ul = $("<ul/>").append($btn_li);
-					$btn = $("<div/>").addClass("follow_btn").append($btn_ul);
+					$btn = $("<div/>").addClass("follow_btn").append($btn_ul);*/
 
-					$follow = $("<div/>").addClass("follow").append($pic).append($account).append($btn);
+					$follow = $("<div/>").addClass("follow").append($pic).append($account);
 
 					$(".allcontents").append($follow);
 
