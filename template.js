@@ -137,8 +137,24 @@ CheeseController.prototype.getOwnBadges = function(callback){
 	if(callback!=null){callback(response);}
 }
 
+CheeseController.prototype.getBadges = function(screen_id,callback){
+	url = "/users/"  + screen_id + "/badges";
+	data = null;
+	type = "get";
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	if(callback!=null){callback(response);}
+}
+
 CheeseController.prototype.getOwnActivities = function(callback){
 	url = "/users/"  + localStorage.screen_id + "/activities";
+	data = null;
+	type = "get";
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	if(callback!=null){callback(response);}
+}
+
+CheeseController.prototype.getActivities = function(screen_id,callback){
+	url = "/users/"  + screen_id + "/activities";
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
