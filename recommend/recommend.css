@@ -4,10 +4,10 @@
 
 
 /*-------------------------
-まんなか ( ･`ω･´)  
+まんなか ( ･`ω･´)
 
 ○　　○
-　●  
+　●
 ○　　○
 
 --------------------------*/
@@ -117,7 +117,7 @@ article span {
 }*/
 
 /*-------------------------
-四隅のサークルのスタイル(^_-)-☆  
+四隅のサークルのスタイル(^_-)-☆
 --------------------------*/
 
 
@@ -128,8 +128,8 @@ a.circle{
     border-radius:50%;
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     position: relative;
     background-position: center center;
     background-repeat: no-repeat;
@@ -143,7 +143,7 @@ a.circle:hover{
 }
 
 .recipename{
-    font-size: 9px;
+    font-size: 12px;
     text-align: center;
     color:#645641;
     height: 30px;
@@ -225,7 +225,7 @@ a.circle:hover{
 /*-------------------------
 ○　　○
 　○
-○　　●    
+○　　●
 
 右下
 --------------------------*/
@@ -373,7 +373,7 @@ a.circle:hover{
 }
 
 /*
-調理方法　 調理方法の名前　ed7b7b   
+調理方法　 調理方法の名前　ed7b7b
 ---------*/
 
 .methods{
@@ -395,7 +395,7 @@ a.circle:hover{
 }
 
 /*
-いままでのレシピすべて　e168a3   
+いままでのレシピすべて　e168a3
 ---------*/
 
 .food{
