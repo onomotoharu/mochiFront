@@ -47,11 +47,18 @@ photo
 	-webkit-box-shadow: 0px 2px 5px #bbb; /* Google Chrome, Safari用*/
 }
 
-.photo img{
-	width: 280px;
-	height: 180px;
-	text-align:center;
-	
+.photo p {
+   display:block;
+   width:280px; /*トリミング後の横幅*/
+   height:180px; /*トリミング後の縦幅*/
+   overflow:hidden;
+   position:relative;
+   z-index:1;
+}
+
+.photo p img{
+  float:left;
+  position:absolute;
 }
 
 /*----------------------------------------
