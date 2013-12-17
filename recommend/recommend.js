@@ -200,6 +200,6 @@ $(document).ready(function(){
 
 
 // 更新ボタン
-$('#r_btn a').click(function(){
+$('#r_btn a','.flickSimple').click(function(){
     location.reload();
 });
