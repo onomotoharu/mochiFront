@@ -51,7 +51,7 @@ div.iine_btn_on{
 	padding-top: 10px;
 }
 
-.iine_btn img{
-	height: 12px;
-	width: 12px;
+.iine_btn img,.iine_btn_on img{
+	width: 14px;
+	height: 13px;
 }

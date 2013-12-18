@@ -82,11 +82,81 @@
 	margin:0 0 10px;
 }
 
-.box_on{
-	filter:alpha(opacity=80);
-	-moz-opacity:0.8;
-	opacity:0.8;
-	margin:0 0 10px;
+.box_on {
+	margin:0 0 10px 0;
+}
+
+.box_on #comment{
+	background-color: #C3AD08;
+	color: #fff;
+}
+
+.box_on #comment p{
+	color: #fff;
 }
 
 [data-columns]::before { display: none; }
+
+/*--------------------------------------
+　　　アニメーション
+--------------------------------------*/
+
+.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:0.6s;-moz-animation-duration:0.6s;-ms-animation-duration:0.6s;-o-animation-duration:0.6s;animation-duration:0.6s;}.animated.hinge{-webkit-animation-duration:0.6s;-moz-animation-duration:0.6s;-ms-animation-duration:0.6s;-o-animation-duration:0.6s;animation-duration:0.6s;}@-webkit-keyframes shake {
+	0%, 100% {-webkit-transform: translateX(0);}	10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-5px);}
+	20%, 40%, 60%, 80% {-webkit-transform: translateX(5px);}
+}
+
+@-moz-keyframes shake {
+	0%, 100% {-moz-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-5px);}
+	20%, 40%, 60%, 80% {-moz-transform: translateX(5px);}
+}
+
+@-o-keyframes shake {
+	0%, 100% {-o-transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {-o-transform: translateX(-5px);}
+	20%, 40%, 60%, 80% {-o-transform: translateX(5px);}
+}
+
+@keyframes shake {
+	0%, 100% {transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+	20%, 40%, 60%, 80% {transform: translateX(5px);}
+}
+
+.shake {
+	-webkit-animation-name: shake;
+	-moz-animation-name: shake;
+	-o-animation-name: shake;
+	animation-name: shake;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }	
+	50% { -webkit-transform: scale(1.1); }
+    100% { -webkit-transform: scale(1); }
+}
+@-moz-keyframes pulse {
+    0% { -moz-transform: scale(1); }	
+	50% { -moz-transform: scale(1.1); }
+    100% { -moz-transform: scale(1); }
+}
+@-o-keyframes pulse {
+    0% { -o-transform: scale(1); }	
+	50% { -o-transform: scale(1.1); }
+    100% { -o-transform: scale(1); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }	
+	50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+	-webkit-animation-name: pulse;
+	-moz-animation-name: pulse;
+	-o-animation-name: pulse;
+	animation-name: pulse;
+}
+

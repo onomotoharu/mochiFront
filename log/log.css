@@ -278,9 +278,9 @@
 	padding-top: 7px;
 }
 
-.iine_btn img{
+.iine_btn img,.iine_btn_on img {
+	width: 14px;
 	height: 13px;
-	width: 12px;
 }
 
 #share{
