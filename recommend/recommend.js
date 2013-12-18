@@ -136,17 +136,18 @@ $(document).ready(function(){
     //ヘッダー
     //$('#pagename').append("cheese!")
     // $('#r_btn a').append("更新");
-    $reloadBtn = $('<img/>').attr('src', '../img/reload.png').css({
-        width: '25',
-        height: '25'
-    });;
-    $('#r_btn a').append($reloadBtn);
+    // $reloadBtn = $('<img/>').attr('src', '../img/reload.png').css({
+    //     width: '25',
+    //     height: '25'
+    // });;
+    // $('#r_btn a').append($reloadBtn);
 
 
     //フッター
     $('#nav_reco img').attr("src", "../img/on/reco_on.png");
 
     //中央　過去ログ
+<<<<<<< HEAD
 
     App.getOwnActivities(function(kakolog){
         for(i=kakolog.activities.length-1; i>-1; i--){
@@ -158,6 +159,16 @@ $(document).ready(function(){
             }
         }
     });
+=======
+    // App.getOwnActivities(function(kakolog){
+    //     console.log(kakolog);
+    //     var max = kakolog.activities.length - 1;
+    //     App.getDetail(kakolog.activities[max].recipe_id,function(kako_img){
+    //         console.log(kako_img);
+    //         $(".center_circle a").attr("style", "background-image: url('http://winvelab.net/cheese/img/"+kako_img.default_picture_name+"')");
+    //     });
+    // });
+>>>>>>> signinCut
 
     App.getRecommend(function(recommend){
     
@@ -214,6 +225,7 @@ $(document).ready(function(){
             render(json);
         });
 
+<<<<<<< HEAD
     });
 
     $('.center_circle a').click(function(){
@@ -222,3 +234,9 @@ $(document).ready(function(){
         });
     })
 });
+=======
+// 更新ボタン
+$('#r_btn a','.flickSimple').click(function(){
+    location.reload();
+});
+>>>>>>> signinCut

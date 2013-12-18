@@ -21,7 +21,7 @@
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="../template.js"></script>
     <script type="text/javascript" src="recommend.js"></script>
-    <script type="text/javascript" src="jquery.flicksimple.js"></script>
+    <!--<script type="text/javascript" src="jquery.flicksimple.js"></script>-->
     <script language="javascript" src="../load.js"></script>
 </head>
 
@@ -32,6 +32,7 @@
 
 
     <div class="allcontents">
+      <div id="pageAll">
         <!-- メインコンテンツここから -->
     <section class="content">
       <!-- 関連図ここから-->
@@ -87,22 +88,14 @@
       <!--真ん中の◯-->
       <article class="center_circle">
         <div id="verticaly"  class="flickSimple">
-              <a href=" " class="circle" style="background-image: url(' ')"　data-transition="slideup"> </a>
+              <a href=" " style="background-image: url('img/change.png')"　data-transition="slideup"> </a>
         </div>
       </article>
       <!--<div class="down">▲</div>-->
     </section>
-
+</div>
   <!-- /全体ここまで -->
 
-
-<script type="text/javascript">
-  $('#verticaly').flickSimple({
-    vertical: true,
-    horizontal: false,
-    lock: true
-  });
-</script>
 
 </div>
 
