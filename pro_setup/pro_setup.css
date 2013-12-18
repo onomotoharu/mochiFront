@@ -99,6 +99,7 @@ input{
  保存ボタン
 ----------------------------------------*/
 
+/* 
 .save_btn{
     text-align: center;
     margin: 5px auto 60px auto;
@@ -113,6 +114,50 @@ input{
     height: 35px;
     width: 140px;
 }
+ */
+
+.save_btn {
+    margin:10px auto;
+    width: 157px;
+    height: 45px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #ff8a34;
+    -webkit-box-shadow: 0 5px 1px #c96d00;
+    -moz-box-shadow: 0 5px 1px #c96d00;
+    box-shadow: 0 5px 1px #c96d00;
+    background-image: -webkit-linear-gradient(bottom, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+    background-image: -moz-linear-gradient(bottom, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+    background-image: -o-linear-gradient(bottom, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+    background-image: linear-gradient(to top, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+}
+
+.save_btn p {
+    margin: 0 auto;
+    display: table;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    padding: 15px;
+}
 
 
+.save_btn_on {
+    width: 157px;
+    height: 45px;
+    margin: 14px auto;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-color: #ff8a34;
+    -webkit-box-shadow: 0 -3px 1px #b05e00;
+    -moz-box-shadow: 0 -3px 1px #b05e00;
+    box-shadow: 0 -3px 1px #b05e00;
+    background-image: -webkit-linear-gradient(bottom, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+    background-image: -moz-linear-gradient(bottom, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+    background-image: -o-linear-gradient(bottom, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+    background-image: linear-gradient(to top, rgba(125,45,1,.14), rgba(255,255,255,.04) 70%, rgba(255,255,255,0));
+}
 
