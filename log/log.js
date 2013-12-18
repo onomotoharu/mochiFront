@@ -52,8 +52,6 @@ $(function() {
 
 	// CheeseController
 
-	App = new CheeseController();
-
 	App.getOwnProfile(function(myprofile){
 		// プロフィール部分DOM操作
 	    $('.myname').html(myprofile.screen_id);
@@ -90,10 +88,10 @@ $(function() {
 				$date = $('<div/>').addClass('date').text($created_at);
 
 			    // コメント
-			    if(activity.activities[i].comment == "") {
-			    	$recipe_title.removeClass('recipe_title').addClass('recipe_title2');
-			    	$my_comment = $('.my_comment').css({display: 'none'});
-			    } else if(activity.activities[i].comment != "") {
+			    if(activity.activities[i].comment == "undefined" || activity.activities[i].comment == "") {
+			    	$recipe_title.removeClass('title').addClass('recipe_title2');
+			    	$my_comment = $('<div/>').addClass('my_comment').css({display: 'none'});
+			    } else if(activity.activities[i].comment != "undefined") {
 		    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
 		    	};
 

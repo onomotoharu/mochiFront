@@ -1,6 +1,6 @@
 $(function(){
-	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png"))
-				 .attr("href", "../search/index.html")
+	$('#l_btn a').attr("href", "javascript:history.back();");
+	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png")).attr("href", "../search/index.html");
 });
 
 /*
@@ -12,16 +12,7 @@ var data=[
 {"username":"ando","userimg":"mob4"}
 ]
 */
-App = null;
-
 $(function(){
-
-	App = new CheeseController();
-	// ## sample ##
-	App.signIn("ren","test",function(json){
-	// 	console.log(json);
-	});
-
 	App.getOwnProfile(function(data){	
 
 		for(var i=0; i<data.following.length; i++){
@@ -48,16 +39,14 @@ $(function(){
 			$(".toggleImage img").click(function(){
 				if($(this).hasClass("on")){
 					$(this).addClass("off").removeClass("on");
-					$(".toggleImage img").attr("src", "./img/follow3_off.png");
-					alert("フォローするよ");
+					$(this).attr("src", "./img/follow3_off.png");
 					var index = $(".toggleImage img").index(this);　
 					screen_id = data.following[index].screen_id;
 					App.setFollow(screen_id,function(id){
 					});
 		    	} else if ($(this).hasClass("off")){
 		    		$(this).addClass("on").removeClass("off");
-		    		$(".toggleImage img").attr("src", "./img/follow3_on.png");
-					alert("フォロー解除だよ");
+		    		$(this).attr("src", "./img/follow3_on.png");
 					var index = $(".toggleImage img").index(this);
 					screen_id = data.following[index].screen_id;
 					App.setUnfollow(screen_id,function(id){

@@ -1,24 +1,15 @@
 $(function(){
-	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png"))
-				 .attr("href", "../search/index.html")
+	$('#l_btn a').attr("href", "javascript:history.back();");
+	$('#r_btn a').append($("<img>").attr("src", "./img/searchicon.png")).attr("href", "../search/index.html");
 });
 
-
-App = null;
-
 $(function(){
-
-	App = new CheeseController();
-	// ## sample ##
-	App.signIn("ren","test",function(json){
-	// 	console.log(json);
-	});
-
 	App.getOwnProfile(function(data){	
+	console.log(data); 
 
 		for(var i=0; i<data.followers.length; i++){
 			//リストを追加
-			$pic_img = $("<img/>").attr("src", "img/"+data.followers[i].photo+".png");
+			$pic_img = $("<img/>").attr("src", "img/"+data.followers[i].icon_name+".png");
 			$pic_a = $("<a/>").attr("href", "").append($pic_img);
 			$pic_li = $("<li/>").append($pic_a);
 			$pic_ul = $("<ul/>").append($pic_li);
@@ -26,13 +17,22 @@ $(function(){
 			
 			$account = $("<a/>").addClass("account").append(data.followers[i].screen_id);
 			
-			if(data.following.length == 0){
-			$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
-			}else if(data.followers[i].screen_id == data.following[i].screen_id){
-			$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+			
+			if(data.followers[i].is_followed){
+				$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
 			}else{
-			$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+				$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
 			}
+			/*
+			if(data.following.length == 0){
+				$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+					}else if(data[i].is_followed){
+						$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+					}else{
+						$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+			}
+			*/
+			
 
 			
 			$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
@@ -48,16 +48,14 @@ $(function(){
 			$(".toggleImage img").click(function(){
 				if($(this).hasClass("on")){
 					$(this).addClass("off").removeClass("on");
-					$(".toggleImage img").attr("src", "./img/follow3_off.png");
-					alert("フォローするよ");
+					$(this).attr("src", "./img/follow3_off.png");
 					var index = $(".toggleImage img").index(this);　
 					screen_id = data.followers[index].screen_id;
 					App.setFollow(screen_id,function(id){　
 					});
 		    	} else if ($(this).hasClass("off")){
 		    		$(this).addClass("on").removeClass("off");
-		    		$(".toggleImage img").attr("src", "./img/follow3_on.png");
-					alert("フォロー解除だよ");
+		    		$(this).attr("src", "./img/follow3_on.png");
 					var unindex = $(".toggleImage img").index(this);
 					screen_id = data.followers[unindex].screen_id;
 					App.setUnfollow(screen_id,function(id){

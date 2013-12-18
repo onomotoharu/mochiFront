@@ -27,12 +27,60 @@ $(function(){
 });
 
 $(function(){
-	$(".toggleImage").click(function(){
-    	a = $(this).parent('.follow');
-    	console.log(a);
-    	// var name = $("this a.account").text();
-    	// var image = $(".follow_pic img").attr("src");
-     //    console.log(name);
-     //    console.log(image);
-    });
+	App.searchFriends(function(data){
+
+		for(var i=0; i<data.length; i++){
+			//リストを追加
+			$pic_img = $("<img/>").attr("src", "img/"+data[i].icon_name+".png");
+			$pic_a = $("<a/>").attr("href", "").append($pic_img);
+			$pic_li = $("<li/>").append($pic_a);
+			$pic_ul = $("<ul/>").append($pic_li);
+			$pic = $("<div/>").addClass("follow_pic").append($pic_ul);
+
+			$account = $("<a/>").addClass("account").append(data[i].screen_id);
+			
+			if(data[i].is_followed){
+				$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+				}else{
+					$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+				}
+			/*
+			for(var j=0; j<data.length; j++){
+				if(data[i].screen_id == data[j].screen_id){
+					$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+				}else{
+					$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+				}
+			}*/
+			$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
+			$btn_li = $("<li/>").append($btn_span);
+			$btn_ul = $("<ul/>").append($btn_li);
+			$btn = $("<div/>").addClass("follow_btn").append($btn_ul);
+
+			$follow = $("<div/>").addClass("follow").append($pic).append($account).append($btn);
+
+			$(".subcontent").append($follow);
+			}
+
+			//クリックイベント
+			$(".toggleImage img").click(function(){
+				if($(this).hasClass("on")){
+					$(this).addClass("off").removeClass("on");
+					$(this).attr("src", "./img/follow3_off.png");
+					alert("フォローするよ");
+					var index = $(".toggleImage img").index(this);
+					screen_id = data[index].screen_id;
+					App.setFollow(screen_id,function(id){
+					});
+		    	} else if ($(this).hasClass("off")){
+		    		$(this).addClass("on").removeClass("off");
+		    		$(this).attr("src", "./img/follow3_on.png");
+					alert("フォロー解除だよ");
+					var index = $(".toggleImage img").index(this);
+					screen_id = data[index].screen_id;
+					App.setUnfollow(screen_id,function(id){
+					});
+				}
+			});
+	});
 });

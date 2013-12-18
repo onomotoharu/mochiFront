@@ -5,9 +5,6 @@ $(document).ready(function(){
 $(function(){
 
 	// レシピデータ
-	App = new CheeseController();
-
-
 	App.getOwnProfile(function(myprofile){
         console.log(myprofile);
 

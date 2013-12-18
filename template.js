@@ -62,17 +62,11 @@ CheeseController.prototype._throwRequest = function(url,data,type){
 		data: data,
 		url: this.domain + url,
 		beforeSend: this._authorizationHeader,
-		async:false,
-		statusCode: {
-    403: function(xhr) {
-      alert("認証エラーです");
-      location.href = "../login/signin.html" ;
-    }}
+		async:false
 	}).responseText;
 }
 
- 
-/*=====================
+ /*=====================
 	Auth
 ======================*/
 
@@ -80,7 +74,7 @@ CheeseController.prototype.signIn = function(screen_id,password,callback){
 	url = "/sign_in";
 	data = {"user": {"screen_id": screen_id, "password": password}};
 	type = "post";
-	responseRaw = this._throwRequest(url,data,type)
+	responseRaw = this._throwRequest(url,data,type);
 	console.log(responseRaw);
 	response = 	$.parseJSON(responseRaw);
 	localStorage.screen_id = screen_id;
@@ -94,7 +88,7 @@ CheeseController.prototype.signOut = function(callback){
 	url = "/sign_out";
 	data = null
 	type = "post";
-	response = 	this._throwRequest(url,data,type);
+	response = 	this._throwRequest(url,data,type);;
 	localStorage.clear();
 	this.isLoggedIn = false;
 	if(callback!=null){callback(response);}
@@ -114,12 +108,21 @@ CheeseController.prototype.createUser = function(screen_id,password,callback){
 	url = "/users/create";
 	data = {"user": {"screen_id": screen_id, "password": password, "password_confirmation": password}}	
 	type = "post";
-	response = this._throwRequest(url,data,type);
+	response = this._throwRequest(url,data,type);;
 	if(callback!=null){callback(response);}
+	this.signIn(screen_id,password,null);
 };
 
 CheeseController.prototype.getOwnProfile = function(callback){
 	url = "/users/"  + localStorage.screen_id + "/profile";
+	data = null;
+	type = "get";
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	if(callback!=null){callback(response);}
+}
+
+CheeseController.prototype.getProfile = function(screen_id,callback){
+	url = "/users/"  + screen_id + "/profile";
 	data = null;
 	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
@@ -142,11 +145,20 @@ CheeseController.prototype.getOwnActivities = function(callback){
 	if(callback!=null){callback(response);}
 }
 
+CheeseController.prototype.searchFriends = function(callback){
+	url = "/users/search/friends";
+	data = null;
+	type = "get";
+	response = 	$.parseJSON(this._throwRequest(url,data,type));
+	if(callback!=null){callback(response);}
+}
+
+
 CheeseController.prototype.setFollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/follow";
 	data = null;
 	type = "post";
-	response = 	this._throwRequest(url,data,type);
+	response = 	this._throwRequest(url,data,type);;
 	if(callback!=null){callback(response);}
 }
 
@@ -154,13 +166,21 @@ CheeseController.prototype.setUnfollow = function(screen_id,callback){
 	url = "/users/"  + screen_id + "/unfollow";
 	data = null;
 	type = "post";
-	response = 	this._throwRequest(url,data,type);
+	response = 	this._throwRequest(url,data,type);;
+	if(callback!=null){callback(response);}
+}
+
+CheeseController.prototype.getGraph = function(screen_id,callback){
+	url = "/users/"  + screen_id + "/graph";
+	data = null;
+	type = "get";
+	response =	$.parseJSON(this._throwRequest(url,data,type));
 	if(callback!=null){callback(response);}
 }
 
 
 /*=====================
-	Recommned
+	Recommend
 ======================*/
 
 CheeseController.prototype.getRecommend = function(callback){
@@ -176,7 +196,7 @@ CheeseController.prototype.getRecommend = function(callback){
 CheeseController.prototype.updateRecommend = function(callback){
 	url = "/recommend/today/update";
 	data = null;
-	type = "post";
+	type = "get";
 	response = 	$.parseJSON(this._throwRequest(url,data,type));
 	if(callback!=null){callback(response);}
 };
@@ -199,7 +219,7 @@ CheeseController.prototype.goodToActivity = function(activity_id,callback){
 	url = "/activities/" + activity_id + "/good";
 	data = null;
 	type = "post";
-	response = 	this._throwRequest(url,data,type);
+	response = 	this._throwRequest(url,data,type);;
 	if(callback!=null){callback(response);}
 }
 
@@ -207,7 +227,7 @@ CheeseController.prototype.sendCommentToActivity = function(activity_id,comment,
 	url = "/activities/" + activity_id + "/comment";
 	data = {"comment" : comment};
 	type = "post";
-	response = 	this._throwRequest(url,data,type);
+	response = 	this._throwRequest(url,data,type);;
 	if(callback!=null){callback(response);}
 }
 
@@ -215,7 +235,7 @@ CheeseController.prototype.deleteActivity = function(activity_id,callback){
 	url = "/activities/" + activity_id + "/delete";
 	data = null;
 	type = "post";
-	response = this._throwRequest(url,data,type);
+	response = this._throwRequest(url,data,type);;
 	if(callback!=null){callback(response);}
 }
 
@@ -263,6 +283,7 @@ App = null;
 
 $(function(){
 	App = new CheeseController();
+	console.log(App);
 
 	// ## sample ##
 	// App.signIn("ren","test",function(json){
