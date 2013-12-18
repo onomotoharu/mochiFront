@@ -139,7 +139,14 @@ $(function(){
 						}
 					});
 
+					console.log(screen_id);
+
+					App.getActivities(screen_id, function(activity){
+						console.log(activity);
+					});
+
 					App.getBadges(screen_id, function(medals){
+						console.log(screen_id);
 						console.log(medals);
 
 						//JSON.parse(medals)[0].created_at.split(" ")[0]

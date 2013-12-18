@@ -60,7 +60,14 @@ $(function(){
         }
     });
 
+        console.log(screen_id);
+
+        App.getActivities(screen_id, function(activity){
+            console.log(activity);
+        });
+
 		App.getGraph(screen_id, function(graph){
+            console.log(screen_id);
 			console.log(graph);
 
 			for(i=0; i<graph.category.length; i++){	
