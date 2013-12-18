@@ -83,9 +83,11 @@ $(function() {
 					$recipe_title     = $('<div/>').addClass('title').append($recipe_title_a);
 				});
 
-				//日付
+				//日付生成
 				$created_at = (activity.activities[i].created_at).split("T")[0];
-				$date = $('<div/>').addClass('date').text($created_at);
+				$hour = (activity.activities[i].created_at).split("T")[1].split(":")[0];
+				$minute = (activity.activities[i].created_at).split("T")[1].split(":")[1];
+				$date = $('<div/>').addClass('date').text($created_at + " " + $hour + ":" + $minute);
 
 			    // コメント
 			    if(activity.activities[i].comment == "undefined" || activity.activities[i].comment == "") {

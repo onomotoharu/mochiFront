@@ -47,16 +47,19 @@ $(function(){
           $('.com_formsend').after($iine_btn.after($activity_id));
         };
 
-        // つくった日
-        var date = timeline[i].created_at;
-        $('.right .date').text(date.split("T")[0]);
+        //日付生成
+        $created_at = (timeline[i].created_at).split("T")[0];
+        $hour = (timeline[i].created_at).split("T")[1].split(":")[0];
+        $minute = (timeline[i].created_at).split("T")[1].split(":")[1];
+        $date = $('.right .date').text($created_at + " " + $hour + ":" + $minute);
+
 
         // ユーザデータ
         // $('.user_info .user_icon img').attr({'src':localStorage.pic});
-        if(timeline[i].comment !== "") {
+        //if(timeline[i].comment == "" || timeline[i].comment == "undefined") {
           $('#def_user,.user_info .user_id').text(timeline[i].screen_id);
           $('#def_comment').text(timeline[i].comment);
-        };
+        //};
       };
     };
 
