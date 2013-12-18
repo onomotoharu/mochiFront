@@ -24,8 +24,13 @@ $(function(){
 			$pic = $("<div/>").addClass("follow_pic").append($pic_ul);
 
 			$account = $("<a/>").addClass("account").append(data.following[i].screen_id);
+			
+			if(data.following[i].is_followed){
+				$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
+			}else{
+				$btn_img = $("<img/>").attr("src", "./img/follow3_on.png").addClass("on");
+			}
 
-			$btn_img = $("<img/>").attr("src", "./img/follow3_off.png").addClass("off");
 			$btn_span = $("<span/>").addClass("toggleImage").append($btn_img);
 			$btn_li = $("<li/>").append($btn_span);
 			$btn_ul = $("<ul/>").append($btn_li);
@@ -35,9 +40,11 @@ $(function(){
 
 			$(".allcontents").append($follow);
 
+		}
 			//クリックイベント
 			$(".toggleImage img").click(function(){
 				if($(this).hasClass("on")){
+					//console.log("1");
 					$(this).addClass("off").removeClass("on");
 					$(this).attr("src", "./img/follow3_off.png");
 					var index = $(".toggleImage img").index(this);　
@@ -45,6 +52,7 @@ $(function(){
 					App.setFollow(screen_id,function(id){
 					});
 		    	} else if ($(this).hasClass("off")){
+					//console.log("0");
 		    		$(this).addClass("on").removeClass("off");
 		    		$(this).attr("src", "./img/follow3_on.png");
 					var index = $(".toggleImage img").index(this);
@@ -53,7 +61,6 @@ $(function(){
 					});
 				}
 			});
-		}
 	});
 });
 

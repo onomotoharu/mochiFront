@@ -43,6 +43,7 @@ $(function(){
 			$follow = $("<div/>").addClass("follow").append($pic).append($account).append($btn);
 
 			$(".allcontents").append($follow);
+		}
 
 			//クリックイベント
 			$(".toggleImage img").click(function(){
@@ -62,7 +63,6 @@ $(function(){
 					});
 				}
 			});
-		}
 	});
 	
 });

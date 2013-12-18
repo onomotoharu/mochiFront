@@ -106,7 +106,7 @@ $(function(){
 				if($(this).hasClass("on")){
 					$(this).addClass("off").removeClass("on");
 					$(this).attr("src", "./img/follow3_off.png");
-					alert("フォローするよ");
+					//alert("フォローするよ");
 					var index = $(".toggleImage img").index(this);
 					screen_id = data[index].screen_id;
 					App.setFollow(screen_id,function(id){
@@ -114,7 +114,7 @@ $(function(){
 		    	} else if ($(this).hasClass("off")){
 		    		$(this).addClass("on").removeClass("off");
 		    		$(this).attr("src", "./img/follow3_on.png");
-					alert("フォロー解除だよ");
+					//alert("フォロー解除だよ");
 					var index = $(".toggleImage img").index(this);
 					screen_id = data[index].screen_id;
 					App.setUnfollow(screen_id,function(id){
