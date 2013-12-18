@@ -149,6 +149,7 @@ a.circle:hover{
     height: 20px;
     width: 120px;
     overflow: hidden;
+    visibility: hidden;
 /*    white-space: nowrap;
     text-overflow: ellipsis;
     -webkit-text-overflow: ellipsis;
@@ -386,7 +387,7 @@ a.circle:hover{
 ---------*/
 
 .methods{
-    width: 60px;
+    width: 70px;
     height: 30px;
     color: #ed7b7b;
     font-weight: bold;
