@@ -115,9 +115,6 @@ $(function(){
 					if(myprofile.following[i].screen_id == profile.screen_id){
 						$('#followbtn').addClass("on").removeClass("off").text("フォロー中");
 					}
-					else{
-						$('#followbtn').text("フォローする");
-					}
 				}
 
 				$('#followbtn').click(function(){
