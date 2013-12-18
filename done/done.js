@@ -121,18 +121,19 @@ jQuery(function($) {
     $("#fade").css("height", pageH).delay(300).fadeOut(1500);
     $("#loader").delay(300).fadeOut(1000);
     $("#container").css("display", "block");
-
     var content = "",
         recommend = false,
         img = "";
 
     // 通信に成功
+	window.onload=function(){
     setTimeout(function(){
         localStorage.setItem("hoge", 1)
         location.href = "../log/index.html";
       },1300);
 
     return false;
+	}
 
   });
 

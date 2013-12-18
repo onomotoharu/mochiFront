@@ -156,8 +156,8 @@ body{
     display: none;
     position: fixed;
     _position: absolute; /* IE6対策 */
-    top:100%;
-    left:100%;
+    top:50%;
+    left:50%;
     margin-top: -60px; /* heightの半分のマイナス値 */
     margin-left: -50px; /* widthの半分のマイナス値 */
     z-index: 100;

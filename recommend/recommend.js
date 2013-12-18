@@ -205,6 +205,7 @@ $(document).ready(function(){
         $target.html($clone.html());
         $clone.remove();
     });
+	
 
     // 更新ボタン
     $('#r_btn a').click(function(){
@@ -212,6 +213,7 @@ $(document).ready(function(){
         
             render(json);
         });
+
     });
 
     $('.center_circle a').click(function(){
