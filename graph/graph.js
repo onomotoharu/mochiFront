@@ -2,12 +2,13 @@
 var max=0;
 
 $(function(){
-	$('#pagename').append("マイページ")
+	$('#pagename').append("マイページ");
 
 	screen_id = getUrlVars()["recipe_id"];
 
     App.getOwnProfile(function(myprofile){
         if(screen_id == null || screen_id == myprofile.screen_id){
+            // 自分のプロフィールだった場合
             $('#nav_my img').attr("src", "../img/on/my_on.png");
             // プロフィール部分DOM操作
             $('.myname').html(myprofile.screen_id);
@@ -20,6 +21,7 @@ $(function(){
             screen_id = myprofile.screen_id;
         }else{  
             App.getProfile(screen_id, function(profile){
+                //他人のプロフィールだった場合
                 $('.myname').html(profile.screen_id);
                 $('.followcount').append(profile.following.length);
                 $('.followercount').append(profile.followers.length);
@@ -57,30 +59,22 @@ $(function(){
         }
     });
 
-        console.log(screen_id);
+	App.getGraph(screen_id, function(graph){
 
-        App.getActivities(screen_id, function(activity){
-            console.log(activity);
-        });
-
-		App.getGraph(screen_id, function(graph){
-            console.log(screen_id);
-			console.log(graph);
-
-			for(i=0; i<graph.category.length; i++){	
-				if(max < graph.category[i]){
-					max=graph.category[i];
-				}
+		for(i=0; i<graph.category.length; i++){	
+			if(max < graph.category[i]){
+				max=graph.category[i];
 			}
+		}
 
-			$("#input1").attr("value", graph.category[0]);
-			$("#input2").attr("value", graph.category[1]);
-			$("#input3").attr("value", graph.category[2]);
-			$("#input4").attr("value", graph.category[3]);
-			$("#input5").attr("value", graph.category[4]);
-			$("#input6").attr("value", graph.category[5]);
-			$("#input7, #input8, #input9, #input10, #input11, #input12").attr("value", max);
-		});
+		$("#input1").attr("value", graph.category[0]);
+		$("#input2").attr("value", graph.category[1]);
+		$("#input3").attr("value", graph.category[2]);
+		$("#input4").attr("value", graph.category[3]);
+		$("#input5").attr("value", graph.category[4]);
+		$("#input6").attr("value", graph.category[5]);
+		$("#input7, #input8, #input9, #input10, #input11, #input12").attr("value", max);
+	});
 
 	$('#canvasChart').canvasChart({
         /*********************
@@ -107,7 +101,7 @@ $(function(){
         *********************/
         chartStrokeColor    : ['#e07431','#9c7d25'],  //チャートの線
         chartFillColor      : ['rgba(224, 116, 49, 0.3)', 'none'],//チャートの塗り色 noneで塗らない
-        chartLineWidth      : 6,//線の太さ
+        chartLineWidth      : 3,//線の太さ
             
         /*********************
          * レーダーチャートの頂点
