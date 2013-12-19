@@ -13,3 +13,15 @@ $(function(){
         alert(screen_ps);
     });
 });
+
+function change(){
+	if (event.keyCode == 13){
+    	var screen_id = $(".login_id").val();
+        var screen_ps = $(".login_ps").val();
+        alert(screen_id);
+        alert(screen_ps);
+        document.location = "../survey/index.html";
+	}
+	else
+	return
+}

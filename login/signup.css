@@ -82,7 +82,7 @@ a{
 ログイン　login 
 ----------------------------------------*/
 
-.login_id{
+.login_ac{
 	width: 272px;
 	height: 40px;
 	background-color: #fff;
@@ -106,7 +106,7 @@ a{
 
 }
 
-.login_ac{
+.login_id{
 	width: 272px;
 	height: 40px;
 	background-color: #fff;
