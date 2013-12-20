@@ -81,7 +81,9 @@ $(function() {
 
 						//日付
 						$created_at = (myactivity.activities[i].created_at).split("T")[0];
-						$date = $('<div/>').addClass('date').text($created_at);
+						$hour = (myactivity.activities[i].created_at).split("T")[1].split(":")[0];
+						$minute = (myactivity.activities[i].created_at).split("T")[1].split(":")[1];
+						$date = $('<div/>').addClass('date').text($created_at + " " + $hour + ":" + $minute);
 
 					    // コメント
 					    if(myactivity.activities[i].comment == "undefined" || myactivity.activities[i].comment == "") {
@@ -136,95 +138,6 @@ $(function() {
 
 				});
 
-<<<<<<< HEAD
-				//日付生成
-				$created_at = (activity.activities[i].created_at).split("T")[0];
-				$hour = (activity.activities[i].created_at).split("T")[1].split(":")[0];
-				$minute = (activity.activities[i].created_at).split("T")[1].split(":")[1];
-				$date = $('<div/>').addClass('date').text($created_at + " " + $hour + ":" + $minute);
-
-			    // コメント
-			    if(activity.activities[i].comment == "undefined" || activity.activities[i].comment == "") {
-			    	$recipe_title.removeClass('title').addClass('recipe_title2');
-			    	$my_comment = $('<div/>').addClass('my_comment').css({display: 'none'});
-			    } else if(activity.activities[i].comment != "undefined") {
-		    		$my_comment = $('<div/>').addClass('my_comment').text(activity.activities[i].comment);
-		    	};
-
-		    	// いいねボタン生成
-		    	if(activity.activities[i].is_liked == false) {
-		    		$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
-			    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
-			    	$iine_img   = $('<img/>').attr('src','./img/good_off.png');
-			    	$iine_btn   = $('<div/>').addClass('iine_btn').append($iine_img.after($iine));
-			    } else if(activity.activities[i].is_liked == true){
-			    	$iine_count = $('<span>').text(activity.activities[i].likes_count).addClass('iine_count');
-			    	$iine       = $('<span/>').text("イイネ！").after($iine_count);
-			    	$iine_img   = $('<img/>').attr('src','./img/good_on.png');
-			    	$iine_btn   = $('<div/>').addClass('iine_btn_on').append($iine_img.after($iine));
-			    };
-
-		    	// コメントボタン生成
-		    	$com_count  =  $('<span/>').text(activity.activities[i].comments.length);
-		    	$com        = $('<span/>').text("コメント").after($com_count);
-		    	$com_img    = $('<img/>').attr('src','./img/com_off.png');
-		    	$com_btn    = $('<div/>').addClass('com_btn').append($com_img.after($com));
-
-		    	// シェアボタン生成
-		    	$share_img  = $('<img/>').attr('src', './img/…_off.png');
-		    	$open01     = $('<a href="#open01"></a>').append($share_img);
-		    	$p_open01   = $('<p/>').append($open01);
-		    	$share      = $('<div id="share"></div>').append($p_open01);
-
-		    	activity_id  = activity.activities[i].id;
-		    	$activity_id = $('<div/>').addClass('activity_id').text(activity_id);
-
-		    	// 親要素生成
-				$act_left   = $('<div/>').addClass('act_left').append($recipe_photo);
-				$act_right  = $('<div/>').addClass('act_right').append($date.after($recipe_title).after($my_comment));
-				$act_bottom = $('<div/>').addClass('act_bottom').append($com_btn.after($activity_id).after($iine_btn));
-				$('.log').append($act_left.after($act_right).after($act_bottom));
-			};
-
-		};
-
-		// コメントボタンをクリックしたら
-	    $(".com_btn").click(function() {
-
-			activity_id = $(this).next(activity_id).text();
-	        // URLにパラメータとして渡す
-	        location.href = "../activity/comment.html?activity_id=" + activity_id;
-
-		});
-
-
-		// いいねボタンをクリックしたら
-		$('.iine_btn,.iine_btn_on').click(function() {
-
-			activity_id = $(this).prev(activity_id).text();
-			for(var i = 0;i<activity.activities.length;i++) {
-				if(activity.activities[i].id == activity_id){
-					iine_count  = activity.activities[i].likes_count;
-
-					// イイネ数を+1して_onデザインにする
-					if($(this).hasClass('iine_btn')){
-						$(this).addClass("iine_btn_on").removeClass('iine_btn');
-						$(".iine_btn_on img").attr('src', './img/good_on.png');
-						iine_count++;
-						$(this).children('span.iine_count').text(iine_count);
-						activity_id = activity.activities[i].id;
-						App.goodToActivity(activity_id,function(){});
-						location.reload();
-					} else if($(this).hasClass('iine_btn_on')) {
-						$(this).addClass("iine_btn").removeClass('iine_btn_on');
-						$(".iine_btn img").attr('src', './img/good_off.png');
-						iine_count--;
-						$(this).children('span.iine_count').text(iine_count);
-						activity_id = activity.activities[i].id;
-						App.goodToActivity(activity_id,function(){});
-						location.reload();
-=======
-
 				// いいねボタンをクリックしたら
 				$('.iine_btn,.iine_btn_on').click(function() {
 
@@ -252,7 +165,6 @@ $(function() {
 								location.reload();
 							};
 						};
->>>>>>> other_profile
 					};
 				});
 			});
@@ -319,7 +231,9 @@ $(function() {
 
 							//日付
 							$created_at = (activity.activities[i].created_at).split("T")[0];
-							$date = $('<div/>').addClass('date').text($created_at);
+							$hour = (activity.activities[i].created_at).split("T")[1].split(":")[0];
+							$minute = (activity.activities[i].created_at).split("T")[1].split(":")[1];
+							$date = $('<div/>').addClass('date').text($created_at + " " + $hour + ":" + $minute);
 
 						    // コメント
 						    if(activity.activities[i].comment == "undefined" || activity.activities[i].comment == "") {
