@@ -1,38 +1,79 @@
 
 var max=0;
 
-$(document).ready(function(){
-	$('#pagename').append("マイページ")
+$(function(){
+	$('#pagename').append("マイページ");
 
-  	$('#nav_my img').attr("src", "../img/on/my_on.png");
+	screen_id = getUrlVars()["recipe_id"];
 
-	App.getOwnProfile(function(myprofile){
+    App.getOwnProfile(function(myprofile){
+        if(screen_id == null || screen_id == myprofile.screen_id){
+            // 自分のプロフィールだった場合
+            $('#nav_my img').attr("src", "../img/on/my_on.png");
+            // プロフィール部分DOM操作
+            $('.myname').html(myprofile.screen_id);
+            $('.followcount').append(myprofile.following.length);
+            $('.followercount').append(myprofile.followers.length);
+            $('#myphoto img').attr("src",myprofile.icon_name);
+            $('#myintro').append(myprofile.bio);
 
-		// プロフィール部分DOM操作
-        $('.myname').html(myprofile.screen_id);
-		$('.followcount').append(myprofile.following.length);
-		$('.followercount').append(myprofile.followers.length);
-		$('#myphoto img').attr("src",myprofile.icon_name);
-		$('#myintro').append(myprofile.bio);
-		screen_id = myprofile.screen_id;
+            $('#followbtn').css("display", "none");
+            screen_id = myprofile.screen_id;
+        }else{  
+            App.getProfile(screen_id, function(profile){
+                //他人のプロフィールだった場合
+                $('.myname').html(profile.screen_id);
+                $('.followcount').append(profile.following.length);
+                $('.followercount').append(profile.followers.length);
+                $('#myphoto img').attr("src",profile.icon_name);
+                $('#myintro').append(profile.bio);
 
-		App.getGraph(screen_id, function(graph){
-			console.log(graph);
+                $('.follow a').attr("href", "../follow/follow.html?recipe_id="+screen_id);
+                $('.follower a').attr("href", "../follow/follower.html?recipe_id="+screen_id);
 
-			for(i=0; i<graph.category.length; i++){	
-				if(max < graph.category[i]){
-					max=graph.category[i];
-				}
+                $('#log a').attr("href", "../log/index.html?recipe_id="+screen_id);
+                $('#fav a').attr("href", "../fav/index.html?recipe_id="+screen_id);
+                $('#badge a').attr("href", "../medal/index.html?recipe_id="+screen_id);
+
+                for(i=0; i<myprofile.following.length; i++){
+                    if(myprofile.following[i].screen_id == profile.screen_id){
+                        $('#followbtn').addClass("on").removeClass("off").text("フォロー中");
+                    }
+                }
+
+                $('#followbtn').click(function(){
+                    if($('#followbtn').hasClass('off')){
+                        $('#followbtn').addClass('on').removeClass('off').text('フォロー中');
+                        App.setFollow(screen_id,function(id){});
+                        profile.followers.length = profile.followers.length + 1;
+                        $('.followercount').empty().append(profile.followers.length);
+                    }
+                    else if($('#followbtn').hasClass('on')){
+                        $('#followbtn').addClass('off').removeClass('on').text('フォローする');
+                        App.setUnfollow(screen_id,function(id){});
+                        profile.followers.length = profile.followers.length - 1;
+                        $('.followercount').empty().append(profile.followers.length);
+                    }
+                });
+            });
+        }
+    });
+
+	App.getGraph(screen_id, function(graph){
+
+		for(i=0; i<graph.category.length; i++){	
+			if(max < graph.category[i]){
+				max=graph.category[i];
 			}
+		}
 
-			$("#input1").attr("value", graph.category[0]);
-			$("#input2").attr("value", graph.category[1]);
-			$("#input3").attr("value", graph.category[2]);
-			$("#input4").attr("value", graph.category[3]);
-			$("#input5").attr("value", graph.category[4]);
-			$("#input6").attr("value", graph.category[5]);
-			$("#input7, #input8, #input9, #input10, #input11, #input12").attr("value", max);
-		});
+		$("#input1").attr("value", graph.category[0]);
+		$("#input2").attr("value", graph.category[1]);
+		$("#input3").attr("value", graph.category[2]);
+		$("#input4").attr("value", graph.category[3]);
+		$("#input5").attr("value", graph.category[4]);
+		$("#input6").attr("value", graph.category[5]);
+		$("#input7, #input8, #input9, #input10, #input11, #input12").attr("value", max);
 	});
 
 	$('#canvasChart').canvasChart({
@@ -60,7 +101,7 @@ $(document).ready(function(){
         *********************/
         chartStrokeColor    : ['#e07431','#9c7d25'],  //チャートの線
         chartFillColor      : ['rgba(224, 116, 49, 0.3)', 'none'],//チャートの塗り色 noneで塗らない
-        chartLineWidth      : 6,//線の太さ
+        chartLineWidth      : 3,//線の太さ
             
         /*********************
          * レーダーチャートの頂点
