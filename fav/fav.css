@@ -185,6 +185,10 @@
 	bottom: -5px;
 }
 
+.fav_menu_money {
+	margin: 0 10px 0 0;
+}
+
 .fav_menu_money, .fav_menu_time{
 	position: relative;
 	bottom: -5px;

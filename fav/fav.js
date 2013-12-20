@@ -45,7 +45,6 @@ $(function(){
     			else if(recipe.necessary_time == 6){time = "1時間以上";}
     			else if(recipe.necessary_time == 0){time = "不明";}
 				$menu_time = $('<span/>').addClass('fav_menu_time').text(time);
-				$border = $('<span/>').text(' | ');
 
 				// シェアボタン生成
 		    	$share_img  = $('<img/>').attr('src', './img/…_off.png');
@@ -53,7 +52,7 @@ $(function(){
 		    	$p_open01   = $('<p/>').append($open01);
 		    	$share      = $('<div id="share"></div>').append($p_open01);
 
-				$fav_menu_info = $('<span/>').addClass('fav_menu_info').append($money_img.after($menu_money).after($border).after($time_img).after($menu_time));
+				$fav_menu_info = $('<span/>').addClass('fav_menu_info').append($money_img.after($menu_money).after($time_img).after($menu_time));
 				$fav_info_all = $('<div/>').addClass('fav_info_all').append($fav_menu_info);
 				$fav_menu = $('<div/>').addClass('fav_menu').append($fav_menu_photo_a.after($fav_menu_title_a).after($fav_info_all));
 				$('div.tab_title').after($fav_menu);

@@ -54,6 +54,18 @@ jQuery(function($) {
     }
   });
 
+  // 写真のアス比
+
+  $("#re_photo p img").on("load",function(){
+    var iw, ih;
+    var cw = 280; /*トリミング後の横幅*/
+    var ch = 180; /*トリミング後の縦幅*/
+    iw = ($(this).width() - cw) / 2;
+    ih = ($(this).height() - ch) / 2;
+    $(this).css("top", "-"+ih+"px");
+    $(this).css("left", "-"+iw+"px");
+  });
+
 
   // お気に入りボタン
   App.getOwnProfile(function(myprofile) {
